@@ -1,0 +1,14 @@
+Hi All,
+
+An error has occurred with the following workflow: ${subject}
+
+Please reach out to your TD representative for troubleshooting and support.
+
+Additionally, you can find further details in the workflow log below.
+
+Regards,
+Treasure Data
+
+---------------Log---------------
+
+${error.message}

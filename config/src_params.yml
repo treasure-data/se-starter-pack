@@ -1,0 +1,13 @@
+raw: raw
+src: src
+stg: stg
+sub: retail
+meta: retail_starter_pack
+run_all: true
+
+# US
+td_cdp_endpoint: "https://api-cdp.treasuredata.com"
+# APAC
+# td_cdp_endpoint: "https://api-cdp.ap02.treasuredata.com"
+# EMEA
+# td_cdp_endpoint: "https://api-cdp.eu01.treasuredata.com"

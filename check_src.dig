@@ -1,0 +1,167 @@
+timezone: UTC
+
+_export:
+  !include : 'config/src_params.yml'
+  !include : 'config/email_ids.yml'
+  mail:
+    from: "wf-error-alert@treasure-data.com"
+  td:
+      database: ${meta}      
+
++prepare_db:
+  td_ddl>:
+  create_databases: ["${meta}"]
+
++prepare_table:
+  td>: "queries/src_tmp_ddl.sql"
+
++prepare_report_base:
+  td>: "queries/check_src_vs_ref.sql"
+
++prepare_report:
+  # database: ${meta}
+  td>: "queries/report_deviations.sql"
+
++warning_email:
+  td_for_each>: queries/get_warnings.sql
+  _do:
+    +prepare_email_content:
+      echo>: ${td.each.subject}
+
+    +send_email:
+      for_each>:
+        email: ${email_ids}
+      _do:
+        mail>: utilities/generic.txt
+        subject: ${td.each.subject}
+        to: ${email}
+        body: ${td.each.message}
+
++error_email:
+  td_for_each>: queries/get_errors.sql
+  _do:
+    +prepare_email_content:
+      echo>: ${td.each.subject}
+
+    +send_email:
+      for_each>:
+        email: ${email_ids}
+      _do:
+        mail>: utilities/generic.txt
+        subject: ${td.each.subject}
+        to: ${email}
+        body: ${td.each.message}
+
+# +query_extra_tables:
+#   td>:
+#   query: "select count(1) as cnt from report_extra_tables_in_src"
+#   store_last_results: true
+
+# +check_extra_tables_and_send_email:
+#   if>: ${td.last_results.cnt > 0}
+#   _do:
+#     +prepare_email_content:
+#       echo>: "Extra tables found in source database ${src}_${sub}, preparing email content..."
+
+#     +send_email:
+#       for_each>:
+#         email: ${email_ids}
+#       _do:
+#         mail>: utilities/generic.txt
+#         subject: "Warning: Extra tables found in source database ${src}_${sub}."
+#         to: ${email}
+#         body: "Check ${meta}.report_extra_tables_in_src for extra columns in source database ${src}_${sub}."
+
+# +query_extra_columns:
+#   # database: ${meta}
+#   td>:
+#   query: "select count(1) as cnt from report_extra_columns_in_src"
+#   store_last_results: true
+
+# +check_extra_columns_and_send_email:
+#   if>: ${td.last_results.cnt > 0}
+#   _do:
+#     +prepare_email_content:
+#       echo>: "Extra columns found in source db ${src}_${sub}, preparing email content..."
+
+#     +send_email:
+#       for_each>:
+#         email: ${email_ids}
+#       _do:
+#         mail>: utilities/generic.txt
+#         subject: "Warning: Extra columns found in source database ${src}_${sub}."
+#         to: ${email}
+#         body: "Check ${meta}.report_extra_columns_in_src for extra columns in source database ${src}_${sub}."
+
+# +query_missing_columns:
+#   td>:
+#   query: "select count(1) as cnt from report_missing_src_columns"
+#   store_last_results: true
+
+# +check_missing_columns_and_send_email:
+#   if>: ${td.last_results.cnt > 0}
+#   _do:
+#     +prepare_email_content:
+#       echo>: "Missing columns from source database ${src}_${sub} tables, preparing email content..."
+
+#     +send_email:
+#       for_each>:
+#         email: ${email_ids}
+#       _do:
+#         mail>: utilities/generic.txt
+#         subject: "Error: Missing columns from source database ${src}_${sub}. Stopping workflow!"
+#         to: ${email}
+#         body: "Check ${meta}.report_missing_src_columns for missing columns in source database ${src}_${sub}."
+
+# +query_column_type_mismatch:
+#   td>:
+#   query: "select count(1) as cnt from report_column_type_mismatches"
+#   store_last_results: true
+
+# +check_column_type_and_send_email:
+#   if>: ${td.last_results.cnt > 0} 
+#   _do:
+#     +prepare_email_content:
+#       echo>: "Mismatched column types in source database ${src}_${sub} tables, preparing email content..."
+
+#     +send_email:
+#       for_each>:
+#         email: ${email_ids}
+#       _do:
+#         mail>: utilities/generic.txt
+#         subject: "Error: Mismatched column types in source database ${src}_${sub}. Stopping workflow!"
+#         to: ${email}
+#         body: "Check ${meta}.report_column_type_mismatches for column type mismatches in source database ${src}_${sub}."
+
+# +query_missing_src_table:
+#   td>:
+#   query: "select count(1) as cnt from report_missing_tables_in_src"
+#   store_last_results: true
+
+# +check_missing_src_table_and_send_email:
+#   if>: ${td.last_results.cnt > 0} 
+#   _do:
+#     +prepare_email_content:
+#       echo>: "Missing tables in source database ${src}_${sub} , preparing email content..."
+
+#     +send_email:
+#       for_each>:
+#         email: ${email_ids}
+#       _do:
+#         mail>: utilities/generic.txt
+#         subject: "Error: Missing tables in source database ${src}_${sub}. Stopping workflow!"
+#         to: ${email}
+#         body: "Check ${meta}.report_missing_tables_in_src for missing tables in source database ${src}_${sub}."
+                  
++drop_table:
+  td>: "queries/src_tmp_drop_ddl.sql"
+
++query_to_raise_error:
+  td>:
+  query: "select sum(cnt) as cnt from ( select count(1) as cnt from report_missing_src_columns union all select count(1) as cnt from report_column_type_mismatches union all select count(1) as cnt from report_missing_tables_in_src) x"
+  store_last_results: true
+
++raise_error_if_necessary:
+  if>: ${td.last_results.cnt > 0} 
+  _do:
+    fail>: "Detected issues with missing tables columns or column type mismatches. Check ${meta}.report_missing_src_columns for missing columns.  Check ${meta}.report_column_type_mismatches for column type mismatches. Check ${meta}.report_missing_tables_in_src for missing source tables"
