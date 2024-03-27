@@ -1,125 +1,123 @@
 name: branch deploy
 on:
-  push:
-    branches: 
-     - 'feat/*'
-     - 'fix/*'
-     - 'hot/*'
+    push:
+        branches:
+            - "feat/*"
+            - "fix/*"
+            - "hot/*"
 
 jobs:
     branch_deploy:
         runs-on: ubuntu-latest
         environment: ${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa' }}
-        steps:           
-        - name: determine Feature by splitting branch name on -
-          id: feature
-          shell: bash
-          run: |
-            split=(${GITHUB_REF_NAME//\// })
-            index=$((${#split[@]}-1))
-            FeatureName=${split[$index]}
-            split=(${FeatureName//-/ })
-            Feature=br${split[1]}
-            echo "::set-output name=Feature::$Feature"  
+        steps:
+            - name: determine Feature by splitting branch name on -
+              id: feature
+              shell: bash
+              run: |
+                  split=(${GITHUB_REF_NAME//\// })
+                  index=$((${#split[@]}-1))
+                  FeatureName=${split[$index]}
+                  split=(${FeatureName//-/ })
+                  Feature=br${split[1]}
+                  echo "::set-output name=Feature::$Feature"
 
-        ###Checkout the branch corresponding to the push event
-        - name: checkout branch
-          uses: actions/checkout@v1
-          with:
-            fetch-depth: 2
-        
-        ###Get hash of the last run of the WORKFLOW (not the last commit).
-        #Since the workflow does not run for minor commits, this ensures the right commits are compared to figure out which projects to push
-        #Note: this step triggers a deprecation warning; this step may have to be rewritten in bash with curl
-        - name: Get Previous Build Hash
-          if: contains(github.event.head_commit.message, 'dplytp_full')==false
-          id: pwsh1
-          shell: pwsh
-          run: |
-            $url = "https://api.github.com/repos/treasure-data-ps/levis_cicd_test/actions/runs"
-            $token = "${{github.token}}"
-            $response = invoke-restMethod $url  -headers @{Authorization = "bearer $token"}
-            $response.workflow_runs | ForEach-Object {
-              if(($_.name -eq "${{github.workflow}}") -and ($_.conclusion -eq "success") -and (-join ("refs/heads/", $_.head_branch) -eq "${{github.ref}}")){
-                $build_sha=$_.head_sha
-                Write-Host ::set-output name=build_sha::$build_sha
-                break
-              }
-            }
+            ###Checkout the branch corresponding to the push event
+            - name: checkout branch
+              uses: actions/checkout@v1
+              with:
+                  fetch-depth: 2
 
-    #   Use database.yml to create variant dbs to silo the testing of the feature branch, this part has to be customized by customer
-        - name: Update yml 
-          shell: pwsh
-          run: | 
-            sed -i "s/env:.*/env: _${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa'}}_${{ steps.feature.outputs.Feature }}/g" ./orchestration_eu/config/database.yml
-            sed -i "s/env:.*/env: _${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa'}}_${{ steps.feature.outputs.Feature }}/g" ./dsar_eu/config/database.yml
+            ###Get hash of the last run of the WORKFLOW (not the last commit).
+            #Since the workflow does not run for minor commits, this ensures the right commits are compared to figure out which projects to push
+            #Note: this step triggers a deprecation warning; this step may have to be rewritten in bash with curl
+            - name: Get Previous Build Hash
+              if: contains(github.event.head_commit.message, 'dplytp_full')==false
+              id: pwsh1
+              shell: pwsh
+              run: |
+                  $url = "https://api.github.com/repos/treasure-data-ps/se-starter-pack-retail/actions/runs"
+                  $token = "${{github.token}}"
+                  $response = invoke-restMethod $url  -headers @{Authorization = "bearer $token"}
+                  $response.workflow_runs | ForEach-Object {
+                    if(($_.name -eq "${{github.workflow}}") -and ($_.conclusion -eq "success") -and (-join ("refs/heads/", $_.head_branch) -eq "${{github.ref}}")){
+                      $build_sha=$_.head_sha
+                      Write-Host ::set-output name=build_sha::$build_sha
+                      break
+                    }
+                  }
 
+            #   Use database.yml to create variant dbs to silo the testing of the feature branch, this part has to be customized by customer
+            - name: Update yml
+              shell: pwsh
+              run: |
+                  sed -i "s/env:.*/env: _${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa'}}_${{ steps.feature.outputs.Feature }}/g" ./orchestration_eu/config/database.yml
+                  sed -i "s/env:.*/env: _${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa'}}_${{ steps.feature.outputs.Feature }}/g" ./dsar_eu/config/database.yml
 
-        ##call td_push deployment action
-        - name: td_push
-          uses: ./.github/actions/td_push
-          with:
-            proj_dirs: ${{ vars.TD_WF_PROJS }}
-            fbranch: ${{ steps.feature.outputs.Feature }}
-            prev_build_sha: ${{ steps.pwsh1.outputs.build_sha }}
-            curr_build_sha: ${{ github.sha }}
-            api_token: ${{ secrets.TD_API_TOKEN }}
-            wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} #full endpoint
-            env_label: ${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa' }}
-    
-        ##call td_test_wf for test automation 
-        - name: td_test_wf
-          if: ${{ vars.TD_TEST_WF != ''  }} 
-          uses: ./.github/actions/td_test_wf
-          with:
-            test_wf_project_name: ${{ vars.TD_TEST_WF  }}
-            test_wf_name: ${{ vars.TD_TEST_WF  }}
-            fbranch: ${{ steps.feature.outputs.Feature }} #enable or disable this line based on static or dynamic test workflow
-            api_token: ${{ secrets.TD_API_TOKEN }}
-            wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} 
-            env_label: ${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa' }} #enable or disable this line based on static or dynamic test workflow
+            ##call td_push deployment action
+            - name: td_push
+              uses: ./.github/actions/td_push
+              with:
+                  proj_dirs: ${{ vars.TD_WF_PROJS }}
+                  fbranch: ${{ steps.feature.outputs.Feature }}
+                  prev_build_sha: ${{ steps.pwsh1.outputs.build_sha }}
+                  curr_build_sha: ${{ github.sha }}
+                  api_token: ${{ secrets.TD_API_TOKEN }}
+                  wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} #full endpoint
+                  env_label: ${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa' }}
 
-          
-        ##call td_test_sql for test automation via sql
-        - name: td_test_sql
-          if: ${{ vars.TD_TEST_DB != ''  }} 
-          uses: ./.github/actions/td_test_sql
-          with:
-            test_db: ${{ vars.TD_TEST_DB }} 
-            sql_script: ${{ vars.TD_TEST_SQL }} 
-            fbranch: ${{ steps.feature.outputs.Feature }} #enable or disable this line based on static or dynamic test workflow
-            api_token: ${{ secrets.TD_API_TOKEN }}
-            api_endpoint: ${{vars.TD_API_ENDPOINT}}
-            env_label: ${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa' }} #enable or disable this line based on static or dynamic test workflow
+            ##call td_test_wf for test automation
+            - name: td_test_wf
+              if: ${{ vars.TD_TEST_WF != ''  }}
+              uses: ./.github/actions/td_test_wf
+              with:
+                  test_wf_project_name: ${{ vars.TD_TEST_WF  }}
+                  test_wf_name: ${{ vars.TD_TEST_WF  }}
+                  fbranch: ${{ steps.feature.outputs.Feature }} #enable or disable this line based on static or dynamic test workflow
+                  api_token: ${{ secrets.TD_API_TOKEN }}
+                  wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }}
+                  env_label: ${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa' }} #enable or disable this line based on static or dynamic test workflow
 
-        - name: Send custom JSON data to Slack workflow on Success
-          id: slack_success
-          if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }} 
-          uses: slackapi/slack-github-action@v1.24.0
-          with:
-            payload: |
-              {
-                "workflow_name": "${{ github.job }}",
-                "version": "${{ github.sha }}",
-                "branch": "${{ github.event.ref }}",
-                "repo": "${{ github.repository }}",
-                "err": "Success"
-              }
-          env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
-        
-        - name: Send custom JSON data to Slack workflow on failure
-          id: slack_failure
-          if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }} 
-          uses: slackapi/slack-github-action@v1.24.0
-          with:
-            payload: |
-              {
-                "workflow_name": "${{ github.job }}",
-                "version": "${{ github.sha }}",
-                "branch": "${{ github.event.ref }}",
-                "repo": "${{ github.repository }}",
-                "err": "Error-check the github actions logs for the description!"
-              }
-          env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+            ##call td_test_sql for test automation via sql
+            - name: td_test_sql
+              if: ${{ vars.TD_TEST_DB != ''  }}
+              uses: ./.github/actions/td_test_sql
+              with:
+                  test_db: ${{ vars.TD_TEST_DB }}
+                  sql_script: ${{ vars.TD_TEST_SQL }}
+                  fbranch: ${{ steps.feature.outputs.Feature }} #enable or disable this line based on static or dynamic test workflow
+                  api_token: ${{ secrets.TD_API_TOKEN }}
+                  api_endpoint: ${{vars.TD_API_ENDPOINT}}
+                  env_label: ${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa' }} #enable or disable this line based on static or dynamic test workflow
+
+            - name: Send custom JSON data to Slack workflow on Success
+              id: slack_success
+              if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }}
+              uses: slackapi/slack-github-action@v1.24.0
+              with:
+                  payload: |
+                      {
+                        "workflow_name": "${{ github.job }}",
+                        "version": "${{ github.sha }}",
+                        "branch": "${{ github.event.ref }}",
+                        "repo": "${{ github.repository }}",
+                        "err": "Success"
+                      }
+              env:
+                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+            - name: Send custom JSON data to Slack workflow on failure
+              id: slack_failure
+              if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }}
+              uses: slackapi/slack-github-action@v1.24.0
+              with:
+                  payload: |
+                      {
+                        "workflow_name": "${{ github.job }}",
+                        "version": "${{ github.sha }}",
+                        "branch": "${{ github.event.ref }}",
+                        "repo": "${{ github.repository }}",
+                        "err": "Error-check the github actions logs for the description!"
+                      }
+              env:
+                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

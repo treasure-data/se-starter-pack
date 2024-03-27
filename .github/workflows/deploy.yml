@@ -3,108 +3,108 @@ on:
     workflow_dispatch:
         inputs:
             version:
-                description: 'The version of main you want to deploy (leave it as empty to deploy the latest)'
+                description: "The version of main you want to deploy (leave it as empty to deploy the latest)"
                 required: false
             env:
-                description: 'The env (prod/qa/dev) you want to deploy to'
+                description: "The env (prod/qa/dev) you want to deploy to"
                 required: true
             deploy_type:
-                description: 'full or inc'
-                default: 'full'
+                description: "full or inc"
+                default: "full"
                 required: true
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment: ${{ (github.event.inputs.env=='prod' &&'') || github.event.inputs.env}}
-    steps:
-    - name: checkout branch
-      uses: actions/checkout@v3
-      with:
-            fetch-depth: 2
-            ref: ${{(github.event.inputs.version!='' && format('{0}{1}','refs/tags/',github.event.inputs.version))||'' }}
+    deploy:
+        runs-on: ubuntu-latest
+        environment: ${{ (github.event.inputs.env=='prod' &&'') || github.event.inputs.env}}
+        steps:
+            - name: checkout branch
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 2
+                  ref: ${{(github.event.inputs.version!='' && format('{0}{1}','refs/tags/',github.event.inputs.version))||'' }}
 
-    - name: Get GitHub SHA and Save in Output Variable
-      id: chkout_ver
-      run: echo "::set-output name=sha::$(git rev-parse HEAD)"
-    ###Get hash tag we are trying to deploy (not the last commit).
-   
-    #Note: this step triggers a deprecation warning; this step may have to be rewritten in bash with curl
-    - name: Get Previous Build Hash
-      if: ${{github.event.inputs.deploy_type=='inc'}}
-      id: pwsh1
-      shell: pwsh
-      run: |
-            $url = "https://api.github.com/repos/treasure-data-ps/levis_cicd_test/actions/runs"
-            $token = "${{github.token}}"
-            $response = invoke-restMethod $url  -headers @{Authorization = "bearer $token"}
-            $response.workflow_runs | ForEach-Object {
-                if(($_.name -eq "${{github.workflow}}") -and ($_.conclusion -eq "success") -and (-join ("refs/heads/", $_.head_branch) -eq "${{github.ref}}")){
-                $build_sha=$_.head_sha
-                Write-Host ::set-output name=build_sha::$build_sha
-                break
-                }
-            }
+            - name: Get GitHub SHA and Save in Output Variable
+              id: chkout_ver
+              run: echo "::set-output name=sha::$(git rev-parse HEAD)"
+            ###Get hash tag we are trying to deploy (not the last commit).
 
-    - name: Read json
-      id: read-json
-      shell: pwsh
-      run: |
-        $json = Get-Content ./package.json | ConvertFrom-Json
-        echo "::set-output name=latest_ver::$(echo $json.version)"
+            #Note: this step triggers a deprecation warning; this step may have to be rewritten in bash with curl
+            - name: Get Previous Build Hash
+              if: ${{github.event.inputs.deploy_type=='inc'}}
+              id: pwsh1
+              shell: pwsh
+              run: |
+                  $url = "https://api.github.com/repos/treasure-data-ps/se-starter-pack-retail/actions/runs"
+                  $token = "${{github.token}}"
+                  $response = invoke-restMethod $url  -headers @{Authorization = "bearer $token"}
+                  $response.workflow_runs | ForEach-Object {
+                      if(($_.name -eq "${{github.workflow}}") -and ($_.conclusion -eq "success") -and (-join ("refs/heads/", $_.head_branch) -eq "${{github.ref}}")){
+                      $build_sha=$_.head_sha
+                      Write-Host ::set-output name=build_sha::$build_sha
+                      break
+                      }
+                  }
 
-    #   Custom code for LS update environment specific YAML within WF (s)-  update appropriately for other customers
-    - name: Update yml 
-      shell: pwsh
-      run: | 
-        sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./orchestration_eu/config/database.yml
-        sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./orchestration_eu/error_handling/config/email_ids.yml
-        sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS }}]/g" ./ingestion_eu/config/config.yml
-        sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS_2 }}]/g" ./ingestion_eu/config/config_2.yml
-        sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./ingestion_eu/config/email_ids.yml
-        sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./dsar_eu/config/database.yml
-        sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./dsar_eu/config/email_ids.yml
-        sed -i "s/parent_segment_ids:.*/parent_segment_ids: [${{ vars.TD_PS_IDS }}]/g" ./parent_segment_eu/parent_segment.yml
+            - name: Read json
+              id: read-json
+              shell: pwsh
+              run: |
+                  $json = Get-Content ./package.json | ConvertFrom-Json
+                  echo "::set-output name=latest_ver::$(echo $json.version)"
 
-    ##call td_push deployment action
-    - name: td_push
-      uses: ./.github/actions/td_push
-      with:
-        proj_dirs: ${{ vars.TD_WF_PROJS }}
-        prev_build_sha: ${{ steps.pwsh1.outputs.build_sha }}
-        curr_build_sha: ${{ steps.chkout_ver.outputs.sha }}
-        dply_version: ${{ (github.event.inputs.version!='' && github.event.inputs.version)||steps.read-json.outputs.latest_ver }}
-        api_token: ${{ secrets.TD_API_TOKEN }}
-        wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} #full endpoint
-        env_label: ${{ github.event.inputs.env }} 
+            #   Custom code for LS update environment specific YAML within WF (s)-  update appropriately for other customers
+            - name: Update yml
+              shell: pwsh
+              run: |
+                  sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./orchestration_eu/config/database.yml
+                  sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./orchestration_eu/error_handling/config/email_ids.yml
+                  sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS }}]/g" ./ingestion_eu/config/config.yml
+                  sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS_2 }}]/g" ./ingestion_eu/config/config_2.yml
+                  sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./ingestion_eu/config/email_ids.yml
+                  sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./dsar_eu/config/database.yml
+                  sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./dsar_eu/config/email_ids.yml
+                  sed -i "s/parent_segment_ids:.*/parent_segment_ids: [${{ vars.TD_PS_IDS }}]/g" ./parent_segment_eu/parent_segment.yml
 
-    - name: Send custom JSON data to Slack workflow on Success
-      id: slack_success
-      if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }} 
-      uses: slackapi/slack-github-action@v1.24.0
-      with:
-        payload: |
-          {
-            "workflow_name": "${{ github.job }}",
-            "version": "${{ github.event.inputs.version }}",
-            "branch": "${{ github.event.ref }}",
-            "repo": "${{ github.repository }}",
-            "err": "Success"
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
-      
-    - name: Send custom JSON data to Slack workflow on failure
-      id: slack_failure
-      if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }} 
-      uses: slackapi/slack-github-action@v1.24.0
-      with:
-        payload: |
-          {
-            "workflow_name": "${{ github.job }}",
-            "version": "${{ github.event.inputs.version }}",
-            "branch": "${{ github.event.ref }}",
-            "repo": "${{ github.repository }}",
-            "err": "Error-check the github actions logs for the description!"
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            ##call td_push deployment action
+            - name: td_push
+              uses: ./.github/actions/td_push
+              with:
+                  proj_dirs: ${{ vars.TD_WF_PROJS }}
+                  prev_build_sha: ${{ steps.pwsh1.outputs.build_sha }}
+                  curr_build_sha: ${{ steps.chkout_ver.outputs.sha }}
+                  dply_version: ${{ (github.event.inputs.version!='' && github.event.inputs.version)||steps.read-json.outputs.latest_ver }}
+                  api_token: ${{ secrets.TD_API_TOKEN }}
+                  wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} #full endpoint
+                  env_label: ${{ github.event.inputs.env }}
+
+            - name: Send custom JSON data to Slack workflow on Success
+              id: slack_success
+              if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }}
+              uses: slackapi/slack-github-action@v1.24.0
+              with:
+                  payload: |
+                      {
+                        "workflow_name": "${{ github.job }}",
+                        "version": "${{ github.event.inputs.version }}",
+                        "branch": "${{ github.event.ref }}",
+                        "repo": "${{ github.repository }}",
+                        "err": "Success"
+                      }
+              env:
+                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+            - name: Send custom JSON data to Slack workflow on failure
+              id: slack_failure
+              if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }}
+              uses: slackapi/slack-github-action@v1.24.0
+              with:
+                  payload: |
+                      {
+                        "workflow_name": "${{ github.job }}",
+                        "version": "${{ github.event.inputs.version }}",
+                        "branch": "${{ github.event.ref }}",
+                        "repo": "${{ github.repository }}",
+                        "err": "Error-check the github actions logs for the description!"
+                      }
+              env:
+                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
