@@ -1,0 +1,85 @@
+name: branch td pull
+on:
+  workflow_dispatch:
+      inputs:
+          env:
+              description: 'The env (prod/qa/dev) you want to pull from'
+              required: true
+          commit_message:
+              description: 'The commit message for push (this can be used to chain deployment to dev/qa)'
+              required: true                
+
+jobs:
+    branch_td_pull:
+        runs-on: ubuntu-latest
+        environment: ${{ (github.event.inputs.env=='prod' &&'') || github.event.inputs.env}}
+        steps:           
+        - name: determine Feature by splitting branch name on -
+          id: feature
+          shell: bash
+          run: |
+            split=(${GITHUB_REF_NAME//\// })
+            index=$((${#split[@]}-1))
+            FeatureName=${split[$index]}
+            split=(${FeatureName//-/ })
+            Feature=br${split[1]}
+            echo "::set-output name=Feature::$Feature"  
+
+        ###Checkout the branch corresponding to the push event
+        - name: checkout branch
+          uses: actions/checkout@v1
+          with:
+            fetch-depth: 2
+        
+        ##call td_pull deployment action
+        - name: td_pull
+          uses: ./.github/actions/td_pull
+          with:
+            proj_dirs: ${{ vars.TD_WF_PROJS }}
+            fbranch: ${{ steps.feature.outputs.Feature }}
+            api_token: ${{ secrets.TD_API_TOKEN }}
+            wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} #full endpoint
+            env_label: ${{ github.event.inputs.env }}
+
+        - name: GIT Commit Push
+          # Only run on main branch push (e.g. after pull request merge).
+          run: |
+            git config --global user.name "${{ github.triggering_actor }}"
+            git config --global user.email "username@users.noreply.github.com"
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+            git checkout ${{ github.ref_name}}
+            git add .
+            git commit -m "${{ github.event.inputs.commit_message }}"
+            git push
+
+        - name: Send custom JSON data to Slack workflow on Success
+          id: slack_success
+          if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }} 
+          uses: slackapi/slack-github-action@v1.24.0
+          with:
+            payload: |
+              {
+                "workflow_name": "${{ github.job }}",
+                "version": "${{ github.sha }}",
+                "branch": "${{ github.event.ref }}",
+                "repo": "${{ github.repository }}",
+                "err": "Success"
+              }
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+        
+        - name: Send custom JSON data to Slack workflow on failure
+          id: slack_failure
+          if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }} 
+          uses: slackapi/slack-github-action@v1.24.0
+          with:
+            payload: |
+              {
+                "workflow_name": "${{ github.job }}",
+                "version": "${{ github.sha }}",
+                "branch": "${{ github.event.ref }}",
+                "repo": "${{ github.repository }}",
+                "err": "Error-check the github actions logs for the description!"
+              }
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

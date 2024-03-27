@@ -1,0 +1,34 @@
+name: td test wf
+description: automated testing of release - integral part of the cicd pipeline
+inputs:
+  api_token:
+    description: Treasure Data API access token
+    required: true
+  test_wf_project_name:
+    description: Treasure Data Test Automation Project Name
+    required: true
+  test_wf_name:
+    description: Treasure Data Test Automation WF  Name
+    required: true
+  fbranch:
+    description: label (suffix name) of the project directories to delete from TD
+    required: true
+  wf_endpoint:
+    description: pipe-delimited list of TD WF URL to make API calls to with each deployment event
+    required: true
+  env_label:
+    description: pipe-delimited list of environment labels to label project names with for each deployment event
+    required: true
+runs:
+  using: "composite" #This is the option to use if we're going to run .sh scripts inside this action
+  steps:
+    - name: run_wf_script
+      shell: bash 
+      env:
+        INPUT_TD_ACCESS_TOKEN: ${{ inputs.api_token }}
+        INPUT_FBRANCH: ${{ inputs.fbranch }}
+        INPUT_TEST_WORKFLOW_PROJECT_NAME: ${{ inputs.test_wf_project_name }}
+        INPUT_TEST_WORKFLOW_NAME: ${{ inputs.test_wf_name }}
+        INPUT_WF_ENDPOINT: ${{ inputs.wf_endpoint }}
+        INPUT_ENV_LABEL: ${{ inputs.env_label }}
+      run: ${{ github.action_path }}/script.sh 

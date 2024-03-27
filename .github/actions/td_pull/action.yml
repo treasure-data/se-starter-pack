@@ -1,0 +1,31 @@
+name: td push
+description: push a test TD workflow into Treasure Data
+inputs:
+  proj_dirs:
+    description: List of project directories to pull from TD. String with "|" delimiter, ie abc|def|xyz
+    required: true
+  fbranch:
+    description: name of current branch. Used to label project files and data in TD
+    required: true
+  api_token:
+    description: API token to used with each deployment event
+    required: true
+  wf_endpoint:
+    description: TD WF URL to make API calls to with each deployment event
+    required: true
+  env_label:
+    description: environment label to label project names with (ie; qa) for each deployment event
+    required: true
+runs:
+  using: "composite" #This is the option to use if we're going to run .sh scripts inside this action
+  steps:
+    - name: run_push_script
+      shell: bash
+      env:
+        INPUT_PROJ_DIRS: ${{ inputs.proj_dirs }}
+        INPUT_FBRANCH: ${{ inputs.fbranch }}
+        INPUT_API_TOKEN: ${{ inputs.api_token }}
+        INPUT_WF_ENDPOINT: ${{ inputs.wf_endpoint }}
+        INPUT_ENV_LABEL: ${{ inputs.env_label }}
+      #the github.action_path is always available, and is how you access scripts in the same directory in composite actions
+      run: ${{ github.action_path }}/script.sh

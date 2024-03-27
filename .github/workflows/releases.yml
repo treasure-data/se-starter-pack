@@ -1,0 +1,63 @@
+name: Releases
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.github_token }}
+          tag-prefix: ''
+          skip-on-empty: 'false'
+
+     # feat: fix: BREAKING CHANGE: https://www.conventionalcommits.org/en/v1.0.0/ 
+
+      - name: create release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }} 
+      
+      - name: Send custom JSON data to Slack workflow on Success
+        id: slack_success
+        if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }} 
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "workflow_name": "${{ github.job }}",
+              "version": "${{ steps.changelog.outputs.tag }}",
+              "branch": "${{ github.event.ref }}",
+              "repo": "${{ github.repository }}",
+              "err": "Success"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+        
+      - name: Send custom JSON data to Slack workflow on failure
+        id: slack_failure
+        if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }} 
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "workflow_name": "${{ github.job }}",
+              "version": "${{ steps.changelog.outputs.tag }}",
+              "branch": "${{ github.event.ref }}",
+              "repo": "${{ github.repository }}",
+              "err": "Error-check the github actions logs for the description!"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

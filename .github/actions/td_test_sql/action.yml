@@ -1,0 +1,35 @@
+name: td test sql
+description: automated testing of release - integral part of the cicd pipeline
+inputs:
+  test_db:
+    description: Treasure Data Test Automation DDB
+    required: true
+  sql_script:
+    description: Treasure Data SQL Script for Automated Testing
+    required: true
+  fbranch:
+    description: label (suffix name) of the project directories to delete from TD
+    required: true
+  api_token:
+    description: Treasure Data API access token
+    required: true
+  api_endpoint:
+    description: TD API endpoint to use for each deployment 
+    required: true
+  env_label:
+    description: env label to use for each deployment (dev, qa, et). Use NULL for none
+    required: true
+runs:
+  using: "composite" #This is the option to use if we're going to run .sh scripts inside this action
+  steps:
+    - name: run_test_sql_script
+      shell: bash 
+      env:
+        INPUT_TD_ACCESS_TOKEN: ${{ inputs.api_token }}
+        INPUT_TEST_DB: ${{ inputs.test_db }}
+        INPUT_SQL_STRING: ${{ inputs.sql_script }}
+        INPUT_FBRANCH: ${{ inputs.fbranch }}
+        INPUT_API_ENDPOINT: ${{ inputs.api_endpoint }}
+        INPUT_ENV_LABEL: ${{ inputs.env_label }}
+      run: ${{ github.action_path }}/script.sh 
+      

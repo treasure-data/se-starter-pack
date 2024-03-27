@@ -1,0 +1,42 @@
+name: td delete
+description: delete projects in treasure data. Counterpart of td_push
+inputs:
+  proj_dirs:
+    description: |
+      List of BASE NAMES of project directories to delete from TD
+      a string with item delimited by pipes, ie abc|123
+    required: true
+  db_names:
+    description: |
+      List of BASE NAMES for every database involved with the project
+      a string delimited by pipes
+    required: true
+  api_token:
+    description: api key to use for each deployment
+    required: true
+  api_endpoint:
+    description: TD API endpoint to use for each deployment 
+    required: true
+  wf_endpoint:
+    description: TD WF endpoint to use for each deployment 
+    required: true
+  env_label:
+    description: env label to use for each deployment (dev, qa, et). Use NULL for none
+    required: true
+  fbranch:
+    description: label (suffix name) of the project directories to delete from TD
+    required: true
+runs:
+  using: "composite" #This is the option to use if we're going to run .sh scripts inside this action
+  steps:
+    - name: run_push_script
+      shell: bash 
+      env:
+        INPUT_PROJ_DIRS: ${{ inputs.proj_dirs }}
+        INPUT_DB_NAMES: ${{inputs.db_names }}
+        INPUT_API_TOKEN: ${{ inputs.api_token }}
+        INPUT_API_ENDPOINT: ${{ inputs.api_endpoint }}
+        INPUT_WF_ENDPOINT: ${{ inputs.wf_endpoint }}
+        INPUT_ENV_LABEL: ${{ inputs.env_label }}
+        INPUT_FBRANCH: ${{ inputs.fbranch }}
+      run: ${{ github.action_path }}/script.sh

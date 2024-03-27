@@ -1,0 +1,92 @@
+name: clean up
+on:
+  delete:
+    
+jobs:
+  clean_up_dev:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+    - name: determine Feature by splitting branch name on -
+      id: feature
+      shell: bash
+      run: |
+        ref=(${{ github.event.ref }})
+        split=(${ref//\// })
+        index=$((${#split[@]}-1))
+        FeatureName=${split[$index]}
+        split=(${FeatureName//-/ })
+        Feature=br${split[1]}
+        echo "::set-output name=Feature::$Feature"
+    
+    - name: checkout branch
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 2  
+
+    - name: td_delete
+      uses: ./.github/actions/td_delete
+      if: ${{ github.event.ref_type == 'branch' }}
+      with:
+        proj_dirs: ${{ vars.TD_WF_PROJS }}
+        db_names: ${{ vars.TD_DBS }}
+        api_token: ${{ secrets.TD_API_TOKEN }}
+        api_endpoint: ${{vars.TD_API_ENDPOINT}}
+        wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }}
+        env_label: "dev"
+        fbranch: ${{ steps.feature.outputs.Feature }} 
+    
+    outputs:
+      fbranch: ${{ steps.feature.outputs.Feature }} 
+    
+  clean_up_qa:
+      needs: clean_up_dev
+      runs-on: ubuntu-latest
+      environment: qa  
+      steps:
+      - name: checkout branch
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 2   
+
+      - name: td_delete
+        uses: ./.github/actions/td_delete
+        if: ${{ github.event.ref_type == 'branch' }}
+        with:
+          proj_dirs: ${{ vars.TD_WF_PROJS }}
+          db_names: ${{ vars.TD_DBS }}
+          api_token: ${{ secrets.TD_API_TOKEN }}
+          api_endpoint: ${{vars.TD_API_ENDPOINT}}
+          wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }}
+          env_label: "qa"
+          fbranch: ${{ needs.clean_up_dev.outputs.fbranch  }} 
+
+      - name: Send custom JSON data to Slack workflow on Success
+        id: slack_success
+        if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }} 
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "workflow_name": "${{ github.job }}",
+              "branch": "${{ github.event.ref }}",
+              "repo": "${{ github.repository }}",
+              "err": "Success"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+        
+      - name: Send custom JSON data to Slack workflow on failure
+        id: slack_failure
+        if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }} 
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "workflow_name": "${{ github.job }}",
+              "branch": "${{ github.event.ref }}",
+              "repo": "${{ github.repository }}",
+              "err": "Error-check the github actions logs for the description!"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
