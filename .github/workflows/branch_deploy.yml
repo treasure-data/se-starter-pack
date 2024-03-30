@@ -47,13 +47,6 @@ jobs:
                     }
                   }
 
-            #   Use database.yml to create variant dbs to silo the testing of the feature branch, this part has to be customized by customer
-            - name: Update yml
-              shell: pwsh
-              run: |
-                  sed -i "s/env:.*/env: _${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa'}}_${{ steps.feature.outputs.Feature }}/g" ./orchestration_eu/config/database.yml
-                  sed -i "s/env:.*/env: _${{ contains(github.event.head_commit.message, 'dply_dev') && 'dev'|| 'qa'}}_${{ steps.feature.outputs.Feature }}/g" ./dsar_eu/config/database.yml
-
             ##call td_push deployment action
             - name: td_push
               uses: ./.github/actions/td_push
