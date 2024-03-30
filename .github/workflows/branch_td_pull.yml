@@ -22,8 +22,8 @@ jobs:
             index=$((${#split[@]}-1))
             FeatureName=${split[$index]}
             split=(${FeatureName//-/ })
-            Feature=br${split[1]}
-            echo "::set-output name=Feature::$Feature"  
+            Feature=br-${FeatureName}
+            echo "::set-output name=Feature::$Feature" 
 
         ###Checkout the branch corresponding to the push event
         - name: checkout branch
