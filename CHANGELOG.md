@@ -1,3 +1,7 @@
+## [0.1.4](https://github.com/treasure-data/se-starter-pack-retail/compare/0.1.3...0.1.4) (2024-03-30)
+
+
+
 ## [0.1.3](https://github.com/treasure-data/se-starter-pack-retail/compare/0.1.2...0.1.3) (2024-03-30)
 
 
