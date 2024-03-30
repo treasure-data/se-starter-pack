@@ -16,7 +16,7 @@ jobs:
         index=$((${#split[@]}-1))
         FeatureName=${split[$index]}
         split=(${FeatureName//-/ })
-        Feature=br${split[1]}
+        Feature=br-${FeatureName}
         echo "::set-output name=Feature::$Feature"
     
     - name: checkout branch
