@@ -15,7 +15,7 @@ _export:
   _do:
     +del_log:
       td>:
-      query: "delete from log_tbl where 1=1" 
+      query: "delete from log_tbl where 1=1"
       database: ${meta}  
 
 +validation:

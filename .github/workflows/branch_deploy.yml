@@ -36,7 +36,7 @@ jobs:
               id: pwsh1
               shell: pwsh
               run: |
-                  $url = "https://api.github.com/repos/${{env.GITHUB_REPOSITORY}}/actions/runs"
+                  $url = "https://api.github.com/repos/${{ env.GITHUB_REPOSITORY }}/actions/runs"
                   $token = "${{github.token}}"
                   $response = invoke-restMethod $url  -headers @{Authorization = "bearer $token"}
                   $response.workflow_runs | ForEach-Object {
