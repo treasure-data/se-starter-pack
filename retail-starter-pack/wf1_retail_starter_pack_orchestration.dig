@@ -32,14 +32,11 @@ _export:
   call>: wf2_run_workflow_with_logging.dig
 
 
-# +unification:
-#   _export:
-#     step_name: unification
-#     workflow_to_run: retail_starter_pack_deterministic_unification
-#     project_name: retail_starter_pack_deterministic_unification
-#   call>: run_workflow_with_logging.dig
-#   # require>: retail_starter_pack_deterministic_unification
-#   # project_name: retail_starter_pack_deterministic_unification
++unification:
+  _export:
+    step_name: unification
+    workflow_to_run: wf5_unify.dig
+  call>: run_workflow_with_logging.dig
 
 # +unification_dashboard:
 #   _export:
