@@ -7,7 +7,7 @@ _export:
     from: "wf-error-alert@treasure-data.com"
   td:
       database: ${meta}      
-
+ 
 +prepare_db:
   td_ddl>:
   create_databases: ["${meta}"]
