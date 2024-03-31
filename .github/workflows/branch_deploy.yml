@@ -39,7 +39,7 @@ jobs:
                   $url = "https://api.github.com/repos/treasure-data/se-starter-pack/actions/runs"
                   $token = "${{github.token}}"
                   $response = invoke-restMethod $url  -headers @{Authorization = "bearer $token"}
-                  echo -e $response
+                  echo $response
                   $response.workflow_runs | ForEach-Object {
                     if(($_.name -eq "${{github.workflow}}") -and ($_.conclusion -eq "success") -and (-join ("refs/heads/", $_.head_branch) -eq "${{github.ref}}")){
                       $build_sha=$_.head_sha
