@@ -1,0 +1,10 @@
+_export:
+  !include : 'config/src_params.yml'
+  td: 
+    database: ${src}_${sub}
++transformed:
+  for_each>: 
+    tbl: ['customers']
+  _do: 
+    td>: staging/queries/${tbl}.sql
+    create_table: ${stg}_${sub}.${tbl}
