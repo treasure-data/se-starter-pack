@@ -39,6 +39,7 @@ jobs:
                   $url = "https://api.github.com/repos/treasure-data/se-starter-pack/actions/runs"
                   $token = "${{github.token}}"
                   $response = invoke-restMethod $url  -headers @{Authorization = "bearer $token"}
+                  echo -e $response
                   $response.workflow_runs | ForEach-Object {
                     if(($_.name -eq "${{github.workflow}}") -and ($_.conclusion -eq "success") -and (-join ("refs/heads/", $_.head_branch) -eq "${{github.ref}}")){
                       $build_sha=$_.head_sha
@@ -53,7 +54,7 @@ jobs:
               with:
                   proj_dirs: ${{ vars.TD_WF_PROJS }}
                   fbranch: ${{ steps.feature.outputs.Feature }}
-                  prev_build_sha: ${{ steps.pwsh1.outputs.build_sha }}
+                  prev_build_sha: ${{ github.event.before }}
                   curr_build_sha: ${{ github.sha }}
                   api_token: ${{ secrets.TD_API_TOKEN }}
                   wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} #full endpoint
