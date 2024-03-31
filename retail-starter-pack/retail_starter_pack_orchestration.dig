@@ -22,7 +22,8 @@ _export:
   _export:
     step_name: validation
     workflow_to_run: check_src
-  call>: orchestrator/run_workflow_with_logging.dig
+  call>: run_workflow_with_logging.dig
+  
 
 # +data_staging:
 #   _export:

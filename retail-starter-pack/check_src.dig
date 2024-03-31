@@ -6,23 +6,23 @@ _export:
   mail:
     from: "wf-error-alert@treasure-data.com"
   td:
-      database: ${meta}      
+    database: ${meta}      
  
 +prepare_db:
   td_ddl>:
   create_databases: ["${meta}"]
 
 +prepare_table:
-  td>: "queries/src_tmp_ddl.sql"
+  td>: "validation/queries/src_tmp_ddl.sql"
 
 +prepare_report_base:
-  td>: "queries/check_src_vs_ref.sql"
+  td>: "validation/queries/check_src_vs_ref.sql"
 
 +prepare_report:
-  td>: "queries/report_deviations.sql"
+  td>: "validation/queries/report_deviations.sql"
 
 +warning_email:
-  td_for_each>: queries/get_warnings.sql
+  td_for_each>: validation/queries/get_warnings.sql
   _do:
     +prepare_email_content:
       echo>: ${td.each.subject}
@@ -37,7 +37,7 @@ _export:
         body: ${td.each.message}
 
 +error_email:
-  td_for_each>: queries/get_errors.sql
+  td_for_each>: validation/queries/get_errors.sql
   _do:
     +prepare_email_content:
       echo>: ${td.each.subject}
@@ -153,7 +153,7 @@ _export:
 #         body: "Check ${meta}.report_missing_tables_in_src for missing tables in source database ${src}_${sub}."
                   
 +drop_table:
-  td>: "queries/src_tmp_drop_ddl.sql"
+  td>: "validation/queries/src_tmp_drop_ddl.sql"
 
 +query_to_raise_error:
   td>:
