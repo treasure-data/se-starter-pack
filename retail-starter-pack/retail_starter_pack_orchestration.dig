@@ -18,89 +18,84 @@ _export:
       query: "delete from log_tbl where 1=1"
       database: ${meta}  
 
-# +src_stg_creation:
-#   require>: retail_starter_pack_wf
-#   project_name: retail_starter_pack_wf
-
-+schema_mismatch_checks:
++validation:
   _export:
-    step_name: schema_mismatch_checks
+    step_name: validation
     workflow_to_run: check_src
-    project_name: retail_starter_pack_orchestration
-  call>: run_workflow_with_logging.dig
+  call>: orchestrator/run_workflow_with_logging.dig
 
-+data_staging:
-  _export:
-    step_name: data_staging
-    workflow_to_run: stage
-    project_name: retail_starter_pack_accelerator
-  call>: run_workflow_with_logging.dig
-  # require>: stage
-  # project_name: retail_starter_pack_accelerator
+# +data_staging:
+#   _export:
+#     step_name: data_staging
+#     workflow_to_run: stage
+#     project_name: retail_starter_pack_accelerator
+#   call>: run_workflow_with_logging.dig
+#   # require>: stage
+#   # project_name: retail_starter_pack_accelerator
 
-+unification:
-  _export:
-    step_name: unification
-    workflow_to_run: retail_starter_pack_deterministic_unification
-    project_name: retail_starter_pack_deterministic_unification
-  call>: run_workflow_with_logging.dig
-  # require>: retail_starter_pack_deterministic_unification
-  # project_name: retail_starter_pack_deterministic_unification
+# +unification:
+#   _export:
+#     step_name: unification
+#     workflow_to_run: retail_starter_pack_deterministic_unification
+#     project_name: retail_starter_pack_deterministic_unification
+#   call>: run_workflow_with_logging.dig
+#   # require>: retail_starter_pack_deterministic_unification
+#   # project_name: retail_starter_pack_deterministic_unification
 
-+unification_dashboard:
-  _export:
-    step_name: unification_dashboard
-    workflow_to_run: idu_dashboard_launch
-    project_name: retail_starter_pack_idu_dashboard
-  call>: run_workflow_with_logging.dig
+# +unification_dashboard:
+#   _export:
+#     step_name: unification_dashboard
+#     workflow_to_run: idu_dashboard_launch
+#     project_name: retail_starter_pack_idu_dashboard
+#   call>: run_workflow_with_logging.dig
 
-+golden_data_model:
-  _export:
-    step_name: golden_data_model
-    workflow_to_run: golden
-    project_name: retail_starter_pack_attributor
-  call>: run_workflow_with_logging.dig
-  # require>: golden
-  # project_name: retail_starter_pack_attributor
+# +golden_data_model:
+#   _export:
+#     step_name: golden_data_model
+#     workflow_to_run: golden
+#     project_name: retail_starter_pack_attributor
+#   call>: run_workflow_with_logging.dig
+#   # require>: golden
+#   # project_name: retail_starter_pack_attributor
 
-+create_master_segment:
-  _export:
-    step_name: create_master_segment
-    workflow_to_run: main
-    project_name: retail_starter_pack_parent_segment
-  call>: run_workflow_with_logging.dig
+# +create_master_segment:
+#   _export:
+#     step_name: create_master_segment
+#     workflow_to_run: main
+#     project_name: retail_starter_pack_parent_segment
+#   call>: run_workflow_with_logging.dig
 
-+refresh_master_segment:
-  _export:
-    step_name: refresh_master_segment
-    workflow_to_run: refresh
-    project_name: retail_starter_pack_parent_segment
-  call>: run_workflow_with_logging.dig
+# +refresh_master_segment:
+#   _export:
+#     step_name: refresh_master_segment
+#     workflow_to_run: refresh
+#     project_name: retail_starter_pack_parent_segment
+#   call>: run_workflow_with_logging.dig
 
-+create_segment:
-  _export:
-    step_name: create_segment
-    workflow_to_run: create_segment
-    project_name: retail_starter_pack_parent_segment
-  call>: run_workflow_with_logging.dig
+# +create_segment:
+#   _export:
+#     step_name: create_segment
+#     workflow_to_run: create_segment
+#     project_name: retail_starter_pack_parent_segment
+#   call>: run_workflow_with_logging.dig
 
-#Send mail success
-+send_success_alert:
-  for_each>:
-    email: ${email_ids}
-  _do:
-    _export:
-      subject: "Treasure Data retail_starter_pack_orchestration completed Successfully!"
-      receive_email: ${email}
-    call>: utilities/success.dig
+# #Send mail success
+# +send_success_alert:
+#   for_each>:
+#     email: ${email_ids}
+#   _do:
+#     _export:
+#       subject: "Treasure Data retail_starter_pack_orchestration completed Successfully!"
+#       receive_email: ${email}
+#     call>: utilities/success.dig
 
-#Send Error Alert
-_error:
-  +send_error_alert:
-    for_each>:
-      email: ${email_ids}
-    _do:
-      _export:
-        subject: "Treasure Data retail_starter_pack_orchestration Failed! Please Review ASAP."
-        receive_email: ${email}
-      call>: utilities/error.dig
+# #Send Error Alert
+# _error:
+#   +send_error_alert:
+#     for_each>:
+#       email: ${email_ids}
+#     _do:
+#       _export:
+#         subject: "Treasure Data retail_starter_pack_orchestration Failed! Please Review ASAP."
+#         receive_email: ${email}
+#       call>: utilities/error.dig

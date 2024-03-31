@@ -19,7 +19,6 @@ _export:
   td>: "queries/check_src_vs_ref.sql"
 
 +prepare_report:
-  # database: ${meta}
   td>: "queries/report_deviations.sql"
 
 +warning_email:
