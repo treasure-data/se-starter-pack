@@ -1,0 +1,120 @@
+name: retail_starter_pack
+
+#####################################################
+##
+##Declare Validation logic for unification keys
+##
+#####################################################
+
+keys:
+  - name: email
+    invalid_texts: ['', null]  
+  - name: td_global_id
+    invalid_texts: ['', null]
+  - name: phone_number
+    invalid_texts: ['', null]
+  - name: order_no
+    invalid_texts: ['', null]
+
+#####################################################
+##  
+##Declare datebases, tables, and keys to use during unification
+##
+#####################################################
+
+tables:
+  - database: stg_retail
+    table: customers
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+  
+  - database: stg_retail
+    table: pageviews
+    key_columns:
+      - {column: td_global_id, key: td_global_id}  
+
+  - database: stg_retail
+    table: email_activity
+    key_columns:
+      - {column: email, key: email}  
+
+  - database: stg_retail
+    table: order_online_transactions
+    key_columns:
+      - {column: email, key: email}
+      - {column: phone_number, key: phone_number}
+      - {column: order_no, key: order_no}
+
+  - database: stg_retail
+    table: order_offline_transactions
+    key_columns:
+      - {column: email, key: email}
+      - {column: phone_number, key: phone_number}
+      - {column: order_no, key: order_no}
+
+  - database: stg_retail
+    table: order_details
+    key_columns:
+      - {column: order_no, key: order_no}
+ 
+  - database: stg_retail
+    table: formfills
+    key_columns:
+      - {column: email, key: email}
+      - {column: phone_number, key: phone_number}
+      - {column: td_global_id, key: td_global_id}
+
+  - database: stg_retail
+    table: consents
+    key_columns:
+      - {column: email, key: email}
+      - {column: phone_number, key: phone_number}
+
+
+#####################################################
+##  
+##Declare hierarchy for unification. Define keys to use for each level.
+##
+#####################################################
+
+canonical_ids:
+  - name: retail_unification_id
+    merge_by_keys: [email, phone_number, td_global_id, order_no]
+
+
+#####################################################
+##  
+##Declare Survivorship Rules to Determine Best Value for Each Attribute
+##
+#####################################################
+
+master_tables:
+  - name: parent_table
+    canonical_id: retail_unification_id
+    attributes:
+      - name: email
+        source_columns:
+          - {table: customers, column: trfmd_email, priority: 1} 
+          - {table: email_activity, column: email, priority: 2} 
+          - {table: order_online_transactions, column: email, priority: 2}
+          - {table: order_offline_transactions, column: email, priority: 2}
+          - {table: formfills, column: email, priority: 2}
+          - {table: consents, column: email, priority: 2}
+      - name: phone_number
+        source_columns:
+          - {table: customers, column: trfmd_phone_number, priority: 1} 
+          - {table: order_online_transactions, column: phone_number, priority: 2}
+          - {table: order_offline_transactions, column: phone_number, priority: 2}
+          - {table: formfills, column: phone_number, priority: 2}
+          - {table: consents, column: phone_number, priority: 2}
+      - name: td_global_id
+        source_columns:
+          - {table: pageviews, column: td_global_id, priority: 1} 
+          - {table: formfills, column: td_global_id, priority: 2}
+      - name: order_no
+        source_columns:
+          - {table: order_online_transactions, column: order_no, priority: 1}
+          - {table: order_offline_transactions, column: order_no, priority: 2}
+          - {table: order_details, column: order_no, priority: 2}          
+      
