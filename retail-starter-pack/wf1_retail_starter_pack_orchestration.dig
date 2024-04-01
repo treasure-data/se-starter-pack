@@ -35,7 +35,7 @@ _export:
 +unification:
   _export:
     step_name: unification
-    workflow_to_run: wf5_unify.dig
+    workflow_to_run: wf5_unify
   call>: run_workflow_with_logging.dig
 
 # +unification_dashboard:
@@ -45,14 +45,11 @@ _export:
 #     project_name: retail_starter_pack_idu_dashboard
 #   call>: run_workflow_with_logging.dig
 
-# +golden_data_model:
-#   _export:
-#     step_name: golden_data_model
-#     workflow_to_run: golden
-#     project_name: retail_starter_pack_attributor
-#   call>: run_workflow_with_logging.dig
-#   # require>: golden
-#   # project_name: retail_starter_pack_attributor
++golden:
+  _export:
+    step_name: golden
+    workflow_to_run: wf6_golden
+  call>: run_workflow_with_logging.dig
 
 # +create_master_segment:
 #   _export:
