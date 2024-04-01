@@ -36,20 +36,20 @@ _export:
   _export:
     step_name: unification
     workflow_to_run: wf5_unify
-  call>: run_workflow_with_logging.dig
+  call>: wf2_run_workflow_with_logging.dig
 
 # +unification_dashboard:
 #   _export:
 #     step_name: unification_dashboard
 #     workflow_to_run: idu_dashboard_launch
 #     project_name: retail_starter_pack_idu_dashboard
-#   call>: run_workflow_with_logging.dig
+#   call>: wf2_run_workflow_with_logging.dig
 
 +golden:
   _export:
     step_name: golden
     workflow_to_run: wf6_golden
-  call>: run_workflow_with_logging.dig
+  call>: wf2_run_workflow_with_logging.dig
 
 # +create_master_segment:
 #   _export:
