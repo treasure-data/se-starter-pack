@@ -2,6 +2,8 @@ raw: raw
 src: src
 stg: stg
 sub: retail
+uni: cdp_unification
+gld: golden
 meta: retail_starter_pack
 run_all: true
 

@@ -1,7 +1,16 @@
 _export:
   !include : 'config/src_params.yml'
   td:
-    database: cdp_unification_${meta}
+    database: ${uni}_${meta}
 
-+attributes: 
-    echo>: We made it here! 
++db:
+  td_ddl>:
+  create_databases: ["${gld}_${meta}"]
+
++prepare_pre_preferred_season_table:
+  td>: "golden/queries/pre_preferred_season.sql"
+  database: ${uni}_${meta}
+
++attributes:
+  td>: golden/queries/attributes.sql
+  create_table: ${gld}_${meta}.derived_attributes
