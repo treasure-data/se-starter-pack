@@ -1,6 +1,6 @@
 import json
 import requests
-import python.helper.global_var as g
+import segment.python.helper.global_var as g
 
 
 def extract_ref_segment_ids(error_json):

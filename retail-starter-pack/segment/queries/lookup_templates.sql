@@ -1,2 +1,2 @@
 select folder, file 
-from ${database}.${tables.templates}
+from ${meta}.${segment.tables.templates}

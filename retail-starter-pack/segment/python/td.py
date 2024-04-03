@@ -1,7 +1,7 @@
 import json
 import pytd
 import pandas as pd
-import python.helper.global_var as g
+import segment.python.helper.global_var as g
 
 def uploadDataToTD(data, td_write_db, td_write_table, exists='append'):
     try:

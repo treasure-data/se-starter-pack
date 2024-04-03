@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-import python.td as td
+import segment.python.td as td
 
 
 def list_files_in_folder(folder_path):

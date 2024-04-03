@@ -1,10 +1,10 @@
-import python.api.ps as ps
+import segment.python.api.ps as ps
 # import yaml 
 # import json
 import pandas as pd
-import python.td as td
-import python.helper.global_var as g
-from python.helper.utils import convert_yaml_to_json
+import segment.python.td as td
+import segment.python.helper.global_var as g
+from segment.python.helper.utils import convert_yaml_to_json
 
 # def convert_yaml_to_json(folder, file_name):
 #   yaml_file_path = f'{folder}/{file_name}'

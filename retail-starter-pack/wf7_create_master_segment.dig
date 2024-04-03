@@ -23,13 +23,14 @@ _export:
 
 +create_parent_segments:
   _parallel: true
-  td_for_each>: query/lookup_templates.sql
+  td_for_each>: segment/queries/lookup_templates.sql
   _do:
     +create:
       _export:
         folder: ${td.each.folder}
         file_name: ${td.each.file}
-        table: ${tables.parent_segment_creation}
+        database: ${meta}
+        table: ${segment.tables.parent_segment_creation}
       docker:
         image: "digdag/digdag-python:3.9"
       py>: segment.python.create_parent_segments.main
@@ -38,8 +39,8 @@ _export:
         TD_API_KEY: ${secret:td.apikey}
 
 +clean_log:
-  td>: "segment/queries/cleanup_log.sql"
+  td>: segment/queries/cleanup_log.sql
 
 +active_audience:
-  td>: "segment/queries/active_audience.sql"
-  create_table: ${tables.active_audience}
+  td>: segment/queries/active_audience.sql
+  create_table: ${segment.tables.active_audience}

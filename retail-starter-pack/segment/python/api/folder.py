@@ -1,7 +1,7 @@
 import json
 import requests
 import pandas as pd
-import python.helper.global_var as g
+import segment.python.helper.global_var as g
 
 
 def getFolders(audienceId):

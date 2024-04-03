@@ -13,6 +13,7 @@ _export:
       _export:
         folder: segment/config
         file_name: segments.yml
+        database: ${meta}
         table: ${segment.tables.segment_logs}
         audience_id: ${td.each.audience_id}
       docker:

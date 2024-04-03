@@ -1,9 +1,9 @@
 import pandas as pd
-import python.td as td
-from python.helper.utils import convert_yaml_to_json
-import python.api.folder as folder_api
-import python.api.segment as segment_api
-import python.helper.global_var as g
+import segment.python.td as td
+from segment.python.helper.utils import convert_yaml_to_json
+import segment.python.api.folder as folder_api
+import segment.python.api.segment as segment_api
+import segment.python.helper.global_var as g
 import json
 
 
