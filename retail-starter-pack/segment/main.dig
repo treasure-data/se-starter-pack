@@ -1,0 +1,45 @@
+_export:
+  !include : 'config/database.yml'
+
++create_tmp_tables:
+  td_ddl>: 
+  empty_tables: ["${tables.templates}"]
+
++create_tables:
+  td_ddl>: 
+  create_tables: ["${tables.parent_segment_creation}"]
+
++list_all_templates:
+  _export:
+    folder_path: config/templates
+    db: ${database}
+    table: ${tables.templates}
+  docker:
+      image: "digdag/digdag-python:3.9"
+  py>: python.list_templates.main
+  _env:
+    TD_SITE: ${site}
+    TD_API_KEY: ${secret:td.apikey}
+
++create_parent_segments:
+  _parallel: true
+  td_for_each>: query/lookup_templates.sql
+  _do:
+    +create:
+      _export:
+        folder: ${td.each.folder}
+        file_name: ${td.each.file}
+        table: ${tables.parent_segment_creation}
+      docker:
+          image: "digdag/digdag-python:3.9"
+      py>: python.create_parent_segments.main
+      _env:
+        TD_SITE: ${site}
+        TD_API_KEY: ${secret:td.apikey}
+
++clean_log:
+  td>: "query/cleanup_log.sql"
+
++active_audience:
+  td>: "query/active_audience.sql"
+  create_table: ${tables.active_audience}

@@ -10,20 +10,20 @@ _export:
   database: ${meta}
   td>: "queries/log_tbl.sql"
 
-+empty_log_table: 
++empty_log_table:
   if>: ${run_all==true}
   _do:
     +del_log:
       td>:
-      query: "delete from log_tbl where 1=1" 
-      database: ${meta}  
+      query: "delete from log_tbl where 1=1"
+      database: ${meta}
 
 +validation:
   _export:
     step_name: validation
     workflow_to_run: wf3_validate
   call>: wf2_run_workflow_with_logging.dig
-  
+
 
 +staging:
   _export:

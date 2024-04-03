@@ -1,0 +1,122 @@
+name: TEST2 Parent Segment
+description: test2
+scheduleType: none
+scheduleOption: 
+timezone: UTC
+matrixUpdatedAt:
+workflowHiveOnly: false 
+hiveEngineVersion: cdpaudience
+hivePoolName: 
+prestoPoolName: 
+population: 
+createdAt: 
+updatedAt: 
+createdBy:
+  id: 15108
+  td_user_id: 104670
+  name: Tram Tran
+updatedBy:
+  id: 15108
+  td_user_id: 104670
+  name: Tram Tran
+master:
+  parentDatabaseName: tramtran_ecommerce
+  parentTableName: users
+attributes:
+- audienceId: '436355'
+  id: '3168357'
+  name: age
+  type: number
+  parentDatabaseName: tramtran_ecommerce 
+  parentTableName: user_attributes
+  parentColumn: age
+  parentKey: uuid
+  foreignKey: uuid
+  matrixColumnName: age
+  usedBySegmentInsight: true
+  groupingName:
+- audienceId: '436355'
+  id: '3168358'
+  name: email
+  type: string
+  parentDatabaseName: tramtran_ecommerce
+  parentTableName: user_attributes
+  parentColumn: email
+  parentKey: uuid
+  foreignKey: uuid
+  matrixColumnName: email
+  usedBySegmentInsight: true
+  groupingName:
+- audienceId: '436355'
+  id: '3168359'
+  name: first_name
+  type: string
+  parentDatabaseName: tramtran_ecommerce
+  parentTableName: user_attributes
+  parentColumn: first_name
+  parentKey: uuid
+  foreignKey: uuid
+  matrixColumnName: first_name
+  usedBySegmentInsight: true
+  groupingName:
+- audienceId: '436355'
+  id: '3168360'
+  name: gender
+  type: string
+  parentDatabaseName: tramtran_ecommerce 
+  parentTableName: user_attributes
+  parentColumn: gender
+  parentKey: uuid
+  foreignKey: uuid
+  matrixColumnName: gender
+  usedBySegmentInsight: true
+  groupingName:
+- audienceId: '436355'
+  id: '3168361'
+  name: last_name
+  type: string
+  parentDatabaseName: tramtran_ecommerce
+  parentTableName: user_attributes
+  parentColumn: last_name
+  parentKey: uuid
+  foreignKey: uuid
+  matrixColumnName: last_name
+  usedBySegmentInsight: true
+  groupingName:
+- audienceId: '436355'
+  id: '3168362'
+  name: region
+  type: string
+  parentDatabaseName: tramtran_ecommerce
+  parentTableName: user_attributes
+  parentColumn: region
+  parentKey: uuid
+  foreignKey: uuid
+  matrixColumnName: region
+  usedBySegmentInsight: true
+  groupingName:
+behaviors:
+- audienceId: '436355'
+  id: '352859'
+  name: user_behavior
+  parentDatabaseName: tramtran_ecommerce
+  parentTableName: user_activity
+  parentKey: uuid
+  foreignKey: uuid
+  matrixDatabaseName: cdp_audience_436355
+  matrixTableName: behavior_user_activity
+  allColumns: false
+  defaultTimeFilterEnabled: true
+  schema:
+  - name: Device type
+    type: string
+    parentColumn: device_type
+    matrixColumnName: device_type
+  - name: First Referer
+    type: string
+    parentColumn: first_referrer
+    matrixColumnName: first_referrer
+  # - name: Item
+  #   type: string
+  #   parentColumn: item
+  #   matrixColumnName: item

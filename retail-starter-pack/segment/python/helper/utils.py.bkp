@@ -1,0 +1,196 @@
+import json
+import yaml
+import pandas as pd
+import numpy as np
+# import python.api.folder as folder_api
+import python.helper.global_var as g
+
+def add_level_attribute(json_string):
+    # Load the JSON string into a Python object
+    json_obj = json.loads(json_string)
+
+    # Iterate through each key-value pair
+    for key, value in json_obj.items():
+        # Extract the number from the end of the key string
+        level = int(key.split("_")[-1])
+
+        # Add a "level" attribute to each object in the value list
+        for obj in value:
+            obj["level"] = level
+
+    # Convert the modified dictionary back into a JSON string
+    new_json_string = json.dumps(json_obj)
+
+    return new_json_string
+
+
+def filter_by_folder_and_level(df, folder):
+    # If input_folder_path is provided, check if it corresponds to input_level
+    if folder["folderPath"] != "None":
+        if folder["folderPath"].count('/') != folder['level']:
+            print("Error: The input folder path does not correspond to input level.")
+            return pd.DataFrame()
+
+    # Split 'folderPath' into parts
+    df['folderPath_parts'] = df['folderPath'].str.split('/')
+
+    # Function to check if folder_name is at the correct level
+    def check_folder(row):
+        try:
+            name_match = row['folderPath_parts'][folder['level']] == folder['name']
+            path_match = row['folderPath'].startswith(folder['folderPath']) if folder['folderPath'] != "None" else True
+            return name_match and path_match
+        except IndexError:
+            return False
+
+    # Apply the function to each row
+    df['match'] = df.apply(check_folder, axis=1)
+
+    # Filter rows where 'match' is True
+    df_filtered = df[df['match']]
+
+    # Drop the added columns
+    df_filtered = df_filtered.drop(columns=['folderPath_parts', 'match'])
+
+    return df_filtered
+
+def flatten_json(json_string):
+    json_obj = json.loads(json_string)
+    data = []
+    
+    for level, level_data in json_obj.items():
+        for item in level_data:
+            # Check if "folderPath" is not null
+            if item.get("folderPath") is not None:
+                # Concatenate "folderPath" with "name"
+                item["folderPath"] = item["folderPath"] + "/"+ item["name"]
+            data.append(item)
+    
+    df = pd.DataFrame(data)
+    return df
+
+
+def convert_yaml_file_to_df(yaml_file_path, action):
+  with open(yaml_file_path, 'r') as f:
+      data = yaml.safe_load(f)
+
+  rename_data = data.get(action, {})
+  # Convert to DataFrame
+  rename_json = json.dumps(rename_data)
+  format_json = add_level_attribute(rename_json)
+  df = flatten_json(format_json)
+  return df
+
+
+def convert_yaml_to_df(yaml_file):
+
+  rename_data = yaml.safe_load(yaml_file)
+  # Convert to DataFrame
+  rename_json = json.dumps(rename_data)
+  format_json = add_level_attribute(rename_json)
+  df = flatten_json(format_json)
+  return df
+
+def calculate_folder_data(df_folders):
+    # Adding new columns
+    df_folders['level'] = 0
+    df_folders['folderPath'] = 'ROOT'
+
+    # Initialize the stack with the root folders
+    stack = [(idx, row['id'], 'ROOT', 0) for idx, row in df_folders[df_folders['parentFolderId'] == '0'].iterrows()]
+
+    # Iterate until the stack is empty
+    while stack:
+        idx, folder_id, path, level = stack.pop()
+        df_folders.at[idx, 'level'] = level
+        df_folders.at[idx, 'folderPath'] = path
+        children = df_folders[df_folders['parentFolderId'] == folder_id]
+        for child_idx, child_row in children.iterrows():
+            stack.append((child_idx, child_row['id'], f"{path}/{child_row['name']}", level + 1))
+
+    # Display the DataFrame
+    return df_folders
+
+def replace_root(path):
+    # Split the path by '/' into parts
+    parts = path.split('/')
+    
+    # Replace the first part of the path with 'ROOT'
+    parts[0] = 'ROOT'
+    
+    # Join the parts back together
+    new_path = '/'.join(parts)
+    
+    return new_path
+
+def left_merge(df_main, df_left):
+    # replace root folder name
+    df_main.loc[df_main['level'] == 0, 'name'] = 'ROOT'
+
+    df_left.loc[(df_left['level'] == 0) & (df_left['type'] == 'folder-segment'), 'name'] = 'ROOT'
+
+    df_main['folderPath'] = df_main['folderPath'].apply(lambda x: replace_root(x) if x != 'None' else x)
+
+    # Split df_delete_segments into two DataFrames based on 'folderPath'
+    df_main_none = df_main[df_main['folderPath'] == 'None']
+    df_main_other = df_main[df_main['folderPath'] != 'None']
+
+
+    # Merge each DataFrame with df_left
+    merged_df_none = pd.merge(df_main_none, df_left, how='left', 
+                              left_on=['name', 'level'], 
+                              right_on=['name', 'level'])
+
+    merged_df_other = pd.merge(df_main_other, df_left, how='left', 
+                               left_on=['name', 'level', 'folderPath'], 
+                               right_on=['name', 'level', 'folderPath'])
+    
+    merged_df_none.rename(columns={'folderPath_y': 'folderPath'}, inplace=True) 
+    merged_df_none = merged_df_none.drop(columns=['folderPath_x'])
+
+    # Concatenate the merged DataFrames
+    merged_df = pd.concat([merged_df_none, merged_df_other], ignore_index=True)
+    merged_df.fillna('None', inplace=True)
+
+    fixed_columns = ['name', 'level', 'folderPath']
+    other_columns = [col for col in df_left.columns if col not in fixed_columns]
+    # Create the final column order
+    final_columns = fixed_columns + other_columns
+
+
+    # Select the required columns
+    merged_df = merged_df[final_columns]
+
+    return merged_df
+
+def filter_by_folder_and_level(df, folder):
+    # If input_folder_path is provided, check if it corresponds to input_level
+    if folder["folderPath"] != "None":
+        if folder["folderPath"].count('/') != folder['level']:
+            print("Error: The input folder path does not correspond to input level.")
+            return pd.DataFrame()
+
+    # Split 'folderPath' into parts
+    df['folderPath_parts'] = df['folderPath'].str.split('/')
+
+    # Function to check if folder_name is at the correct level
+    def check_folder(row):
+        try:
+            name_match = row['folderPath_parts'][folder['level']] == folder['name']
+            path_match = row['folderPath'].startswith(folder['folderPath']) if folder['folderPath'] != "None" else True
+            return name_match and path_match
+        except IndexError:
+            return False
+
+    # Apply the function to each row
+    df['match'] = df.apply(check_folder, axis=1)
+
+    # Filter rows where 'match' is True
+    df_filtered = df[df['match']]
+
+    # Drop the added columns
+    df_filtered = df_filtered.drop(columns=['folderPath_parts', 'match'])
+
+    return df_filtered
+
+ 

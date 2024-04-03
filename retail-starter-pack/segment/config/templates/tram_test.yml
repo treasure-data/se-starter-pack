@@ -1,0 +1,116 @@
+id: null
+name: TRAM TEST on Ecommerce DB
+description: testing automation
+scheduleType: none
+scheduleOption: ''
+timezone: UTC
+matrixUpdatedAt: '2023-11-21T06:01:36.306Z'
+workflowHiveOnly: false
+hiveEngineVersion: cdpaudience
+hivePoolName: ''
+prestoPoolName: ''
+population: 12
+maxActivationBehaviorRow: 2
+allowActivationBehavior: true
+rootFolderId: ''
+master:
+  parentDatabaseName: tramtran_ecommerce
+  parentTableName: users
+attributes:
+  - audienceId: null
+    id: null
+    name: age
+    type: number
+    parentDatabaseName: tramtran_ecommerce
+    parentTableName: user_attributes
+    parentColumn: age
+    parentKey: uuid
+    foreignKey: uuid
+    matrixColumnName: null
+    groupingName: undefined
+  - audienceId: null
+    id: null
+    name: email
+    type: string
+    parentDatabaseName: tramtran_ecommerce
+    parentTableName: user_attributes
+    parentColumn: email
+    parentKey: uuid
+    foreignKey: uuid
+    matrixColumnName: null
+    groupingName: undefined
+  - audienceId: null
+    id: null
+    name: first_name
+    type: string
+    parentDatabaseName: tramtran_ecommerce
+    parentTableName: user_attributes
+    parentColumn: first_name
+    parentKey: uuid
+    foreignKey: uuid
+    matrixColumnName: null
+    groupingName: undefined
+  - audienceId: null
+    id: null
+    name: gender
+    type: string
+    parentDatabaseName: tramtran_ecommerce
+    parentTableName: user_attributes
+    parentColumn: gender
+    parentKey: uuid
+    foreignKey: uuid
+    matrixColumnName: null
+    groupingName: undefined
+  - audienceId: null
+    id: null
+    name: last_name
+    type: string
+    parentDatabaseName: tramtran_ecommerce
+    parentTableName: user_attributes
+    parentColumn: last_name
+    parentKey: uuid
+    foreignKey: uuid
+    matrixColumnName: null
+    groupingName: undefined
+  - audienceId: null
+    id: null
+    name: region
+    type: string
+    parentDatabaseName: tramtran_ecommerce
+    parentTableName: user_attributes
+    parentColumn: region
+    parentKey: uuid
+    foreignKey: uuid
+    matrixColumnName: null
+    groupingName: undefined
+behaviors:
+  - audienceId: null
+    id: null
+    name: User Behavior
+    parentDatabaseName: tramtran_ecommerce
+    parentTableName: user_activity
+    parentKey: uuid
+    foreignKey: uuid
+    matrixDatabaseName: null
+    matrixTableName: null
+    allColumns: false
+    defaultTimeFilterEnabled: false
+    schema:
+      - name: Device type
+        type: string
+        parentColumn: device_type
+        matrixColumnName: null
+      - name: First Referer
+        type: string
+        parentColumn: first_referrer
+        matrixColumnName: null
+createdAt: ''
+updatedAt: ''
+createdBy:
+  id: ''
+  td_user_id: ''
+  name: ''
+updatedBy:
+  id: ''
+  td_user_id: ''
+  name: ''

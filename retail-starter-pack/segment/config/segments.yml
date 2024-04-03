@@ -1,0 +1,163 @@
+# ---
+# audienceId: '241715'
+# id: '101228'
+# name: scott - only kfc Known diners (copy)
+# realtime: false
+# isVisible: true
+# numSyndications: 0
+# description: ''
+# segmentFolderId: '339470'
+# population: 36109742
+# createdAt: '2022-01-08T00:46:00.786Z'
+# updatedAt: '2022-01-08T00:46:00.786Z'
+# createdBy:
+#   id: '10144'
+#   name: Craig Hooper
+# updatedBy:
+#   id: '10144'
+#   name: Craig Hooper
+# kind: 0
+# rule:
+#   type: And
+#   conditions:
+#   - conditions:
+#     - type: Value
+#       leftValue:
+#         aggregation:
+#           type: Count
+#           groupingColumns: []
+#           groupingColumnsWithVisibility: []
+#         source:
+#           name: behavior_enriched_kfc_transactions
+#         filter: 
+#       operator:
+#         not: false
+#         rightValue: 1
+#         type: GreaterEqual
+#       arrayMatching: 
+#       exclude: false
+#     type: And
+#     description: ''
+#     expr: ''
+#   - conditions:
+#     - exclude: true
+#       id: '101218'
+#       type: Reference
+#     type: And
+#     description: ''
+#     expr: ''
+#   - conditions:
+#     - exclude: true
+#       id: '101220'
+#       type: Reference
+#     type: And
+#     description: ''
+#     expr: ''
+#   expr: ''
+
+# ---
+# data:
+#   id: '639370'
+#   type: segment-batch
+#   attributes:
+#     audienceId: '656496'
+#     name: Test Model
+#     countPopulation: true
+#     description: ''
+#     population: 28242
+#     numSyndications: 
+#     createdAt: '2024-03-07T12:47:06.655Z'
+#     updatedAt: '2024-03-11T09:46:51.140Z'
+#     rule:
+#       type: And
+#       conditions:
+#       - conditions:
+#         - type: Value
+#           leftValue:
+#             aggregation:
+#               type: Count
+#             source:
+#               name: behavior_enriched_consents
+#             filter:
+#               type: And
+#               conditions:
+#               - type: Column
+#                 column: consent_flag
+#                 operator:
+#                   not: false
+#                   rightValue: 1
+#                   type: Equal
+#                 visibility: clear
+#           operator:
+#             not: false
+#             rightValue: 1
+#             type: GreaterEqual
+#           exclude: false
+#         type: And
+#         description: Consent
+#     segmentInsightDashboardId: 
+#   relationships:
+#     parentFolder:
+#       data:
+#         id: '994651'
+#         type: folder-segment
+#     createdBy:
+#       data:
+#         id: '5735'
+#         type: user
+#     updatedBy:
+#       data:
+#         id: '15996'
+#         type: user
+# included:
+# - id: '5735'
+#   type: user
+#   attributes:
+#     tdUserId: '37273'
+#     name: Vipul
+# - id: '15996'
+#   type: user
+#   attributes:
+#     tdUserId: '80852'
+#     name: Biswadip Paul
+
+
+type: segment-batch
+id: null
+relationships:
+  parentFolder:
+    data:
+      id: ${rootfolder_id}
+      type: folder-segment
+attributes:
+  - audienceId: ${audience_id}
+    countPopulation: true
+    name: Marktable Users
+    rule:
+      type: And
+      conditions:
+      - conditions:
+        - type: Value
+          leftValue:
+            aggregation:
+              type: Count
+            source:
+              name: behavior_enriched_consents
+            filter:
+              type: And
+              conditions:
+              - type: Column
+                column: consent_flag
+                operator:
+                  not: false
+                  rightValue: 1
+                  type: Equal
+          operator:
+            not: false
+            rightValue: 1
+            type: GreaterEqual
+          exclude: false
+        type: And
+        description: Users who have given consent
+    description: 'Marktable Users - Users who have given consent'
+    segmentInsightDashboardId: 

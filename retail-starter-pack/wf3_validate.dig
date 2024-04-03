@@ -6,8 +6,8 @@ _export:
   mail:
     from: "wf-error-alert@treasure-data.com"
   td:
-    database: ${meta}      
- 
+    database: ${meta}
+
 +prepare_db:
   td_ddl>:
   create_databases: ["${meta}"]
@@ -118,7 +118,7 @@ _export:
 #   store_last_results: true
 
 # +check_column_type_and_send_email:
-#   if>: ${td.last_results.cnt > 0} 
+#   if>: ${td.last_results.cnt > 0}
 #   _do:
 #     +prepare_email_content:
 #       echo>: "Mismatched column types in source database ${src}_${sub} tables, preparing email content..."
@@ -138,7 +138,7 @@ _export:
 #   store_last_results: true
 
 # +check_missing_src_table_and_send_email:
-#   if>: ${td.last_results.cnt > 0} 
+#   if>: ${td.last_results.cnt > 0}
 #   _do:
 #     +prepare_email_content:
 #       echo>: "Missing tables in source database ${src}_${sub} , preparing email content..."
@@ -151,7 +151,7 @@ _export:
 #         subject: "Error: Missing tables in source database ${src}_${sub}. Stopping workflow!"
 #         to: ${email}
 #         body: "Check ${meta}.report_missing_tables_in_src for missing tables in source database ${src}_${sub}."
-                  
+
 +drop_table:
   td>: "validation/queries/src_tmp_drop_ddl.sql"
 
@@ -161,6 +161,6 @@ _export:
   store_last_results: true
 
 +raise_error_if_necessary:
-  if>: ${td.last_results.cnt > 0} 
+  if>: ${td.last_results.cnt > 0}
   _do:
     fail>: "Detected issues with missing tables columns or column type mismatches. Check ${meta}.report_missing_src_columns for missing columns.  Check ${meta}.report_column_type_mismatches for column type mismatches. Check ${meta}.report_missing_tables_in_src for missing source tables"
