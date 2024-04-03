@@ -1,4 +1,5 @@
 # General
 .DS_Store
 .digdag
-__pycache__
+__pycache__/
+*.pyc
