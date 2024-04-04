@@ -1,0 +1,27 @@
+_export:
+  !include : 'config/params.yml'
+  !include : 'config.json'
+  td:
+    database: ${sink_database}
+
++extract_model_oid_from_hist_table:
+  td>:
+    data: "SELECT oid FROM ${sink_database}.${model_config_table} WHERE name  = '${model_name}' "
+  store_last_results: true  
+
+###-- Workflow to refresh the datamodel with updated tables and data schema 
++call_post_builds:
+  http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds"
+  method: POST
+  headers:
+    - authorization: "TD1 ${secret:secret_key}"
+    - cache-control: "no-cache"
+    - accept: "application/json"
+    - content-type: "application/json"
+  content:
+    buildType: "full"
+  content_format: "json"
+  store_content: true
+
++echo:
+  echo>: ${http.last_content}

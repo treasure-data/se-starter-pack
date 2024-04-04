@@ -38,12 +38,12 @@ _export:
     workflow_to_run: wf5_unify
   call>: wf2_run_workflow_with_logging.dig
 
-# +unification_dashboard:
-#   _export:
-#     step_name: unification_dashboard
-#     workflow_to_run: idu_dashboard_launch
-#     project_name: retail_starter_pack_idu_dashboard
-#   call>: wf2_run_workflow_with_logging.dig
++unification_dashboard:
+  _export:
+    step_name: unification_dashboard
+    workflow_to_run: idu_dashboard_launch
+    project_name: idu_dashboard
+  call>: wf2_run_workflow_with_logging.dig
 
 +golden:
   _export:

@@ -1,0 +1,58 @@
+_export:
+  !include : config/params.yml
+  td:
+    database: ${reporting_db}
+
+# timezone: America/Los_Angeles
+
+###################### SCHEDULE PARAMS ##################################  
+# schedule:
+#   daily>: 00:00:00
+
+##################### ERROR EMAIL NOTIFICATION ############################  
+_error:
+  mail>: body.txt
+  subject: IDU Dashboard Workflow Failed - Client Name
+  to: ['ps-ml-analytics@treasure-data.com']
+
+############## IDU MAIN STATS Data Prep ##########################################
++run_main_data_prep:
+  call>: idu_dashboard_data_prep.dig
+
+############## Over-Merging Q&A Analysis ##########################################
++check_if_idu_data_qa_should_run:
+  if>: ${run_qa =='yes'}
+  _do:
+    +run_model_idu_data_qa:
+      call>: idu_qa.dig
+
+  _else_do: 
+    ####### Refresh IDU QA stats on 5th, 15th, and 25th of each Month ######## 
+    +check_todays_date:
+      td>:
+        data: "SELECT substr('${session_date}', 9) in ('05', '15', '25') AS run_idu_qa"
+      store_last_results: true
+
+    +check_if_joined_must_run_today:
+      if>: ${td.last_results.run_idu_qa == true}
+      _do:
+        +run_model_idu_data_qa_refresh:
+          call>: idu_qa.dig
+
+############## DATAMODEL BUILDOUT & UPDATE #########################################
++check_if_need_to_create_dashboard:
+  if>: ${create_dashboard=='yes'}
+  _do:
+    +run_model_create_wf:
+      call>: idu_datamodel_create.dig
+
+    +run_model_refresh_build_wf:
+      call>: idu_datamodel_build.dig
+
+#################### DELETES TEMP TABLES ###########################################
++check_if_cleanup_temp_tables:
+  if>: ${cleanup_temp_tables == 'yes'}
+  _do:
+    +delete_temporary_tables:
+      call>: idu_cleanup_runner
+

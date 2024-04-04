@@ -1,0 +1,1 @@
+select concat(array_join(array_agg(distinct column_name), ','), ',source_table') as keys from idu_qa_build_id_extracts
