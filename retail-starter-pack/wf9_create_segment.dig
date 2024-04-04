@@ -21,4 +21,4 @@ _export:
       py>: segment.python.create_segment.main
       _env:
         TD_SITE: ${site}
-        TD_API_KEY: ${secret:td.apikey}
+        TD_API_KEY: ${secret:td.apikeysegment}

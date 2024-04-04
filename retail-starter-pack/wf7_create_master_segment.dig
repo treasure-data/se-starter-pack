@@ -19,7 +19,7 @@ _export:
   py>: segment.python.list_templates.main
   _env:
     TD_SITE: ${site}
-    TD_API_KEY: ${secret:td.apikey}
+    TD_API_KEY: ${secret:td.apikeysegment}
 
 +create_parent_segments:
   _parallel: true
@@ -36,7 +36,7 @@ _export:
       py>: segment.python.create_parent_segments.main
       _env:
         TD_SITE: ${site}
-        TD_API_KEY: ${secret:td.apikey}
+        TD_API_KEY: ${secret:td.apikeysegment}
 
 +clean_log:
   td>: segment/queries/cleanup_log.sql

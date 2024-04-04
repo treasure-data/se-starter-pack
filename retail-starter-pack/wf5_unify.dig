@@ -7,7 +7,7 @@ _export:
   http_call>: https://api-cdp.treasuredata.com/unifications/workflow_call
   headers:
     #Enter your apikey as a secret to this workflow
-    - authorization: 'TD1 ${secret:td.apikey}'
+    - authorization: ${secret:td.apikey}
   method: POST
   retry: true
   content_format: json
