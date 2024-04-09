@@ -7,7 +7,7 @@ _export:
   !include : 'config/email_ids.yml'
 
 +prepare_log_table:
-  database: ${meta}
+  database: ${meta} 
   td>: "queries/log_tbl.sql"
 
 +empty_log_table:
