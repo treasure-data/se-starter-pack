@@ -2,13 +2,13 @@ drop table if exists pre_preferred_season;
 
 create table if not exists pre_preferred_season as
 with enriched_order_offline_transactions_enriched_order_online_transactions_cte_attributor as (select
-season as season,
+trfmd_season as season,
 retail_unification_id as retail_unification_id,
 order_no as order_no
  from enriched_order_online_transactions
  union all
 select
-season as season,
+trfmd_season as season,
 retail_unification_id as retail_unification_id,
 order_no as order_no
  from enriched_order_offline_transactions),

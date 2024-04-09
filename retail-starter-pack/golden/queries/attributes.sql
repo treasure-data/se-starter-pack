@@ -108,8 +108,8 @@ coalesce(last_store_visit, null) as last_store_visit,
 coalesce(ltv, null) as ltv,
 coalesce(preferred_season, null) as preferred_season,
 coalesce(purchases_last_30days, null) as purchases_last_30days,
-coalesce(web_visits_last_7days, null) as web_visits_last_7days 
-from base_1 
+coalesce(web_visits_last_7days, null) as web_visits_last_7days
+from base_1
 left join transactions_attributes ON base_1.retail_unification_id = transactions_attributes.retail_unification_id
 left join preferred_season_attributes ON base_1.retail_unification_id = preferred_season_attributes.retail_unification_id
 left join email_attributes ON base_1.retail_unification_id = email_attributes.retail_unification_id
