@@ -6,7 +6,7 @@ case
   else lower(ltrim(rtrim("country")))
 end   AS  "trfmd_country",
 --
-concat(first_name,' ',last_name)   AS  "trfmd_full_name",
+lower(lower(ltrim(rtrim(concat(first_name,' ',last_name)))))   AS  "trfmd_full_name",
 --
 case
   when nullif(lower(ltrim(rtrim("state"))), 'null') is null then null

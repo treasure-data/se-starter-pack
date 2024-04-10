@@ -19,20 +19,18 @@ def list_files_in_folder(folder_path):
             # folder = os.path.relpath(folder, folder_path)
 
             # Append the folder and file to the list
-            file_list.append({
-                'Folder': folder_path,
-                'File': file_name
-            })
+            file_list.append({"Folder": folder_path, "File": file_name})
 
     # Create a DataFrame from the list of files
     df_files = pd.DataFrame(file_list)
 
     return df_files
 
+
 def main(folder_path, db, table):
-  result_df = list_files_in_folder(folder_path)
+    result_df = list_files_in_folder(folder_path)
 
-  td.uploadDataToTD(result_df, db, table)
+    td.uploadDataToTD(result_df, db, table)
 
-  # Display the resulting DataFrame
-  print(result_df)
+    # Display the resulting DataFrame
+    print(result_df)

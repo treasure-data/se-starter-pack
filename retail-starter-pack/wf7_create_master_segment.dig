@@ -31,6 +31,7 @@ _export:
         file_name: ${td.each.file}
         database: ${meta}
         table: ${segment.tables.parent_segment_creation}
+        run_type: ${segment.run_type}
       docker:
         image: "digdag/digdag-python:3.9"
       py>: segment.python.create_parent_segments.main

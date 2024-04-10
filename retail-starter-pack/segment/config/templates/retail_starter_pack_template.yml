@@ -23,7 +23,7 @@ attributes:
       type: number
       parentDatabaseName: cdp_unification_retail_starter_pack
       parentTableName: enriched_customers
-      parentColumn: age
+      parentColumn: trfmd_age
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
       matrixColumnName: null
@@ -56,7 +56,7 @@ attributes:
       type: string
       parentDatabaseName: cdp_unification_retail_starter_pack
       parentTableName: enriched_customers
-      parentColumn: name
+      parentColumn: trfmd_full_name
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
       matrixColumnName: null
@@ -67,7 +67,7 @@ attributes:
       type: string
       parentDatabaseName: cdp_unification_retail_starter_pack
       parentTableName: enriched_customers
-      parentColumn: gender_code
+      parentColumn: trfmd_gender
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
       matrixColumnName: null
