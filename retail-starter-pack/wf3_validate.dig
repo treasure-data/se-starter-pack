@@ -21,35 +21,76 @@ _export:
 +prepare_report:
   td>: "validation/queries/report_deviations.sql"
 
-+warning_email:
-  td_for_each>: validation/queries/get_warnings.sql
++query_to_find_warning_error:
+  td>:
+  query: "select sum(cnt) as cnt from report_deviation"
+  store_last_results: true
+
++prepare_email_html:
+  if>: ${td.last_results.cnt > 0}
   _do:
+    +drop_email_content_table:
+      td_ddl>:
+      drop_tables: ["email_content"]
+      database: ${meta}
+
     +prepare_email_content:
-      echo>: ${td.each.subject}
+      _export:
+        database: ${meta}
+        td_write_table: 'email_content'
+      docker:
+          image: "digdag/digdag-python:3.9"
+      py>: validation.python.gen_html.main
+      _env:
+        TD_SITE: ${site}
+        TD_API_KEY: ${secret:secret_key}
 
     +send_email:
-      for_each>:
-        email: ${email_ids}
+      td_for_each>:
+        data: 'select html_content from ${meta}.email_content'
       _do:
-        mail>: utilities/generic.txt
-        subject: ${td.each.subject}
-        to: ${email}
-        body: ${td.each.message}
+        +prepare_email_content:
+          echo>: 'email content fetched'
 
-+error_email:
-  td_for_each>: validation/queries/get_errors.sql
-  _do:
-    +prepare_email_content:
-      echo>: ${td.each.subject}
+        +send_email:
+          for_each>:
+            email: ${email_ids}
+          _do:
+            mail>: utilities/generic.txt
+            html: true
+            subject: 'Validation Report'
+            to: ${email}
+            body: ${td.each.html_content}
 
-    +send_email:
-      for_each>:
-        email: ${email_ids}
-      _do:
-        mail>: utilities/generic.txt
-        subject: ${td.each.subject}
-        to: ${email}
-        body: ${td.each.message}
+# +warning_email:
+#   td_for_each>: validation/queries/get_warnings.sql
+#   _do:
+#     +prepare_email_content:
+#       echo>: ${td.each.subject}
+
+#     +send_email:
+#       for_each>:
+#         email: ${email_ids}
+#       _do:
+#         mail>: utilities/generic.txt
+#         subject: ${td.each.subject}
+#         to: ${email}
+#         body: ${td.each.message}
+
+# +error_email:
+#   td_for_each>: validation/queries/get_errors.sql
+#   _do:
+#     +prepare_email_content:
+#       echo>: ${td.each.subject}
+
+#     +send_email:
+#       for_each>:
+#         email: ${email_ids}
+#       _do:
+#         mail>: utilities/generic.txt
+#         subject: ${td.each.subject}
+#         to: ${email}
+#         body: ${td.each.message}
 
 # +query_extra_tables:
 #   td>:

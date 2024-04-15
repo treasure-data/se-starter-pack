@@ -68,23 +68,23 @@ _export:
     workflow_to_run: wf9_create_segment
   call>: wf2_run_workflow_with_logging.dig
 
-# #Send mail success
-# +send_success_alert:
-#   for_each>:
-#     email: ${email_ids}
-#   _do:
-#     _export:
-#       subject: "Treasure Data retail_starter_pack_orchestration completed Successfully!"
-#       receive_email: ${email}
-#     call>: utilities/success.dig
+#Send mail success
++send_success_alert:
+  for_each>:
+    email: ${email_ids}
+  _do:
+    _export:
+      subject: "Treasure Data retail_starter_pack_orchestration completed Successfully!"
+      receive_email: ${email}
+    call>: utilities/success.dig
 
-# #Send Error Alert
-# _error:
-#   +send_error_alert:
-#     for_each>:
-#       email: ${email_ids}
-#     _do:
-#       _export:
-#         subject: "Treasure Data retail_starter_pack_orchestration Failed! Please Review ASAP."
-#         receive_email: ${email}
-#       call>: utilities/error.dig
+#Send Error Alert
+_error:
+  +send_error_alert:
+    for_each>:
+      email: ${email_ids}
+    _do:
+      _export:
+        subject: "Treasure Data retail_starter_pack_orchestration Failed! Please Review ASAP."
+        receive_email: ${email}
+      call>: utilities/error.dig

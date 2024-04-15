@@ -33,7 +33,6 @@ _export:
           _export:
           call>: ${workflow_to_run}
 
-
         +update_log:
           td>:
           query: "select '${step_name}' as step_name, 'success' as status, null as error_msg"
