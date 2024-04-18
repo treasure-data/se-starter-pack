@@ -11,8 +11,8 @@ end   AS  "trfmd_activity_type",
 --
 case
   when nullif(lower(ltrim(rtrim("campaign_name"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("campaign_name"))), '') is null
-  then null else lower(ltrim(rtrim("campaign_name")))
+  when nullif(lower(ltrim(rtrim("campaign_name"))), '') is null then null
+  else regexp_replace(lower(ltrim(rtrim("campaign_name"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
 end   AS  "trfmd_campaign_name",
 --
 case

@@ -100,8 +100,8 @@ group by retail_unification_id),
 base_1 as (select distinct retail_unification_id from parent_table )
 
 select coalesce(base_1.retail_unification_id, 'no_retail_unification_id') as retail_unification_id, coalesce(aov, null) as aov,
-coalesce(email_hardbounce, null) as email_hardbounce,
-coalesce(email_softbounce_gt5, null) as email_softbounce_gt5,
+case when coalesce(email_hardbounce, null) > 0 then 'True' else 'False' end as email_hardbounce,
+case when coalesce(email_softbounce_gt5, null) then 'True' else 'False' end as email_softbounce_gt5,
 coalesce(last_email_date, null) as last_email_date,
 coalesce(last_purchase_date, null) as last_purchase_date,
 coalesce(last_store_visit, null) as last_store_visit,

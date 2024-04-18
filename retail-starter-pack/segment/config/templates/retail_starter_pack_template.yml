@@ -14,14 +14,14 @@ maxActivationBehaviorRow: 20
 allowActivationBehavior: false
 rootFolderId: ""
 master:
-    parentDatabaseName: cdp_unification_retail_starter_pack
+    parentDatabaseName: gld_retail
     parentTableName: parent_table
 attributes:
     - audienceId: null
       id: null
       name: Age
       type: number
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_customers
       parentColumn: trfmd_age
       parentKey: retail_unification_id
@@ -32,7 +32,7 @@ attributes:
       id: null
       name: Email
       type: string
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: parent_table
       parentColumn: email
       parentKey: retail_unification_id
@@ -43,7 +43,7 @@ attributes:
       id: null
       name: Phone Number
       type: string
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: parent_table
       parentColumn: phone_number
       parentKey: retail_unification_id
@@ -54,7 +54,7 @@ attributes:
       id: null
       name: Name
       type: string
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_customers
       parentColumn: trfmd_full_name
       parentKey: retail_unification_id
@@ -65,7 +65,7 @@ attributes:
       id: null
       name: Gender Code
       type: string
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_customers
       parentColumn: trfmd_gender
       parentKey: retail_unification_id
@@ -76,7 +76,7 @@ attributes:
       id: null
       name: Country
       type: string
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_customers
       parentColumn: country
       parentKey: retail_unification_id
@@ -87,7 +87,7 @@ attributes:
       id: null
       name: Loyalty Status
       type: number
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_customers
       parentColumn: loyalty_status
       parentKey: retail_unification_id
@@ -208,7 +208,7 @@ behaviors:
     - audienceId: null
       id: null
       name: Email Activity
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_email_activity
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
@@ -219,7 +219,7 @@ behaviors:
     - audienceId: null
       id: null
       name: Online Transactions
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_order_online_transactions
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
@@ -230,7 +230,7 @@ behaviors:
     - audienceId: null
       id: null
       name: Offline Transactions
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_order_offline_transactions
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
@@ -241,7 +241,7 @@ behaviors:
     - audienceId: null
       id: null
       name: All Transaction Details
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_order_details
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
@@ -252,7 +252,7 @@ behaviors:
     - audienceId: null
       id: null
       name: Pageviews
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_pageviews
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
@@ -263,7 +263,7 @@ behaviors:
     - audienceId: null
       id: null
       name: Consent
-      parentDatabaseName: cdp_unification_retail_starter_pack
+      parentDatabaseName: gld_retail
       parentTableName: enriched_consents
       parentKey: retail_unification_id
       foreignKey: retail_unification_id
