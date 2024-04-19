@@ -48,7 +48,7 @@ function push_workflow_td(){
   #how to make a put request is documented here:
   #https://td-internal.redoc.ly/pages/td-digdag-sever_v1-private/operation/putProject/
   #Notable is that the revision in the url is REQUIRED
-  echo "===== Sending project $td_project_name with revision $project_rev with endpoint $endpoint"
+  echo "===== Sending project $td_project_name with revision $project_rev with endpoint $INPUT_WF_ENDPOINT"
   status_code=$(curl -s -o /dev/null -w "%{http_code}" \
       --request PUT "$INPUT_WF_ENDPOINT/api/projects?project=$td_project_name&revision=$project_rev" \
       --header "Authorization: TD1 $INPUT_API_TOKEN" \
