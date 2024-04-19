@@ -8,4 +8,4 @@ and (
     or table_name not like '%_id_result_key_stats'
     or table_name not like '%_id_source_key_stats'
     or table_name not like '%_id_tables'
-    )
+    );

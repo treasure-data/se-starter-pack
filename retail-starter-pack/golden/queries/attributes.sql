@@ -117,4 +117,3 @@ left join pageviews_attributes ON base_1.retail_unification_id = pageviews_attri
 left join offline_transactions_attributes ON base_1.retail_unification_id = offline_transactions_attributes.retail_unification_id
 left join order_details_attributes ON base_1.retail_unification_id = order_details_attributes.retail_unification_id
 left join email_attributes_2 ON base_1.retail_unification_id = email_attributes_2.retail_unification_id;
-
