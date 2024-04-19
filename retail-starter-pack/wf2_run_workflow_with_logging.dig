@@ -9,7 +9,7 @@ _export:
 +src_checks:
   if>: ${run_all!=true}
   _do:
-    +query_log_tables:
+    +query_log_tables: 
       td>:
       query: "select case when status = 'success' or status is null then 1 else 0 end status  from log_tbl where step_name = '${step_name}' order by time desc"
       store_last_results: true
