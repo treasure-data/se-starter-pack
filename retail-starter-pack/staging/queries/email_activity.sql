@@ -12,7 +12,7 @@ end   AS  "trfmd_activity_type",
 case
   when nullif(lower(ltrim(rtrim("campaign_name"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("campaign_name"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("campaign_name"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else  array_join((transform((split(lower(trim("campaign_name")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_campaign_name",
 --
 case
