@@ -26,13 +26,13 @@ end   AS  "trfmd_phone_number",
 case
   when nullif(lower(ltrim(rtrim("order_type"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("order_type"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("order_type"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("order_type")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_order_type",
 --
 case
   when nullif(lower(ltrim(rtrim("payment_method"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("payment_method"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("payment_method"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("payment_method")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_payment_method"
 
 FROM

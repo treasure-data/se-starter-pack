@@ -4,19 +4,19 @@ SELECT
 case
   when nullif(lower(ltrim(rtrim("store_postal_code"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("store_postal_code"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("store_postal_code"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else lower(ltrim(rtrim("store_postal_code")))
 end   AS  "trfmd_store_postal_code",
 --
 case
   when nullif(lower(ltrim(rtrim("store_city"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("store_city"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("store_city"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("store_city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_store_city",
 --
 case
   when nullif(lower(ltrim(rtrim("store_state"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("store_state"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("store_state"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("store_state")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_store_state",
 --
 case
@@ -38,7 +38,7 @@ end   AS  "trfmd_email",
 case
   when nullif(lower(ltrim(rtrim("store_address"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("store_address"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("store_address"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("store_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_store_address",
 --
 case
@@ -50,13 +50,13 @@ end   AS  "trfmd_phone_number",
 case
   when nullif(lower(ltrim(rtrim("payment_method"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("payment_method"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("payment_method"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("payment_method")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_payment_method",
 --
 case
   when nullif(lower(ltrim(rtrim("store_country"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("store_country"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("store_country"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("store_country")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_store_country"
 
 FROM

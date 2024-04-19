@@ -3,15 +3,15 @@ SELECT
 case
   when nullif(lower(ltrim(rtrim("country"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("country"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("country"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("country")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_country",
 --
-lower(lower(ltrim(rtrim(concat(first_name,' ',last_name)))))   AS  "trfmd_full_name",
+array_join((transform((split(lower(trim(concat(first_name,' ',last_name))),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')  AS  "trfmd_full_name",
 --
 case
   when nullif(lower(ltrim(rtrim("state"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("state"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("state"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("state")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_state",
 --
 case
@@ -29,13 +29,13 @@ case
 case
   when nullif(lower(ltrim(rtrim("first_name"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("first_name"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("first_name"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("first_name")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_first_name",
 --
 case
   when nullif(lower(ltrim(rtrim("last_name"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("last_name"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("last_name"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("last_name")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_last_name",
 --
 cast(COALESCE(regexp_like( "email", '^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z0-9]{2,})$'), false) as varchar)  AS  "valid_email_flag",
@@ -43,7 +43,7 @@ cast(COALESCE(regexp_like( "email", '^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z0-9]{2,})$
 case
   when nullif(lower(ltrim(rtrim("loyalty_status"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("loyalty_status"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("loyalty_status"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("loyalty_status")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_loyalty_status",
 --
 case
@@ -55,7 +55,7 @@ end   AS  "trfmd_postal_code",
 case
   when nullif(lower(ltrim(rtrim("address"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("address"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("address"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_address",
 --
 case
@@ -67,7 +67,7 @@ case
 case
   when nullif(lower(ltrim(rtrim("city"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("city"))), '') is null then null
-  else regexp_replace(lower(ltrim(rtrim("city"))), '(\w)(\w*)', x -> upper(x[1]) || lower(x[2]))
+  else array_join((transform((split(lower(trim("city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_city",
 --
 date_diff('year', date_parse(date_of_birth, '%Y-%m-%d'), current_date)   AS  "trfmd_age",
