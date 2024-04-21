@@ -28,8 +28,7 @@ _export:
         
         +run_workflow:
           # echo>: "Running step ${step_name} and workflow name ${workflow_to_run} when run_all ${run_all} and historical run are empty or failed."
-          require>: ${workflow_to_run}
-          project_name: ${project_name}
+          require>: ${step_name}/${workflow_to_run}
 
         +update_log:
           td>: 
@@ -45,8 +44,7 @@ _export:
           
     +run_workflow:
       # echo>: "Running step ${step_name} and workflow name ${workflow_to_run} when run_all ${run_all} and no historical run is checked."
-      require>: ${workflow_to_run}
-      project_name: ${project_name}
+      require>: ${step_name}/${workflow_to_run}
 
     +update_log:
       td>: 

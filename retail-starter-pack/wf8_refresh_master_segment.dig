@@ -1,0 +1,12 @@
+_export:
+  !include : 'config/src_params.yml'
+
++refresh_parent_segments:
+  _parallel: true
+  td_for_each>: segment/queries/get_active_audience.sql
+  _do:
+    +refresh:
+      http>: "${td.each.url}/audiences/${td.each.audience_id}/run"
+      method: POST
+      headers:
+        - authorization: "TD1 ${secret:secret_key}"

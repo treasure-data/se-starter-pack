@@ -1,7 +1,10 @@
+site: us
 raw: raw
 src: src
 stg: stg
 sub: retail
+uni: cdp_unification
+gld: golden
 meta: retail_starter_pack
 run_all: true
 
@@ -11,3 +14,11 @@ td_cdp_endpoint: "https://api-cdp.treasuredata.com"
 # td_cdp_endpoint: "https://api-cdp.ap02.treasuredata.com"
 # EMEA
 # td_cdp_endpoint: "https://api-cdp.eu01.treasuredata.com"
+
+segment:
+  run_type: update
+  tables:
+    templates: retail_starter_pack_template
+    parent_segment_creation: automation_parent_segments
+    active_audience: active_audience
+    segment_logs: segment_logs

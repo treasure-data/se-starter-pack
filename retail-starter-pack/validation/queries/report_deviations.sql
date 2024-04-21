@@ -13,7 +13,7 @@ create table if not exists report_column_type_mismatches as
 select *
 from check_src_vs_ref_cols
 where src_data_type != ref_data_type
-and src_column_name is not null 
+and src_column_name is not null
 and ref_column_name is not null
 and src_table_name = ref_table_name;
 
@@ -40,7 +40,7 @@ where ref_table_name is null;
 
 drop table if exists report_deviation;
 
-create table if not exists report_deviation as 
+create table if not exists report_deviation as
 with deviation as (
   select 'extra_tables' as type, 'warning' as issue, count(1) as cnt from report_extra_tables_in_src
   union all

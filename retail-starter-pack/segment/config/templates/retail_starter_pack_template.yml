@@ -1,0 +1,283 @@
+id: null
+name: Retail Starter Pack
+description: Retail Starter Pack
+scheduleType: none
+scheduleOption: ""
+timezone: UTC
+matrixUpdatedAt: ""
+workflowHiveOnly: false
+hiveEngineVersion: cdpaudience
+hivePoolName: ""
+prestoPoolName: ""
+population:
+maxActivationBehaviorRow: 20
+allowActivationBehavior: false
+rootFolderId: ""
+master:
+    parentDatabaseName: golden_retail
+    parentTableName: parent_table
+attributes:
+    - audienceId: null
+      id: null
+      name: Age
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_customers
+      parentColumn: trfmd_age
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Demographics
+    - audienceId: null
+      id: null
+      name: Email
+      type: string
+      parentDatabaseName: golden_retail
+      parentTableName: parent_table
+      parentColumn: email
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Identity
+    - audienceId: null
+      id: null
+      name: Phone Number
+      type: string
+      parentDatabaseName: golden_retail
+      parentTableName: parent_table
+      parentColumn: phone_number
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Identity
+    - audienceId: null
+      id: null
+      name: Name
+      type: string
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_customers
+      parentColumn: trfmd_full_name
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Identity
+    - audienceId: null
+      id: null
+      name: Gender Code
+      type: string
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_customers
+      parentColumn: trfmd_gender
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Demographics
+    - audienceId: null
+      id: null
+      name: Country
+      type: string
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_customers
+      parentColumn: country
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Geo
+    - audienceId: null
+      id: null
+      name: Loyalty Status
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_customers
+      parentColumn: loyalty_status
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Loyalty
+    - audienceId: null
+      id: null
+      name: Average Order Value
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: aov
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Purchase
+    - audienceId: null
+      id: null
+      name: Last Purchase Date
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: last_purchase_date
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Purchase
+    - audienceId: null
+      id: null
+      name: Web Visits Last 7days
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: web_visits_last_7days
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Engagement
+    - audienceId: null
+      id: null
+      name: Purchase Last 30days
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: purchases_last_30days
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Purchase
+    - audienceId: null
+      id: null
+      name: Lifetime Value
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: ltv
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Purchase
+    - audienceId: null
+      id: null
+      name: Last Store Visit
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: last_store_visit
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Engagement
+    - audienceId: null
+      id: null
+      name: Last Email Date
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: last_email_date
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Engagement
+    - audienceId: null
+      id: null
+      name: Email Hardbounce
+      type: number
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: email_hardbounce
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Engagement
+    - audienceId: null
+      id: null
+      name: Email SoftBounce Greater Than 5
+      type: string
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: email_softbounce_gt5
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Engagement
+    - audienceId: null
+      id: null
+      name: Preffered Season
+      type: string
+      parentDatabaseName: golden_retail
+      parentTableName: derived_attributes
+      parentColumn: preferred_season
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixColumnName: null
+      groupingName: Engagement
+behaviors:
+    - audienceId: null
+      id: null
+      name: Email Activity
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_email_activity
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixDatabaseName: null
+      matrixTableName: null
+      allColumns: true
+      defaultTimeFilterEnabled: false
+    - audienceId: null
+      id: null
+      name: Online Transactions
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_order_online_transactions
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixDatabaseName: null
+      matrixTableName: null
+      allColumns: true
+      defaultTimeFilterEnabled: false
+    - audienceId: null
+      id: null
+      name: Offline Transactions
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_order_offline_transactions
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixDatabaseName: null
+      matrixTableName: null
+      allColumns: true
+      defaultTimeFilterEnabled: false
+    - audienceId: null
+      id: null
+      name: All Transaction Details
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_order_details
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixDatabaseName: null
+      matrixTableName: null
+      allColumns: true
+      defaultTimeFilterEnabled: false
+    - audienceId: null
+      id: null
+      name: Pageviews
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_pageviews
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixDatabaseName: null
+      matrixTableName: null
+      allColumns: true
+      defaultTimeFilterEnabled: false
+    - audienceId: null
+      id: null
+      name: Consent
+      parentDatabaseName: golden_retail
+      parentTableName: enriched_consents
+      parentKey: retail_unification_id
+      foreignKey: retail_unification_id
+      matrixDatabaseName: null
+      matrixTableName: null
+      allColumns: true
+      defaultTimeFilterEnabled: false
+createdAt: ""
+updatedAt: ""
+createdBy:
+    id: ""
+    td_user_id: ""
+    name: ""
+updatedBy:
+    id: ""
+    td_user_id: ""
+    name: ""

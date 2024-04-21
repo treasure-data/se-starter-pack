@@ -13,7 +13,7 @@ create table customers_tmp
    country varchar,
    gender varchar,
    date_of_birth varchar,
-   loyalty_status int,
+   loyalty_status varchar,
   --  customer_makeme_fail varchar,
    time bigint
 );
