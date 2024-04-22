@@ -5,6 +5,7 @@ import segment.python.helper.global_var as g
 
 
 def uploadDataToTD(data, td_write_db, td_write_table, exists="append"):
+    print(g.td_api_key)
     try:
         client = pytd.Client(
             apikey=g.td_api_key,

@@ -3,26 +3,31 @@ time as time,
 retail_unification_id as retail_unification_id
  from enriched_pageviews),
 
-transactions_cte as (select
-retail_unification_id as retail_unification_id,
-order_datetime as order_datetime
- from enriched_order_offline_transactions
- union all
-select
-retail_unification_id as retail_unification_id,
-order_datetime as order_datetime
- from enriched_order_online_transactions),
+transactions_cte as (
+select 
+  *, 
+  date_diff('day', LAG(FROM_UNIXTIME(order_datetime)) OVER (PARTITION BY retail_unification_id ORDER BY order_datetime), FROM_UNIXTIME(order_datetime)) as days_between_transactions
+from 
+(
+  select
+    retail_unification_id as retail_unification_id,
+    order_datetime as order_datetime,
+    amount as amount
+    from enriched_order_offline_transactions
+    union all
+    select
+    retail_unification_id as retail_unification_id,
+    order_datetime as order_datetime,
+    amount as amount
+    from enriched_order_online_transactions
+)
+ ),
 
 email_cte as (select
 time as time,
 retail_unification_id as retail_unification_id,
 activity_type as activity_type
  from enriched_email_activity),
-
-order_details_cte as (select
-retail_unification_id as retail_unification_id,
-retail_price as retail_price
- from enriched_order_details),
 
 offline_transactions_cte as (select
 retail_unification_id as retail_unification_id,
@@ -81,21 +86,18 @@ count(CASE WHEN time >= try_cast(to_unixtime(date_trunc('day', now()) - interval
 pageviews_cte
 group by retail_unification_id),
 
-order_details_attributes as (select
-retail_unification_id,
-sum(CASE WHEN retail_price is not null THEN retail_price ELSE NULL END) AS ltv,
-avg(CASE WHEN retail_price is not null THEN retail_price ELSE NULL END) AS aov
- from
-order_details_cte
-group by retail_unification_id),
-
-transactions_attributes as (select
+transactions_attributes as (
+  select
 retail_unification_id,
 max(CASE WHEN order_datetime is not null THEN order_datetime ELSE NULL END) AS last_purchase_date,
-count(CASE WHEN order_datetime >= try_cast(to_unixtime(date_trunc('day', now()) - interval '30' day) as integer) THEN retail_unification_id ELSE NULL END) AS purchases_last_30days
+count(CASE WHEN order_datetime >= try_cast(to_unixtime(date_trunc('day', now()) - interval '30' day) as integer) THEN retail_unification_id ELSE NULL END) AS purchases_last_30days,
+sum(CASE WHEN amount is not null THEN amount ELSE NULL END) AS ltv,
+avg(CASE WHEN amount is not null THEN amount ELSE NULL END) AS aov,
+ROUND(AVG(days_between_transactions)) as avg_days_between_transactions
  from
 transactions_cte
-group by retail_unification_id),
+group by retail_unification_id
+),
 
 base_1 as (select distinct retail_unification_id from parent_table )
 
@@ -108,12 +110,12 @@ coalesce(last_store_visit, null) as last_store_visit,
 coalesce(ltv, null) as ltv,
 coalesce(preferred_season, null) as preferred_season,
 coalesce(purchases_last_30days, null) as purchases_last_30days,
-coalesce(web_visits_last_7days, null) as web_visits_last_7days
+coalesce(web_visits_last_7days, null) as web_visits_last_7days,
+coalesce(avg_days_between_transactions, null) as avg_days_between_transactions
 from base_1
 left join transactions_attributes ON base_1.retail_unification_id = transactions_attributes.retail_unification_id
 left join preferred_season_attributes ON base_1.retail_unification_id = preferred_season_attributes.retail_unification_id
 left join email_attributes ON base_1.retail_unification_id = email_attributes.retail_unification_id
 left join pageviews_attributes ON base_1.retail_unification_id = pageviews_attributes.retail_unification_id
 left join offline_transactions_attributes ON base_1.retail_unification_id = offline_transactions_attributes.retail_unification_id
-left join order_details_attributes ON base_1.retail_unification_id = order_details_attributes.retail_unification_id
 left join email_attributes_2 ON base_1.retail_unification_id = email_attributes_2.retail_unification_id;

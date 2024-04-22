@@ -10,10 +10,10 @@ _export:
 #   daily>: 00:00:00
 
 ##################### ERROR EMAIL NOTIFICATION ############################  
-_error:
-  mail>: body.txt
-  subject: IDU Dashboard Workflow Failed - Client Name
-  to: ['ps-ml-analytics@treasure-data.com']
+# _error:
+#   mail>: body.txt
+#   subject: IDU Dashboard Workflow Failed - Client Name
+#   to: ['ps-ml-analytics@treasure-data.com']
 
 ############## IDU MAIN STATS Data Prep ##########################################
 +run_main_data_prep:

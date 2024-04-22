@@ -4,7 +4,7 @@ src: src
 stg: stg
 sub: retail
 uni: cdp_unification
-gld: golden
+gld: gld
 meta: retail_starter_pack
 run_all: true
 

@@ -9,4 +9,4 @@ _export:
       http>: "${td.each.url}/audiences/${td.each.audience_id}/run"
       method: POST
       headers:
-        - authorization: "TD1 ${secret:secret_key}"
+        - authorization: "${secret:td.apikey}"
