@@ -86,7 +86,7 @@ _export:
     http>: "https://${workflow_api_url}/api/attempts?project=${unification_project}&workflow=${unification_workflow}&include_retried=true&page_size=${num_runs}"
     method: GET
     headers:
-      - Authorization: "TD1 ${secret:secret_key}"
+      - Authorization: "TD1 ${secret:td.apikey}"
     store_content: true
 
   +save_attempts_info:

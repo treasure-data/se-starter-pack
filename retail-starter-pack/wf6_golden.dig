@@ -23,4 +23,5 @@ _export:
 
 +attributes:
   td>: golden/queries/attributes.sql
+  database: ${gld}_${sub}
   create_table: ${gld}_${sub}.derived_attributes

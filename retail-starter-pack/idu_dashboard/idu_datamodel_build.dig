@@ -14,7 +14,7 @@ _export:
   http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds"
   method: POST
   headers:
-    - authorization: "TD1 ${secret:secret_key}"
+    - authorization: "${secret:td.apikey}"
     - cache-control: "no-cache"
     - accept: "application/json"
     - content-type: "application/json"

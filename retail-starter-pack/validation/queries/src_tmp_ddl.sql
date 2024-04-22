@@ -73,6 +73,7 @@ create table order_online_transactions_tmp (
    guest_checkout_flag int,
    order_create_datetime bigint,
    projected_delivery_date bigint,
+   amount double,
    time bigint
 );
 
@@ -92,6 +93,7 @@ create table order_offline_transactions_tmp (
    store_state varchar,
    store_postal_code varchar,
    store_country varchar,
+   amount double, 
    time bigint
 );
 

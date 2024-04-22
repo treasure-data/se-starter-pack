@@ -36,7 +36,7 @@ _export:
         +create_datamodel_for_the_first_time:   
             py>: python_files.create_datamodel.create_model
             _env:
-              TD_API_KEY: '${secret:secret_key}'
+              TD_API_KEY: '${secret:td_apikey}'
               TD_API_SERVER: '${api_endpoint}'
               SINK_DB: '${sink_database}'
               OUTPUT_TABLE: '${model_config_table}'
@@ -55,7 +55,7 @@ _export:
     +create_datamodel_for_the_first_time:   
         py>: python_files.create_datamodel.create_model
         _env:
-          TD_API_KEY: '${secret:secret_key}'
+          TD_API_KEY: '${secret:td_apikey}'
           TD_API_SERVER: '${api_endpoint}'
           SINK_DB: '${sink_database}'
           OUTPUT_TABLE: '${model_config_table}'
