@@ -5,6 +5,7 @@ stg: stg
 sub: retail
 uni: cdp_unification
 gld: gld
+ana: analytics
 meta: retail_starter_pack
 run_all: true
 

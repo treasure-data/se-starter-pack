@@ -38,7 +38,20 @@ _export:
       _env:
         TD_SITE: ${site}
         TD_API_KEY: ${secret:td_apikey}
-
+    +analytics:
+      _export:
+        database: ${ana}_${sub}
+        src_database: ${gld}_${sub}
+      +prepare_db:
+        td_ddl>:
+        create_databases: ["${ana}_${sub}"]
+      +sales_trends:
+        td>: analytics/queries/sales_trends.sql
+        create_table: ${ana}_${sub}.sales_trends
+      +sales_market_basket_analysis:
+        td>: analytics/queries/sales_market_basket_analysis.sql
+        engine: hive
+        create_table: ${ana}_${sub}.sales_market_basket_analysis
 +clean_log:
   td>: segment/queries/cleanup_log.sql
 
