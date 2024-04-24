@@ -24,7 +24,7 @@ product_counts AS (
     GROUP BY
         trfmd_product_name
 )
-INSERT OVERWRITE TABLE ${ana}_${sub}.sales_market_basket_analysis
+-- DIGDAG_INSERT_LINE
 SELECT
     pc.product1,
     pc.product2,
