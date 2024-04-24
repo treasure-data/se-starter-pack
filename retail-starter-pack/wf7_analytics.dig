@@ -33,4 +33,4 @@ _export:
     td>: analytics/queries/sales_market_basket_analysis.sql
     engine: hive
     create_table: ${ana}_${sub}.recent_item_contacts
-        database: ${gld}_${sub} #query fails to get the source tables otherwise
+    database: ${gld}_${sub} #query fails to get the source tables otherwise
