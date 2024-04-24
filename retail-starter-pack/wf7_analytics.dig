@@ -11,7 +11,7 @@ _export:
   +sales_trends:
     +check_st_exists:
       td>:
-        data: "select count(table_name) cnt from information_schema.tables where table_schema = '${database}' and table_name='sales_trends'"
+        data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='sales_trends'"
       store_last_results: true
     +run_sales_trends:
       if>: ${td.last_results.cnt > 0}
