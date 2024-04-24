@@ -52,6 +52,7 @@ _export:
         td>: analytics/queries/sales_market_basket_analysis.sql
         engine: hive
         create_table: ${ana}_${sub}.sales_market_basket_analysis
+
 +clean_log:
   td>: segment/queries/cleanup_log.sql
 
