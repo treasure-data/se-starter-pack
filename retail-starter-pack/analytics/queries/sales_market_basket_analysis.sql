@@ -24,8 +24,9 @@ product_counts AS (
     GROUP BY
         trfmd_product_name
 )
+INSERT OVERWRITE TABLE ${ana}_${sub}.sales_market_basket_analysis
 SELECT
-    pc.product1,sales_trends,
+    pc.product1,
     pc.product2,
     pc.order_count,
     CAST(pc.order_count as DOUBLE) / CAST(t.total_count as DOUBLE) AS support,
@@ -41,4 +42,4 @@ JOIN
 CROSS JOIN
     total_orders t
 ORDER BY
-    order_count DESC;
+    order_count DESC

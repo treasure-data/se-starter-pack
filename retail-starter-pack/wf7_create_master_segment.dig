@@ -46,12 +46,33 @@ _export:
         td_ddl>:
         create_databases: ["${ana}_${sub}"]
       +sales_trends:
-        td>: analytics/queries/sales_trends.sql
-        create_table: ${ana}_${sub}.sales_trends
+        +check_st_exists:
+          td>:
+            data: "select count(table_name) cnt from information_schema.tables where table_schema = '${database}' and table_name='sales_trends'"
+          store_last_results: true
+        +run_sales_trends:
+          if>: ${td.last_results.cnt > 0}
+          _do:
+            +drop_tmp:
+              td_ddl>:
+              drop_tables: ["sales_trends_tmp"]
+            +create_tmp:
+              td>:
+              query: "create table sales_trends_tmp as select * from sales_trends"
+            +update_st:
+              td>: analytics/queries/sales_trends_update.sql
+              create_table: ${ana}_${sub}.sales_trends
+          _else_do:
+            +create_st:
+              td>: analytics/queries/sales_trends_create.sql
+              create_table: ${ana}_${sub}.sales_trends
       +sales_market_basket_analysis:
-        td>: analytics/queries/sales_market_basket_analysis.sql
-        engine: hive
-        create_table: ${ana}_${sub}.sales_market_basket_analysis
+        +create_table:
+          td>: analytics/queries/create_sales_market_basket_analysis.sql
+        +insert:
+          td>: analytics/queries/sales_market_basket_analysis.sql
+          engine: hive
+          database: ${gld}_${sub} #query fails to get the source tables otherwise
 
 +clean_log:
   td>: segment/queries/cleanup_log.sql

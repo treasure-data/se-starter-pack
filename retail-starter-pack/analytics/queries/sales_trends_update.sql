@@ -1,8 +1,3 @@
-drop table if exists sales_trends_tmp;
-
-create table sales_trends_tmp as
-select * from sales_trends;
-
 select  date,
 aov_first_quartile,
 aov_median,
