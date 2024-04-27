@@ -1,0 +1,12 @@
+###Database created by unification workflow where the id_lookup and key_stats tables live
+source_db: analytics_retail
+
+##Reporting database (output DB where idu_dashboard tables are written) --> sink_database should be SAME as reporting_db
+reporting_db: retail_starter_pack_analytics_reporting
+sink_database: retail_starter_pack_analytics_reporting
+
+##Global Prams
+api_endpoint: api.treasuredata.com
+workflow_api_url: api-workflow.treasuredata.com     ##- use 'api-workflow.eu01.treasuredata.com' for EU Region
+model_config_table: 'analytics_datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
+create_dashboard: 'yes'
