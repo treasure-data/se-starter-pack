@@ -10,7 +10,6 @@ import json
 apikey = os.environ["TD_API_KEY"]
 tdserver = os.environ["TD_API_SERVER"]
 sink_database = os.environ["SINK_DB"]
-source_database = os.environ["SOURCE_DB"]
 output_table = os.environ["OUTPUT_TABLE"]
 
 # apikey = "10602/1a46f12b2af63b743cbf2185edadf5135b57c6b6"
