@@ -3,6 +3,11 @@ _export:
   td:
     database: ${reporting_db}
 
+############## CREATE REPORTING DATABASE IF NOT EXIST ###############################
++create_sink_database:
+  td_ddl>:
+  create_databases: ["${sink_database}"]
+
 ############## DATAMODEL BUILDOUT & UPDATE #########################################
 +check_if_need_to_create_dashboard:
   if>: ${create_dashboard=='yes'}
