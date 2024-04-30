@@ -3,7 +3,7 @@ _export:
 
 ##### Create Datamodel for the first time
 +create_datamodel:
-    py>: python.create_datamodel.create_model
+    py>: python.create_datamodel.main
     _env:
       TD_API_KEY: '${secret:td_apikey}'
       TD_API_SERVER: '${api_endpoint}'
