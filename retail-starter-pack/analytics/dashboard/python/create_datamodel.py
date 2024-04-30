@@ -12,11 +12,6 @@ tdserver = os.environ["TD_API_SERVER"]
 sink_database = os.environ["SINK_DB"]
 output_table = os.environ["OUTPUT_TABLE"]
 
-# apikey = "10602/1a46f12b2af63b743cbf2185edadf5135b57c6b6"
-# tdserver = "api.treasuredata.com"
-# sink_database = "analytics_retail"
-# output_table = "analytics_datamodel_build_history"
-
 
 ### --Function to create datamodel via API below
 def create_model(config, headers):
