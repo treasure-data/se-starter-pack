@@ -221,8 +221,3 @@ def main(filename):
                 f"Datamodel with name: {model_name} will be created for the first time"
             )
             create_model(mn, headers)
-
-
-# main(
-#     "/Users/biswadippaul/Documents/TreasureData/github/se-starter-pack-retail/retail-starter-pack/analytics/dashboard/config/config.json.bkp"
-# )
