@@ -34,3 +34,7 @@ _export:
     engine: hive
     create_table: ${ana}_${sub}.recent_item_contacts
     database: ${gld}_${sub} #query fails to get the source tables otherwise
+  +web_analytics:
+    td>: analytics/queries/web_analytics.sql
+    create_table: ${ana}_${sub}.web_analytics
+    database: ${gld}_${sub} #query fails to get the source tables otherwise

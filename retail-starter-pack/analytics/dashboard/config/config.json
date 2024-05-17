@@ -12,22 +12,12 @@
                     "name": "sales_trends"
                 }
             ],
-            "shared_user_list": [
-                "biswadip.paul+demodata@treasure-data.com"
-            ],
+            "shared_user_list": ["biswadip.paul+demodata@treasure-data.com"],
             "change_schema_cols": {
-                "date": [
-                    "ENTER_NAME"
-                ],
-                "text": [
-                    "ENTER_NAME"
-                ],
-                "float": [
-                    "ENTER_NAME"
-                ],
-                "bigint": [
-                    "ENTER_NAME"
-                ]
+                "date": ["ENTER_NAME"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
             },
             "join_relations": {
                 "pairs": []
@@ -46,18 +36,34 @@
                 }
             ],
             "change_schema_cols": {
-                "date": [
-                    "ENTER_NAME"
-                ],
-                "text": [
-                    "ENTER_NAME"
-                ],
-                "float": [
-                    "ENTER_NAME"
-                ],
-                "bigint": [
-                    "ENTER_NAME"
-                ]
+                "date": ["ENTER_NAME"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
+            },
+            "join_relations": {
+                "pairs": []
+            },
+            "shared_user_list": [
+                "biswadip.paul+demodata@treasure-data.com",
+                "charles.vatin+demodata@treasure-data.com",
+                "nidhi.gotgi+demodata@treasure-data.com",
+                "vishal.patel+demodata@treasure-data.com"
+            ]
+        },
+        {
+            "model_name": "Retail Value Accelerator - Web Analytics",
+            "model_tables": [
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics"
+                }
+            ],
+            "change_schema_cols": {
+                "date": ["ENTER_NAME"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
             },
             "join_relations": {
                 "pairs": []
