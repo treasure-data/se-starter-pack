@@ -10,7 +10,7 @@ _export:
   database: ${meta}
   td>: "queries/log_tbl.sql"
 
-+empty_log_table:
++empty_log_table: 
   if>: ${run_all==true}
   _do:
     +del_log:
