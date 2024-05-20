@@ -68,7 +68,7 @@ _export:
     workflow_to_run: wf9_create_segment
   call>: wf2_run_workflow_with_logging.dig
 
-#Send mail success
+# Send mail success
 +send_success_alert:
   for_each>:
     email: ${email_ids}
