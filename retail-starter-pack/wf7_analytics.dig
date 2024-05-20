@@ -38,3 +38,20 @@ _export:
     td>: analytics/queries/web_analytics.sql
     create_table: ${ana}_${sub}.web_analytics
     database: ${gld}_${sub} #query fails to get the source tables otherwise
+  +web_analytics_agg:
+      +check_wag_exists:
+        td>:
+          data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='web_analytics_agg'"
+        store_last_results: true
+      +run_sales_trends:
+        if>: ${td.last_results.cnt > 0}
+        _do:
+          +create_wag:
+            td>: analytics/queries/web_analytics_agg.sql
+            create_table: ${ana}_${sub}.web_analytics_agg
+            database: ${gld}_${sub} #query fails to get the source tables otherwise
+        _else_do:
+          +insert_wag:
+            td>: analytics/queries/web_analytics_agg.sql
+            insert_into: ${ana}_${sub}.web_analytics_agg
+            database: ${gld}_${sub}
