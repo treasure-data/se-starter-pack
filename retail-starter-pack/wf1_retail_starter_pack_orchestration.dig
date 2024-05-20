@@ -5,7 +5,7 @@
 _export:
   !include : 'config/src_params.yml'
   !include : 'config/email_ids.yml'
-
+ 
 +prepare_log_table:
   database: ${meta}
   td>: "queries/log_tbl.sql"

@@ -23,7 +23,7 @@ product_counts AS (
         ${src_database}.enriched_order_details
     GROUP BY
         trfmd_product_name
-)
+) 
 -- DIGDAG_INSERT_LINE
 SELECT
     pc.product1,

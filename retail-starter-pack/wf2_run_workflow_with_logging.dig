@@ -13,7 +13,7 @@ _export:
       td>:
       query: "select case when status = 'success' or status is null then 1 else 0 end status  from log_tbl where step_name = '${step_name}' order by time desc"
       store_last_results: true
-
+ 
     +check_to_run:
       if>: ${td.last_results.status==true}
       _do:
