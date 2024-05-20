@@ -1,6 +1,6 @@
 _export:
   !include : 'config/src_params.yml'
-
+##
 +create_tables:
   td_ddl>:
   empty_tables: [ "${segment.tables.segment_logs}"]
