@@ -25,3 +25,9 @@ _export:
   td>: golden/queries/attributes.sql
   database: ${gld}_${sub}
   create_table: ${gld}_${sub}.derived_attributes
+
++consent_transformation:
+  td>: golden/queries/consent.sql
+  database: ${gld}_${sub}
+  create_table: ${gld}_${sub}.consents
+
