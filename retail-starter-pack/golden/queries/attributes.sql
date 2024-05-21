@@ -105,7 +105,38 @@ transactions_cte
 group by retail_unification_id
 ),
 
-base_1 as (select distinct retail_unification_id from parent_table )
+base_1 as (select distinct retail_unification_id from parent_table ),
+
+purchase_counts as (
+  select retail_unification_id
+    ,count(1) as total_purchases
+    ,min(order_datetime) as first_purchase
+    ,max(order_datetime) as last_purchase
+  from 
+    (select retail_unification_id
+      ,trfmd_order_datetime_unix as order_datetime
+    from enriched_order_online_transactions
+    union all
+    select retail_unification_id
+      ,trfmd_order_datetime_unix as order_datetime
+    from enriched_order_offline_transactions)
+  group by retail_unification_id
+),
+purchase_interval as (
+  select retail_unification_id
+    ,total_purchases
+    ,DATE_DIFF('day', from_unixtime(last_purchase), CURRENT_TIMESTAMP) as time_since_last_purchase
+    ,DATE_DIFF('day', from_unixtime(first_purchase), from_unixtime(last_purchase)) AS purchase_period
+    from purchase_counts
+    where total_purchases > 2
+),
+purchase_average as (
+  select retail_unification_id
+    ,AVG(purchase_period/(total_purchases-1)) as average_purchase
+    ,max(time_since_last_purchase) as time_since_last_purchase
+  from purchase_interval
+  group by retail_unification_id
+)
 
 select coalesce(base_1.retail_unification_id, 'no_retail_unification_id') as retail_unification_id, coalesce(aov, null) as aov,
 case when coalesce(email_hardbounce, null) > 0 then 'True' else 'False' end as email_hardbounce,
@@ -117,11 +148,13 @@ coalesce(ltv, null) as ltv,
 coalesce(preferred_season, null) as preferred_season,
 coalesce(purchases_last_30days, null) as purchases_last_30days,
 coalesce(web_visits_last_7days, null) as web_visits_last_7days,
-coalesce(avg_days_between_transactions, null) as avg_days_between_transactions
+coalesce(avg_days_between_transactions, null) as avg_days_between_transactions,
+case when time_since_last_purchase > (average_purchase + ceiling(0.1*average_purchase)) then 'Yes' ELSE 'No' END as churn_risk
 from base_1
 left join transactions_attributes ON base_1.retail_unification_id = transactions_attributes.retail_unification_id
 left join preferred_season_attributes ON base_1.retail_unification_id = preferred_season_attributes.retail_unification_id
 left join email_attributes ON base_1.retail_unification_id = email_attributes.retail_unification_id
 left join pageviews_attributes ON base_1.retail_unification_id = pageviews_attributes.retail_unification_id
 left join offline_transactions_attributes ON base_1.retail_unification_id = offline_transactions_attributes.retail_unification_id
-left join email_attributes_2 ON base_1.retail_unification_id = email_attributes_2.retail_unification_id;
+left join email_attributes_2 ON base_1.retail_unification_id = email_attributes_2.retail_unification_id
+left join purchase_average ON base_1.retail_unification_id = purchase_average.retail_unification_id;
