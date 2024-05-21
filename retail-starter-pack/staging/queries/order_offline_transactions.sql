@@ -1,5 +1,7 @@
 SELECT
 *,
+-- 
+TD_TIME_PARSE(order_datetime) as trfmd_order_datetime_unix,
 --
 case
   when nullif(lower(ltrim(rtrim("store_postal_code"))), 'null') is null then null
@@ -20,10 +22,10 @@ case
 end   AS  "trfmd_store_state",
 --
 case
-  when month(from_unixtime(order_datetime)) in (12, 1, 2) then 'Winter'
-  when month(from_unixtime(order_datetime)) in (3, 4, 5) then 'Spring'
-  when month(from_unixtime(order_datetime)) in (6, 7, 8) then 'Summer'
-  when month(from_unixtime(order_datetime)) in (9, 10, 11) then 'Fall'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (12, 1, 2) then 'Winter'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (3, 4, 5) then 'Spring'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (6, 7, 8) then 'Summer'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (9, 10, 11) then 'Fall'
   else null
 end   AS  "trfmd_season",
 --

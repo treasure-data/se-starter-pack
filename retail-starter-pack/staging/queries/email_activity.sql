@@ -1,6 +1,8 @@
 SELECT
 *,
 --
+TD_TIME_PARSE(activity_date) as trfmd_activity_date_unix, 
+--
 cast(COALESCE(regexp_like( "email", '^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z0-9]{2,})$'), false) as varchar)  AS  "valid_email_flag",
 --
 case
