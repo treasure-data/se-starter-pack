@@ -77,9 +77,9 @@ _export:
             +insert_sub_agg:
               td>: analytics/queries/web_analytics_from_tmp.sql
               insert_into: ${ana}_${sub}.web_analytics_${parray}_agg
-              database: ${gld}_${sub} #query fails to get the source tables otherwise
+              database: ${ana}_${sub} #query fails to get the source tables otherwise
           _else_do:
             +create_sub_agg:
               td>: analytics/queries/web_analytics_from_tmp.sql
               create_table: ${ana}_${sub}.web_analytics_${parray}_agg
-              database: ${gld}_${sub} #query fails to get the source tables otherwise
+              database: ${ana}_${sub} #query fails to get the source tables otherwise
