@@ -110,16 +110,9 @@ base_1 as (select distinct retail_unification_id from parent_table ),
 purchase_counts as (
   select retail_unification_id
     ,count(1) as total_purchases
-    ,min(order_datetime) as first_purchase
-    ,max(order_datetime) as last_purchase
-  from 
-    (select retail_unification_id
-      ,trfmd_order_datetime_unix as order_datetime
-    from enriched_order_online_transactions
-    union all
-    select retail_unification_id
-      ,trfmd_order_datetime_unix as order_datetime
-    from enriched_order_offline_transactions)
+    ,min(trfmd_order_datetime_unix) as first_purchase
+    ,max(trfmd_order_datetime_unix) as last_purchase
+  from transactions_cte
   group by retail_unification_id
 ),
 purchase_interval as (
