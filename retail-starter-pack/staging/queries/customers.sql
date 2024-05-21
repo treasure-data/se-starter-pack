@@ -38,7 +38,7 @@ case
   else array_join((transform((split(lower(trim("last_name")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_last_name",
 --
-cast(COALESCE(regexp_like( "email", '^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z0-9]{2,})$'), false) as varchar)  AS  "valid_email_flag",
+cast(COALESCE(regexp_like( "email", '^(?=.{1,256})(?=.{1,64}@.{1,255}$)[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$'), false) as varchar)  AS  "valid_email_flag",
 --
 case
   when nullif(lower(ltrim(rtrim("loyalty_status"))), 'null') is null then null
@@ -75,7 +75,7 @@ date_diff('year', date_parse(date_of_birth, '%Y-%m-%d'), current_date)   AS  "tr
 case
   when nullif(lower(ltrim(rtrim("email"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("email"))), '') is null then null
-  else lower(ltrim(rtrim("email")))
+  else lower(ltrim(rtrim(regexp_replace("email", '[^a-zA-Z0-9.@_+-]', ''))))
 end   AS  "trfmd_email"
 
 FROM
