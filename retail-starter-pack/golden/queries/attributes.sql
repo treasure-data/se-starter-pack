@@ -1,3 +1,9 @@
+-- project_id: 1352842
+-- project_name: retail-starter-pack_qa_br-timestamps
+-- workflow_name: wf1_retail_starter_pack_orchestration
+-- session_id: 225355877
+-- attempt_id: 1161502005
+-- task_name: +wf1_retail_starter_pack_orchestration+golden^sub+src_checks^sub+run_workflow^sub+attributes
 with pageviews_cte as (select
 time as time,
 retail_unification_id as retail_unification_id
@@ -6,32 +12,32 @@ retail_unification_id as retail_unification_id
 transactions_cte as (
 select 
   *, 
-  date_diff('day', LAG(FROM_UNIXTIME(order_datetime)) OVER (PARTITION BY retail_unification_id ORDER BY order_datetime), FROM_UNIXTIME(order_datetime)) as days_between_transactions
+  date_diff('day', LAG(FROM_UNIXTIME(trfmd_order_datetime_unix)) OVER (PARTITION BY retail_unification_id ORDER BY trfmd_order_datetime_unix), FROM_UNIXTIME(trfmd_order_datetime_unix)) as days_between_transactions
 from 
 (
   select
     retail_unification_id as retail_unification_id,
-    order_datetime as order_datetime,
+    trfmd_order_datetime_unix as trfmd_order_datetime_unix,
     amount as amount
     from enriched_order_offline_transactions
     union all
     select
     retail_unification_id as retail_unification_id,
-    order_datetime as order_datetime,
+    trfmd_order_datetime_unix as trfmd_order_datetime_unix,
     amount as amount
     from enriched_order_online_transactions
 )
  ),
 
 email_cte as (select
-time as time,
+trfmd_activity_date_unix as trfmd_activity_date_unix,
 retail_unification_id as retail_unification_id,
 activity_type as activity_type
  from enriched_email_activity),
 
 offline_transactions_cte as (select
 retail_unification_id as retail_unification_id,
-order_datetime as order_datetime
+trfmd_order_datetime_unix as trfmd_order_datetime_unix
  from enriched_order_offline_transactions),
 
 preferred_season_cte as (select
@@ -42,7 +48,7 @@ preferred_season_cnt as preferred_season_cnt
 
 email_attributes as (select
 retail_unification_id,
-max(CASE WHEN lower(activity_type) = 'email_sent' THEN time ELSE NULL END) AS last_email_date,
+max(CASE WHEN lower(activity_type) = 'email_sent' THEN trfmd_activity_date_unix ELSE NULL END) AS last_email_date_unix,
 count(CASE WHEN lower(activity_type) = 'email_hardbounced' THEN activity_type ELSE NULL END) AS email_hardbounce
  from
 email_cte
@@ -54,7 +60,7 @@ activity_type as email_softbounce_gt5
 from (select
 retail_unification_id,
 activity_type,
-row_number() over (partition by retail_unification_id order by time desc) as rnk
+row_number() over (partition by retail_unification_id order by trfmd_activity_date_unix desc) as rnk
 from
 email_cte
 where lower(activity_type) = 'email_softbounced') x
@@ -62,7 +68,7 @@ where rnk = 6),
 
 offline_transactions_attributes as (select
 retail_unification_id,
-max(CASE WHEN order_datetime is not null THEN order_datetime ELSE NULL END) AS last_store_visit
+max(CASE WHEN trfmd_order_datetime_unix is not null THEN trfmd_order_datetime_unix ELSE NULL END) AS last_store_visit_unix
  from
 offline_transactions_cte
 group by retail_unification_id),
@@ -89,8 +95,8 @@ group by retail_unification_id),
 transactions_attributes as (
   select
 retail_unification_id,
-max(CASE WHEN order_datetime is not null THEN order_datetime ELSE NULL END) AS last_purchase_date,
-count(CASE WHEN order_datetime >= try_cast(to_unixtime(date_trunc('day', now()) - interval '30' day) as integer) THEN retail_unification_id ELSE NULL END) AS purchases_last_30days,
+max(CASE WHEN trfmd_order_datetime_unix is not null THEN trfmd_order_datetime_unix ELSE NULL END) AS last_purchase_date_unix,
+count(CASE WHEN trfmd_order_datetime_unix >= try_cast(to_unixtime(date_trunc('day', now()) - interval '30' day) as integer) THEN retail_unification_id ELSE NULL END) AS purchases_last_30days,
 sum(CASE WHEN amount is not null THEN amount ELSE NULL END) AS ltv,
 avg(CASE WHEN amount is not null THEN amount ELSE NULL END) AS aov,
 ROUND(AVG(days_between_transactions)) as avg_days_between_transactions
@@ -104,9 +110,9 @@ base_1 as (select distinct retail_unification_id from parent_table )
 select coalesce(base_1.retail_unification_id, 'no_retail_unification_id') as retail_unification_id, coalesce(aov, null) as aov,
 case when coalesce(email_hardbounce, null) > 0 then 'True' else 'False' end as email_hardbounce,
 case when coalesce(email_softbounce_gt5, null) = 'email_softbounced' then 'True' else 'False' end as email_softbounce_gt5,
-coalesce(last_email_date, null) as last_email_date,
-coalesce(last_purchase_date, null) as last_purchase_date,
-coalesce(last_store_visit, null) as last_store_visit,
+coalesce(last_email_date_unix, null) as last_email_date_unix,
+coalesce(last_purchase_date_unix, null) as last_purchase_date_unix,
+coalesce(last_store_visit_unix, null) as last_store_visit_unix,
 coalesce(ltv, null) as ltv,
 coalesce(preferred_season, null) as preferred_season,
 coalesce(purchases_last_30days, null) as purchases_last_30days,
