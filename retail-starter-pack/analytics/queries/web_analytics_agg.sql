@@ -17,11 +17,11 @@ total_sales as (
   select sum(amount) as amount from (
       select sum(amount) as amount
         from enriched_order_offline_transactions, cal
-        where TD_TIME_RANGE(order_datetime, st_dt , end_dt)
+        where TD_TIME_RANGE(trfmd_order_datetime_unix, st_dt , end_dt)
         union all
         select sum(amount) as amount
         from enriched_order_online_transactions, cal
-        where TD_TIME_RANGE(order_datetime, st_dt , end_dt)
+        where TD_TIME_RANGE(trfmd_order_datetime_unix, st_dt , end_dt)
   )
 )
 ),

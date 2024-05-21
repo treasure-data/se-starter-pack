@@ -64,21 +64,21 @@ _export:
       for_each>:
         parray: ["td_url", "utm_source", "utm_medium", "utm_campaign", "utm_content", "search_engine", "country_by_ip", "subdivision_by_ip_list", "city_by_ip", "connectiontype_by_ip", "domain_by_ip", "device_type", "os_name", "browser_name"]
       _do:
-      +check_sub_agg_exists:
-        td>:
-          data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='web_analytics_${parray}_agg'"
-        store_last_results: true
-      +run_sub_agg:
-        if>: ${td.last_results.cnt > 0}
-        _do:
-          _export:
-            gvar: ${parray}
-            intablename: web_analytics_agg_tmp
-          +create_sub_agg:
-            td>: analytics/queries/web_analytics_from_tmp.sql
-            create_table: ${ana}_${sub}.web_analytics_${parray}_agg
-            database: ${gld}_${sub} #query fails to get the source tables otherwise
-          +insert_sub_agg:
-            td>: analytics/queries/web_analytics_from_tmp.sql
-            insert_into: ${ana}_${sub}.web_analytics_${parray}_agg
-            database: ${gld}_${sub} #query fails to get the source tables otherwise
+        +check_sub_agg_exists:
+          td>:
+            data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='web_analytics_${parray}_agg'"
+          store_last_results: true
+        +run_sub_agg:
+          if>: ${td.last_results.cnt > 0}
+          _do:
+            _export:
+              gvar: ${parray}
+              intablename: web_analytics_agg_tmp
+            +create_sub_agg:
+              td>: analytics/queries/web_analytics_from_tmp.sql
+              create_table: ${ana}_${sub}.web_analytics_${parray}_agg
+              database: ${gld}_${sub} #query fails to get the source tables otherwise
+            +insert_sub_agg:
+              td>: analytics/queries/web_analytics_from_tmp.sql
+              insert_into: ${ana}_${sub}.web_analytics_${parray}_agg
+              database: ${gld}_${sub} #query fails to get the source tables otherwise
