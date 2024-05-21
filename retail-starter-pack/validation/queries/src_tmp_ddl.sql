@@ -50,12 +50,13 @@ create table pageviews_tmp
 drop table if exists email_activity_tmp;
 
 create table  email_activity_tmp (
-   campaign_id varchar,
-   campaign_name varchar,
-   email varchar,
-   unique_guest_id varchar,
-   activity_type varchar,
-   time bigint
+  activity_date varchar,
+  campaign_id varchar,
+  campaign_name varchar,
+  email varchar,
+  unique_guest_id varchar,
+  activity_type varchar,
+  time bigint
 );
 
 drop table if exists order_online_transactions_tmp;
@@ -64,15 +65,15 @@ create table order_online_transactions_tmp (
    email varchar,
    phone_number varchar,
    order_no varchar,
-   order_datetime bigint,
+   order_datetime varchar,
    order_type varchar,
    payment_method varchar,
    expidated_ship_flag int,
    promo_flag int,
    markdown_flag int,
    guest_checkout_flag int,
-   order_create_datetime bigint,
-   projected_delivery_date bigint,
+   order_create_datetime varchar,
+   projected_delivery_date varchar,
    amount double,
    time bigint
 );
@@ -84,7 +85,7 @@ create table order_offline_transactions_tmp (
    email varchar,
    phone_number varchar,  
    order_no varchar,
-   order_datetime bigint,
+   order_datetime varchar,
    payment_method varchar,
    promo_flag int,
    store_id varchar,

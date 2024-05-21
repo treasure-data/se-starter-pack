@@ -1,11 +1,15 @@
 SELECT
 *,
 --
+TD_TIME_PARSE(order_datetime) as trfmd_order_datetime_unix,
+TD_TIME_PARSE(order_create_datetime) as trfmd_order_create_datetime_unix,
+TD_TIME_PARSE(projected_delivery_date) as trfmd_projected_delivery_date_unix,
+--
 case
-  when month(from_unixtime(order_datetime)) in (12, 1, 2) then 'Winter'
-  when month(from_unixtime(order_datetime)) in (3, 4, 5) then 'Spring'
-  when month(from_unixtime(order_datetime)) in (6, 7, 8) then 'Summer'
-  when month(from_unixtime(order_datetime)) in (9, 10, 11) then 'Fall'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (12, 1, 2) then 'Winter'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (3, 4, 5) then 'Spring'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (6, 7, 8) then 'Summer'
+  when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (9, 10, 11) then 'Fall'
   else null
 end   AS  "trfmd_season",
 --
