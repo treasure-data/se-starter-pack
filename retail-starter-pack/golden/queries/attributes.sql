@@ -96,6 +96,8 @@ transactions_attributes as (
   select
 retail_unification_id,
 max(CASE WHEN trfmd_order_datetime_unix is not null THEN trfmd_order_datetime_unix ELSE NULL END) AS last_purchase_date_unix,
+count(case when trfmd_order_datetime_unix is not null then retail_unification_id ELSE null END) as total_purchases,
+min(CASE WHEN trfmd_order_datetime_unix is not null THEN trfmd_order_datetime_unix ELSE NULL END) as first_purchase_date_unix,
 count(CASE WHEN trfmd_order_datetime_unix >= try_cast(to_unixtime(date_trunc('day', now()) - interval '30' day) as integer) THEN retail_unification_id ELSE NULL END) AS purchases_last_30days,
 sum(CASE WHEN amount is not null THEN amount ELSE NULL END) AS ltv,
 avg(CASE WHEN amount is not null THEN amount ELSE NULL END) AS aov,
@@ -107,20 +109,12 @@ group by retail_unification_id
 
 base_1 as (select distinct retail_unification_id from parent_table ),
 
-purchase_counts as (
-  select retail_unification_id
-    ,count(1) as total_purchases
-    ,min(trfmd_order_datetime_unix) as first_purchase
-    ,max(trfmd_order_datetime_unix) as last_purchase
-  from transactions_cte
-  group by retail_unification_id
-),
 purchase_interval as (
   select retail_unification_id
     ,total_purchases
-    ,DATE_DIFF('day', from_unixtime(last_purchase), CURRENT_TIMESTAMP) as time_since_last_purchase
-    ,DATE_DIFF('day', from_unixtime(first_purchase), from_unixtime(last_purchase)) AS purchase_period
-    from purchase_counts
+    ,DATE_DIFF('day', from_unixtime(last_purchase_date_unix), CURRENT_TIMESTAMP) as time_since_last_purchase
+    ,DATE_DIFF('day', from_unixtime(first_purchase_date_unix), from_unixtime(last_purchase_date_unix)) AS purchase_period
+    from transactions_attributes
     where total_purchases > 2
 ),
 purchase_average as (
