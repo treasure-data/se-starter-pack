@@ -1,0 +1,65 @@
+type: segment-batch
+id: null
+relationships:
+  parentFolder:
+    data:
+      id: ${rootfolder_id}
+      type: folder-segment
+attributes:
+  - audienceId: ${audience_id}
+    countPopulation: true
+    name: Media Suppression test
+    rule:
+      type: And
+      conditions:
+      - conditions:
+        - type: Value
+          leftValue:
+            aggregation:
+              type: Count
+            source:
+              name: behavior_enriched_order_online_transactions
+            filter:
+              type: And
+              conditions:
+              - type: Column
+                column: timestamp
+                operator:
+                  type: TimeWithinPast
+                  unit: day
+                  value: 30
+                  not: false
+                visibility: clear
+          operator:
+            not: false
+            rightValue: 1
+            type: GreaterEqual
+          exclude: false
+        type: And
+        description: ''
+      - conditions:
+        - type: Value
+          leftValue:
+            aggregation:
+              type: Count
+            source:
+              name: behavior_enriched_order_offline_transactions
+            filter:
+              type: And
+              conditions:
+              - type: Column
+                column: timestamp
+                operator:
+                  type: TimeWithinPast
+                  unit: day
+                  value: 30
+                  not: false
+                visibility: clear
+          operator:
+            not: false
+            rightValue: 1
+            type: GreaterEqual
+          exclude: false
+        type: And
+        description: 'Media Suppression test'
+        segmentInsightDashboardId: null
