@@ -46,15 +46,15 @@ _export:
       +run_sales_trends:
         if>: ${td.last_results.cnt > 0}
         _do:
-          +create_wag:
-            td>: analytics/queries/web_analytics_agg.sql
-            create_table: ${ana}_${sub}.web_analytics_agg
-            database: ${gld}_${sub} #query fails to get the source tables otherwise
-        _else_do:
           +insert_wag:
             td>: analytics/queries/web_analytics_agg.sql
             insert_into: ${ana}_${sub}.web_analytics_agg
             database: ${gld}_${sub}
+        _else_do:
+          +create_wag:
+            td>: analytics/queries/web_analytics_agg.sql
+            create_table: ${ana}_${sub}.web_analytics_agg
+            database: ${gld}_${sub} #query fails to get the source tables otherwise
   +web_analytics_agg_others:
     +create_agg_tmp:
       td>: analytics/queries/web_analytics_agg_tmp.sql
@@ -69,16 +69,17 @@ _export:
             data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='web_analytics_${parray}_agg'"
           store_last_results: true
         +run_sub_agg:
+          _export:
+            gvar: ${parray}
+            intablename: web_analytics_agg_tmp
           if>: ${td.last_results.cnt > 0}
           _do:
-            _export:
-              gvar: ${parray}
-              intablename: web_analytics_agg_tmp
-            +create_sub_agg:
-              td>: analytics/queries/web_analytics_from_tmp.sql
-              create_table: ${ana}_${sub}.web_analytics_${parray}_agg
-              database: ${gld}_${sub} #query fails to get the source tables otherwise
             +insert_sub_agg:
               td>: analytics/queries/web_analytics_from_tmp.sql
               insert_into: ${ana}_${sub}.web_analytics_${parray}_agg
+              database: ${gld}_${sub} #query fails to get the source tables otherwise
+          _else_do:
+            +create_sub_agg:
+              td>: analytics/queries/web_analytics_from_tmp.sql
+              create_table: ${ana}_${sub}.web_analytics_${parray}_agg
               database: ${gld}_${sub} #query fails to get the source tables otherwise
