@@ -1,0 +1,27 @@
+type: segment-batch
+id: null
+relationships:
+  parentFolder:
+    data:
+      id: ${rootfolder_id}
+      type: folder-segment
+attributes:
+  - audienceId: ${audience_id}
+    countPopulation: true
+    name: Preferred Season - Winter
+    rule:
+          type: And
+          conditions:
+            - conditions:
+                - type: Value
+                  leftValue:
+                    name: preferred_season
+                    visibility: clear
+                  operator:
+                    not: false
+                    rightValue: Winter
+                    type: Equal
+                  exclude: false
+              type: And
+              description: 'Preferred Season - Winter'
+              segmentInsightDashboardId: null
