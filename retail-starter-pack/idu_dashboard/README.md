@@ -1,6 +1,6 @@
 # General Overview
 
-The **ID Unification Dashboard** aims to assist customers in understanding the average number of IDs, emails, devices, etc., associated with a user's profile. It offers high-level metrics and detailed insights to demonstrate the overall deduplication rates and potential cost savings over time. Additionally, it provides a comparison of known vs. unknown customer counts and the IDs and ID types responsible for incorrect over-merging.
+The **ID Unification Dashboard** aims to assist customers in understanding the average number of IDs, emails, devices, etc., associated with a user's profile. It offers high-level metrics and detailed insights to demonstrate the overall deduplication rates and potential cost savings over time. Additionally, it provides a comparison of known vs. unknown customer counts and the IDs and ID types responsible for incorrect over-merging. 
 
 ## Requirements
 

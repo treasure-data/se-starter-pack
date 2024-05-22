@@ -5,7 +5,7 @@
 _export:
   !include : 'config/src_params.yml'
   !include : 'config/email_ids.yml'
- 
+
 +prepare_log_table:
   database: ${meta}
   td>: "queries/log_tbl.sql"
@@ -83,7 +83,8 @@ _export:
     workflow_to_run: wf10_create_segment
   call>: wf2_run_workflow_with_logging.dig
 
-#Send mail success
+
+# # Send mail success
 +send_success_alert:
   for_each>:
     email: ${email_ids}
@@ -93,7 +94,7 @@ _export:
       receive_email: ${email}
     call>: utilities/success.dig
 
-#Send Error Alert
+# #Send Error Alert
 _error:
   +send_error_alert:
     for_each>:

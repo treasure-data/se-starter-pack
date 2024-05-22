@@ -20,6 +20,7 @@ segment:
   run_type: update
   tables:
     templates: retail_starter_pack_template
+    segment_templates: segment_templates
     parent_segment_creation: automation_parent_segments
     active_audience: active_audience
     segment_logs: segment_logs
