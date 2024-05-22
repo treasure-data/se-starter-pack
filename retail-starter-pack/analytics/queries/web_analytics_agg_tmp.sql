@@ -1,5 +1,5 @@
 with cal as (
-  select DATE_FORMAT(date_add('day', -1, current_date), '%Y-%m-%d') st_dt,
+  select DATE_FORMAT(date_add('day', -200, current_date), '%Y-%m-%d') st_dt,
             DATE_FORMAT(current_date, '%Y-%m-%d') end_dt,
           DATE_FORMAT(current_date,  '%Y-%m-%d 00:00:00.0') today_datetime
 ),
