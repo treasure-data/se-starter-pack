@@ -52,11 +52,67 @@
             ]
         },
         {
-            "model_name": "Retail Value Accelerator - Web Analytics",
+            "model_name": "Retail Value Accelerator - Web Analytics Agg",
             "model_tables": [
                 {
                     "db": "sink_database",
-                    "name": "web_analytics"
+                    "name": "web_analytics_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_td_url_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_utm_source_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_utm_medium_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_utm_campaign_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_utm_content_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_search_engine_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_country_by_ip_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_subdivision_by_ip_list_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_city_by_ip_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_connectiontype_by_ip_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_domain_by_ip_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_device_type_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_os_name_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_browser_name_agg"
                 }
             ],
             "change_schema_cols": {
