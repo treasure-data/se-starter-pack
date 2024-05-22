@@ -203,7 +203,7 @@ attributes:
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixColumnName: preferred_season
-  groupingName: 
+  groupingName:
 behaviors:
 - audienceId: null
   id: null

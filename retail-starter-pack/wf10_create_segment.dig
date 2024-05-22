@@ -1,0 +1,24 @@
+_export:
+  !include : 'config/src_params.yml'
+
++create_tables:
+  td_ddl>:
+  empty_tables: [ "${segment.tables.segment_logs}"]
+
++create_segments:
+  _parallel: true
+  td_for_each>: segment/queries/get_active_audience.sql
+  _do:
+    +create:
+      _export:
+        folder: segment/config
+        file_name: segments.yml
+        database: ${meta}
+        table: ${segment.tables.segment_logs}
+        audience_id: ${td.each.audience_id}
+      docker:
+        image: "digdag/digdag-python:3.9"
+      py>: segment.python.create_segment.main
+      _env:
+        TD_SITE: ${site}
+        TD_API_KEY: ${secret:td_apikey}
