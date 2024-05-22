@@ -1,0 +1,4637 @@
+{
+  "title": "Web Analytics Dash Template",
+  "desc": "",
+  "source": "632b30da0c596c00372aabec",
+  "type": "dashboard",
+  "style": {
+    "name": "vivid",
+    "palette": {
+      "colors": [
+        "#00cee6",
+        "#9b9bd7",
+        "#6EDA55",
+        "#fc7570",
+        "#fbb755",
+        "#218A8C"
+      ],
+      "name": "Vivid",
+      "sortOrder": 10,
+      "isSystem": true,
+      "systemDefault": true
+    }
+  },
+  "layout": {
+    "instanceid": "1389B-A7F0-98",
+    "type": "columnar",
+    "columns": [
+      {
+        "width": 100,
+        "cells": [
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 838,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": "40px",
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1ae"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1081,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 32,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 32,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1ab"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1081,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1b0",
+                    "height": "396px"
+                  }
+                ],
+                "width": 24.612306153076545,
+                "stretchable": false,
+                "pxlWidth": 266.052,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1ad",
+                    "height": "396px"
+                  }
+                ],
+                "width": 75.38769384692347,
+                "stretchable": false,
+                "pxlWidth": 814.938,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": "352px",
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1a4"
+                  }
+                ],
+                "width": 27.312775330396477,
+                "stretchable": false,
+                "pxlWidth": 368,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1a5",
+                    "height": "352px"
+                  }
+                ],
+                "width": 72.68722466960355,
+                "stretchable": false,
+                "pxlWidth": 990,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1aa",
+                    "height": "396px"
+                  }
+                ],
+                "width": 27.312775330396477,
+                "stretchable": false,
+                "pxlWidth": 372,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1ac",
+                    "height": "396px"
+                  }
+                ],
+                "width": 72.6872246696035,
+                "stretchable": false,
+                "pxlWidth": 990,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1a6",
+                    "height": "396px",
+                    "autoHeight": "334px"
+                  }
+                ],
+                "width": 27.312775330396477,
+                "stretchable": false,
+                "pxlWidth": 370.906,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1a7",
+                    "height": "396px"
+                  }
+                ],
+                "width": 72.68722466960355,
+                "stretchable": false,
+                "pxlWidth": 990,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1a8",
+                    "height": "396px"
+                  }
+                ],
+                "width": 24.61230615307654,
+                "stretchable": false,
+                "pxlWidth": 266.052,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1a9",
+                    "height": "396px"
+                  }
+                ],
+                "width": 75.38769384692345,
+                "stretchable": false,
+                "pxlWidth": 814.938,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1b1",
+                    "height": "396px"
+                  }
+                ],
+                "width": 24.61230615307654,
+                "stretchable": false,
+                "pxlWidth": 266.052,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "63473317a7b3690037efb1af",
+                    "height": "396px"
+                  }
+                ],
+                "width": 75.38769384692347,
+                "stretchable": false,
+                "pxlWidth": 814.938,
+                "index": 1
+              }
+            ]
+          }
+        ],
+        "pxlWidth": 1081,
+        "index": 0
+      }
+    ],
+    "container": {
+      "sizzle1665609022339": {
+        "undefined": {
+          "parentNode": [
+            998.7672294055177,
+            35,
+            true
+          ]
+        }
+      }
+    }
+  },
+  "original": null,
+  "oid": "63473317a7b3690037efb1a3",
+  "allowChangeSubscription": false,
+  "dataExploration": false,
+  "datasource": {
+    "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+    "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+    "address": "LocalHost",
+    "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+    "live": false,
+    "title": "dm_11125_pckg_web_analytics_automated"
+  },
+  "defaultFilters": [
+    {
+      "jaql": {
+        "table": "web_analytics_global_time_filter",
+        "column": "event_date",
+        "dim": "[web_analytics_global_time_filter.event_date (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "days",
+        "collapsed": true,
+        "title": "Date Filter",
+        "datasource": {
+          "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+          "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "address": "LocalHost",
+          "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "live": false,
+          "title": "dm_11125_pckg_web_analytics_automated"
+        },
+        "isDashboardFilter": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "00765-AD0D-2B",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "instanceid": "64BA2-B6B1-1C",
+      "isCascading": true,
+      "levels": [
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "channel_final",
+          "dim": "[web_analytics_pageviews_aggregate.channel_final]",
+          "datatype": "text",
+          "merged": true,
+          "collapsed": true,
+          "title": "Channel",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "isDashboardFilter": true,
+          "panel": "scope",
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        },
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "source_final",
+          "dim": "[web_analytics_pageviews_aggregate.source_final]",
+          "datatype": "text",
+          "merged": true,
+          "collapsed": true,
+          "title": "Source",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "isDashboardFilter": true,
+          "panel": "scope",
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        },
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "campaign_final",
+          "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+          "datatype": "text",
+          "merged": true,
+          "collapsed": true,
+          "title": "Campaign",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "isDashboardFilter": true,
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        }
+      ],
+      "model": {
+        "instanceid": "7C0AB-9397-ED",
+        "__store": [
+          "[web_analytics_pageviews_aggregate.channel_final]",
+          "[web_analytics_pageviews_aggregate.source_final]",
+          "[web_analytics_pageviews_aggregate.campaign_final]"
+        ]
+      },
+      "disabled": false
+    },
+    {
+      "instanceid": "0C3A8-8CD6-65",
+      "isCascading": true,
+      "levels": [
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "country_ip",
+          "dim": "[web_analytics_pageviews_aggregate.country_ip]",
+          "datatype": "text",
+          "merged": true,
+          "title": "Country",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "collapsed": true,
+          "isDashboardFilter": true,
+          "panel": "scope",
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        },
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "city_ip",
+          "dim": "[web_analytics_pageviews_aggregate.city_ip]",
+          "datatype": "text",
+          "merged": true,
+          "title": "City",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "collapsed": true,
+          "isDashboardFilter": true,
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        }
+      ],
+      "model": {
+        "instanceid": "1F236-8B12-B1",
+        "__store": [
+          "[web_analytics_pageviews_aggregate.country_ip]",
+          "[web_analytics_pageviews_aggregate.city_ip]"
+        ]
+      },
+      "disabled": false
+    },
+    {
+      "isCascading": false,
+      "disabled": false,
+      "jaql": {
+        "table": "web_analytics_pageviews_aggregate",
+        "column": "device",
+        "dim": "[web_analytics_pageviews_aggregate.device]",
+        "datatype": "text",
+        "merged": true,
+        "collapsed": true,
+        "title": "Device",
+        "isDashboardFilter": true,
+        "panel": "scope",
+        "datasource": {
+          "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+          "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "address": "LocalHost",
+          "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "live": false,
+          "title": "dm_11125_pckg_web_analytics_automated"
+        },
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      }
+    }
+  ],
+  "editing": false,
+  "filterToDatasourceMapping": {},
+  "filters": [
+    {
+      "jaql": {
+        "table": "web_analytics_global_time_filter",
+        "column": "event_date",
+        "dim": "[web_analytics_global_time_filter.event_date (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "days",
+        "collapsed": true,
+        "title": "Date Filter",
+        "isDashboardFilter": true,
+        "datasource": {
+          "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+          "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "address": "LocalHost",
+          "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "live": false,
+          "title": "dm_11125_pckg_web_analytics_automated"
+        },
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "00765-AD0D-2B",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "instanceid": "64BA2-B6B1-1C",
+      "isCascading": true,
+      "levels": [
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "channel_final",
+          "dim": "[web_analytics_pageviews_aggregate.channel_final]",
+          "datatype": "text",
+          "merged": true,
+          "collapsed": true,
+          "title": "Channel",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "isDashboardFilter": true,
+          "panel": "scope",
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        },
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "source_final",
+          "dim": "[web_analytics_pageviews_aggregate.source_final]",
+          "datatype": "text",
+          "merged": true,
+          "collapsed": true,
+          "title": "Source",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "isDashboardFilter": true,
+          "panel": "scope",
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        },
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "campaign_final",
+          "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+          "datatype": "text",
+          "merged": true,
+          "collapsed": true,
+          "title": "Campaign",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "isDashboardFilter": true,
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        }
+      ],
+      "model": {
+        "instanceid": "7C0AB-9397-ED",
+        "__store": [
+          "[web_analytics_pageviews_aggregate.channel_final]",
+          "[web_analytics_pageviews_aggregate.source_final]",
+          "[web_analytics_pageviews_aggregate.campaign_final]"
+        ]
+      },
+      "disabled": false
+    },
+    {
+      "instanceid": "0C3A8-8CD6-65",
+      "isCascading": true,
+      "levels": [
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "country_ip",
+          "dim": "[web_analytics_pageviews_aggregate.country_ip]",
+          "datatype": "text",
+          "merged": true,
+          "title": "Country",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "collapsed": true,
+          "isDashboardFilter": true,
+          "panel": "scope",
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        },
+        {
+          "table": "web_analytics_pageviews_aggregate",
+          "column": "city_ip",
+          "dim": "[web_analytics_pageviews_aggregate.city_ip]",
+          "datatype": "text",
+          "merged": true,
+          "title": "City",
+          "datasource": {
+            "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+            "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "address": "LocalHost",
+            "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+            "live": false,
+            "title": "dm_11125_pckg_web_analytics_automated"
+          },
+          "collapsed": true,
+          "isDashboardFilter": true,
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        }
+      ],
+      "model": {
+        "instanceid": "1F236-8B12-B1",
+        "__store": [
+          "[web_analytics_pageviews_aggregate.country_ip]",
+          "[web_analytics_pageviews_aggregate.city_ip]"
+        ]
+      },
+      "disabled": false
+    },
+    {
+      "isCascading": false,
+      "disabled": false,
+      "jaql": {
+        "table": "web_analytics_pageviews_aggregate",
+        "column": "device",
+        "dim": "[web_analytics_pageviews_aggregate.device]",
+        "datatype": "text",
+        "merged": true,
+        "collapsed": true,
+        "title": "Device",
+        "isDashboardFilter": true,
+        "panel": "scope",
+        "datasource": {
+          "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+          "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "address": "LocalHost",
+          "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+          "live": false,
+          "title": "dm_11125_pckg_web_analytics_automated"
+        },
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "5ACB1-F323-B7"
+    }
+  ],
+  "isPublic": null,
+  "lastOpened": null,
+  "lastPublish": "2022-10-12T21:34:58.230Z",
+  "parentFolder": "63472d75a7b3690037efb14d",
+  "previewLayout": null,
+  "script": "/*\nWelcome to your Dashboard's Script.\n\nTo learn how you can access the Widget and Dashboard objects, see the online documentation at https://developer.sisense.com/pages/viewpage.action?pageId=557127\n*/\n\ndashboard.on('widgetready',function(d) {\n\t/*\n    $('.dashboard-layout-cell-horizontal-divider').remove();\n\t*/\n\t$('label.transput-input-placeholder').css('display', 'none');\n});",
+  "settings": {
+    "autoUpdateOnFiltersChange": true
+  },
+  "tenantId": "6059a4239a359b001ad90b4c",
+  "widgets": [
+    {
+      "title": "Total Pageviews",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "63473317a7b3690037efb1a4",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a47",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_unqiue_visitors",
+                  "column": "total_visitors",
+                  "dim": "[web_analytics_unqiue_visitors.total_visitors]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total Pageviews"
+                },
+                "instanceid": "0F064-0ABE-78",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_unqiue_visitors",
+                  "column": "unique_visitors",
+                  "dim": "[web_analytics_unqiue_visitors.unique_visitors]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Unique Visitors"
+                },
+                "instanceid": "50E23-C24E-F0",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "min",
+            "items": [
+              {
+                "jaql": {
+                  "formula": "0",
+                  "title": "0 (default)"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  }
+                },
+                "instanceid": "A80D6-69B1-FD"
+              }
+            ]
+          },
+          {
+            "name": "max",
+            "items": [
+              {
+                "jaql": {
+                  "formula": "100",
+                  "title": "100 (default)"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  }
+                },
+                "instanceid": "DE15A-FFC4-A4"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": false,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "9DA1F-FE62-24",
+      "queryStartTime": "2022-10-12T17:29:16",
+      "drawing": true,
+      "disableSelctor": false,
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "minDate": 1609477200000,
+      "maxDate": 1616817600000,
+      "tickLevel": "day",
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "lastOpened": null
+    },
+    {
+      "title": "Weekly Landing Page Visits",
+      "type": "chart/line",
+      "subtype": "line/spline",
+      "oid": "63473317a7b3690037efb1a5",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a48",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "x-axis",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_unqiue_visitors",
+                  "column": "event_date",
+                  "dim": "[web_analytics_unqiue_visitors.event_date (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "weeks",
+                  "title": "Weeks in event_date",
+                  "firstday": "mon"
+                },
+                "instanceid": "D54ED-968F-3F",
+                "panel": "rows",
+                "field": {
+                  "id": "[web_analytics_unqiue_visitors.event_date (Calendar)]_years",
+                  "index": 0
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "MMM-dd-yy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm"
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[80FBC-FA8]",
+                  "context": {
+                    "[80FBC-FA8]": {
+                      "table": "web_analytics_unqiue_visitors",
+                      "column": "total_visitors",
+                      "dim": "[web_analytics_unqiue_visitors.total_visitors]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_visitors"
+                    }
+                  },
+                  "title": "Total Pageviews",
+                  "datatype": "numeric"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "disabled": false,
+                "instanceid": "FAE41-6A01-B0",
+                "panel": "measures",
+                "field": {
+                  "id": "[80FBC-FA8]",
+                  "index": 1
+                }
+              },
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[E05B7-A20]",
+                  "context": {
+                    "[E05B7-A20]": {
+                      "table": "web_analytics_unqiue_visitors",
+                      "column": "unique_visitors",
+                      "dim": "[web_analytics_unqiue_visitors.unique_visitors]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total unique_visitors"
+                    }
+                  },
+                  "title": "Unique Visitors",
+                  "datatype": "numeric"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "color": "#9b9bd7",
+                    "type": "color"
+                  }
+                },
+                "singleSeriesType": "column",
+                "disabled": false,
+                "instanceid": "31F3B-DB45-0D",
+                "panel": "measures",
+                "field": {
+                  "id": "[E05B7-A20]",
+                  "index": 2
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "lineWidth": {
+          "width": "bold"
+        },
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "years_in_event_date",
+              "title": "Years in event_date",
+              "singular": "Years in event_date",
+              "plural": "Years in event_date"
+            }
+          ]
+        }
+      },
+      "instanceid": "F29FF-8604-A9",
+      "queryStartTime": "2022-10-12T17:30:58",
+      "disableSelctor": false,
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "lastOpened": null
+    },
+    {
+      "title": "Top 10 Visited Page Sections",
+      "type": "pivot2",
+      "subtype": "pivot2",
+      "oid": "63473317a7b3690037efb1a6",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a49",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "rows",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_path_stats",
+                  "column": "td_path",
+                  "dim": "[web_analytics_path_stats.td_path]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "td_path"
+                },
+                "panel": "rows",
+                "field": {
+                  "id": "[web_analytics_path_stats.td_path]",
+                  "index": 0
+                },
+                "instanceid": "46EBD-8886-45"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[5CF05-3E2]",
+                  "context": {
+                    "[5CF05-3E2]": {
+                      "table": "web_analytics_path_stats",
+                      "column": "total_visitors",
+                      "dim": "[web_analytics_path_stats.total_visitors]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_visitors"
+                    }
+                  },
+                  "title": "Total Visits",
+                  "sort": "desc",
+                  "datatype": "numeric",
+                  "sortDetails": {
+                    "field": 1,
+                    "dir": "desc",
+                    "measurePath": null,
+                    "sortingLastDimension": true,
+                    "isLastApplied": true,
+                    "initialized": true
+                  }
+                },
+                "panel": "measures",
+                "field": {
+                  "id": "[web_analytics_pageviews_final.td_url]_count",
+                  "index": 1
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "t": true,
+                    "b": true,
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color",
+                    "color": "transparent"
+                  }
+                },
+                "disabled": false,
+                "instanceid": "7158D-E923-4D"
+              },
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[8E9C8-3C9]",
+                  "context": {
+                    "[8E9C8-3C9]": {
+                      "table": "web_analytics_path_stats",
+                      "column": "unique_visitors",
+                      "dim": "[web_analytics_path_stats.unique_visitors]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total unique_visitors"
+                    }
+                  },
+                  "title": "Unique Visitors",
+                  "datatype": "numeric"
+                },
+                "panel": "measures",
+                "field": {
+                  "id": "[web_analytics_pageviews_final.td_canonical_id]_count",
+                  "index": 2
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "t": true,
+                    "b": true,
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color",
+                    "color": "transparent"
+                  }
+                },
+                "disabled": false,
+                "instanceid": "CD084-D72C-75"
+              }
+            ]
+          },
+          {
+            "name": "columns",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[A2CF3-063]",
+                  "context": {
+                    "[A2CF3-063]": {
+                      "table": "web_analytics_pageviews_final",
+                      "column": "td_url",
+                      "dim": "[web_analytics_pageviews_final.td_url]",
+                      "datatype": "text",
+                      "agg": "countduplicates",
+                      "title": "# of td_url"
+                    }
+                  },
+                  "title": "Total Visits",
+                  "datatype": "numeric",
+                  "filter": {
+                    "top": 11
+                  },
+                  "datasource": {
+                    "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+                    "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+                    "address": "LocalHost",
+                    "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+                    "live": false,
+                    "title": "dm_11125_pckg_web_analytics_automated"
+                  },
+                  "collapsed": false,
+                  "sort": null
+                },
+                "panel": "scope",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "t": true,
+                    "b": true,
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  }
+                },
+                "instanceid": "84FA0-9003-F3"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "scroll": false,
+        "pageSize": "10",
+        "automaticHeight": true,
+        "colors": {
+          "rows": true,
+          "columns": false,
+          "headers": false,
+          "members": false,
+          "totals": false
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "td_path",
+              "title": "td_path",
+              "singular": "td_path",
+              "plural": "td_path"
+            }
+          ]
+        }
+      },
+      "instanceid": "A7B62-4F39-1F",
+      "queryStartTime": "2022-09-21T13:21:02",
+      "widgetTimingLoged": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 2,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "triggersDomready": true,
+        "drillToAnywhere": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "canEditFilters": true,
+      "drawing": true,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "lastOpened": null
+    },
+    {
+      "title": "Pageviews Heatmap by Country",
+      "type": "map/area",
+      "subtype": "areamap/world",
+      "oid": "63473317a7b3690037efb1a7",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a4a",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "geo",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "country_ip",
+                  "dim": "[web_analytics_pageviews_aggregate.country_ip]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "country_ip"
+                },
+                "instanceid": "32DC0-B562-10"
+              }
+            ]
+          },
+          {
+            "name": "color",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[BD782-364]",
+                  "context": {
+                    "[BD782-364]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "unique_events",
+                      "dim": "[web_analytics_pageviews_aggregate.unique_events]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total unique_events"
+                    }
+                  },
+                  "title": "Total Pageviews"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "type": "range",
+                    "steps": 9,
+                    "rangeMode": "auto"
+                  },
+                  "color": {
+                    "steps": 0,
+                    "min": "#0de6ff",
+                    "max": "#00a5b8",
+                    "minvalue": null,
+                    "midvalue": null,
+                    "maxvalue": null,
+                    "minValueValid": true,
+                    "midValueValid": true,
+                    "maxValueValid": true,
+                    "type": "range",
+                    "rangeMode": "both"
+                  }
+                },
+                "instanceid": "98D43-1109-82"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "country_ip",
+              "title": "country_ip",
+              "singular": "country_ip",
+              "plural": "country_ip"
+            }
+          ]
+        }
+      },
+      "instanceid": "E0391-A9A3-A4",
+      "queryStartTime": "2022-09-21T11:18:38",
+      "widgetTimingLoged": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "realTimeRefreshing": false,
+      "canEditFilters": true,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "disallowSelector": false,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "lastOpened": null
+    },
+    {
+      "title": "Total Conversions by Source",
+      "type": "chart/pie",
+      "subtype": "pie/donut",
+      "oid": "63473317a7b3690037efb1a8",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a4b",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "source_final",
+                  "dim": "[web_analytics_pageviews_aggregate.source_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "source_final"
+                },
+                "format": {
+                  "members": {
+                    "affiliate": {
+                      "color": "#00cee6",
+                      "title": "affiliate",
+                      "sortData": "affiliate"
+                    },
+                    "facebook": {
+                      "color": "#9b9bd7",
+                      "title": "facebook",
+                      "sortData": "facebook",
+                      "inResultset": true
+                    },
+                    "google": {
+                      "color": "#6EDA55",
+                      "title": "google",
+                      "sortData": "google",
+                      "inResultset": true
+                    },
+                    "sfmc": {
+                      "color": "#fc7570",
+                      "title": "sfmc",
+                      "sortData": "sfmc",
+                      "inResultset": true
+                    },
+                    "organic_visit": {
+                      "color": "#fbb755",
+                      "title": "organic_visit",
+                      "sortData": "organic_visit",
+                      "inResultset": true
+                    },
+                    "twitter": {
+                      "color": "#218A8C",
+                      "title": "twitter",
+                      "sortData": "twitter",
+                      "inResultset": true
+                    }
+                  }
+                },
+                "instanceid": "125AA-4D76-3C"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[56DE7-4FF]",
+                  "context": {
+                    "[56DE7-4FF]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Total conversion"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "0EACF-F6EC-EC"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": false,
+          "value": false,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "bySlicesCount",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "stacked": false,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "source_final",
+              "title": "source_final",
+              "singular": "source_final",
+              "plural": "source_final"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "A1629-1AE8-A2",
+      "queryStartTime": "2022-10-12T17:18:36",
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "lastOpened": null
+    },
+    {
+      "title": "Weekly Conversions by Source (utm_source)",
+      "type": "chart/column",
+      "subtype": "column/stackedcolumn",
+      "oid": "63473317a7b3690037efb1a9",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a4c",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "event_date",
+                  "dim": "[web_analytics_pageviews_aggregate.event_date (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "weeks",
+                  "title": "Weeks in event_date",
+                  "firstday": "mon"
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "MMM-dd-yy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm"
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ],
+                "instanceid": "954D7-9EB6-D0"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[367DD-9AE]",
+                  "context": {
+                    "[367DD-9AE]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Total Conversions"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "B7AE3-3C97-C3"
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "source_final",
+                  "dim": "[web_analytics_pageviews_aggregate.source_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "source_final"
+                },
+                "format": {
+                  "members": {
+                    "affiliate": {
+                      "color": "#00cee6",
+                      "title": "affiliate",
+                      "sortData": "affiliate"
+                    },
+                    "facebook": {
+                      "color": "#9b9bd7",
+                      "title": "facebook",
+                      "sortData": "facebook",
+                      "inResultset": true
+                    },
+                    "google": {
+                      "color": "#6EDA55",
+                      "title": "google",
+                      "sortData": "google",
+                      "inResultset": true
+                    },
+                    "sfmc": {
+                      "color": "#fc7570",
+                      "title": "sfmc",
+                      "sortData": "sfmc",
+                      "inResultset": true
+                    },
+                    "organic_visit": {
+                      "color": "#fbb755",
+                      "title": "organic_visit",
+                      "sortData": "organic_visit",
+                      "inResultset": true
+                    },
+                    "twitter": {
+                      "color": "#218A8C",
+                      "title": "twitter",
+                      "sortData": "twitter",
+                      "inResultset": true
+                    }
+                  }
+                },
+                "instanceid": "BA93A-F7FC-E2"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": true,
+            "stacked": true,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "years_in_event_date",
+              "title": "Years in event_date",
+              "singular": "Years in event_date",
+              "plural": "Years in event_date"
+            },
+            {
+              "id": "source_final",
+              "title": "source_final",
+              "singular": "source_final",
+              "plural": "source_final"
+            }
+          ]
+        }
+      },
+      "instanceid": "39FC9-0602-D3",
+      "queryStartTime": "2022-10-12T17:18:36",
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "lastOpened": null
+    },
+    {
+      "title": "Total Visits by Device",
+      "type": "chart/pie",
+      "subtype": "pie/donut",
+      "oid": "63473317a7b3690037efb1aa",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a4d",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "device",
+                  "dim": "[web_analytics_pageviews_aggregate.device]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "device"
+                },
+                "format": {
+                  "members": {
+                    "Android Phone": {
+                      "color": "#00cee6",
+                      "title": "Android Phone",
+                      "sortData": "Android Phone",
+                      "inResultset": true
+                    },
+                    "Apple Desktop": {
+                      "color": "#9b9bd7",
+                      "title": "Apple Desktop",
+                      "sortData": "Apple Desktop",
+                      "inResultset": true
+                    },
+                    "GoogleBot Crawler": {
+                      "color": "#6EDA55",
+                      "title": "GoogleBot Crawler",
+                      "sortData": "GoogleBot Crawler",
+                      "inResultset": true
+                    },
+                    "iPad": {
+                      "color": "#fc7570",
+                      "title": "iPad",
+                      "sortData": "iPad",
+                      "inResultset": true
+                    },
+                    "iPhone": {
+                      "color": "#fbb755",
+                      "title": "iPhone",
+                      "sortData": "iPhone",
+                      "inResultset": true
+                    },
+                    "Linux Desktop": {
+                      "color": "#218A8C",
+                      "title": "Linux Desktop",
+                      "sortData": "Linux Desktop",
+                      "inResultset": true
+                    },
+                    "Other": {
+                      "color": "#06e5ff",
+                      "title": "Other",
+                      "sortData": "Other",
+                      "inResultset": true
+                    },
+                    "Other Crawler": {
+                      "color": "#fc7570",
+                      "title": "Other Crawler",
+                      "sortData": "Other Crawler",
+                      "inResultset": true
+                    },
+                    "Windows Desktop": {
+                      "color": "#7efb62",
+                      "title": "Windows Desktop",
+                      "sortData": "Windows Desktop",
+                      "inResultset": true
+                    }
+                  }
+                },
+                "instanceid": "3DB46-662A-0F"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[45B15-9FC]",
+                  "context": {
+                    "[45B15-9FC]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Visit Count"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "3F1CE-3468-2D"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": false,
+          "value": false,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "byPercentage",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": true,
+          "enabled": false,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "device",
+              "title": "device",
+              "singular": "device",
+              "plural": "device"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "414E2-EF60-41",
+      "queryStartTime": "2022-09-21T11:18:38",
+      "disableSelctor": false,
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "realTimeRefreshing": false,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "lastOpened": null
+    },
+    {
+      "title": "",
+      "type": "WidgetsTabber",
+      "subtype": "WidgetsTabber",
+      "oid": "63473317a7b3690037efb1ab",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a4e",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "activeTab": "0",
+        "showTitle": false,
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "746C3-FD5A-14",
+      "widgetTimingLoged": false,
+      "drawing": true,
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "script": "\nwidget.on('render',function(w, e){e.prefixText = '';\ne.suffixText = '';\ne.selectedColor = '#3A4356'; /*The color of the chosen title*/\ne.fontColor = '#d1d1d1'; /*The color of the unchosen titles*/\n e.fontWeight = '300';\ne.fontFamily = 'Avenir';\ne.elementWidth = '100%';\ne.descColor = '#a5a5a5';\ne.parentMarginLeft = '-50px';\ne.height = 40; /* affects the tabber widget default high*/\n}); \n\n\nwidget.tabs = [\n{title: \"Pageviews\", \n displayWidgetIds : [\"63473317a7b3690037efb1a4\",\"63473317a7b3690037efb1a5\",\"63473317a7b3690037efb1a6\",\"63473317a7b3690037efb1a7\",\"63473317a7b3690037efb1aa\",\"63473317a7b3690037efb1ac\"],\n hideWidgetIds : [\"63473317a7b3690037efb1b0\",\"63473317a7b3690037efb1ad\",\"63473317a7b3690037efb1a8\",\"63473317a7b3690037efb1a9\",\"63473317a7b3690037efb1b1\",\"63473317a7b3690037efb1af\"]},\n{title: \"Conversions\", \n displayWidgetIds : [\"63473317a7b3690037efb1b0\",\"63473317a7b3690037efb1ad\",\"63473317a7b3690037efb1a8\",\"63473317a7b3690037efb1a9\",\"63473317a7b3690037efb1b1\",\"63473317a7b3690037efb1af\"],\n hideWidgetIds : [\"63473317a7b3690037efb1a4\",\"63473317a7b3690037efb1a5\",\"63473317a7b3690037efb1a6\",\"63473317a7b3690037efb1a7\",\"63473317a7b3690037efb1aa\",\"63473317a7b3690037efb1ac\"]}\n]; \n\nwidget.tabsConfig = 'multiply';\n\nwidget.on('ready', function(se, ev){\n$(element).css('overflow','hidden'),\n$(element).css('max-height','40px'),\n$(element).css('padding-top','5px'),\n$(element).css('margin-top','-40px'),\n$(element).css('background-color','#ecf0f5'),\n$(element).css('font-family','Avenir'),\n$(element).css('font-weight','300'),\n$(element).css('font-size','16px'),\n$(element).css('float','left'),\n$(element).css('align-self','end'),\n$(element).css('align-self','end'),\n$('.widget-body .listDefaultCSS').css('text-align','left'),\n$('.widget-body .listDefaultCSS').css('margin-left','35px');\n\n});\n\n\n\n",
+      "tabs": [
+        {
+          "title": "Pageviews",
+          "displayWidgetIds": [
+            "63473317a7b3690037efb1ac",
+            "63473317a7b3690037efb1aa",
+            "63473317a7b3690037efb1a4",
+            "63473317a7b3690037efb1a5",
+            "63473317a7b3690037efb1a6",
+            "63473317a7b3690037efb1a7"
+          ],
+          "hideWidgetIds": [
+            "63473317a7b3690037efb1a9",
+            "63473317a7b3690037efb1a8",
+            "632b30da0c596c00372aabdb",
+            "628e3e706fb84f0038311d2d",
+            "632b30da0c596c00372aabda"
+          ]
+        },
+        {
+          "title": "Conversions",
+          "displayWidgetIds": [
+            "63473317a7b3690037efb1a9",
+            "63473317a7b3690037efb1a8",
+            "63473317a7b3690037efb1a4",
+            "63473317a7b3690037efb1a5",
+            "63473317a7b3690037efb1a6",
+            "63473317a7b3690037efb1a7"
+          ],
+          "hideWidgetIds": [
+            "63473317a7b3690037efb1a4",
+            "63473317a7b3690037efb1a5",
+            "63473317a7b3690037efb1a6",
+            "63473317a7b3690037efb1a7",
+            "63473317a7b3690037efb1ac",
+            "63473317a7b3690037efb1aa",
+            "632b30da0c596c00372aabdb",
+            "628e3e706fb84f0038311d2d",
+            "632b30da0c596c00372aabda"
+          ]
+        }
+      ],
+      "tabsConfig": "multiply",
+      "lastOpened": null
+    },
+    {
+      "title": "Weekly Landing Page Visits by Channel (utm_medium)",
+      "type": "chart/column",
+      "subtype": "column/stackedcolumn",
+      "oid": "63473317a7b3690037efb1ac",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a4f",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "event_date",
+                  "dim": "[web_analytics_pageviews_aggregate.event_date (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "weeks",
+                  "title": "Weeks in event_date",
+                  "firstday": "mon"
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "MMM-dd-yy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm"
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ],
+                "instanceid": "DE7C5-77BF-DB"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[0FF10-A75]",
+                  "context": {
+                    "[0FF10-A75]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "unique_events",
+                      "dim": "[web_analytics_pageviews_aggregate.unique_events]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total unique_events"
+                    }
+                  },
+                  "title": "Total Pageviews"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "907FF-8675-06"
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "channel_final",
+                  "dim": "[web_analytics_pageviews_aggregate.channel_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "channel_final"
+                },
+                "format": {
+                  "members": {
+                    "affiliate": {
+                      "color": "#00cee6",
+                      "title": "affiliate",
+                      "sortData": "affiliate"
+                    },
+                    "client_domain_organic_visit": {
+                      "color": "#9b9bd7",
+                      "title": "client_domain_organic_visit",
+                      "sortData": "client_domain_organic_visit"
+                    },
+                    "email": {
+                      "color": "#6EDA55",
+                      "title": "email",
+                      "sortData": "email",
+                      "inResultset": true
+                    },
+                    "organic_search": {
+                      "color": "#fc7570",
+                      "title": "organic_search",
+                      "sortData": "organic_search",
+                      "inResultset": true
+                    },
+                    "search": {
+                      "color": "#fbb755",
+                      "title": "search",
+                      "sortData": "search",
+                      "inResultset": true
+                    },
+                    "social": {
+                      "color": "#218A8C",
+                      "title": "social",
+                      "sortData": "social",
+                      "inResultset": true
+                    },
+                    "organic_visit": {
+                      "color": "#06e5ff",
+                      "title": "organic_visit",
+                      "sortData": "organic_visit",
+                      "inResultset": true
+                    }
+                  }
+                },
+                "instanceid": "C8A88-BFD4-9A"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": true,
+            "stacked": true,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "weeks_in_event_date",
+              "title": "Weeks in event_date",
+              "singular": "Weeks in event_date",
+              "plural": "Weeks in event_date"
+            },
+            {
+              "id": "channel_final",
+              "title": "channel_final",
+              "singular": "channel_final",
+              "plural": "channel_final"
+            }
+          ]
+        }
+      },
+      "instanceid": "39FC9-0602-D3",
+      "queryStartTime": "2022-10-12T17:36:18",
+      "disableSelctor": false,
+      "widgetTimingLoged": true,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "minDate": 1601524800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "realTimeRefreshing": false,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "lastOpened": null
+    },
+    {
+      "title": "Weekly Conversions by Channel (utm_medium)",
+      "type": "chart/column",
+      "subtype": "column/stackedcolumn",
+      "oid": "63473317a7b3690037efb1ad",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a50",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "event_date",
+                  "dim": "[web_analytics_pageviews_aggregate.event_date (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "weeks",
+                  "title": "Weeks in event_date",
+                  "firstday": "mon"
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "MMM-dd-yy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm"
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ],
+                "instanceid": "954D7-9EB6-D0"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[367DD-9AE]",
+                  "context": {
+                    "[367DD-9AE]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Total Conversions"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "B7AE3-3C97-C3"
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "channel_final",
+                  "dim": "[web_analytics_pageviews_aggregate.channel_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "channel_final"
+                },
+                "instanceid": "6CB80-1169-B3",
+                "format": {
+                  "members": {
+                    "affiliate": {
+                      "color": "#00cee6",
+                      "title": "affiliate",
+                      "sortData": "affiliate"
+                    },
+                    "client_domain_organic_visit": {
+                      "color": "#9b9bd7",
+                      "title": "client_domain_organic_visit",
+                      "sortData": "client_domain_organic_visit"
+                    },
+                    "email": {
+                      "color": "#6EDA55",
+                      "title": "email",
+                      "sortData": "email",
+                      "inResultset": true
+                    },
+                    "organic_search": {
+                      "color": "#fc7570",
+                      "title": "organic_search",
+                      "sortData": "organic_search",
+                      "inResultset": true
+                    },
+                    "search": {
+                      "color": "#fbb755",
+                      "title": "search",
+                      "sortData": "search",
+                      "inResultset": true
+                    },
+                    "social": {
+                      "color": "#218A8C",
+                      "title": "social",
+                      "sortData": "social",
+                      "inResultset": true
+                    },
+                    "organic_visit": {
+                      "color": "#06e5ff",
+                      "title": "organic_visit",
+                      "sortData": "organic_visit",
+                      "inResultset": true
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": true,
+            "stacked": true,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "weeks_in_event_date",
+              "title": "Weeks in event_date",
+              "singular": "Weeks in event_date",
+              "plural": "Weeks in event_date"
+            },
+            {
+              "id": "channel_final",
+              "title": "channel_final",
+              "singular": "channel_final",
+              "plural": "channel_final"
+            }
+          ]
+        }
+      },
+      "instanceid": "39FC9-0602-D3",
+      "queryStartTime": "2022-10-12T17:18:36",
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "lastOpened": null
+    },
+    {
+      "title": "",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "63473317a7b3690037efb1ae",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a51",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ]
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "titleStyle": [
+            {
+              "display": "none"
+            }
+          ],
+          "showCarousel": true,
+          "backgroundImage": "",
+          "backgroundColor": "#5b70fe",
+          "body": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Web Analytics Dashboard",
+                  "style": {
+                    "text-align": "center",
+                    "color": "white",
+                    "font-weight": "bold",
+                    "font-size": "24px",
+                    "margin": "2px"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#5b70fe",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 36.5
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "CCE61-509D-49",
+      "widgetTimingLoged": false,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "element": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "lastOpened": null
+    },
+    {
+      "title": "Weekly Conversions by Campaign (utm_campaign)",
+      "type": "chart/column",
+      "subtype": "column/stackedcolumn",
+      "oid": "63473317a7b3690037efb1af",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a52",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "event_date",
+                  "dim": "[web_analytics_pageviews_aggregate.event_date (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "weeks",
+                  "title": "Weeks in event_date",
+                  "firstday": "mon"
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "MMM-dd-yy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm"
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ],
+                "instanceid": "954D7-9EB6-D0"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[367DD-9AE]",
+                  "context": {
+                    "[367DD-9AE]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Total Conversions"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "B7AE3-3C97-C3"
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "campaign_final",
+                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "campaign_final"
+                },
+                "instanceid": "4EB16-6A79-04",
+                "format": {
+                  "members": {
+                    "N\\A": {
+                      "color": "#00cee6",
+                      "title": "N\\A",
+                      "sortData": "N\\A"
+                    },
+                    "promo_code": {
+                      "color": "#9b9bd7",
+                      "title": "promo_code",
+                      "sortData": "promo_code",
+                      "inResultset": true
+                    },
+                    "retargeting": {
+                      "color": "#6EDA55",
+                      "title": "retargeting",
+                      "sortData": "retargeting",
+                      "inResultset": true
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "campaign_final",
+                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "campaign_final",
+                  "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "exclude": {
+                      "members": [
+                        "N\\A"
+                      ]
+                    }
+                  },
+                  "collapsed": true,
+                  "datasource": {
+                    "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+                    "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+                    "address": "LocalHost",
+                    "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+                    "live": false,
+                    "title": "dm_11125_pckg_web_analytics_automated"
+                  }
+                },
+                "instanceid": "7EA61-E191-68"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": true,
+            "stacked": true,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "weeks_in_event_date",
+              "title": "Weeks in event_date",
+              "singular": "Weeks in event_date",
+              "plural": "Weeks in event_date"
+            },
+            {
+              "id": "campaign_final",
+              "title": "campaign_final",
+              "singular": "campaign_final",
+              "plural": "campaign_final"
+            }
+          ]
+        }
+      },
+      "instanceid": "39FC9-0602-D3",
+      "queryStartTime": "2022-10-12T17:18:36",
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "canEditFilters": true,
+      "drawing": true,
+      "lastOpened": null
+    },
+    {
+      "title": "Total Conversions by Channel",
+      "type": "chart/pie",
+      "subtype": "pie/donut",
+      "oid": "63473317a7b3690037efb1b0",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a53",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "channel_final",
+                  "dim": "[web_analytics_pageviews_aggregate.channel_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "channel_final"
+                },
+                "instanceid": "2E500-E557-21",
+                "format": {
+                  "members": {
+                    "affiliate": {
+                      "color": "#00cee6",
+                      "title": "affiliate",
+                      "sortData": "affiliate",
+                      "inResultset": true
+                    },
+                    "client_domain_organic_visit": {
+                      "color": "#9b9bd7",
+                      "title": "client_domain_organic_visit",
+                      "sortData": "client_domain_organic_visit",
+                      "inResultset": true
+                    },
+                    "email": {
+                      "color": "#6EDA55",
+                      "title": "email",
+                      "sortData": "email",
+                      "inResultset": true
+                    },
+                    "organic_search": {
+                      "color": "#fc7570",
+                      "title": "organic_search",
+                      "sortData": "organic_search",
+                      "inResultset": true
+                    },
+                    "search": {
+                      "color": "#fbb755",
+                      "title": "search",
+                      "sortData": "search",
+                      "inResultset": true
+                    },
+                    "social": {
+                      "color": "#218A8C",
+                      "title": "social",
+                      "sortData": "social",
+                      "inResultset": true
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[56DE7-4FF]",
+                  "context": {
+                    "[56DE7-4FF]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Total conversion"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "0EACF-F6EC-EC"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": false,
+          "value": false,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "bySlicesCount",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "stacked": false,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "channel_final",
+              "title": "channel_final",
+              "singular": "channel_final",
+              "plural": "channel_final"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "A1629-1AE8-A2",
+      "queryStartTime": "2022-09-21T13:09:52",
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "lastOpened": null
+    },
+    {
+      "title": "Total Conversions by  Campaign",
+      "type": "chart/pie",
+      "subtype": "pie/donut",
+      "oid": "63473317a7b3690037efb1b1",
+      "desc": null,
+      "source": "632b4bb5cd002d0038621a54",
+      "datasource": {
+        "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+        "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "address": "LocalHost",
+        "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+        "live": false,
+        "title": "dm_11125_pckg_web_analytics_automated"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "campaign_final",
+                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "campaign_final"
+                },
+                "instanceid": "8B8F4-A68E-F5",
+                "format": {
+                  "members": {
+                    "N\\A": {
+                      "color": "#00cee6",
+                      "title": "N\\A",
+                      "sortData": "N\\A"
+                    },
+                    "promo_code": {
+                      "color": "#9b9bd7",
+                      "title": "promo_code",
+                      "sortData": "promo_code",
+                      "inResultset": true
+                    },
+                    "retargeting": {
+                      "color": "#6EDA55",
+                      "title": "retargeting",
+                      "sortData": "retargeting",
+                      "inResultset": true
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[56DE7-4FF]",
+                  "context": {
+                    "[56DE7-4FF]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Total conversion"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "0EACF-F6EC-EC"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "campaign_final",
+                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "campaign_final",
+                  "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "exclude": {
+                      "members": [
+                        "N\\A"
+                      ]
+                    }
+                  },
+                  "collapsed": true,
+                  "datasource": {
+                    "fullname": "localhost/dm_11125_pckg_web_analytics_automated",
+                    "id": "localhost_admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+                    "address": "LocalHost",
+                    "database": "admXwAa11125XwAapckgXwAawebXwAaanalyticsXwAaautomated",
+                    "live": false,
+                    "title": "dm_11125_pckg_web_analytics_automated"
+                  }
+                },
+                "instanceid": "57791-A3EC-C9"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": false,
+          "value": false,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "bySlicesCount",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "stacked": false,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "campaign_final",
+              "title": "campaign_final",
+              "singular": "campaign_final",
+              "plural": "campaign_final"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "A1629-1AE8-A2",
+      "queryStartTime": "2022-09-21T13:13:07",
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "minDate": 1609390800000,
+      "maxDate": 1616644800000,
+      "tickLevel": "week",
+      "forcedRedraw": false,
+      "hasExcessiveSeries": false,
+      "disableSelctor": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "tenantId": "6059a4239a359b001ad90b4c",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "63473317a7b3690037efb1a3",
+      "drawing": true,
+      "canEditFilters": true,
+      "lastOpened": null
+    }
+  ],
+  "hierarchies": []
+}

@@ -7,4 +7,4 @@ _export:
     tbl: ['customers', 'consents', 'email_activity', 'formfills', 'pageviews', 'order_details', 'order_online_transactions', 'order_offline_transactions']
   _do:
     td>: staging/queries/${tbl}.sql
-    create_table: ${stg}_${sub}.${tbl} 
+    create_table: ${stg}_${sub}.${tbl}

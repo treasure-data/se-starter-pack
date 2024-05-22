@@ -83,3 +83,7 @@ _export:
               td>: analytics/queries/web_analytics_from_tmp.sql
               create_table: ${ana}_${sub}.web_analytics_${parray}_agg
               database: ${ana}_${sub} #query fails to get the source tables otherwise
+    +drop_tmp:
+      td_ddl>:
+      drop_tables: ["web_analytics_agg_tmp"]
+      database: ${ana}_${sub}
