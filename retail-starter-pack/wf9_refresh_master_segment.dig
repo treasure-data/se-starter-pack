@@ -5,8 +5,7 @@ _export:
   _parallel: true
   td_for_each>: segment/queries/get_active_audience.sql
   _do:
-    +refresh:
-      http>: "${td.each.url}/audiences/${td.each.audience_id}/run"
-      method: POST
-      headers:
-        - authorization: "${secret:td.apikey}"
+      +parent_segment_refresh:
+          require>: audience
+          project_name: cdp_audience_${td.each.audience_id}
+          session_time: ${moment(session_time).add(i, 'm').format()}
