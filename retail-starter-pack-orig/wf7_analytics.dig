@@ -1,0 +1,89 @@
+_export:
+  !include : 'config/src_params.yml'
+  td:
+    database: ${ana}_${sub}
+    src_database: ${gld}_${sub}
+
++analytics:
+  +prepare_db:
+    td_ddl>:
+    create_databases: ["${ana}_${sub}"]
+  +sales_trends:
+    +check_st_exists:
+      td>:
+        data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='sales_trends'"
+      store_last_results: true
+    +run_sales_trends:
+      if>: ${td.last_results.cnt > 0}
+      _do:
+        +drop_tmp:
+          td_ddl>:
+          drop_tables: ["sales_trends_tmp"]
+        +create_tmp:
+          td>:
+          query: "create table sales_trends_tmp as select * from sales_trends"
+        +update_st:
+          td>: analytics/queries/sales_trends_update.sql
+          create_table: ${ana}_${sub}.sales_trends
+      _else_do:
+        +create_st:
+          td>: analytics/queries/sales_trends_create.sql
+          create_table: ${ana}_${sub}.sales_market_basket_analysis
+  +sales_market_basket_analysis:
+    td>: analytics/queries/sales_market_basket_analysis.sql
+    engine: hive
+    create_table: ${ana}_${sub}.recent_item_contacts
+    database: ${gld}_${sub} #query fails to get the source tables otherwise
+  +web_analytics:
+    td>: analytics/queries/web_analytics.sql
+    create_table: ${ana}_${sub}.web_analytics
+    database: ${gld}_${sub} #query fails to get the source tables otherwise
+  +web_analytics_agg:
+      +check_wag_exists:
+        td>:
+          data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='web_analytics_agg'"
+        store_last_results: true
+      +run_sales_trends:
+        if>: ${td.last_results.cnt > 0}
+        _do:
+          +insert_wag:
+            td>: analytics/queries/web_analytics_agg.sql
+            insert_into: ${ana}_${sub}.web_analytics_agg
+            database: ${gld}_${sub}
+        _else_do:
+          +create_wag:
+            td>: analytics/queries/web_analytics_agg.sql
+            create_table: ${ana}_${sub}.web_analytics_agg
+            database: ${gld}_${sub} #query fails to get the source tables otherwise
+  +web_analytics_agg_others:
+    +create_agg_tmp:
+      td>: analytics/queries/web_analytics_agg_tmp.sql
+      create_table: ${ana}_${sub}.web_analytics_agg_tmp
+      database: ${gld}_${sub} #query fails to get the source tables otherwise
+    +sub_agg_table:
+      for_each>:
+        parray: ["td_url", "utm_source", "utm_medium", "utm_campaign", "utm_content", "search_engine", "country_by_ip", "subdivision_by_ip_list", "city_by_ip", "connectiontype_by_ip", "domain_by_ip", "device_type", "os_name", "browser_name"]
+      _do:
+        +check_sub_agg_exists:
+          td>:
+            data: "select count(table_name) cnt from information_schema.tables where table_schema = '${ana}_${sub}' and table_name='web_analytics_${parray}_agg'"
+          store_last_results: true
+        +run_sub_agg:
+          _export:
+            gvar: ${parray}
+            intablename: web_analytics_agg_tmp
+          if>: ${td.last_results.cnt > 0}
+          _do:
+            +insert_sub_agg:
+              td>: analytics/queries/web_analytics_from_tmp.sql
+              insert_into: ${ana}_${sub}.web_analytics_${parray}_agg
+              database: ${ana}_${sub} #query fails to get the source tables otherwise
+          _else_do:
+            +create_sub_agg:
+              td>: analytics/queries/web_analytics_from_tmp.sql
+              create_table: ${ana}_${sub}.web_analytics_${parray}_agg
+              database: ${ana}_${sub} #query fails to get the source tables otherwise
+    +drop_tmp:
+      td_ddl>:
+      drop_tables: ["web_analytics_agg_tmp"]
+      database: ${ana}_${sub}
