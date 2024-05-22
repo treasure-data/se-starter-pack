@@ -2,7 +2,7 @@
   td>:
     data: "delete from ${segment.tables.segment_templates} where time>0"
     database: ${meta}
-
+ 
 +create_tables:
   td_ddl>:
     empty_tables: [ "${segment.tables.segment_logs}"]
