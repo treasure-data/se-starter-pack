@@ -88,3 +88,28 @@ _export:
       td_ddl>:
       drop_tables: ["web_analytics_agg_tmp"]
       database: ${ana}_${sub}
+  +web_analytics_sankey:
+    _export:
+      tblname: enriched_pageviews
+      column: td_url
+    +create_sub_agg:
+      td>: analytics/queries/sankey_web_conversion.sql
+      create_table: ${ana}_${sub}.web_conversion
+      database: ${gld}_${sub} #query fails to get the source tables otherwise
+    +generate_step_stats:
+      for_range>:
+        from: 1
+        to: 5
+        step: 1
+      _do:
+        td>: analytics/queries/sankey_step_statistics.sql
+        insert_into: web_conversion_step_statistics
+        database: ${ana}_${sub}
+    +generate_labels:
+      td>: analytics/queries/sankey_generate_labels.sql
+      create_table: web_conversion_labels
+      database: ${ana}_${sub}
+    +generate_data_model:
+      td>: analytics/queries/sankey_data_model_final.sql
+      create_table: web_conversion_analytics_final
+      database: ${ana}_${sub}
