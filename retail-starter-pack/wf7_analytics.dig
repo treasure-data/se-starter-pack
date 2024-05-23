@@ -1,5 +1,4 @@
 _export:
-_export:
   !include : 'config/src_params.yml'
   td:
     database: ${ana}_${sub}
