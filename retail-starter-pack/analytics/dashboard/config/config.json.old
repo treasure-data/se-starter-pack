@@ -1,0 +1,21 @@
+{
+    "model_name": "analytics_dash_retail_starter_pack_test",
+    "model_tables": [
+        {
+            "db": "sink_database",
+            "name": "sales_market_basket_analysis"
+        },
+        {
+            "db": "sink_database",
+            "name": "sales_trends"
+        }
+    ],
+    "shared_user_list": ["biswadip.paul+demodata@treasure-data.com"],
+    "change_schema_cols": {
+        "date": ["ENTER_NAME"],
+        "text": ["ENTER_NAME"],
+        "float": ["ENTER_NAME"],
+        "bigint": ["ENTER_NAME"]
+    },
+    "join_relations": { "pairs": [] }
+}
