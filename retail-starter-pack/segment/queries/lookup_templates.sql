@@ -1,2 +1,2 @@
 select folder, file 
-from ${meta}.${segment.tables.templates}
+from va_config_${sub}.${segment.tables.parent_segment_templates}

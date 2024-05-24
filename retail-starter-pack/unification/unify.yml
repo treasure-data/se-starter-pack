@@ -1,4 +1,4 @@
-name: retail_starter_pack
+name: ${sub}
 
 #####################################################
 ##
@@ -18,57 +18,61 @@ keys:
 
 #####################################################
 ##
-##Declare datebases, tables, and keys to use during unification
+## Declare datebases, tables, and keys to use during unification
 ##
 #####################################################
 
 tables:
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: customers
     key_columns:
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: pageviews
     key_columns:
       - {column: td_global_id, key: td_global_id}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: email_activity
     key_columns:
       - {column: trfmd_email, key: email}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: order_online_transactions
     key_columns:
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: order_offline_transactions
     key_columns:
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: order_details
     key_columns:
       - {column: order_no, key: order_no}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: formfills
     key_columns:
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
       - {column: td_global_id, key: td_global_id}
 
-  - database: stg_retail
-    table: consents
+  - database: ${stg}_${sub}
+    table: consents_email
     key_columns:
       - {column: trfmd_email, key: email}
+      
+  - database: ${stg}_${sub}
+    table: consents_phone
+    key_columns:
       - {column: trfmd_phone_number, key: phone_number}
 
 
@@ -100,14 +104,14 @@ master_tables:
           - {table: order_online_transactions, column: trfmd_email, priority: 2}
           - {table: order_offline_transactions, column: trfmd_email, priority: 2}
           - {table: formfills, column: trfmd_email, priority: 2}
-          - {table: consents, column: trfmd_email, priority: 2}
+          - {table: consents_email, column: trfmd_email, priority: 2}
       - name: phone_number
         source_columns:
           - {table: customers, column: trfmd_phone_number, priority: 1}
           - {table: order_online_transactions, column: trfmd_phone_number, priority: 2}
           - {table: order_offline_transactions, column: trfmd_phone_number, priority: 2}
           - {table: formfills, column: trfmd_phone_number, priority: 2}
-          - {table: consents, column: trfmd_phone_number, priority: 2}
+          - {table: consents_phone, column: trfmd_phone_number, priority: 2}
       - name: td_global_id
         source_columns:
           - {table: pageviews, column: td_global_id, priority: 1}

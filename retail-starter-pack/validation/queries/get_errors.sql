@@ -15,15 +15,15 @@ select  case when js['missing_tables'] > 0 and js['missing_columns'] > 0 and js[
              then 'Error: Mismatched column types from source database ${src}_${sub}. Stopping workflow!'                               
         end as subject,
         case when js['missing_tables'] > 0 and js['missing_columns'] > 0 and js['mismatch_column_type'] > 0
-             then 'Check ${meta}.report_missing_tables_in_src for missing tables, ${meta}.report_missing_src_columns for missing columns and ${meta}.report_column_type_mismatches for column type mismatches in source database ${src}_${sub}.' 
+             then 'Check va_config_${sub}.report_missing_tables_in_src for missing tables, va_config_${sub}.report_missing_src_columns for missing columns and va_config_${sub}.report_column_type_mismatches for column type mismatches in source database ${src}_${sub}.' 
              when js['missing_tables'] > 0 and js['missing_columns'] > 0 and js['mismatch_column_type'] = 0
-             then 'Check ${meta}.report_missing_tables_in_src for missing tables and ${meta}.report_missing_src_columns for missing columns in source database ${src}_${sub}.' 
+             then 'Check va_config_${sub}.report_missing_tables_in_src for missing tables and va_config_${sub}.report_missing_src_columns for missing columns in source database ${src}_${sub}.' 
              when js['missing_tables'] > 0 and js['missing_columns'] = 0 and js['mismatch_column_type'] = 0
-             then 'Check ${meta}.report_missing_tables_in_src for missing tables in source database ${src}_${sub}.' 
+             then 'Check va_config_${sub}.report_missing_tables_in_src for missing tables in source database ${src}_${sub}.' 
              when js['missing_tables'] = 0 and js['missing_columns'] > 0 and js['mismatch_column_type'] = 0
-             then 'Check ${meta}.report_missing_src_columns for missing columns in source database ${src}_${sub}.' 
+             then 'Check va_config_${sub}.report_missing_src_columns for missing columns in source database ${src}_${sub}.' 
              when js['missing_tables'] = 0 and js['missing_columns'] = 0 and js['mismatch_column_type'] > 0
-             then 'Check ${meta}.report_column_type_mismatches for column type mismatches in source database ${src}_${sub}'                               
+             then 'Check va_config_${sub}.report_column_type_mismatches for column type mismatches in source database ${src}_${sub}'                               
         end as message         
 from agg
 where issue = 'error'

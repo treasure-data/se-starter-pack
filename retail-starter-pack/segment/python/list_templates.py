@@ -29,7 +29,7 @@ def list_files_in_folder(folder_path):
 
 def main(folder_path, db, table):
     result_df = list_files_in_folder(folder_path)
-
+    print(result_df, db, table)
     td.uploadDataToTD(result_df, db, table)
 
     # Display the resulting DataFrame

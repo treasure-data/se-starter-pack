@@ -1,7 +1,7 @@
 _export:
   !include : 'config/src_params.yml'
   td:
-      database: ${meta}
+      database: va_config_${sub}
 
 
 +src_checks:

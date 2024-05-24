@@ -104,11 +104,10 @@ create table order_details_tmp (
    order_no varchar,
    order_line_no varchar,
    order_transaction_type varchar,
-   item_id varchar,
+   product_id varchar,
    quantity double,
-   ship_price double,
+   shipping_cost double,
    list_price double,
-   retail_price double,
    discount_offered double,
    tax double,
    net_price double,
@@ -136,9 +135,9 @@ create table formfills_tmp (
 drop table if exists consents_tmp;
 
 create table consents_tmp (
-   email varchar,
-   phone_number varchar,
+   id varchar,
+   id_type varchar,
    consent_type varchar,
-   consent_flag int,
+   consent_flag varchar,
    time bigint
 );
