@@ -296,7 +296,7 @@ behaviors:
     type: number
     parentColumn: amount
     matrixColumnName: amount
-  - name: trfmd_payment_method
+  - name: Payment Method
     type: string
     parentColumn: trfmd_payment_method
     matrixColumnName: trfmd_payment_method
