@@ -1,7 +1,7 @@
 import segment.python.api.ps as ps
 
 # import yaml
-# import json
+import json
 import pandas as pd
 import segment.python.td as td
 import segment.python.helper.global_var as g
@@ -62,16 +62,18 @@ def delete_and_create(body):
     return audience_id, name, message
 
 
-def main(folder, file_name, database, table, run_type="create"):
+def main(folder, file_name, database, table, parent_db, run_type="create"):
     df_log = pd.DataFrame()
     body = convert_yaml_to_json(folder, file_name)
-
+    print(parent_db)
+    body_ = body.replace('gld_retail', f'{parent_db}')
+    
     if run_type == "create":
-        audience_id, name, message = check_and_create(body)
+        audience_id, name, message = check_and_create(body_)
     elif run_type == "update":
-        audience_id, name, message = check_and_update(body)
+        audience_id, name, message = check_and_update(body_)
     elif run_type == "recreate":
-        audience_id, name, message = delete_and_create(body)
+        audience_id, name, message = delete_and_create(body_)
     else:
         audience_id, name, message = (None, None, None)
     df_log["file"] = [file_name]

@@ -8,4 +8,4 @@ _export:
       +parent_segment_refresh:
           require>: audience
           project_name: cdp_audience_${td.each.audience_id}
-          session_time: ${moment(session_time).add(i, 'm').format()}
+          session_time: ${moment(session_time).format()}
