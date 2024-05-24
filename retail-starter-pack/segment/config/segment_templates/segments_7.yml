@@ -8,7 +8,7 @@ relationships:
 attributes:
   - audienceId: ${audience_id}
     countPopulation: true
-    name: Media Suppression test
+    name: Media Suppression
     rule:
       type: And
       conditions:
