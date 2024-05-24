@@ -7,7 +7,7 @@ where  table_schema = '${src}_${sub}'),
 
 ref_meta as (select replace(table_name, '_tmp', '') ref_table_name, column_name as ref_column_name, data_type as ref_data_type
 from INFORMATION_SCHEMA.COLUMNS
-where  table_schema = '${meta}'
+where  table_schema = 'va_config_${sub}'
 and table_name like '%_tmp')
 
 select src_meta.*, ref_meta.*
@@ -26,7 +26,7 @@ where  table_schema = '${src}_${sub}'),
 
 ref_meta as (select replace(table_name, '_tmp', '') ref_table_name
 from INFORMATION_SCHEMA.TABLES
-where  table_schema = '${meta}'
+where  table_schema = 'va_config_${sub}'
 and table_name like '%_tmp')
 
 select src_meta.*, ref_meta.*

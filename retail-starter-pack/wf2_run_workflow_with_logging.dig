@@ -1,10 +1,10 @@
 _export:
   !include : 'config/src_params.yml'
   td:
-    database: ${meta}
+    database: va_config_${sub}
 ##
 +echo:
-  echo>: ${meta}
+  echo>: va_config_${sub}
  
 +src_checks:
   if>: ${run_all!=true}

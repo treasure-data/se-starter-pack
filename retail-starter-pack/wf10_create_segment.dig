@@ -1,16 +1,12 @@
-+del_table:
-  td>:
-    data: "delete from ${segment.tables.segment_templates} where time>0"
-    database: ${meta}
-
+ 
 +create_tables:
   td_ddl>:
-    empty_tables: [ "${segment.tables.segment_logs}"]
+  empty_tables: [ "${segment.tables.segment_logs}", "${segment.tables.segment_templates}"]
 
 +list_all_templates:
   _export:
     folder_path: segment/config/segment_templates
-    db: ${meta}
+    db: va_config_${sub}
     table: ${segment.tables.segment_templates}
   docker:
     image: "digdag/digdag-python:3.9"
@@ -27,7 +23,7 @@
       _export:
         folder: segment/config/segment_templates
         file_name: ${td.each.file}
-        database: ${meta}
+        database: va_config_${sub}
         table: ${segment.tables.segment_logs}
         audience_id: ${td.each.audience_id}
       docker:

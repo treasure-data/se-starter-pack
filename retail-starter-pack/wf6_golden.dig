@@ -1,12 +1,9 @@
 _export:
   !include : 'config/src_params.yml'
   td:
-    database: ${uni}_${meta}
-    src_database: ${uni}_${meta}
+    database: cdp_unification_${sub}
+    src_database: cdp_unification_${sub}
 
-+db:
-  td_ddl>:
-  create_databases: ["${gld}_${sub}"]
 
 +move_unified:
   +get_table_name:
@@ -25,3 +22,9 @@ _export:
   td>: golden/queries/attributes.sql
   database: ${gld}_${sub}
   create_table: ${gld}_${sub}.derived_attributes
+
++consent_transformation:
+  td>: golden/queries/consent.sql
+  database: ${gld}_${sub}
+  create_table: ${gld}_${sub}.${gld}_consents
+

@@ -1,9 +1,4 @@
--- project_id: 1352842
--- project_name: retail-starter-pack_qa_br-timestamps
--- workflow_name: wf1_retail_starter_pack_orchestration
--- session_id: 225355877
--- attempt_id: 1161502005
--- task_name: +wf1_retail_starter_pack_orchestration+golden^sub+src_checks^sub+run_workflow^sub+attributes
+
 with pageviews_cte as (select
 time as time,
 retail_unification_id as retail_unification_id
