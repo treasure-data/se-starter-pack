@@ -1,7 +1,7 @@
 select * from
 (
   select null as label, t1.value, t2.row_num as from_num, t3.row_num as to_num, stage
-  from step_statistics t1
+  from  web_conversion_step_statistics t1
   left join
   web_conversion_labels t2
   on t1."from" = t2.label

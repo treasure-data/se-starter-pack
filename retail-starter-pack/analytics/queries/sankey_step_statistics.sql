@@ -15,7 +15,7 @@ with t1 as (
             ARRAY_AGG(activity_orig order by time) as touches
             from web_conversion
             where (row_num in (${range.from},${range.from+1}) and grp = 0) or (row_num in (${range.from+1},${range.from+2}) and grp > 0)
-            group by cdp_customer_id, grp
+            group by retail_unification_id, grp
         )
     group by 1,2 order by 2 desc
 )
