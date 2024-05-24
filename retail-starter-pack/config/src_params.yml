@@ -21,3 +21,37 @@ segment:
     parent_segment_creation: automation_parent_segments
     active_audience: active_audience
     segment_logs: segment_logs
+
+analytics:
+  dashboards:
+    sankey:
+      register:
+        event: 'register'
+        description: 'Account Creation/Sign-Up'
+      login:
+        event: 'login'
+        description: 'Sign-In/Login'
+      products:
+        event: 'products'
+        description: 'Product Page Visit'
+      wishlist:
+        event: 'wishlist'
+        description: 'Wishlist/Favorites'
+      cart:
+        event: 'cart'
+        description: 'Add to Cart'
+      checkout:
+        event: 'checkout'
+        description: 'Checkout Initiation'
+      loyalty:
+        event: 'loyalty'
+        description: 'Loyalty Program Enrollment'
+      return:
+        event: 'return'
+        description: 'Returns/Exchanges'
+      review:
+        event: 'review'
+        description: 'Write a Review'
+      support:
+        event: 'support'
+        description: 'Customer Support Ticket'
