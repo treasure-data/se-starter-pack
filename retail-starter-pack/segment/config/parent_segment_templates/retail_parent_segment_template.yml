@@ -41,7 +41,7 @@ attributes:
   groupingName: Identity
 - audienceId: null
   id: null
-  name: Gender Code
+  name: Gender
   type: string
   parentDatabaseName: gld_retail
   parentTableName: enriched_customers
@@ -118,7 +118,7 @@ attributes:
   groupingName: Purchase
 - audienceId: null
   id: null
-  name: Web Visits Last 7days
+  name: Web Visits Last 7 Days
   type: number
   parentDatabaseName: gld_retail
   parentTableName: derived_attributes
@@ -129,7 +129,7 @@ attributes:
   groupingName: Engagement
 - audienceId: null
   id: null
-  name: Purchase Last 30days
+  name: Purchases in Last 30 Days
   type: number
   parentDatabaseName: gld_retail
   parentTableName: derived_attributes
