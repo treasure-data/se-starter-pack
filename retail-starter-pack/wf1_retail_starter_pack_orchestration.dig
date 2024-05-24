@@ -5,6 +5,7 @@
 _export:
   !include : 'config/src_params.yml'
   !include : 'config/email_ids.yml'
+
   td:
     database: va_config_${sub}
 
@@ -22,6 +23,7 @@ _export:
     +del_log:
       td>:
       query: "delete from log_tbl where 1=1"
+
       database: va_config_${sub}
 
 # +validation:
@@ -96,6 +98,7 @@ _export:
     email: ${email_ids}
   _do:
     _export:
+
       subject: "Treasure Data Value Accelerator completed Successfully!"
       receive_email: ${email}
     call>: utilities/success.dig
