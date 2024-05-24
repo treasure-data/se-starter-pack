@@ -5,7 +5,6 @@ stg: stg
 sub: retail2
 gld: gld
 run_all: true
-i: 10
 
 # US
 td_cdp_endpoint: "https://api-cdp.treasuredata.com"
