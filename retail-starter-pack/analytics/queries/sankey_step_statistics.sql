@@ -51,7 +51,7 @@ UNION ALL
     value
     from t1
     where stage = 'Repurchase'
-    value > (
+    and value > (
         SELECT MAX(value) * 0.2
         FROM t1
         where stage = 'Repurchase'
