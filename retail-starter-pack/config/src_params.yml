@@ -2,8 +2,9 @@ site: us
 raw: raw
 src: src
 stg: stg
-sub: retail2
+sub: retail
 gld: gld
+ana: analytics
 run_all: true
 
 # US
