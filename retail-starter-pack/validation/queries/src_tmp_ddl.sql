@@ -43,7 +43,6 @@ create table pageviews_tmp
    td_browser_version varchar,
    td_os varchar,
    td_os_version varchar,
-   variant varchar,
    time bigint
 );
 
