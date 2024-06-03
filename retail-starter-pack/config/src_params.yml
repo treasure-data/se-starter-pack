@@ -27,32 +27,42 @@ analytics:
   dashboards:
     sankey:
       register:
-        event: 'register'
-        description: 'Account Creation/Sign-Up'
+        pattern: 'register'
+        stage: 'Account Creation/Sign-Up'
+        indexno: 0
       login:
-        event: 'login'
-        description: 'Sign-In/Login'
+        pattern: 'login'
+        stage: 'Sign-In/Login'
+        indexno: 1
       products:
-        event: 'products'
-        description: 'Product Page Visit'
+        pattern: 'products'
+        stage: 'Product Page Visit'
+        indexno: 2
       wishlist:
-        event: 'wishlist'
-        description: 'Wishlist/Favorites'
+        pattern: 'wishlist'
+        stage: 'Wishlist/Favorites'
+        indexno: 3
       cart:
-        event: 'cart'
-        description: 'Add to Cart'
+        pattern: 'cart'
+        stage: 'Add to Cart'
+        indexno: 4
       checkout:
-        event: 'checkout'
-        description: 'Checkout Initiation'
+        pattern: 'checkout'
+        stage: 'Checkout Initiation'
+        indexno: 5
       loyalty:
-        event: 'loyalty'
-        description: 'Loyalty Program Enrollment'
+        pattern: 'loyalty'
+        stage: 'Loyalty Program Enrollment'
+        indexno: 6
       return:
-        event: 'return'
-        description: 'Returns/Exchanges'
+        pattern: 'return'
+        stage: 'Returns/Exchanges'
+        indexno: 7
       review:
-        event: 'review'
-        description: 'Write a Review'
+        pattern: 'review'
+        stage: 'Write a Review'
+        indexno: 8
       support:
-        event: 'support'
-        description: 'Customer Support Ticket'
+        pattern: 'support'
+        stage: 'Customer Support Ticket'
+        indexno: 9
