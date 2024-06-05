@@ -107,5 +107,5 @@ _export:
       td>: analytics/queries/sankey_data_model_final.sql
       create_table: web_conversion_analytics_final
       database: ${ana}_${sub}
-  +dashboards:
-    call>: analytics/dashboard/analytics_dashboard_launch.dig
++dashboards:
+  call>: analytics/dashboard/analytics_dashboard_launch.dig
