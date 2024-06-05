@@ -15,31 +15,32 @@ _export:
       store_last_results: true
 
     ###-- Workflow to refresh the datamodel with updated tables and data schema
-    +call_post_builds:
-      http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds"
-      method: POST
-      headers:
-        - authorization: "${secret:td.apikey}"
-        - cache-control: "no-cache"
-        - accept: "application/json"
-        - content-type: "application/json"
-      content:
-        buildType: "full"
-      content_format: "json"
-      store_content: true
+    +post_get:
+      +call_post_builds:
+        http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds"
+        method: POST
+        headers:
+          - authorization: "${secret:td.apikey}"
+          - cache-control: "no-cache"
+          - accept: "application/json"
+          - content-type: "application/json"
+        content:
+          buildType: "full"
+        content_format: "json"
+        store_content: true
 
-    +echo_post:
-      echo>: ${http.last_content}
+      +echo_post:
+        echo>: ${http.last_content}
 
-    +call_get_builds:
-      http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds/${http.last_content.oid}"
-      method: GET
-      headers:
-        - authorization: "${secret:td.apikey}"
-        - cache-control: "no-cache"
-        - accept: "application/json"
-        - content-type: "application/json"
-      store_content: true
+      +call_get_builds:
+        http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds/${JSON.parse(http.last_content)['oid']}"
+        method: GET
+        headers:
+          - authorization: "${secret:td.apikey}"
+          - cache-control: "no-cache"
+          - accept: "application/json"
+          - content-type: "application/json"
+        store_content: true
 
-    +echo_get:
-      echo>: ${http.last_content}
+      +echo_get:
+        echo>: ${http.last_content}
