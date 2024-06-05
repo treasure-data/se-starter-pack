@@ -1,0 +1,8 @@
+Hi All,
+
+${subject}
+
+Please reach out to your TD representative for troubleshooting and support if required.
+
+Regards,
+Treasure Data

@@ -1,0 +1,23 @@
+site: us
+raw: raw
+src: src
+stg: stg
+sub: event
+gld: gld
+run_all: true
+
+# US
+td_cdp_endpoint: "https://api-cdp.treasuredata.com"
+# APAC
+# td_cdp_endpoint: "https://api-cdp.ap02.treasuredata.com"
+# EMEA
+# td_cdp_endpoint: "https://api-cdp.eu01.treasuredata.com"
+
+segment:
+  run_type: update
+  tables:
+    parent_segment_templates: parent_segment_template
+    segment_templates: segment_templates
+    parent_segment_creation: automation_parent_segments
+    active_audience: active_audience
+    segment_logs: segment_logs

@@ -1,0 +1,10 @@
+timezone: UTC
+
+_export:
+    mail:
+      from: "wf-error-alert@treasure-data.com"
+
++send_alert:
+  mail>: error_body.txt
+  subject: "Error! ${subject}"
+  to: ${receive_email}
