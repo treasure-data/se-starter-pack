@@ -61,9 +61,9 @@ _export:
 +run_master_segment_and_analytics:
   _parallel: true
 
-  +analytics_and_dashboard:
+  +analytics:
     _export:
-      step_name: analytics_and_dashboard
+      step_name: analytics
       workflow_to_run: wf7_analytics
     call>: wf2_run_workflow_with_logging.dig
 
@@ -72,6 +72,7 @@ _export:
       step_name: create_master_segment
       workflow_to_run: wf8_create_master_segment
     call>: wf2_run_workflow_with_logging.dig
+
 
 +refresh_master_segment:
   _export:

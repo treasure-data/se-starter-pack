@@ -1,4 +1,4 @@
-name: retail_starter_pack
+name: ${sub}
 
 #####################################################
 ##
@@ -9,7 +9,6 @@ name: retail_starter_pack
 keys:
   - name: email
     invalid_texts: ['', null]
-    valid_regexp: ".*@.*"   
   - name: td_global_id
     invalid_texts: ['', null]
   - name: phone_number
@@ -18,63 +17,67 @@ keys:
     invalid_texts: ['', null]
 
 #####################################################
-##  
-##Declare datebases, tables, and keys to use during unification
+##
+## Declare databases, tables, and keys to use during unification
 ##
 #####################################################
 
 tables:
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: customers
     key_columns:
-      - {column: email, key: email}
-      - {column: phone_number, key: phone_number}
-  
-  - database: stg_retail
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+
+  - database: ${stg}_${sub}
     table: pageviews
     key_columns:
-      - {column: td_global_id, key: td_global_id}  
+      - {column: td_global_id, key: td_global_id}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: email_activity
     key_columns:
-      - {column: email, key: email}  
+      - {column: trfmd_email, key: email}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: order_online_transactions
     key_columns:
-      - {column: email, key: email}
-      - {column: phone_number, key: phone_number}
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: order_offline_transactions
     key_columns:
-      - {column: email, key: email}
-      - {column: phone_number, key: phone_number}
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
 
-  - database: stg_retail
+  - database: ${stg}_${sub}
     table: order_details
     key_columns:
       - {column: order_no, key: order_no}
- 
-  - database: stg_retail
+
+  - database: ${stg}_${sub}
     table: formfills
     key_columns:
-      - {column: email, key: email}
-      - {column: phone_number, key: phone_number}
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
       - {column: td_global_id, key: td_global_id}
 
-  - database: stg_retail
-    table: consents
+  - database: ${stg}_${sub}
+    table: consents_email
     key_columns:
-      - {column: email, key: email}
-      - {column: phone_number, key: phone_number}
+      - {column: trfmd_email, key: email}
+      
+  - database: ${stg}_${sub}
+    table: consents_phone
+    key_columns:
+      - {column: trfmd_phone_number, key: phone_number}
 
 
 #####################################################
-##  
+##
 ##Declare hierarchy for unification. Define keys to use for each level.
 ##
 #####################################################
@@ -85,7 +88,7 @@ canonical_ids:
 
 
 #####################################################
-##  
+##
 ##Declare Survivorship Rules to Determine Best Value for Each Attribute
 ##
 #####################################################
@@ -96,26 +99,20 @@ master_tables:
     attributes:
       - name: email
         source_columns:
-          - {table: customers, column: email, priority: 1} 
-          - {table: email_activity, column: email, priority: 2} 
-          - {table: order_online_transactions, column: email, priority: 2}
-          - {table: order_offline_transactions, column: email, priority: 2}
-          - {table: formfills, column: email, priority: 2}
-          - {table: consents, column: email, priority: 2}
+          - {table: customers, column: trfmd_email, priority: 1}
+          - {table: email_activity, column: trfmd_email, priority: 2}
+          - {table: order_online_transactions, column: trfmd_email, priority: 2}
+          - {table: order_offline_transactions, column: trfmd_email, priority: 2}
+          - {table: formfills, column: trfmd_email, priority: 2}
+          - {table: consents_email, column: trfmd_email, priority: 2}
       - name: phone_number
         source_columns:
-          - {table: customers, column: phone_number, priority: 1} 
-          - {table: order_online_transactions, column: phone_number, priority: 2}
-          - {table: order_offline_transactions, column: phone_number, priority: 2}
-          - {table: formfills, column: phone_number, priority: 2}
-          - {table: consents, column: phone_number, priority: 2}
+          - {table: customers, column: trfmd_phone_number, priority: 1}
+          - {table: order_online_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: order_offline_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: formfills, column: trfmd_phone_number, priority: 2}
+          - {table: consents_phone, column: trfmd_phone_number, priority: 2}
       - name: td_global_id
         source_columns:
-          - {table: pageviews, column: td_global_id, priority: 1} 
+          - {table: pageviews, column: td_global_id, priority: 1}
           - {table: formfills, column: td_global_id, priority: 2}
-      - name: order_no
-        source_columns:
-          - {table: order_online_transactions, column: order_no, priority: 1}
-          - {table: order_offline_transactions, column: order_no, priority: 2}
-          - {table: order_details, column: order_no, priority: 2}          
-      
