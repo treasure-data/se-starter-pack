@@ -18,7 +18,7 @@ keys:
 
 #####################################################
 ##
-## Declare datebases, tables, and keys to use during unification
+## Declare databases, tables, and keys to use during unification
 ##
 #####################################################
 
@@ -116,8 +116,3 @@ master_tables:
         source_columns:
           - {table: pageviews, column: td_global_id, priority: 1}
           - {table: formfills, column: td_global_id, priority: 2}
-      - name: order_no
-        source_columns:
-          - {table: order_online_transactions, column: order_no, priority: 1}
-          - {table: order_offline_transactions, column: order_no, priority: 2}
-          - {table: order_details, column: order_no, priority: 2}
