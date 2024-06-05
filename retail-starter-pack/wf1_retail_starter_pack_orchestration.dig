@@ -62,17 +62,10 @@ _export:
   _parallel: true
 
   +analytics_and_dashboard:
-    +analytics:
-      _export:
-        step_name: analytics
-        workflow_to_run: wf7_analytics
-      call>: wf2_run_workflow_with_logging.dig
-
-    +analytics_dashboard:
-      _export:
-        step_name: analytics_dashboard
-        workflow_to_run: analytics/dashboard/analytics_dashboard_launch
-      call>: wf2_run_workflow_with_logging.dig
+    _export:
+      step_name: analytics_and_dashboard
+      workflow_to_run: wf7_analytics
+    call>: wf2_run_workflow_with_logging.dig
 
   +create_master_segment:
     _export:
