@@ -7,14 +7,14 @@ _export:
   !include : 'config/email_ids.yml'
 
   td:
-    database: va_config_${sub}
+    database: config_${sub}
 
 +prepare_db:
   td_ddl>:
-  create_databases: ["va_config_${sub}", "${stg}_${sub}", "${gld}_${sub}"]
+  create_databases: ["config_${sub}", "${stg}_${sub}", "${gld}_${sub}"]
 
 +prepare_log_table:
-  database: va_config_${sub}
+  database: config_${sub}
   td>: "queries/log_tbl.sql"
 
 +empty_log_table:
@@ -33,63 +33,57 @@ _export:
   call>: wf2_run_workflow_with_logging.dig
 
 
-+staging:
-  _export:
-    step_name: staging
-    workflow_to_run: wf4_stage
-  call>: wf2_run_workflow_with_logging.dig
-
-
-+unification:
-  _export:
-    step_name: unification
-    workflow_to_run: wf5_unify
-  call>: wf2_run_workflow_with_logging.dig
-
-+unification_dashboard:
-  _export:
-    step_name: unification_dashboard
-    workflow_to_run: idu_dashboard/idu_dashboard_launch
-  call>: wf2_run_workflow_with_logging.dig
-
-+golden:
-  _export:
-    step_name: golden
-    workflow_to_run: wf6_golden
-  call>: wf2_run_workflow_with_logging.dig
-
-+run_master_segment_and_analytics:
-  _parallel: true
-
-  # +analytics:
-  #   # _export:
-  #   #   step_name: create_master_segment
-  #   #   workflow_to_run: wf7_analytics
-  #   # call>: wf2_run_workflow_with_logging.dig
-
-  +create_master_segment:
-    _export:
-      step_name: create_master_segment
-      workflow_to_run: wf8_create_master_segment
-    call>: wf2_run_workflow_with_logging.dig
-
-# +analytics_dashboard:
+# +staging:
 #   _export:
-#     step_name: analytics_dashboard
-#     workflow_to_run: analytics/dashboard/analytics_dashboard_launch
+#     step_name: staging
+#     workflow_to_run: wf4_stage
 #   call>: wf2_run_workflow_with_logging.dig
 
-+refresh_master_segment:
-  _export:
-    step_name: refresh_master_segment
-    workflow_to_run: wf9_refresh_master_segment
-  call>: wf2_run_workflow_with_logging.dig
 
-+create_segment:
-  _export:
-    step_name: create_segment
-    workflow_to_run: wf10_create_segment
-  call>: wf2_run_workflow_with_logging.dig
+# +unification:
+#   _export:
+#     step_name: unification
+#     workflow_to_run: wf5_unify
+#   call>: wf2_run_workflow_with_logging.dig
+
+# +unification_dashboard:
+#   _export:
+#     step_name: unification_dashboard
+#     workflow_to_run: idu_dashboard/idu_dashboard_launch
+#   call>: wf2_run_workflow_with_logging.dig
+
+# +golden:
+#   _export:
+#     step_name: golden
+#     workflow_to_run: wf6_golden
+#   call>: wf2_run_workflow_with_logging.dig
+
+# +run_master_segment_and_analytics:
+#   _parallel: true
+
+#   +analytics:
+#     _export:
+#       step_name: create_master_segment
+#       workflow_to_run: wf7_analytics
+#     call>: wf2_run_workflow_with_logging.dig
+
+#   +create_master_segment:
+#     _export:
+#       step_name: create_master_segment
+#       workflow_to_run: wf8_create_master_segment
+#     call>: wf2_run_workflow_with_logging.dig
+
+# +refresh_master_segment:
+#   _export:
+#     step_name: refresh_master_segment
+#     workflow_to_run: wf9_refresh_master_segment
+#   call>: wf2_run_workflow_with_logging.dig
+
+# +create_segment:
+#   _export:
+#     step_name: create_segment
+#     workflow_to_run: wf10_create_segment
+#   call>: wf2_run_workflow_with_logging.dig
 
 
 # # Send mail success
