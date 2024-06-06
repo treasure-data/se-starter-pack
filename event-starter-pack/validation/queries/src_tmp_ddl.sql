@@ -146,7 +146,7 @@ create table customers_tmp (
    country varchar ,
    gender varchar ,
    date_of_birth varchar ,
-   loyalty_status varchar ,
+   loyalty_tier varchar ,
    time bigint
 );
 
@@ -163,7 +163,8 @@ create table consents_tmp (
 drop table if exists online_merchandise_transactions_tmp;
 
 create table online_merchandise_transactions_tmp (
-email varchar ,
+   unique_loyalty_id varchar ,
+   email varchar ,
    phone_number varchar ,
    token bigint ,
    order_no varchar ,
