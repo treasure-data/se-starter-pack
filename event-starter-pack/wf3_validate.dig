@@ -36,7 +36,7 @@ _export:
         database: va_config_${sub}
         td_write_table: 'email_content'
       docker:
-          image: "digdag/digdag-python:3.9"
+          image: "digdag/digdag-python:3.10.1"
       py>: validation.python.gen_html.main
       _env:
         TD_SITE: ${site}
