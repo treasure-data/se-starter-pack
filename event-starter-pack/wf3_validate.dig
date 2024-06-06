@@ -43,8 +43,7 @@ _export:
         TD_API_KEY: ${secret:td_apikey}
 
     +send_email:
-      td_for_each>:
-        data: 'select html_content from va_config_${sub}.email_content'
+      td_for_each>: "validation/queries/fetch_email_body.sql"
       _do:
         +prepare_email_content:
           echo>: 'email content fetched'

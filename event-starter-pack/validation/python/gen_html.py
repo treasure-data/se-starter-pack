@@ -5,6 +5,12 @@ from validation.python.pretty_html_table import build_table
 import validation.python.global_var as g
 
 
+def split_html_content(content, max_size=131072):
+    return [
+        (i + 1, content[i : i + max_size]) for i in range(0, len(content), max_size)
+    ]
+
+
 def main(database, td_write_table, run_type="create"):
     try:
         client = pytd.Client(
@@ -150,8 +156,12 @@ def main(database, td_write_table, run_type="create"):
         </body>
     </html>
     """
-    df_html = pd.DataFrame()
-    df_html["html_content"] = [html_content]
+    # Split the html_content into chunks with row numbers
+    html_chunks_with_rownum = split_html_content(html_content)
+
+    # Create the DataFrame with the split content and row numbers
+    df_html = pd.DataFrame(html_chunks_with_rownum, columns=["rownum", "html_content"])
+
     try:
         client.load_table_from_dataframe(
             df_html, td_write_table, writer="bulk_import", if_exists="overwrite"
