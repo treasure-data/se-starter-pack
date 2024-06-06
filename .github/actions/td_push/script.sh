@@ -78,10 +78,13 @@ fi
 echo -e "===== Changed Dirs $changed_dirs"
 #proj_dirs looks like abc|def|xyz, perfect form for a regex
 dir_regex="^($INPUT_PROJ_DIRS)"
-
+echo -e "===== dir_regex $dir_regex"
 for proj_dir in $changed_dirs; do
+  echo -e "===== proj_dir $proj_dir"
   if [[ $proj_dir =~ $dir_regex ]]; then
+    echo -e "===== proj_dir $proj_dir dir_regex $dir_regex "
     create_tarball $proj_dir
     push_workflow_td $proj_dir
   fi
 done
+echo -e "===== Done ====="
