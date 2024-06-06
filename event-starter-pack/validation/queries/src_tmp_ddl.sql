@@ -1,4 +1,4 @@
-drop table if  exists email_activity_tmp;
+drop table if exists email_activity_tmp;
 
 create table email_activity_tmp
 (
@@ -11,7 +11,7 @@ create table email_activity_tmp
    time bigint
 );
 
-drop table if  exists pageviews_tmp;
+drop table if exists pageviews_tmp;
 
 create table pageviews_tmp
 (
@@ -211,4 +211,4 @@ create table favorites_tmp (
    favorite varchar ,
    favorite_type varchar ,
    time bigint
-)
+);
