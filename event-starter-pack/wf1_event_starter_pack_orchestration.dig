@@ -7,11 +7,11 @@ _export:
   !include : 'config/email_ids.yml'
 
   td:
-    database: config_${sub}
+    database: va_config_${sub}
 
 +prepare_db:
   td_ddl>:
-  create_databases: ["config_${sub}", "${stg}_${sub}", "${gld}_${sub}"]
+  create_databases: ["va_config_${sub}", "${stg}_${sub}", "${gld}_${sub}"]
 
 +prepare_log_table:
   database: config_${sub}
