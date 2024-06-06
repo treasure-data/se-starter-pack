@@ -43,7 +43,7 @@ create table pageviews_tmp
 drop table if exists ticket_transactions_tmp;
 
 create table  ticket_transactions_tmp (
-   unique_loyalty_id bigint ,
+   unique_loyalty_id varchar ,
    email varchar ,
    phone_number varchar ,
    token bigint ,
