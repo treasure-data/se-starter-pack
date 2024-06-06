@@ -96,9 +96,14 @@ _export:
       create_table: ${ana}_${sub}.web_conversion
       database: ${gld}_${sub} #query fails to get the source tables otherwise
     +generate_step_stats:
-      td>: analytics/queries/sankey_step_statistics.sql
-      create_table: web_conversion_step_statistics
-      database: ${ana}_${sub}
+      for_range>:
+        from: 1
+        to: 5
+        step: 1
+      _do:
+        td>: analytics/queries/sankey_step_statistics.sql
+        insert_into: web_conversion_step_statistics
+        database: ${ana}_${sub}
     +generate_labels:
       td>: analytics/queries/sankey_generate_labels.sql
       create_table: web_conversion_labels
@@ -107,5 +112,3 @@ _export:
       td>: analytics/queries/sankey_data_model_final.sql
       create_table: web_conversion_analytics_final
       database: ${ana}_${sub}
-+dashboards:
-  call>: analytics/dashboard/analytics_dashboard_launch.dig

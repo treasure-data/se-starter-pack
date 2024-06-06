@@ -61,11 +61,11 @@ _export:
 +run_master_segment_and_analytics:
   _parallel: true
 
-  +analytics:
-    _export:
-      step_name: analytics
-      workflow_to_run: wf7_analytics
-    call>: wf2_run_workflow_with_logging.dig
+  # +analytics:
+  #   # _export:
+  #   #   step_name: create_master_segment
+  #   #   workflow_to_run: wf7_analytics
+  #   # call>: wf2_run_workflow_with_logging.dig
 
   +create_master_segment:
     _export:
@@ -73,6 +73,11 @@ _export:
       workflow_to_run: wf8_create_master_segment
     call>: wf2_run_workflow_with_logging.dig
 
+# +analytics_dashboard:
+#   _export:
+#     step_name: analytics_dashboard
+#     workflow_to_run: analytics/dashboard/analytics_dashboard_launch
+#   call>: wf2_run_workflow_with_logging.dig
 
 +refresh_master_segment:
   _export:
@@ -87,7 +92,7 @@ _export:
   call>: wf2_run_workflow_with_logging.dig
 
 
-# Send mail success
+# # Send mail success
 +send_success_alert:
   for_each>:
     email: ${email_ids}
@@ -98,7 +103,7 @@ _export:
       receive_email: ${email}
     call>: utilities/success.dig
 
-#Send Error Alert
+# #Send Error Alert
 _error:
   +send_error_alert:
     for_each>:

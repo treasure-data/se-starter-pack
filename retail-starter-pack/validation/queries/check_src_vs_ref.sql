@@ -11,11 +11,11 @@ where  table_schema = 'va_config_${sub}'
 and table_name like '%_tmp')
 
 select src_meta.*, ref_meta.*
-from 
-src_meta  full outer join ref_meta 
+from
+src_meta  full outer join ref_meta
 on (src_meta.src_table_name = ref_meta.ref_table_name
 and src_meta.src_column_name = ref_meta.ref_column_name)
-order by src_meta.src_table_name;
+order by src_meta.src_table_name, ref_meta.ref_table_name;
 
 drop table if exists check_src_vs_ref_tables;
 
@@ -31,4 +31,5 @@ and table_name like '%_tmp')
 
 select src_meta.*, ref_meta.*
 from src_meta  full outer join ref_meta
-on (src_meta.src_table_name = ref_meta.ref_table_name);
+on (src_meta.src_table_name = ref_meta.ref_table_name)
+order by src_meta.src_table_name, ref_meta.ref_table_name;

@@ -5,6 +5,12 @@ from validation.python.pretty_html_table import build_table
 import validation.python.global_var as g
 
 
+def split_html_content(content, max_size=131072):
+    return [
+        (i + 1, content[i : i + max_size]) for i in range(0, len(content), max_size)
+    ]
+
+
 def main(database, td_write_table, run_type="create"):
     try:
         client = pytd.Client(
@@ -17,7 +23,7 @@ def main(database, td_write_table, run_type="create"):
         raise Exception("Error calling pytd.Client")
 
     data_report_missing_tables_in_src = client.query(
-        f"select * from report_missing_tables_in_src"
+        f"select * from report_missing_tables_in_src order by src_table_name, ref_table_name"
     )
     df_data_report_missing_tables_in_src = pd.DataFrame(
         **data_report_missing_tables_in_src
@@ -40,7 +46,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_missing_src_columns = client.query(
-        f"select * from report_missing_src_columns"
+        f"select * from report_missing_src_columns order by src_table_name, src_column_name, ref_table_name, ref_column_name"
     )
     df_data_report_missing_src_columns = pd.DataFrame(**data_report_missing_src_columns)
 
@@ -61,7 +67,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_column_type_mismatches = client.query(
-        f"select * from report_column_type_mismatches"
+        f"select * from report_column_type_mismatches order by src_table_name, src_column_name, ref_table_name, ref_column_name"
     )
     df_data_report_column_type_mismatches = pd.DataFrame(
         **data_report_column_type_mismatches
@@ -84,7 +90,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_extra_tables_in_src = client.query(
-        f"select * from report_extra_tables_in_src"
+        f"select * from report_extra_tables_in_src order by src_table_name, ref_table_name"
     )
     df_data_report_extra_tables_in_src = pd.DataFrame(**data_report_extra_tables_in_src)
 
@@ -105,7 +111,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_extra_columns_in_src = client.query(
-        f"select * from report_extra_columns_in_src"
+        f"select * from report_extra_columns_in_src order by src_table_name, src_column_name, ref_table_name, ref_column_name"
     )
     df_data_report_extra_columns_in_src = pd.DataFrame(
         **data_report_extra_columns_in_src
@@ -150,8 +156,12 @@ def main(database, td_write_table, run_type="create"):
         </body>
     </html>
     """
-    df_html = pd.DataFrame()
-    df_html["html_content"] = [html_content]
+    # Split the html_content into chunks with row numbers
+    html_chunks_with_rownum = split_html_content(html_content)
+
+    # Create the DataFrame with the split content and row numbers
+    df_html = pd.DataFrame(html_chunks_with_rownum, columns=["rownum", "html_content"])
+
     try:
         client.load_table_from_dataframe(
             df_html, td_write_table, writer="bulk_import", if_exists="overwrite"

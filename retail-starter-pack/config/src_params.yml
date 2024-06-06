@@ -2,9 +2,8 @@ site: us
 raw: raw
 src: src
 stg: stg
-sub: retail
+sub: retail2
 gld: gld
-ana: analytics
 run_all: true
 
 # US
@@ -27,42 +26,32 @@ analytics:
   dashboards:
     sankey:
       register:
-        pattern: 'register'
-        stage: 'Account Creation/Sign-Up'
-        indexno: 0
+        event: 'register'
+        description: 'Account Creation/Sign-Up'
       login:
-        pattern: 'login'
-        stage: 'Sign-In/Login'
-        indexno: 1
+        event: 'login'
+        description: 'Sign-In/Login'
       products:
-        pattern: 'products'
-        stage: 'Product Page Visit'
-        indexno: 2
+        event: 'products'
+        description: 'Product Page Visit'
       wishlist:
-        pattern: 'wishlist'
-        stage: 'Wishlist/Favorites'
-        indexno: 3
+        event: 'wishlist'
+        description: 'Wishlist/Favorites'
       cart:
-        pattern: 'cart'
-        stage: 'Add to Cart'
-        indexno: 4
+        event: 'cart'
+        description: 'Add to Cart'
       checkout:
-        pattern: 'checkout'
-        stage: 'Checkout Initiation'
-        indexno: 5
+        event: 'checkout'
+        description: 'Checkout Initiation'
       loyalty:
-        pattern: 'loyalty'
-        stage: 'Loyalty Program Enrollment'
-        indexno: 6
+        event: 'loyalty'
+        description: 'Loyalty Program Enrollment'
       return:
-        pattern: 'return'
-        stage: 'Returns/Exchanges'
-        indexno: 7
+        event: 'return'
+        description: 'Returns/Exchanges'
       review:
-        pattern: 'review'
-        stage: 'Write a Review'
-        indexno: 8
+        event: 'review'
+        description: 'Write a Review'
       support:
-        pattern: 'support'
-        stage: 'Customer Support Ticket'
-        indexno: 9
+        event: 'support'
+        description: 'Customer Support Ticket'
