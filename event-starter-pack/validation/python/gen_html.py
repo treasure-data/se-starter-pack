@@ -23,7 +23,7 @@ def main(database, td_write_table, run_type="create"):
         raise Exception("Error calling pytd.Client")
 
     data_report_missing_tables_in_src = client.query(
-        f"select * from report_missing_tables_in_src"
+        f"select * from report_missing_tables_in_src order by src_table_name, ref_table_name"
     )
     df_data_report_missing_tables_in_src = pd.DataFrame(
         **data_report_missing_tables_in_src
@@ -46,7 +46,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_missing_src_columns = client.query(
-        f"select * from report_missing_src_columns"
+        f"select * from report_missing_src_columns order by src_table_name, src_column_name, ref_table_name, ref_column_name"
     )
     df_data_report_missing_src_columns = pd.DataFrame(**data_report_missing_src_columns)
 
@@ -67,7 +67,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_column_type_mismatches = client.query(
-        f"select * from report_column_type_mismatches"
+        f"select * from report_column_type_mismatches order by src_table_name, src_column_name, ref_table_name, ref_column_name"
     )
     df_data_report_column_type_mismatches = pd.DataFrame(
         **data_report_column_type_mismatches
@@ -90,7 +90,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_extra_tables_in_src = client.query(
-        f"select * from report_extra_tables_in_src"
+        f"select * from report_extra_tables_in_src order by src_table_name, ref_table_name"
     )
     df_data_report_extra_tables_in_src = pd.DataFrame(**data_report_extra_tables_in_src)
 
@@ -111,7 +111,7 @@ def main(database, td_write_table, run_type="create"):
     )
 
     data_report_extra_columns_in_src = client.query(
-        f"select * from report_extra_columns_in_src"
+        f"select * from report_extra_columns_in_src order by src_table_name, src_column_name, ref_table_name, ref_column_name"
     )
     df_data_report_extra_columns_in_src = pd.DataFrame(
         **data_report_extra_columns_in_src
