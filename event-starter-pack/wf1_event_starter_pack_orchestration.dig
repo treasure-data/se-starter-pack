@@ -14,7 +14,7 @@ _export:
   create_databases: ["va_config_${sub}", "${stg}_${sub}", "${gld}_${sub}"]
 
 +prepare_log_table:
-  database: config_${sub}
+  database: va_config_${sub}
   td>: "queries/log_tbl.sql"
 
 +empty_log_table:
@@ -23,7 +23,6 @@ _export:
     +del_log:
       td>:
       query: "delete from log_tbl where 1=1"
-
       database: va_config_${sub}
 
 +validation:
