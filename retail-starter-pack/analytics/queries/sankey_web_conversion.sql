@@ -2,29 +2,29 @@ with t1 as (
   select distinct
   retail_unification_id,
   CASE
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.register.pattern}') THEN '${analytics.dashboards.sankey.register.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.login.pattern}') THEN '${analytics.dashboards.sankey.login.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.products.pattern}') THEN '${analytics.dashboards.sankey.products.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.wishlist.pattern}') THEN '${analytics.dashboards.sankey.wishlist.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.cart.pattern}') THEN '${analytics.dashboards.sankey.cart.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.checkout.pattern}') THEN '${analytics.dashboards.sankey.checkout.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.loyalty.pattern}') THEN '${analytics.dashboards.sankey.loyalty.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.return.pattern}') THEN '${analytics.dashboards.sankey.return.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.review.pattern}') THEN '${analytics.dashboards.sankey.review.stage}'
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.support.pattern}') THEN '${analytics.dashboards.sankey.support.stage}'
+    WHEN regexp_like(${column}, '${sankey.register.pattern}') THEN '${sankey.register.stage}'
+    WHEN regexp_like(${column}, '${sankey.login.pattern}') THEN '${sankey.login.stage}'
+    WHEN regexp_like(${column}, '${sankey.products.pattern}') THEN '${sankey.products.stage}'
+    WHEN regexp_like(${column}, '${sankey.wishlist.pattern}') THEN '${sankey.wishlist.stage}'
+    WHEN regexp_like(${column}, '${sankey.cart.pattern}') THEN '${sankey.cart.stage}'
+    WHEN regexp_like(${column}, '${sankey.checkout.pattern}') THEN '${sankey.checkout.stage}'
+    WHEN regexp_like(${column}, '${sankey.loyalty.pattern}') THEN '${sankey.loyalty.stage}'
+    WHEN regexp_like(${column}, '${sankey.return.pattern}') THEN '${sankey.return.stage}'
+    WHEN regexp_like(${column}, '${sankey.review.pattern}') THEN '${sankey.review.stage}'
+    WHEN regexp_like(${column}, '${sankey.support.pattern}') THEN '${sankey.support.stage}'
     ELSE null
   END AS stage,
   CASE
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.register.pattern}') THEN cast ('${analytics.dashboards.sankey.register.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.login.pattern}') THEN cast ('${analytics.dashboards.sankey.login.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.products.pattern}') THEN cast ('${analytics.dashboards.sankey.products.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.wishlist.pattern}') THEN cast ('${analytics.dashboards.sankey.wishlist.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.cart.pattern}') THEN cast ('${analytics.dashboards.sankey.cart.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.checkout.pattern}') THEN cast ('${analytics.dashboards.sankey.checkout.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.loyalty.pattern}') THEN cast ('${analytics.dashboards.sankey.loyalty.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.return.pattern}') THEN cast ('${analytics.dashboards.sankey.return.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.review.pattern}') THEN cast ('${analytics.dashboards.sankey.review.indexno}' as int)
-    WHEN regexp_like(${column}, '${analytics.dashboards.sankey.support.pattern}') THEN cast ('${analytics.dashboards.sankey.support.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.register.pattern}') THEN cast ('${sankey.register.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.login.pattern}') THEN cast ('${sankey.login.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.products.pattern}') THEN cast ('${sankey.products.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.wishlist.pattern}') THEN cast ('${sankey.wishlist.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.cart.pattern}') THEN cast ('${sankey.cart.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.checkout.pattern}') THEN cast ('${sankey.checkout.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.loyalty.pattern}') THEN cast ('${sankey.loyalty.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.return.pattern}') THEN cast ('${sankey.return.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.review.pattern}') THEN cast ('${sankey.review.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.support.pattern}') THEN cast ('${sankey.support.indexno}' as int)
     ELSE null
   END AS stage_indexno,
   time
