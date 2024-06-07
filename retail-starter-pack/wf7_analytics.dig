@@ -96,13 +96,8 @@ _export:
       create_table: ${ana}_${sub}.web_conversion
       database: ${gld}_${sub} #query fails to get the source tables otherwise
     +generate_step_stats:
-      for_range>:
-        from: 1
-        to: 5
-        step: 1
-      _do:
         td>: analytics/queries/sankey_step_statistics.sql
-        insert_into: web_conversion_step_statistics
+        create_table: web_conversion_step_statistics
         database: ${ana}_${sub}
     +generate_labels:
       td>: analytics/queries/sankey_generate_labels.sql
