@@ -39,7 +39,7 @@
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1909,
+                "pxlWidth": 1016.22,
                 "index": 0
               }
             ]
@@ -60,7 +60,7 @@
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1909,
+                "pxlWidth": 1016.22,
                 "index": 0
               }
             ]
@@ -81,7 +81,7 @@
                 ],
                 "width": 24.612306153076545,
                 "stretchable": false,
-                "pxlWidth": 469.844,
+                "pxlWidth": 250.113,
                 "index": 0
               },
               {
@@ -98,7 +98,7 @@
                 ],
                 "width": 75.38769384692347,
                 "stretchable": false,
-                "pxlWidth": 1439.15,
+                "pxlWidth": 766.094,
                 "index": 1
               }
             ]
@@ -119,7 +119,7 @@
                 ],
                 "width": 27.312775330396477,
                 "stretchable": false,
-                "pxlWidth": 521.398,
+                "pxlWidth": 277.552,
                 "index": 0
               },
               {
@@ -136,7 +136,7 @@
                 ],
                 "width": 72.68722466960355,
                 "stretchable": false,
-                "pxlWidth": 1387.59,
+                "pxlWidth": 738.655,
                 "index": 1
               }
             ]
@@ -157,7 +157,7 @@
                 ],
                 "width": 27.312775330396484,
                 "stretchable": false,
-                "pxlWidth": 521.398,
+                "pxlWidth": 277.552,
                 "index": 0
               },
               {
@@ -174,7 +174,7 @@
                 ],
                 "width": 72.68722466960351,
                 "stretchable": false,
-                "pxlWidth": 1387.59,
+                "pxlWidth": 738.655,
                 "index": 1
               }
             ]
@@ -189,31 +189,31 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6648ed8669df6d0033c58a72",
-                    "height": "396px",
-                    "autoHeight": "334px"
+                    "widgetid": "6648ed8669df6d0033c58a73",
+                    "height": "396px"
                   }
                 ],
-                "width": 27.312775330396477,
+                "width": 50,
                 "stretchable": false,
-                "pxlWidth": 521.398,
+                "pxlWidth": 506.997,
                 "index": 0
               },
               {
                 "elements": [
                   {
-                    "minHeight": 96,
+                    "minHeight": 128,
                     "maxHeight": 2048,
                     "minWidth": 128,
                     "maxWidth": 2048,
+                    "height": "396px",
                     "defaultWidth": 512,
-                    "widgetid": "6648ed8669df6d0033c58a73",
-                    "height": "396px"
+                    "widgetid": "66635130cc4c72003309f85c",
+                    "autoHeight": "308px"
                   }
                 ],
-                "width": 72.68722466960355,
+                "width": 50,
                 "stretchable": false,
-                "pxlWidth": 1387.59,
+                "pxlWidth": 506.997,
                 "index": 1
               }
             ]
@@ -234,7 +234,7 @@
                 ],
                 "width": 24.61230615307654,
                 "stretchable": false,
-                "pxlWidth": 469.844,
+                "pxlWidth": 250.113,
                 "index": 0
               },
               {
@@ -251,7 +251,7 @@
                 ],
                 "width": 75.38769384692345,
                 "stretchable": false,
-                "pxlWidth": 1439.15,
+                "pxlWidth": 766.094,
                 "index": 1
               }
             ]
@@ -272,7 +272,7 @@
                 ],
                 "width": 24.61230615307654,
                 "stretchable": false,
-                "pxlWidth": 469.844,
+                "pxlWidth": 250.113,
                 "index": 0
               },
               {
@@ -289,7 +289,7 @@
                 ],
                 "width": 75.38769384692347,
                 "stretchable": false,
-                "pxlWidth": 1439.15,
+                "pxlWidth": 766.094,
                 "index": 1
               }
             ]
@@ -310,22 +310,22 @@
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1909,
+                "pxlWidth": 1016.22,
                 "index": 0
               }
             ]
           }
         ],
-        "pxlWidth": 1909,
+        "pxlWidth": 1016.22,
         "index": 0
       }
     ],
     "container": {
-      "sizzle1717582931523": {
+      "sizzle1717784822069": {
         "undefined": {
           "parentNode": [
-            94.25060047295133,
-            29,
+            170.28428635642766,
+            31,
             true
           ]
         }
@@ -357,6 +357,7 @@
         "level": "days",
         "collapsed": true,
         "title": "Date Filter",
+        "isDashboardFilter": true,
         "datasource": {
           "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
           "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -365,7 +366,6 @@
           "live": false,
           "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
         },
-        "isDashboardFilter": true,
         "filter": {
           "explicit": false,
           "multiSelection": true,
@@ -549,7 +549,8 @@
           "multiSelection": true,
           "all": true
         }
-      }
+      },
+      "instanceid": "5ACB1-F323-B7"
     }
   ],
   "editing": false,
@@ -767,7 +768,7 @@
   "settings": {
     "autoUpdateOnFiltersChange": true
   },
-  "lastPublish": "2024-06-05T10:29:27.720Z",
+  "lastPublish": "2024-06-07T18:53:10.098Z",
   "subscription": {
     "subscribe": true,
     "executionPerDay": 1,
@@ -789,6 +790,7 @@
     "timezone": -330,
     "active": true
   },
+  "hasPrevioiusVersion": true,
   "widgets": [
     {
       "title": "Total Pageviews",
@@ -796,7 +798,7 @@
       "subtype": "indicator/numeric",
       "oid": "6648ed8669df6d0033c58a70",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a47",
+      "source": "6648ed8669df6d0033c58a8d",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -818,12 +820,19 @@
             "items": [
               {
                 "jaql": {
-                  "table": "web_analytics_unqiue_visitors",
-                  "column": "total_visitors",
-                  "dim": "[web_analytics_unqiue_visitors.total_visitors]",
-                  "datatype": "numeric",
-                  "agg": "sum",
-                  "title": "Total Pageviews"
+                  "type": "measure",
+                  "formula": "sum([5E160-2EB])",
+                  "context": {
+                    "[5E160-2EB]": {
+                      "table": "web_analytics_td_url_agg",
+                      "column": "td_url_count",
+                      "dim": "[web_analytics_td_url_agg.td_url_count]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total td_url_count"
+                    }
+                  },
+                  "title": "Total Visitors"
                 },
                 "instanceid": "0F064-0ABE-78",
                 "format": {
@@ -840,8 +849,8 @@
                     "isdefault": true
                   },
                   "color": {
-                    "color": "#00cee6",
-                    "type": "color"
+                    "type": "color",
+                    "colorIndex": 0
                   }
                 }
               }
@@ -852,11 +861,26 @@
             "items": [
               {
                 "jaql": {
-                  "table": "web_analytics_unqiue_visitors",
-                  "column": "unique_visitors",
-                  "dim": "[web_analytics_unqiue_visitors.unique_visitors]",
-                  "datatype": "numeric",
-                  "agg": "sum",
+                  "type": "measure",
+                  "formula": "Sum([547E7-6D5]+[327F1-DDD])",
+                  "context": {
+                    "[327F1-DDD]": {
+                      "table": "web_analytics_agg",
+                      "column": "new_customer_cnt",
+                      "dim": "[web_analytics_agg.new_customer_cnt]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total new_customer_cnt"
+                    },
+                    "[547E7-6D5]": {
+                      "table": "web_analytics_agg",
+                      "column": "known_cust_cnt",
+                      "dim": "[web_analytics_agg.known_cust_cnt]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total known_cust_cnt"
+                    }
+                  },
                   "title": "Unique Visitors"
                 },
                 "instanceid": "50E23-C24E-F0",
@@ -879,55 +903,11 @@
           },
           {
             "name": "min",
-            "items": [
-              {
-                "jaql": {
-                  "formula": "0",
-                  "title": "0 (default)"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                },
-                "instanceid": "A80D6-69B1-FD"
-              }
-            ]
+            "items": []
           },
           {
             "name": "max",
-            "items": [
-              {
-                "jaql": {
-                  "formula": "100",
-                  "title": "100 (default)"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                },
-                "instanceid": "DE15A-FFC4-A4"
-              }
-            ]
+            "items": []
           },
           {
             "name": "filters",
@@ -1047,12 +1027,12 @@
       "lastOpened": null
     },
     {
-      "title": "Weekly Landing Page Visits",
+      "title": "Weekly Known vs New Count",
       "type": "chart/line",
       "subtype": "line/spline",
       "oid": "6648ed8669df6d0033c58a71",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a48",
+      "source": "6648ed8669df6d0033c58a8e",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -1074,29 +1054,26 @@
             "items": [
               {
                 "jaql": {
-                  "table": "web_analytics_unqiue_visitors",
-                  "column": "event_date",
-                  "dim": "[web_analytics_unqiue_visitors.event_date (Calendar)]",
+                  "table": "web_analytics_agg",
+                  "column": "run_date",
+                  "dim": "[web_analytics_agg.run_date (Calendar)]",
                   "datatype": "datetime",
                   "merged": true,
                   "level": "weeks",
-                  "title": "Weeks in event_date",
+                  "title": "Weeks in run_date",
                   "firstday": "mon"
                 },
-                "instanceid": "D54ED-968F-3F",
-                "panel": "rows",
-                "field": {
-                  "id": "[web_analytics_unqiue_visitors.event_date (Calendar)]_years",
-                  "index": 0
-                },
+                "instanceid": "722DB-AA73-50",
                 "format": {
                   "mask": {
                     "years": "yyyy",
                     "quarters": "yyyy Q",
                     "months": "MM/yyyy",
-                    "weeks": "MMM-dd-yy",
+                    "weeks": "ww yyyy",
                     "days": "shortDate",
-                    "minutes": "HH:mm"
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
                   }
                 },
                 "hierarchies": [
@@ -1111,21 +1088,14 @@
             "items": [
               {
                 "jaql": {
-                  "type": "measure",
-                  "formula": "[80FBC-FA8]",
-                  "context": {
-                    "[80FBC-FA8]": {
-                      "table": "web_analytics_unqiue_visitors",
-                      "column": "total_visitors",
-                      "dim": "[web_analytics_unqiue_visitors.total_visitors]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total total_visitors"
-                    }
-                  },
-                  "title": "Total Pageviews",
-                  "datatype": "numeric"
+                  "table": "web_analytics_agg",
+                  "column": "known_cust_cnt",
+                  "dim": "[web_analytics_agg.known_cust_cnt]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total known_cust_cnt"
                 },
+                "instanceid": "060FB-4D8F-0D",
                 "format": {
                   "mask": {
                     "type": "number",
@@ -1140,35 +1110,21 @@
                     "isdefault": true
                   },
                   "color": {
-                    "color": "#00cee6",
+                    "colorIndex": 0,
                     "type": "color"
                   }
-                },
-                "disabled": false,
-                "instanceid": "FAE41-6A01-B0",
-                "panel": "measures",
-                "field": {
-                  "id": "[80FBC-FA8]",
-                  "index": 1
                 }
               },
               {
                 "jaql": {
-                  "type": "measure",
-                  "formula": "[E05B7-A20]",
-                  "context": {
-                    "[E05B7-A20]": {
-                      "table": "web_analytics_unqiue_visitors",
-                      "column": "unique_visitors",
-                      "dim": "[web_analytics_unqiue_visitors.unique_visitors]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total unique_visitors"
-                    }
-                  },
-                  "title": "Unique Visitors",
-                  "datatype": "numeric"
+                  "table": "web_analytics_agg",
+                  "column": "new_customer_cnt",
+                  "dim": "[web_analytics_agg.new_customer_cnt]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total new_customer_cnt"
                 },
+                "instanceid": "3343C-2C2F-6A",
                 "format": {
                   "mask": {
                     "type": "number",
@@ -1183,17 +1139,9 @@
                     "isdefault": true
                   },
                   "color": {
-                    "color": "#9b9bd7",
+                    "colorIndex": 1,
                     "type": "color"
                   }
-                },
-                "singleSeriesType": "column",
-                "disabled": false,
-                "instanceid": "31F3B-DB45-0D",
-                "panel": "measures",
-                "field": {
-                  "id": "[E05B7-A20]",
-                  "index": 2
                 }
               }
             ]
@@ -1288,10 +1236,10 @@
           "aggregation": "sum",
           "labels": [
             {
-              "id": "years_in_event_date",
-              "title": "Years in event_date",
-              "singular": "Years in event_date",
-              "plural": "Years in event_date"
+              "id": "weeks_in_run_date",
+              "title": "Weeks in run_date",
+              "singular": "Weeks in run_date",
+              "plural": "Weeks in run_date"
             }
           ]
         }
@@ -1348,7 +1296,7 @@
       "subtype": "areamap/world",
       "oid": "6648ed8669df6d0033c58a73",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a4a",
+      "source": "6648ed8669df6d0033c58a90",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -1370,14 +1318,14 @@
             "items": [
               {
                 "jaql": {
-                  "table": "web_analytics_pageviews_aggregate",
-                  "column": "country_ip",
-                  "dim": "[web_analytics_pageviews_aggregate.country_ip]",
+                  "table": "web_analytics_country_by_ip_agg",
+                  "column": "country_by_ip",
+                  "dim": "[web_analytics_country_by_ip_agg.country_by_ip]",
                   "datatype": "text",
                   "merged": true,
-                  "title": "country_ip"
+                  "title": "country_by_ip"
                 },
-                "instanceid": "32DC0-B562-10"
+                "instanceid": "FC0F5-700F-88"
               }
             ]
           },
@@ -1387,15 +1335,15 @@
               {
                 "jaql": {
                   "type": "measure",
-                  "formula": "[BD782-364]",
+                  "formula": "[45C47-D85]",
                   "context": {
-                    "[BD782-364]": {
-                      "table": "web_analytics_pageviews_aggregate",
-                      "column": "unique_events",
-                      "dim": "[web_analytics_pageviews_aggregate.unique_events]",
+                    "[45C47-D85]": {
+                      "table": "web_analytics_country_by_ip_agg",
+                      "column": "country_by_ip_count",
+                      "dim": "[web_analytics_country_by_ip_agg.country_by_ip_count]",
                       "datatype": "numeric",
                       "agg": "sum",
-                      "title": "Total unique_events"
+                      "title": "Total country_by_ip_count"
                     }
                   },
                   "title": "Total Pageviews"
@@ -1413,15 +1361,8 @@
                     "decimals": "auto",
                     "isdefault": true
                   },
-                  "color_bkp": {
-                    "type": "range",
-                    "steps": 9,
-                    "rangeMode": "auto"
-                  },
                   "color": {
                     "steps": 0,
-                    "min": "#0de6ff",
-                    "max": "#00a5b8",
                     "minvalue": null,
                     "midvalue": null,
                     "maxvalue": null,
@@ -1453,10 +1394,10 @@
           "aggregation": "sum",
           "labels": [
             {
-              "id": "country_ip",
-              "title": "country_ip",
-              "singular": "country_ip",
-              "plural": "country_ip"
+              "id": "country_by_ip",
+              "title": "country_by_ip",
+              "singular": "country_by_ip",
+              "plural": "country_by_ip"
             }
           ]
         }
@@ -1505,273 +1446,12 @@
       "lastOpened": null
     },
     {
-      "title": "Top 10 Visited Page Sections",
-      "type": "pivot2",
-      "subtype": "pivot2",
-      "oid": "6648ed8669df6d0033c58a72",
-      "desc": null,
-      "source": "632b4bb5cd002d0038621a49",
-      "datasource": {
-        "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
-        "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "address": "LocalHost",
-        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "live": false,
-        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false,
-          "ids": []
-        },
-        "panels": [
-          {
-            "name": "rows",
-            "items": [
-              {
-                "jaql": {
-                  "table": "web_analytics_path_stats",
-                  "column": "td_path",
-                  "dim": "[web_analytics_path_stats.td_path]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "td_path"
-                },
-                "panel": "rows",
-                "field": {
-                  "id": "[web_analytics_path_stats.td_path]",
-                  "index": 0
-                },
-                "instanceid": "46EBD-8886-45"
-              }
-            ]
-          },
-          {
-            "name": "values",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[5CF05-3E2]",
-                  "context": {
-                    "[5CF05-3E2]": {
-                      "table": "web_analytics_path_stats",
-                      "column": "total_visitors",
-                      "dim": "[web_analytics_path_stats.total_visitors]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total total_visitors"
-                    }
-                  },
-                  "title": "Total Visits",
-                  "sort": "desc",
-                  "datatype": "numeric",
-                  "sortDetails": {
-                    "field": 1,
-                    "dir": "desc",
-                    "measurePath": null,
-                    "sortingLastDimension": true,
-                    "isLastApplied": true,
-                    "initialized": true
-                  }
-                },
-                "panel": "measures",
-                "field": {
-                  "id": "[web_analytics_pageviews_final.td_url]_count",
-                  "index": 1
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "t": true,
-                    "b": true,
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "type": "color",
-                    "color": "transparent"
-                  }
-                },
-                "disabled": false,
-                "instanceid": "7158D-E923-4D"
-              },
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[8E9C8-3C9]",
-                  "context": {
-                    "[8E9C8-3C9]": {
-                      "table": "web_analytics_path_stats",
-                      "column": "unique_visitors",
-                      "dim": "[web_analytics_path_stats.unique_visitors]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total unique_visitors"
-                    }
-                  },
-                  "title": "Unique Visitors",
-                  "datatype": "numeric"
-                },
-                "panel": "measures",
-                "field": {
-                  "id": "[web_analytics_pageviews_final.td_canonical_id]_count",
-                  "index": 2
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "t": true,
-                    "b": true,
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "type": "color",
-                    "color": "transparent"
-                  }
-                },
-                "disabled": false,
-                "instanceid": "CD084-D72C-75"
-              }
-            ]
-          },
-          {
-            "name": "columns",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[A2CF3-063]",
-                  "context": {
-                    "[A2CF3-063]": {
-                      "table": "web_analytics_pageviews_final",
-                      "column": "td_url",
-                      "dim": "[web_analytics_pageviews_final.td_url]",
-                      "datatype": "text",
-                      "agg": "countduplicates",
-                      "title": "# of td_url"
-                    }
-                  },
-                  "title": "Total Visits",
-                  "datatype": "numeric",
-                  "filter": {
-                    "top": 11
-                  },
-                  "datasource": {
-                    "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
-                    "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-                    "address": "LocalHost",
-                    "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-                    "live": false,
-                    "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
-                  },
-                  "collapsed": false,
-                  "sort": null
-                },
-                "panel": "scope",
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "t": true,
-                    "b": true,
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                },
-                "instanceid": "84FA0-9003-F3"
-              }
-            ]
-          }
-        ],
-        "usedFormulasMapping": {}
-      },
-      "style": {
-        "scroll": false,
-        "pageSize": "10",
-        "automaticHeight": true,
-        "colors": {
-          "rows": true,
-          "columns": false,
-          "headers": false,
-          "members": false,
-          "totals": false
-        },
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": [
-            {
-              "id": "td_path",
-              "title": "td_path",
-              "singular": "td_path",
-              "plural": "td_path"
-            }
-          ]
-        }
-      },
-      "instanceid": "A7B62-4F39-1F",
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 2,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "saveDisabledTargetFilters": false,
-        "drillToDashboardByName": false
-      },
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "triggersDomready": true,
-        "drillToAnywhere": true,
-        "autoUpdateOnEveryChange": true
-      },
-      "dashboardid": "6648ed8669df6d0033c58a6f",
-      "lastOpened": null
-    },
-    {
       "title": "Total Conversions by Source",
       "type": "chart/pie",
       "subtype": "pie/donut",
       "oid": "6648ed8669df6d0033c58a74",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a4b",
+      "source": "6648ed8669df6d0033c58a91",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -2046,10 +1726,10 @@
     {
       "title": "Weekly Landing Page Visits by Channel (utm_medium)",
       "type": "chart/column",
-      "subtype": "column/stackedcolumn",
+      "subtype": "column/classic",
       "oid": "6648ed8669df6d0033c58a78",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a4f",
+      "source": "6648ed8669df6d0033c58a95",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -2071,30 +1751,32 @@
             "items": [
               {
                 "jaql": {
-                  "table": "web_analytics_pageviews_aggregate",
-                  "column": "event_date",
-                  "dim": "[web_analytics_pageviews_aggregate.event_date (Calendar)]",
+                  "table": "web_analytics_utm_medium_agg",
+                  "column": "run_date",
+                  "dim": "[web_analytics_utm_medium_agg.run_date (Calendar)]",
                   "datatype": "datetime",
                   "merged": true,
                   "level": "weeks",
-                  "title": "Weeks in event_date",
+                  "title": "Weeks in run_date",
                   "firstday": "mon"
                 },
+                "instanceid": "1C979-726A-C7",
                 "format": {
                   "mask": {
                     "years": "yyyy",
                     "quarters": "yyyy Q",
                     "months": "MM/yyyy",
-                    "weeks": "MMM-dd-yy",
+                    "weeks": "ww yyyy",
                     "days": "shortDate",
-                    "minutes": "HH:mm"
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
                   }
                 },
                 "hierarchies": [
                   "calendar",
                   "calendar - weeks"
-                ],
-                "instanceid": "DE7C5-77BF-DB"
+                ]
               }
             ]
           },
@@ -2104,15 +1786,15 @@
               {
                 "jaql": {
                   "type": "measure",
-                  "formula": "[0FF10-A75]",
+                  "formula": "[63377-DC9]",
                   "context": {
-                    "[0FF10-A75]": {
-                      "table": "web_analytics_pageviews_aggregate",
-                      "column": "unique_events",
-                      "dim": "[web_analytics_pageviews_aggregate.unique_events]",
+                    "[63377-DC9]": {
+                      "table": "web_analytics_utm_medium_agg",
+                      "column": "utm_medium_count",
+                      "dim": "[web_analytics_utm_medium_agg.utm_medium_count]",
                       "datatype": "numeric",
                       "agg": "sum",
-                      "title": "Total unique_events"
+                      "title": "Total utm_medium_count"
                     }
                   },
                   "title": "Total Pageviews"
@@ -2131,8 +1813,8 @@
                     "isdefault": true
                   },
                   "color_bkp": {
-                    "color": "#00cee6",
-                    "type": "color"
+                    "type": "color",
+                    "colorIndex": 0
                   }
                 },
                 "instanceid": "907FF-8675-06"
@@ -2144,53 +1826,17 @@
             "items": [
               {
                 "jaql": {
-                  "table": "web_analytics_pageviews_aggregate",
-                  "column": "channel_final",
-                  "dim": "[web_analytics_pageviews_aggregate.channel_final]",
+                  "table": "web_analytics_utm_medium_agg",
+                  "column": "utm_medium",
+                  "dim": "[web_analytics_utm_medium_agg.utm_medium]",
                   "datatype": "text",
                   "merged": true,
-                  "title": "channel_final"
+                  "title": "utm_medium"
                 },
+                "instanceid": "E4DEA-4E24-82",
                 "format": {
-                  "members": {
-                    "affiliate": {
-                      "color": "#00cee6",
-                      "title": "affiliate",
-                      "sortData": "affiliate"
-                    },
-                    "client_domain_organic_visit": {
-                      "color": "#9b9bd7",
-                      "title": "client_domain_organic_visit",
-                      "sortData": "client_domain_organic_visit"
-                    },
-                    "email": {
-                      "color": "#6EDA55",
-                      "title": "email",
-                      "sortData": "email"
-                    },
-                    "organic_search": {
-                      "color": "#fc7570",
-                      "title": "organic_search",
-                      "sortData": "organic_search"
-                    },
-                    "search": {
-                      "color": "#fbb755",
-                      "title": "search",
-                      "sortData": "search"
-                    },
-                    "social": {
-                      "color": "#218A8C",
-                      "title": "social",
-                      "sortData": "social"
-                    },
-                    "organic_visit": {
-                      "color": "#06e5ff",
-                      "title": "organic_visit",
-                      "sortData": "organic_visit"
-                    }
-                  }
-                },
-                "instanceid": "C8A88-BFD4-9A"
+                  "members": {}
+                }
               }
             ]
           },
@@ -2210,8 +1856,8 @@
           "enabled": false,
           "rotation": 0,
           "labels": {
-            "enabled": true,
-            "stacked": true,
+            "enabled": false,
+            "stacked": false,
             "stackedPercentage": false,
             "types": {
               "count": false,
@@ -2293,16 +1939,16 @@
           "aggregation": "sum",
           "labels": [
             {
-              "id": "weeks_in_event_date",
-              "title": "Weeks in event_date",
-              "singular": "Weeks in event_date",
-              "plural": "Weeks in event_date"
+              "id": "weeks_in_run_date",
+              "title": "Weeks in run_date",
+              "singular": "Weeks in run_date",
+              "plural": "Weeks in run_date"
             },
             {
-              "id": "channel_final",
-              "title": "channel_final",
-              "singular": "channel_final",
-              "plural": "channel_final"
+              "id": "utm_medium",
+              "title": "utm_medium",
+              "singular": "utm_medium",
+              "plural": "utm_medium"
             }
           ]
         }
@@ -2354,12 +2000,396 @@
       "lastOpened": null
     },
     {
+      "title": "Total Conversions by  Campaign",
+      "type": "chart/pie",
+      "subtype": "pie/donut",
+      "oid": "6648ed8669df6d0033c58a7d",
+      "desc": null,
+      "source": "6648ed8669df6d0033c58a9a",
+      "datasource": {
+        "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
+        "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+        "address": "LocalHost",
+        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+        "live": false,
+        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "campaign_final",
+                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "campaign_final"
+                },
+                "instanceid": "8B8F4-A68E-F5",
+                "format": {
+                  "members": {
+                    "N\\A": {
+                      "color": "#00cee6",
+                      "title": "N\\A",
+                      "sortData": "N\\A"
+                    },
+                    "promo_code": {
+                      "color": "#9b9bd7",
+                      "title": "promo_code",
+                      "sortData": "promo_code"
+                    },
+                    "retargeting": {
+                      "color": "#6EDA55",
+                      "title": "retargeting",
+                      "sortData": "retargeting"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[56DE7-4FF]",
+                  "context": {
+                    "[56DE7-4FF]": {
+                      "table": "web_analytics_pageviews_aggregate",
+                      "column": "total_conversions",
+                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_conversions"
+                    }
+                  },
+                  "title": "Total conversion"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#00cee6",
+                    "type": "color"
+                  }
+                },
+                "instanceid": "0EACF-F6EC-EC"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_pageviews_aggregate",
+                  "column": "campaign_final",
+                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "campaign_final",
+                  "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "exclude": {
+                      "members": [
+                        "N\\A"
+                      ]
+                    }
+                  },
+                  "collapsed": true,
+                  "datasource": {
+                    "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
+                    "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+                    "address": "LocalHost",
+                    "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+                    "live": false,
+                    "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
+                  }
+                },
+                "instanceid": "57791-A3EC-C9"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "top"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": false,
+          "value": false,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "bySlicesCount",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "stacked": false,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "campaign_final",
+              "title": "campaign_final",
+              "singular": "campaign_final",
+              "plural": "campaign_final"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "A1629-1AE8-A2",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "6648ed8669df6d0033c58a6f",
+      "lastOpened": null
+    },
+    {
+      "title": "",
+      "type": "WidgetsTabber",
+      "subtype": "WidgetsTabber",
+      "oid": "6648ed8669df6d0033c58a77",
+      "desc": null,
+      "source": "6648ed8669df6d0033c58a94",
+      "datasource": {
+        "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
+        "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+        "address": "LocalHost",
+        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+        "live": false,
+        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "activeTab": "1",
+        "showTitle": false,
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "746C3-FD5A-14",
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "6648ed8669df6d0033c58a6f",
+      "script": "\nwidget.on('render',function(w, e){e.prefixText = '';\ne.suffixText = '';\ne.selectedColor = '#3A4356'; /*The color of the chosen title*/\ne.fontColor = '#d1d1d1'; /*The color of the unchosen titles*/\n e.fontWeight = '300';\ne.fontFamily = 'Avenir';\ne.elementWidth = '100%';\ne.descColor = '#a5a5a5';\ne.parentMarginLeft = '-50px';\ne.height = 40; /* affects the tabber widget default high*/\n}); \n\n\nwidget.tabs = [\n{title: \"Pageviews\", \n displayWidgetIds : [\"6648ed8669df6d0033c58a70\",\"6648ed8669df6d0033c58a71\",\"6648ed8669df6d0033c58a72\",\"6648ed8669df6d0033c58a73\",\"6648ed8669df6d0033c58a76\",\"6648ed8669df6d0033c58a78\",\"66635130cc4c72003309f85c\"],\n hideWidgetIds : [\"6648ed8669df6d0033c58a7c\",\"6648ed8669df6d0033c58a79\",\"6648ed8669df6d0033c58a74\",\"6648ed8669df6d0033c58a75\",\"6648ed8669df6d0033c58a7d\",\"6648ed8669df6d0033c58a7b\",\"66603a0269df6d0033c65b7e\"]},\n{title: \"Conversions\", \n displayWidgetIds : [\"6648ed8669df6d0033c58a7c\",\"6648ed8669df6d0033c58a79\",\"6648ed8669df6d0033c58a74\",\"6648ed8669df6d0033c58a75\",\"6648ed8669df6d0033c58a7d\",\"6648ed8669df6d0033c58a7b\"],\n hideWidgetIds : [\"6648ed8669df6d0033c58a70\",\"6648ed8669df6d0033c58a71\",\"6648ed8669df6d0033c58a72\",\"6648ed8669df6d0033c58a73\",\"6648ed8669df6d0033c58a76\",\"6648ed8669df6d0033c58a78\",\"66603a0269df6d0033c65b7e\",\"66635130cc4c72003309f85c\"]},\n{title: \"Web Journey\", \n displayWidgetIds : [\"66603a0269df6d0033c65b7e\"],\n hideWidgetIds : [\"6648ed8669df6d0033c58a70\",\"6648ed8669df6d0033c58a71\",\"6648ed8669df6d0033c58a72\",\"6648ed8669df6d0033c58a73\",\"6648ed8669df6d0033c58a76\",\"6648ed8669df6d0033c58a78\",\"6648ed8669df6d0033c58a7c\",\"6648ed8669df6d0033c58a79\",\"6648ed8669df6d0033c58a74\",\"6648ed8669df6d0033c58a75\",\"6648ed8669df6d0033c58a7d\",\"6648ed8669df6d0033c58a7b\",\"66635130cc4c72003309f85c\"]},\t\n]; \n\nwidget.tabsConfig = 'multiply';\n\nwidget.on('ready', function(se, ev){\n$(element).css('overflow','hidden'),\n$(element).css('max-height','40px'),\n$(element).css('padding-top','5px'),\n$(element).css('margin-top','-40px'),\n$(element).css('background-color','#ecf0f5'),\n$(element).css('font-family','Avenir'),\n$(element).css('font-weight','300'),\n$(element).css('font-size','16px'),\n$(element).css('float','left'),\n$(element).css('align-self','end'),\n$(element).css('align-self','end'),\n$('.widget-body .listDefaultCSS').css('text-align','left'),\n$('.widget-body .listDefaultCSS').css('margin-left','35px');\n\n});\n\n\n\n",
+      "tabs": [
+        {
+          "title": "Pageviews",
+          "displayWidgetIds": [
+            "6648ed8669df6d0033c58a78",
+            "6648ed8669df6d0033c58a76",
+            "6648ed8669df6d0033c58a70",
+            "6648ed8669df6d0033c58a71",
+            "6648ed8669df6d0033c58a72",
+            "6648ed8669df6d0033c58a73"
+          ],
+          "hideWidgetIds": [
+            "6648ed8669df6d0033c58a75",
+            "6648ed8669df6d0033c58a74",
+            "632b30da0c596c00372aabdb",
+            "628e3e706fb84f0038311d2d",
+            "632b30da0c596c00372aabda"
+          ]
+        },
+        {
+          "title": "Conversions",
+          "displayWidgetIds": [
+            "6648ed8669df6d0033c58a75",
+            "6648ed8669df6d0033c58a74",
+            "6648ed8669df6d0033c58a70",
+            "6648ed8669df6d0033c58a71",
+            "6648ed8669df6d0033c58a72",
+            "6648ed8669df6d0033c58a73"
+          ],
+          "hideWidgetIds": [
+            "6648ed8669df6d0033c58a70",
+            "6648ed8669df6d0033c58a71",
+            "6648ed8669df6d0033c58a72",
+            "6648ed8669df6d0033c58a73",
+            "6648ed8669df6d0033c58a78",
+            "6648ed8669df6d0033c58a76",
+            "632b30da0c596c00372aabdb",
+            "628e3e706fb84f0038311d2d",
+            "632b30da0c596c00372aabda"
+          ]
+        }
+      ],
+      "tabsConfig": "multiply",
+      "lastOpened": null
+    },
+    {
       "title": "Weekly Conversions by Source (utm_source)",
       "type": "chart/column",
       "subtype": "column/stackedcolumn",
       "oid": "6648ed8669df6d0033c58a75",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a4c",
+      "source": "6648ed8669df6d0033c58a92",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -2659,292 +2689,12 @@
       "lastOpened": null
     },
     {
-      "title": "Total Visits by Device",
-      "type": "chart/pie",
-      "subtype": "pie/donut",
-      "oid": "6648ed8669df6d0033c58a76",
-      "desc": null,
-      "source": "632b4bb5cd002d0038621a4d",
-      "datasource": {
-        "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
-        "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "address": "LocalHost",
-        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "live": false,
-        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false,
-          "ids": []
-        },
-        "panels": [
-          {
-            "name": "categories",
-            "items": [
-              {
-                "jaql": {
-                  "table": "web_analytics_pageviews_aggregate",
-                  "column": "device",
-                  "dim": "[web_analytics_pageviews_aggregate.device]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "device"
-                },
-                "format": {
-                  "members": {
-                    "Android Phone": {
-                      "color": "#00cee6",
-                      "title": "Android Phone",
-                      "sortData": "Android Phone"
-                    },
-                    "Apple Desktop": {
-                      "color": "#9b9bd7",
-                      "title": "Apple Desktop",
-                      "sortData": "Apple Desktop"
-                    },
-                    "GoogleBot Crawler": {
-                      "color": "#6EDA55",
-                      "title": "GoogleBot Crawler",
-                      "sortData": "GoogleBot Crawler"
-                    },
-                    "iPad": {
-                      "color": "#fc7570",
-                      "title": "iPad",
-                      "sortData": "iPad"
-                    },
-                    "iPhone": {
-                      "color": "#fbb755",
-                      "title": "iPhone",
-                      "sortData": "iPhone"
-                    },
-                    "Linux Desktop": {
-                      "color": "#218A8C",
-                      "title": "Linux Desktop",
-                      "sortData": "Linux Desktop"
-                    },
-                    "Other": {
-                      "color": "#06e5ff",
-                      "title": "Other",
-                      "sortData": "Other"
-                    },
-                    "Other Crawler": {
-                      "color": "#fc7570",
-                      "title": "Other Crawler",
-                      "sortData": "Other Crawler"
-                    },
-                    "Windows Desktop": {
-                      "color": "#7efb62",
-                      "title": "Windows Desktop",
-                      "sortData": "Windows Desktop"
-                    }
-                  }
-                },
-                "instanceid": "3DB46-662A-0F"
-              }
-            ]
-          },
-          {
-            "name": "values",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[45B15-9FC]",
-                  "context": {
-                    "[45B15-9FC]": {
-                      "table": "web_analytics_pageviews_aggregate",
-                      "column": "total_conversions",
-                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total total_conversions"
-                    }
-                  },
-                  "title": "Visit Count"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color_bkp": {
-                    "color": "#00cee6",
-                    "type": "color"
-                  }
-                },
-                "instanceid": "3F1CE-3468-2D"
-              }
-            ]
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ],
-        "usedFormulasMapping": {}
-      },
-      "style": {
-        "legend": {
-          "enabled": true,
-          "position": "bottom"
-        },
-        "labels": {
-          "enabled": true,
-          "categories": false,
-          "value": false,
-          "percent": true,
-          "decimals": false,
-          "fontFamily": "Open Sans",
-          "color": "red"
-        },
-        "convolution": {
-          "enabled": true,
-          "selectedConvolutionType": "byPercentage",
-          "minimalIndependentSlicePercentage": 3,
-          "independentSlicesCount": 7
-        },
-        "dataLimits": {
-          "seriesCapacity": 100000
-        },
-        "lineWidth": {
-          "width": "bold"
-        },
-        "seriesLabels": {
-          "enabled": false,
-          "rotation": 0
-        },
-        "markers": {
-          "enabled": false,
-          "fill": "filled",
-          "size": "small"
-        },
-        "xAxis": {
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "x2Title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "isIntervalEnabled": false
-        },
-        "yAxis": {
-          "inactive": true,
-          "enabled": false,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "logarithmic": false,
-          "isIntervalEnabled": false
-        },
-        "y2Axis": {
-          "inactive": true,
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "logarithmic": false,
-          "isIntervalEnabled": false
-        },
-        "navigator": {
-          "enabled": true
-        },
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": [
-            {
-              "id": "device",
-              "title": "device",
-              "singular": "device",
-              "plural": "device"
-            }
-          ]
-        },
-        "automaticHeight": false
-      },
-      "instanceid": "414E2-EF60-41",
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "saveDisabledTargetFilters": false,
-        "drillToDashboardByName": false
-      },
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "drillToAnywhere": true
-      },
-      "dashboardid": "6648ed8669df6d0033c58a6f",
-      "lastOpened": null
-    },
-    {
       "title": "Weekly Conversions by Channel (utm_medium)",
       "type": "chart/column",
       "subtype": "column/stackedcolumn",
       "oid": "6648ed8669df6d0033c58a79",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a50",
+      "source": "6648ed8669df6d0033c58a96",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -3249,103 +2999,12 @@
       "lastOpened": null
     },
     {
-      "title": "",
-      "type": "WidgetsTabber",
-      "subtype": "WidgetsTabber",
-      "oid": "6648ed8669df6d0033c58a77",
-      "desc": null,
-      "source": "632b4bb5cd002d0038621a4e",
-      "datasource": {
-        "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
-        "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "address": "LocalHost",
-        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "live": false,
-        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "ids": [],
-          "all": false
-        },
-        "panels": [],
-        "usedFormulasMapping": {}
-      },
-      "style": {
-        "activeTab": "0",
-        "showTitle": false,
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": []
-        }
-      },
-      "instanceid": "746C3-FD5A-14",
-      "options": {
-        "dashboardFiltersMode": "select",
-        "selector": false,
-        "autoUpdateOnEveryChange": true
-      },
-      "dashboardid": "6648ed8669df6d0033c58a6f",
-      "script": "\nwidget.on('render',function(w, e){e.prefixText = '';\ne.suffixText = '';\ne.selectedColor = '#3A4356'; /*The color of the chosen title*/\ne.fontColor = '#d1d1d1'; /*The color of the unchosen titles*/\n e.fontWeight = '300';\ne.fontFamily = 'Avenir';\ne.elementWidth = '100%';\ne.descColor = '#a5a5a5';\ne.parentMarginLeft = '-50px';\ne.height = 40; /* affects the tabber widget default high*/\n}); \n\n\nwidget.tabs = [\n{title: \"Pageviews\", \n displayWidgetIds : [\"6648ed8669df6d0033c58a70\",\"6648ed8669df6d0033c58a71\",\"6648ed8669df6d0033c58a72\",\"6648ed8669df6d0033c58a73\",\"6648ed8669df6d0033c58a76\",\"6648ed8669df6d0033c58a78\"],\n hideWidgetIds : [\"6648ed8669df6d0033c58a7c\",\"6648ed8669df6d0033c58a79\",\"6648ed8669df6d0033c58a74\",\"6648ed8669df6d0033c58a75\",\"6648ed8669df6d0033c58a7d\",\"6648ed8669df6d0033c58a7b\",\"66603a0269df6d0033c65b7e\"]},\n{title: \"Conversions\", \n displayWidgetIds : [\"6648ed8669df6d0033c58a7c\",\"6648ed8669df6d0033c58a79\",\"6648ed8669df6d0033c58a74\",\"6648ed8669df6d0033c58a75\",\"6648ed8669df6d0033c58a7d\",\"6648ed8669df6d0033c58a7b\"],\n hideWidgetIds : [\"6648ed8669df6d0033c58a70\",\"6648ed8669df6d0033c58a71\",\"6648ed8669df6d0033c58a72\",\"6648ed8669df6d0033c58a73\",\"6648ed8669df6d0033c58a76\",\"6648ed8669df6d0033c58a78\",\"66603a0269df6d0033c65b7e\"]},\n{title: \"Web Journey\", \n displayWidgetIds : [\"66603a0269df6d0033c65b7e\"],\n hideWidgetIds : [\"6648ed8669df6d0033c58a70\",\"6648ed8669df6d0033c58a71\",\"6648ed8669df6d0033c58a72\",\"6648ed8669df6d0033c58a73\",\"6648ed8669df6d0033c58a76\",\"6648ed8669df6d0033c58a78\",\"6648ed8669df6d0033c58a7c\",\"6648ed8669df6d0033c58a79\",\"6648ed8669df6d0033c58a74\",\"6648ed8669df6d0033c58a75\",\"6648ed8669df6d0033c58a7d\",\"6648ed8669df6d0033c58a7b\"]},\t\n]; \n\nwidget.tabsConfig = 'multiply';\n\nwidget.on('ready', function(se, ev){\n$(element).css('overflow','hidden'),\n$(element).css('max-height','40px'),\n$(element).css('padding-top','5px'),\n$(element).css('margin-top','-40px'),\n$(element).css('background-color','#ecf0f5'),\n$(element).css('font-family','Avenir'),\n$(element).css('font-weight','300'),\n$(element).css('font-size','16px'),\n$(element).css('float','left'),\n$(element).css('align-self','end'),\n$(element).css('align-self','end'),\n$('.widget-body .listDefaultCSS').css('text-align','left'),\n$('.widget-body .listDefaultCSS').css('margin-left','35px');\n\n});\n\n\n\n",
-      "tabs": [
-        {
-          "title": "Pageviews",
-          "displayWidgetIds": [
-            "6648ed8669df6d0033c58a78",
-            "6648ed8669df6d0033c58a76",
-            "6648ed8669df6d0033c58a70",
-            "6648ed8669df6d0033c58a71",
-            "6648ed8669df6d0033c58a72",
-            "6648ed8669df6d0033c58a73"
-          ],
-          "hideWidgetIds": [
-            "6648ed8669df6d0033c58a75",
-            "6648ed8669df6d0033c58a74",
-            "632b30da0c596c00372aabdb",
-            "628e3e706fb84f0038311d2d",
-            "632b30da0c596c00372aabda"
-          ]
-        },
-        {
-          "title": "Conversions",
-          "displayWidgetIds": [
-            "6648ed8669df6d0033c58a75",
-            "6648ed8669df6d0033c58a74",
-            "6648ed8669df6d0033c58a70",
-            "6648ed8669df6d0033c58a71",
-            "6648ed8669df6d0033c58a72",
-            "6648ed8669df6d0033c58a73"
-          ],
-          "hideWidgetIds": [
-            "6648ed8669df6d0033c58a70",
-            "6648ed8669df6d0033c58a71",
-            "6648ed8669df6d0033c58a72",
-            "6648ed8669df6d0033c58a73",
-            "6648ed8669df6d0033c58a78",
-            "6648ed8669df6d0033c58a76",
-            "632b30da0c596c00372aabdb",
-            "628e3e706fb84f0038311d2d",
-            "632b30da0c596c00372aabda"
-          ]
-        }
-      ],
-      "tabsConfig": "multiply",
-      "lastOpened": null
-    },
-    {
-      "title": "Total Conversions by  Campaign",
+      "title": "Total Conversions by Channel",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6648ed8669df6d0033c58a7d",
+      "oid": "6648ed8669df6d0033c58a7c",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a54",
+      "source": "6648ed8669df6d0033c58a99",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -3368,29 +3027,44 @@
               {
                 "jaql": {
                   "table": "web_analytics_pageviews_aggregate",
-                  "column": "campaign_final",
-                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
+                  "column": "channel_final",
+                  "dim": "[web_analytics_pageviews_aggregate.channel_final]",
                   "datatype": "text",
                   "merged": true,
-                  "title": "campaign_final"
+                  "title": "channel_final"
                 },
-                "instanceid": "8B8F4-A68E-F5",
+                "instanceid": "2E500-E557-21",
                 "format": {
                   "members": {
-                    "N\\A": {
+                    "affiliate": {
                       "color": "#00cee6",
-                      "title": "N\\A",
-                      "sortData": "N\\A"
+                      "title": "affiliate",
+                      "sortData": "affiliate"
                     },
-                    "promo_code": {
+                    "client_domain_organic_visit": {
                       "color": "#9b9bd7",
-                      "title": "promo_code",
-                      "sortData": "promo_code"
+                      "title": "client_domain_organic_visit",
+                      "sortData": "client_domain_organic_visit"
                     },
-                    "retargeting": {
+                    "email": {
                       "color": "#6EDA55",
-                      "title": "retargeting",
-                      "sortData": "retargeting"
+                      "title": "email",
+                      "sortData": "email"
+                    },
+                    "organic_search": {
+                      "color": "#fc7570",
+                      "title": "organic_search",
+                      "sortData": "organic_search"
+                    },
+                    "search": {
+                      "color": "#fbb755",
+                      "title": "search",
+                      "sortData": "search"
+                    },
+                    "social": {
+                      "color": "#218A8C",
+                      "title": "social",
+                      "sortData": "social"
                     }
                   }
                 }
@@ -3440,37 +3114,7 @@
           },
           {
             "name": "filters",
-            "items": [
-              {
-                "jaql": {
-                  "table": "web_analytics_pageviews_aggregate",
-                  "column": "campaign_final",
-                  "dim": "[web_analytics_pageviews_aggregate.campaign_final]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "campaign_final",
-                  "filter": {
-                    "explicit": false,
-                    "multiSelection": true,
-                    "exclude": {
-                      "members": [
-                        "N\\A"
-                      ]
-                    }
-                  },
-                  "collapsed": true,
-                  "datasource": {
-                    "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
-                    "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-                    "address": "LocalHost",
-                    "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-                    "live": false,
-                    "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
-                  }
-                },
-                "instanceid": "57791-A3EC-C9"
-              }
-            ]
+            "items": []
           }
         ],
         "usedFormulasMapping": {}
@@ -3581,10 +3225,10 @@
           "aggregation": "sum",
           "labels": [
             {
-              "id": "campaign_final",
-              "title": "campaign_final",
-              "singular": "campaign_final",
-              "plural": "campaign_final"
+              "id": "channel_final",
+              "title": "channel_final",
+              "singular": "channel_final",
+              "plural": "channel_final"
             }
           ]
         },
@@ -3638,7 +3282,7 @@
       "subtype": "BloX",
       "oid": "6648ed8669df6d0033c58a7a",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a51",
+      "source": "6648ed8669df6d0033c58a97",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -3872,12 +3516,438 @@
       "lastOpened": null
     },
     {
+      "title": "Top 10 Visited Pages",
+      "type": "pivot2",
+      "subtype": "pivot2",
+      "oid": "66635130cc4c72003309f85c",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg",
+        "fullname": "LocalHost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
+        "id": "aLOCALHOST_aDMXwAa10602XwAaRETAILIAAaVALUEIAAaACCELERATORIAAaLQAaIAAaWEBIAAaANALYTICSIAAaAGG",
+        "address": "LocalHost",
+        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "rows",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_td_url_agg",
+                  "column": "td_url",
+                  "dim": "[web_analytics_td_url_agg.td_url]",
+                  "datatype": "text",
+                  "title": "td_url"
+                },
+                "instanceid": "ECCB7-7482-4C",
+                "panel": "rows",
+                "field": {
+                  "id": "[web_analytics_td_url_agg.td_url]",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_td_url_agg",
+                  "column": "td_url_count",
+                  "dim": "[web_analytics_td_url_agg.td_url_count]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total td_url_count"
+                },
+                "instanceid": "6C20B-DB7F-33",
+                "panel": "measures",
+                "field": {
+                  "id": "[web_analytics_td_url_agg.td_url_count]_sum",
+                  "index": 1
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "t": true,
+                    "b": true,
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "columns",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_td_url_agg",
+                  "column": "td_url",
+                  "dim": "[web_analytics_td_url_agg.td_url]",
+                  "datatype": "text",
+                  "filter": {
+                    "top": 10,
+                    "by": {
+                      "table": "web_analytics_td_url_agg",
+                      "column": "td_url_count",
+                      "dim": "[web_analytics_td_url_agg.td_url_count]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total td_url_count"
+                    },
+                    "rankingMessage": "Total td_url_count"
+                  },
+                  "title": "td_url",
+                  "datasource": {
+                    "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg",
+                    "fullname": "LocalHost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
+                    "id": "aLOCALHOST_aDMXwAa10602XwAaRETAILIAAaVALUEIAAaACCELERATORIAAaLQAaIAAaWEBIAAaANALYTICSIAAaAGG",
+                    "address": "LocalHost",
+                    "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg"
+                  },
+                  "collapsed": false
+                },
+                "instanceid": "3665F-E873-D7",
+                "panel": "scope"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "scroll": false,
+        "pageSize": 25,
+        "automaticHeight": true,
+        "colors": {
+          "rows": true,
+          "columns": false,
+          "headers": false,
+          "members": false,
+          "totals": false
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "td_url",
+              "title": "td_url",
+              "singular": "td_url",
+              "plural": "td_url"
+            }
+          ]
+        }
+      },
+      "instanceid": "5F5D0-89E9-0A",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 2,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "viewState": {
+        "activeTab": "filters"
+      },
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "triggersDomready": true,
+        "drillToAnywhere": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "6648ed8669df6d0033c58a6f",
+      "lastOpened": null
+    },
+    {
+      "title": "Total Visits by Device",
+      "type": "chart/pie",
+      "subtype": "pie/donut",
+      "oid": "6648ed8669df6d0033c58a76",
+      "desc": null,
+      "source": "6648ed8669df6d0033c58a93",
+      "datasource": {
+        "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
+        "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+        "address": "LocalHost",
+        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+        "live": false,
+        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "web_analytics_device_type_agg",
+                  "column": "device_type",
+                  "dim": "[web_analytics_device_type_agg.device_type]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "device_type"
+                },
+                "instanceid": "ADE9A-704B-40",
+                "format": {
+                  "members": {}
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[F2EDD-6FF]",
+                  "context": {
+                    "[F2EDD-6FF]": {
+                      "table": "web_analytics_device_type_agg",
+                      "column": "device_type_count",
+                      "dim": "[web_analytics_device_type_agg.device_type_count]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total device_type_count"
+                    }
+                  },
+                  "title": "Visit Count"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "type": "color",
+                    "colorIndex": 0
+                  }
+                },
+                "instanceid": "3F1CE-3468-2D"
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": false,
+          "value": false,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "byPercentage",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": true,
+          "enabled": false,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "device_type",
+              "title": "device_type",
+              "singular": "device_type",
+              "plural": "device_type"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "414E2-EF60-41",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "6648ed8669df6d0033c58a6f",
+      "lastOpened": null
+    },
+    {
       "title": "Weekly Conversions by Campaign (utm_campaign)",
       "type": "chart/column",
       "subtype": "column/stackedcolumn",
       "oid": "6648ed8669df6d0033c58a7b",
       "desc": null,
-      "source": "632b4bb5cd002d0038621a52",
+      "source": "6648ed8669df6d0033c58a98",
       "datasource": {
         "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
         "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
@@ -4192,290 +4262,12 @@
       "lastOpened": null
     },
     {
-      "title": "Total Conversions by Channel",
-      "type": "chart/pie",
-      "subtype": "pie/donut",
-      "oid": "6648ed8669df6d0033c58a7c",
-      "desc": null,
-      "source": "632b4bb5cd002d0038621a53",
-      "datasource": {
-        "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
-        "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "address": "LocalHost",
-        "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
-        "live": false,
-        "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false,
-          "ids": []
-        },
-        "panels": [
-          {
-            "name": "categories",
-            "items": [
-              {
-                "jaql": {
-                  "table": "web_analytics_pageviews_aggregate",
-                  "column": "channel_final",
-                  "dim": "[web_analytics_pageviews_aggregate.channel_final]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "channel_final"
-                },
-                "instanceid": "2E500-E557-21",
-                "format": {
-                  "members": {
-                    "affiliate": {
-                      "color": "#00cee6",
-                      "title": "affiliate",
-                      "sortData": "affiliate"
-                    },
-                    "client_domain_organic_visit": {
-                      "color": "#9b9bd7",
-                      "title": "client_domain_organic_visit",
-                      "sortData": "client_domain_organic_visit"
-                    },
-                    "email": {
-                      "color": "#6EDA55",
-                      "title": "email",
-                      "sortData": "email"
-                    },
-                    "organic_search": {
-                      "color": "#fc7570",
-                      "title": "organic_search",
-                      "sortData": "organic_search"
-                    },
-                    "search": {
-                      "color": "#fbb755",
-                      "title": "search",
-                      "sortData": "search"
-                    },
-                    "social": {
-                      "color": "#218A8C",
-                      "title": "social",
-                      "sortData": "social"
-                    }
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "values",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[56DE7-4FF]",
-                  "context": {
-                    "[56DE7-4FF]": {
-                      "table": "web_analytics_pageviews_aggregate",
-                      "column": "total_conversions",
-                      "dim": "[web_analytics_pageviews_aggregate.total_conversions]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total total_conversions"
-                    }
-                  },
-                  "title": "Total conversion"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color_bkp": {
-                    "color": "#00cee6",
-                    "type": "color"
-                  }
-                },
-                "instanceid": "0EACF-F6EC-EC"
-              }
-            ]
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ],
-        "usedFormulasMapping": {}
-      },
-      "style": {
-        "legend": {
-          "enabled": true,
-          "position": "top"
-        },
-        "labels": {
-          "enabled": true,
-          "categories": false,
-          "value": false,
-          "percent": true,
-          "decimals": false,
-          "fontFamily": "Open Sans",
-          "color": "red"
-        },
-        "convolution": {
-          "enabled": true,
-          "selectedConvolutionType": "bySlicesCount",
-          "minimalIndependentSlicePercentage": 3,
-          "independentSlicesCount": 7
-        },
-        "dataLimits": {
-          "seriesCapacity": 100000
-        },
-        "seriesLabels": {
-          "enabled": false,
-          "rotation": 0,
-          "labels": {
-            "enabled": false,
-            "stacked": false,
-            "stackedPercentage": false,
-            "types": {
-              "count": false,
-              "relative": false,
-              "percentage": false,
-              "totals": false
-            }
-          }
-        },
-        "xAxis": {
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "x2Title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "isIntervalEnabled": false
-        },
-        "yAxis": {
-          "inactive": false,
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "logarithmic": false,
-          "isIntervalEnabled": true,
-          "hideMinMax": false
-        },
-        "y2Axis": {
-          "inactive": true,
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "logarithmic": false,
-          "isIntervalEnabled": true,
-          "hideMinMax": false
-        },
-        "navigator": {
-          "enabled": true
-        },
-        "lineWidth": {
-          "width": "bold"
-        },
-        "markers": {
-          "enabled": false,
-          "fill": "filled",
-          "size": "small"
-        },
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": [
-            {
-              "id": "channel_final",
-              "title": "channel_final",
-              "singular": "channel_final",
-              "plural": "channel_final"
-            }
-          ]
-        },
-        "automaticHeight": false
-      },
-      "instanceid": "A1629-1AE8-A2",
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "saveDisabledTargetFilters": false,
-        "drillToDashboardByName": false
-      },
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "drillToAnywhere": true
-      },
-      "dashboardid": "6648ed8669df6d0033c58a6f",
-      "lastOpened": null
-    },
-    {
       "title": "",
       "type": "BloX",
       "subtype": "BloX",
       "oid": "66603a0269df6d0033c65b7e",
       "desc": null,
-      "source": null,
+      "source": "66603a0269df6d0033c65b7f",
       "datasource": {
         "title": "dm_10602_Retail Value Accelerator - Web Sankey",
         "fullname": "LocalHost/dm_10602_Retail Value Accelerator - Web Sankey",
@@ -4761,10 +4553,6 @@
         "drillToDashboardByName": false
       },
       "drilledDashboardDisplay": {},
-      "viewState": {
-        "activeTab": "design"
-      },
-      "realTimeRefreshing": false,
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
