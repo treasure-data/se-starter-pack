@@ -1,6 +1,7 @@
 _export:
-  !include : 'config/src_params.yml' 
+  !include : 'config/src_params.yml'
   !include : 'analytics/config/sankey.yml'
+  !include : 'analytics/config/conversion.yml'
   td:
     database: ${ana}
     src_database: ${gld}_${sub}
@@ -16,32 +17,32 @@ _export:
     +update_sales_trends:
       td>: analytics/queries/sales_trends_update.sql
       insert_into: ${ana}.sales_trends
-    
+
     +sales_market_basket_analysis:
       td>: analytics/queries/sales_market_basket_analysis.sql
       engine: hive
       create_table: ${ana}.sales_market_basket_analytics
       database: ${gld}_${sub} #query fails to get the source tables otherwise
-    
+
   ### Generate Data Needed for Web Analytics Dashboard
   +web_analytics:
     +prep_web_analytics_base:
       td>: analytics/queries/web_analytics.sql
       create_table: ${ana}.web_analytics
       database: ${gld}_${sub}
-    
-    ### Generate New Visitor, Known Customer and Sales Statistics 
+
+    ### Generate New Visitor, Known Customer and Sales Statistics
     +prep_web_analytics_agg:
       td>: analytics/queries/web_analytics_agg.sql
       insert_into: ${ana}.web_analytics_agg
       database: ${gld}_${sub}
-    
-    ### Generate simple count statistics by various dimensions 
+
+    ### Generate simple count statistics by various dimensions
     +web_analytics_agg_others:
       +create_agg_tmp:
         td>: analytics/queries/web_analytics_agg_tmp.sql
         create_table: ${ana}.web_analytics_agg_tmp
-        database: ${gld}_${sub} 
+        database: ${gld}_${sub}
       +sub_agg_table:
         for_each>:
           parray: ["td_url", "utm_source", "utm_medium", "utm_campaign", "utm_content", "search_engine", "country_by_ip", "subdivision_by_ip_list", "city_by_ip", "connectiontype_by_ip", "domain_by_ip", "device_type", "os_name", "browser_name"]
@@ -49,13 +50,20 @@ _export:
           +insert_sub_agg:
             td>: analytics/queries/web_analytics_from_tmp.sql
             insert_into: ${ana}.web_analytics_${parray}_agg
-            database: ${ana} 
-                              
+            database: ${ana}
+      +sub_agg_conversion_table:
+        for_each>:
+          parray: ["utm_source", "utm_medium", "utm_campaign"]
+        _do:
+          +insert_sub_agg:
+            td>: analytics/queries/web_analytics_conversion_from_tmp.sql
+            insert_into: ${ana}.web_analytics_conv_${parray}
+            database: ${ana}
       +drop_tmp:
         td_ddl>:
         drop_tables: ["web_analytics_agg_tmp"]
         database: ${ana}
-      
+
     +web_analytics_sankey:
         _export:
           tblname: enriched_pageviews
@@ -76,7 +84,7 @@ _export:
           td>: analytics/queries/sankey_data_model_final.sql
           create_table: web_conversion_analytics_final
           database: ${ana}
-  +idu_dashboard: 
+  +idu_dashboard:
     call>: idu_dashboard/idu_dashboard_launch
 
 

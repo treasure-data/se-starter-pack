@@ -14,7 +14,7 @@
             ],
             "shared_user_list": ["biswadip.paul+demodata@treasure-data.com"],
             "change_schema_cols": {
-                "date": ["ENTER_NAME"],
+                "date": ["date"],
                 "text": ["ENTER_NAME"],
                 "float": ["ENTER_NAME"],
                 "bigint": ["ENTER_NAME"]
@@ -36,7 +36,7 @@
                 }
             ],
             "change_schema_cols": {
-                "date": ["ENTER_NAME"],
+                "date": ["date"],
                 "text": ["ENTER_NAME"],
                 "float": ["ENTER_NAME"],
                 "bigint": ["ENTER_NAME"]
@@ -113,10 +113,22 @@
                 {
                     "db": "sink_database",
                     "name": "web_analytics_browser_name_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_conv_utm_campaign"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_conv_utm_medium"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_conv_utm_source"
                 }
             ],
             "change_schema_cols": {
-                "date": ["ENTER_NAME"],
+                "date": ["run_date"],
                 "text": ["ENTER_NAME"],
                 "float": ["ENTER_NAME"],
                 "bigint": ["ENTER_NAME"]
