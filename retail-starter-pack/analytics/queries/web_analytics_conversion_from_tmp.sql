@@ -6,7 +6,7 @@ with get_utm as (
 t1 as (
   select distinct retail_unification_id, session_id
   from web_analytics_agg_tmp
-  where regexp_like(stage, 'Checkout')
+  where regexp_like(${column}, '${conversion.pattern}')
 )
 select today_datetime as run_date, ${parray}, count(t1.session_id) as ${parray}_count
 from t1 left join get_utm

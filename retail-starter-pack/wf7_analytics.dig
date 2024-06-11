@@ -52,6 +52,8 @@ _export:
             insert_into: ${ana}.web_analytics_${parray}_agg
             database: ${ana}
       +sub_agg_conversion_table:
+        _export:
+          column: td_url
         for_each>:
           parray: ["utm_source", "utm_medium", "utm_campaign"]
         _do:
