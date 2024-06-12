@@ -1,59 +1,56 @@
--- SELECT *,
---   CASE
---     WHEN regexp_like('${register.event}', '${column}') THEN '${register.description}'
---     WHEN regexp_like('${login.event}', '${column}') THEN '${login.description}'
---     WHEN regexp_like('${products.event}', '${column}') THEN '${products.description}'
---     WHEN regexp_like('${wishlist.event}', '${column}') THEN '${wishlist.description}'
---     WHEN regexp_like('${cart.event}', '${column}')THEN '${cart.description}'
---     WHEN regexp_like('${checkout.event}', '${column}') THEN '${checkout.description}'
---     WHEN regexp_like('${loyalty.event}', '${column}') THEN '${loyalty.description}'
---     WHEN regexp_like('${return.event}', '${column}') THEN '${return.description}'
---     WHEN regexp_like('${review.event}', '${column}') THEN '${review.description}'
---     WHEN regexp_like('${support.event}', '${column}') THEN '${support.description}'
---     ELSE null
---   END AS touchpoints
--- FROM ${tblname};
-
 with t1 as (
   select distinct
   retail_unification_id,
-  CONCAT('Pageviews - ', td_title) as activity_orig,
-  time,
-  0 as conversion
-  -- CASE
-  --       WHEN regexp_like('${register.event}', '${column}') THEN '${register.description}'
-  --       WHEN regexp_like('${login.event}', '${column}') THEN '${login.description}'
-  --       WHEN regexp_like('${products.event}', '${column}') THEN '${products.description}'
-  --       WHEN regexp_like('${wishlist.event}', '${column}') THEN '${wishlist.description}'
-  --       WHEN regexp_like('${cart.event}', '${column}')THEN '${cart.description}'
-  --       WHEN regexp_like('${checkout.event}', '${column}') THEN '${checkout.description}'
-  --       WHEN regexp_like('${loyalty.event}', '${column}') THEN '${loyalty.description}'
-  --       WHEN regexp_like('${return.event}', '${column}') THEN '${return.description}'
-  --       WHEN regexp_like('${review.event}', '${column}') THEN '${review.description}'
-  --       WHEN regexp_like('${support.event}', '${column}') THEN '${support.description}'
-  --       ELSE 'others'
-  -- END AS activity
-    -- CASE
-  --       WHEN regexp_like('${analytics.dashboards.sankey.register.event}', ${column}) THEN '${analytics.dashboards.sankey.register.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.login.event}', ${column}) THEN '${analytics.dashboards.sankey.login.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.products.event}', ${column}) THEN '${analytics.dashboards.sankey.products.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.wishlist.event}', ${column}) THEN '${analytics.dashboards.sankey.wishlist.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.cart.event}', ${column})THEN '${analytics.dashboards.sankey.cart.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.checkout.event}', ${column}) THEN '${analytics.dashboards.sankey.checkout.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.loyalty.event}', ${column}) THEN '${analytics.dashboards.sankey.loyalty.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.return.event}', ${column}) THEN '${analytics.dashboards.sankey.return.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.review.event}', ${column}) THEN '${analytics.dashboards.sankey.review.description}'
-  --       WHEN regexp_like('${analytics.dashboards.sankey.support.event}', ${column}) THEN '${analytics.dashboards.sankey.support.description}'
-  --       ELSE 'others'
-  -- END AS activity
+  CASE
+    WHEN regexp_like(${column}, '${sankey.register.pattern}') THEN '${sankey.register.stage}'
+    WHEN regexp_like(${column}, '${sankey.login.pattern}') THEN '${sankey.login.stage}'
+    WHEN regexp_like(${column}, '${sankey.products.pattern}') THEN '${sankey.products.stage}'
+    WHEN regexp_like(${column}, '${sankey.wishlist.pattern}') THEN '${sankey.wishlist.stage}'
+    WHEN regexp_like(${column}, '${sankey.cart.pattern}') THEN '${sankey.cart.stage}'
+    WHEN regexp_like(${column}, '${sankey.checkout.pattern}') THEN '${sankey.checkout.stage}'
+    WHEN regexp_like(${column}, '${sankey.loyalty.pattern}') THEN '${sankey.loyalty.stage}'
+    WHEN regexp_like(${column}, '${sankey.return.pattern}') THEN '${sankey.return.stage}'
+    WHEN regexp_like(${column}, '${sankey.review.pattern}') THEN '${sankey.review.stage}'
+    WHEN regexp_like(${column}, '${sankey.support.pattern}') THEN '${sankey.support.stage}'
+    ELSE null
+  END AS stage,
+  CASE
+    WHEN regexp_like(${column}, '${sankey.register.pattern}') THEN cast ('${sankey.register.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.login.pattern}') THEN cast ('${sankey.login.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.products.pattern}') THEN cast ('${sankey.products.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.wishlist.pattern}') THEN cast ('${sankey.wishlist.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.cart.pattern}') THEN cast ('${sankey.cart.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.checkout.pattern}') THEN cast ('${sankey.checkout.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.loyalty.pattern}') THEN cast ('${sankey.loyalty.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.return.pattern}') THEN cast ('${sankey.return.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.review.pattern}') THEN cast ('${sankey.review.indexno}' as int)
+    WHEN regexp_like(${column}, '${sankey.support.pattern}') THEN cast ('${sankey.support.indexno}' as int)
+    ELSE null
+  END AS stage_indexno,
+  time
   from ${tblname}
 ),
 t2 as (
-    select *, ROW_NUMBER() OVER(PARTITION by retail_unification_id, grp order by time) as row_num
-    from (
-        select t1.*, CAST(FROM_UNIXTIME(time) as VARCHAR) as timestamp, sum(conversion) over(partition by retail_unification_id order by time) as grp
-        from t1
-    )
-    order by retail_unification_id, time asc
+  select
+    retail_unification_id,
+    stage,
+    stage_indexno,
+    time
+  from t1
+  where (stage is not null or stage_indexno is not null)
+),
+t3 as (
+  select
+    retail_unification_id,
+    stage as "from",
+    LEAD(stage, 1) OVER (PARTITION BY retail_unification_id ORDER BY time) AS "to",
+    stage_indexno from_num,
+    LEAD(stage_indexno, 1) OVER (PARTITION BY retail_unification_id ORDER BY time) AS to_num,
+    time
+  from t2
+  order by retail_unification_id, time
 )
-select * from t2
+select *
+from t3
+where to_num > from_num
+order by retail_unification_id, time

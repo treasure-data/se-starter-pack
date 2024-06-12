@@ -1,5 +1,5 @@
 {
-  "model_name":  "idu_dash_retail_starter_pack"
+  "model_name":  "Retail Value Accelerator - IDU Dashboard"
   ,
   "model_tables": [
     {"db": "sink_database","name":"idu_canonical_id_source_key_stats_top"},

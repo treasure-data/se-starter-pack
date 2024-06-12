@@ -3,3 +3,4 @@
 .digdag
 __pycache__/
 *.pyc
+*.ipynb

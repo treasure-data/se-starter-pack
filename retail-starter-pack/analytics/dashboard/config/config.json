@@ -14,7 +14,7 @@
             ],
             "shared_user_list": ["biswadip.paul+demodata@treasure-data.com"],
             "change_schema_cols": {
-                "date": ["ENTER_NAME"],
+                "date": ["date"],
                 "text": ["ENTER_NAME"],
                 "float": ["ENTER_NAME"],
                 "bigint": ["ENTER_NAME"]
@@ -36,7 +36,7 @@
                 }
             ],
             "change_schema_cols": {
-                "date": ["ENTER_NAME"],
+                "date": ["date"],
                 "text": ["ENTER_NAME"],
                 "float": ["ENTER_NAME"],
                 "bigint": ["ENTER_NAME"]
@@ -113,10 +113,22 @@
                 {
                     "db": "sink_database",
                     "name": "web_analytics_browser_name_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_conv_utm_campaign"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_conv_utm_medium"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_conv_utm_source"
                 }
             ],
             "change_schema_cols": {
-                "date": ["ENTER_NAME"],
+                "date": ["run_date"],
                 "text": ["ENTER_NAME"],
                 "float": ["ENTER_NAME"],
                 "bigint": ["ENTER_NAME"]
@@ -236,6 +248,30 @@
                         "join_key2": "run_date"
                     }
                 ]
+            },
+            "shared_user_list": [
+                "biswadip.paul+demodata@treasure-data.com",
+                "charles.vatin+demodata@treasure-data.com",
+                "nidhi.gotgi+demodata@treasure-data.com",
+                "vishal.patel+demodata@treasure-data.com"
+            ]
+        },
+        {
+            "model_name": "Retail Value Accelerator - Web Sankey",
+            "model_tables": [
+                {
+                    "db": "sink_database",
+                    "name": "web_conversion_analytics_final"
+                }
+            ],
+            "change_schema_cols": {
+                "date": ["ENTER_NAME"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
+            },
+            "join_relations": {
+                "pairs": []
             },
             "shared_user_list": [
                 "biswadip.paul+demodata@treasure-data.com",

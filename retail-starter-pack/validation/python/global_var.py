@@ -4,7 +4,7 @@ from datetime import datetime
 td_site = os.environ.get("TD_SITE")
 td_api_key = os.environ["TD_API_KEY"]
 
-print(td_api_key)
+# print(td_api_key)
 
 headers = {"Authorization": f"TD1 {td_api_key}", "Content-Type": "application/json"}
 

@@ -2,8 +2,8 @@
 source_db: cdp_unification_retail_starter_pack
 
 ##Reporting database (output DB where idu_dashboard tables are written) --> sink_database should be SAME as reporting_db
-reporting_db: retail_starter_pack_idu_reporting
-sink_database: retail_starter_pack_idu_reporting
+reporting_db: analytics
+sink_database: analytics 
 
 ##Global Prams
 canonical_id_col: 'retail_unification_id'                 #name of the canonical ID col output by unification workflow

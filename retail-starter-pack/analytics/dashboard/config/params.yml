@@ -1,6 +1,6 @@
 ##Reporting database (output DB where idu_dashboard tables are written) --> sink_database should be SAME as reporting_db
-reporting_db: analytics_retail
-sink_database: analytics_retail
+reporting_db: analytics
+sink_database: analytics
 
 ##Global Prams
 api_endpoint: api.treasuredata.com

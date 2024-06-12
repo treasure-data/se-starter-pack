@@ -15,12 +15,12 @@ base as (select
   , url_extract_parameter(td_url, 'utm_campaign') as utm_campaign
   , url_extract_parameter(td_url, 'utm_content')  as utm_content
   , case when td_referrer like '%google%'       then 'Google'
-	     when td_referrer like '%instagram%'    then 'Instagram'
-	     when td_referrer like '%snapshat%'     then 'Snapchat'
-	     when td_referrer like '%youtube%'      then 'Youtube'
-         when td_referrer like '%twitter%'      then 'Twitter'
-         when td_referrer like '%facebook%'     then 'Facebook'
-         else null
+        when td_referrer like '%instagram%'    then 'Instagram'
+        when td_referrer like '%snapshat%'     then 'Snapchat'
+        when td_referrer like '%youtube%'      then 'Youtube'
+        when td_referrer like '%twitter%'      then 'Twitter'
+        when td_referrer like '%facebook%'     then 'Facebook'
+        else null
 	end as search_engine
   , TD_IP_TO_COUNTRY_NAME(td_ip)                         as country_by_ip
   , TD_IP_TO_SUBDIVISION_NAMES(td_ip)                    as subdivision_by_ip_array
@@ -40,13 +40,13 @@ base as (select
         when element_at(td_parse_agent(td_user_agent), 'category') = 'crawler' or
               element_at(td_parse_agent(td_user_agent), 'name') = 'UNKNOWN' or
               (element_at(td_parse_agent(td_user_agent), 'os') = 'Linux' and element_at(td_parse_agent(td_user_agent), 'name') = 'Safari')    then 'BOT/Crawler'
-        when element_at(td_parse_agent(td_user_agent), 'category') = 'appliance'                                                             then 'Game Console'
-        when element_at(td_parse_agent(td_user_agent), 'category') = 'misc'                                                                  then 'ETC'
-        when element_at(td_parse_agent(td_user_agent), 'category') = 'UNKNOWN'                                                               then 'UNKNOWN'
+        when element_at(td_parse_agent(td_user_agent), 'category') = 'appliance'                                                              then 'Game Console'
+        when element_at(td_parse_agent(td_user_agent), 'category') = 'misc'                                                                   then 'ETC'
+        when element_at(td_parse_agent(td_user_agent), 'category') = 'UNKNOWN'                                                                then 'UNKNOWN'
         else element_at(td_parse_agent(td_user_agent), 'category') -- 나중에 다시 체크
     end as device_type
   , case when element_at(td_parse_agent(td_user_agent), 'category') = 'pc' then 'PC'
-        when td_parse_user_agent(td_user_agent, 'device') = 'Other'       then 'UNKNOWN'
+        when td_parse_user_agent(td_user_agent, 'device') = 'Other'        then 'UNKNOWN'
         else td_parse_user_agent(td_user_agent, 'device')
     end as device_name
   , if(td_parse_user_agent(td_user_agent, 'os_family') = 'iOS', 'iOS', element_at(td_parse_agent(td_user_agent), 'os'))       as os_name
@@ -55,7 +55,9 @@ base as (select
   , if(td_parse_user_agent(td_user_agent, 'ua_family') = 'Other', 'UNKNOWN', td_parse_user_agent(td_user_agent, 'ua_family')) as browser_name
   , element_at(td_parse_agent(td_user_agent), 'version')                                                                      as browser_version
   , td_language
-from enriched_pageviews a, cal
-where TD_TIME_RANGE(a.time, st_dt , end_dt)
+  , TD_SESSIONIZE_WINDOW(time, cast ('${conversion.sessionize_time_range}' as int)) OVER (PARTITION BY retail_unification_id ORDER BY time) AS session_id
+  , retail_unification_id
+  from enriched_pageviews a, cal
+  where TD_TIME_RANGE(a.time, st_dt , end_dt)
 )
 select * from base
