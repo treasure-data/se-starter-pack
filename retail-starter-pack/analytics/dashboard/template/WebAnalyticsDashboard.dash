@@ -750,6 +750,36 @@
         }
       },
       "instanceid": "5ACB1-F323-B7"
+    },
+    {
+      "jaql": {
+        "datatype": "datetime",
+        "dim": "[web_analytics_conv_utm_source.run_date (Calendar)]",
+        "title": "Weeks in run_date",
+        "level": "weeks",
+        "firstday": "mon",
+        "column": "run_date",
+        "table": "web_analytics_conv_utm_source",
+        "filter": {
+          "explicit": true,
+          "multiSelection": true,
+          "members": [
+            "2024-06-13T00:00:00"
+          ]
+        },
+        "datasource": {
+          "fullname": "localhost/dm_10602_Retail Value Accelerator - Web Analytics Agg",
+          "id": "localhost_admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+          "address": "LocalHost",
+          "database": "admXwAa10602XwAaRetailIAAaValueIAAaAcceleratorIAAaLQAaIAAaWebIAAaAnalyticsIAAaAgg",
+          "live": false,
+          "title": "dm_10602_Retail Value Accelerator - Web Analytics Agg"
+        },
+        "collapsed": true,
+        "isDashboardFilter": true
+      },
+      "instanceid": "E1E96-B15E-AE",
+      "isCascading": false
     }
   ],
   "isPublic": null,
@@ -780,6 +810,7 @@
     "active": true
   },
   "hasPrevioiusVersion": true,
+  "filterRelations": [],
   "widgets": [
     {
       "title": "Total Pageviews",
@@ -2267,7 +2298,7 @@
         "usedFormulasMapping": {}
       },
       "style": {
-        "activeTab": "0",
+        "activeTab": "2",
         "showTitle": false,
         "narration": {
           "enabled": false,
