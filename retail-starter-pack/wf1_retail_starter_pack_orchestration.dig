@@ -25,35 +25,35 @@ _export:
       query: "delete from log_tbl where 1=1"
       database: va_config_${sub}
 
-# +validation:
-#   _export:
-#     step_name: validation
-#     workflow_to_run: wf3_validate
-#   call>: wf2_run_workflow_with_logging.dig
++validation:
+  _export:
+    step_name: validation
+    workflow_to_run: wf3_validate
+  call>: wf2_run_workflow_with_logging.dig
 
-# +staging:
-#   _export:
-#     step_name: staging
-#     workflow_to_run: wf4_stage
-#   call>: wf2_run_workflow_with_logging.dig
++staging:
+  _export:
+    step_name: staging
+    workflow_to_run: wf4_stage
+  call>: wf2_run_workflow_with_logging.dig
 
-# +unification:
-#   _export:
-#     step_name: unification
-#     workflow_to_run: wf5_unify
-#   call>: wf2_run_workflow_with_logging.dig
++unification:
+  _export:
+    step_name: unification
+    workflow_to_run: wf5_unify
+  call>: wf2_run_workflow_with_logging.dig
 
-# +unification_dashboard:
-#   _export:
-#     step_name: unification_dashboard
-#     workflow_to_run: idu_dashboard/idu_dashboard_launch
-#   call>: wf2_run_workflow_with_logging.dig
++unification_dashboard:
+  _export:
+    step_name: unification_dashboard
+    workflow_to_run: idu_dashboard/idu_dashboard_launch
+  call>: wf2_run_workflow_with_logging.dig
 
-# +golden:
-#   _export:
-#     step_name: golden
-#     workflow_to_run: wf6_golden
-#   call>: wf2_run_workflow_with_logging.dig
++golden:
+  _export:
+    step_name: golden
+    workflow_to_run: wf6_golden
+  call>: wf2_run_workflow_with_logging.dig
 
 +run_master_segment_and_analytics:
   _parallel: true
@@ -64,23 +64,23 @@ _export:
       workflow_to_run: wf7_analytics
     call>: wf2_run_workflow_with_logging.dig
 
-  # +create_master_segment:
-  #   _export:
-  #     step_name: create_master_segment
-  #     workflow_to_run: wf8_create_master_segment
-  #   call>: wf2_run_workflow_with_logging.dig
+  +create_master_segment:
+    _export:
+      step_name: create_master_segment
+      workflow_to_run: wf8_create_master_segment
+    call>: wf2_run_workflow_with_logging.dig
 
-# +refresh_master_segment:
-#   _export:
-#     step_name: refresh_master_segment
-#     workflow_to_run: wf9_refresh_master_segment
-#   call>: wf2_run_workflow_with_logging.dig
++refresh_master_segment:
+  _export:
+    step_name: refresh_master_segment
+    workflow_to_run: wf9_refresh_master_segment
+  call>: wf2_run_workflow_with_logging.dig
 
-# +create_segment:
-#   _export:
-#     step_name: create_segment
-#     workflow_to_run: wf10_create_segment
-#   call>: wf2_run_workflow_with_logging.dig
++create_segment:
+  _export:
+    step_name: create_segment
+    workflow_to_run: wf10_create_segment
+  call>: wf2_run_workflow_with_logging.dig
 
 # Send mail success
 +send_success_alert:
