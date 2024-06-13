@@ -142,14 +142,14 @@ master_tables:
       - name: td_global_id
         source_columns:
           - {table: pageviews, column: td_global_id, priority: 1}
-      - name: order_no
-        source_columns:
-          - {table: ticket_transactions, column: order_no, priority: 1}
-          - {table: event_concessions_transactions, column: order_no, priority: 2}
-          - {table: event_merchandise_transactions, column: order_no, priority: 2}
-          - {table: online_merchandise_transactions, column: order_no, priority: 2}
-          - {table: merchandise_order_details, column: order_no, priority: 2}
-          - {table: event_concessions_order_details, column: order_no, priority: 2}
+      # - name: order_no
+      #   source_columns:
+      #     - {table: ticket_transactions, column: order_no, priority: 1}
+      #     - {table: event_concessions_transactions, column: order_no, priority: 2}
+      #     - {table: event_merchandise_transactions, column: order_no, priority: 2}
+      #     - {table: online_merchandise_transactions, column: order_no, priority: 2}
+      #     - {table: merchandise_order_details, column: order_no, priority: 2}
+      #     - {table: event_concessions_order_details, column: order_no, priority: 2}
       - name: unique_loyalty_id
         source_columns:
           - {table: ticket_transactions, column: unique_loyalty_id, priority: 1}

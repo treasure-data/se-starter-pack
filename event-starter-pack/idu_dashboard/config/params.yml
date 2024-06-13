@@ -1,9 +1,9 @@
 ###Database created by unification workflow where the id_lookup and key_stats tables live
-source_db: cdp_unification_event_starter_pack
+source_db: cdp_unification_${sub}
 
 ##Reporting database (output DB where idu_dashboard tables are written) --> sink_database should be SAME as reporting_db
-reporting_db: event_starter_pack_idu_reporting
-sink_database: event_starter_pack_idu_reporting
+reporting_db: ${sub}_starter_pack_idu_reporting
+sink_database: ${sub}_starter_pack_idu_reporting
 
 ##Global Prams
 canonical_id_col: 'event_unification_id'                 #name of the canonical ID col output by unification workflow
@@ -20,8 +20,8 @@ id_lookup_table: ${source_db}.${canonical_id_col}_lookup       #leave as DEFAULT
 user_master_id_table: ${source_db}.parent_table             #ONLY needed if source table id stats are output in enriched_master table in unification
 
 ##ID unification Project & Workflow
-unification_project: 'event_starter_pack_deterministic_unification'          #name of the unification WF project
-unification_workflow: 'event_starter_pack_deterministic_unification'         #name of the sub-wf .dig that runs unification process in the above project
+unification_project: 'event-starter-pack_qa_br-events'          #name of the unification WF project
+unification_workflow: 'wf5_unify'         #name of the sub-wf .dig that runs unification process in the above project
 num_runs: 30                                                  #Gets runtimes on the last n-runs of unification WF
 unification_output: 'old'         ###-- use 'old' = when source tables are present in source_key_stats tables from IDU, use 'new' = source tables are in enriched_user_master
 
