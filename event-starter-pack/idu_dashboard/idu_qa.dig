@@ -1,0 +1,123 @@
+_export: 
+  !include : config/params.yml
+  !include : config/unify.yml
+  td:
+    database: ${sink_database}
+    
++create_empty_tables:
+  td_ddl>:
+  empty_tables: [idu_qa_src_tables_id_keys_mapping, idu_qa_over_merged_canonical_ids, idu_qa_over_merged_id_sets, idu_qa_common_ids, idu_qa_frequent_ids_temp]
+
++prep_initial_mapping_tables:
+  _parallel: true
+
+  #### Create mapping table of all IDs and Source Tables they were sourced from during unification
+  +create_mapping_table:
+    td>: queries/qa/get_table_id_keys_mapping.sql
+    insert_into: idu_qa_src_tables_id_keys_mapping
+
+### Determine what profiles have ID count > 2.5*stdev of the population and extract them as over-merged
+  +calculate_id_count_statistics:
+    td>: queries/qa/id_avg_min_max.sql
+    insert_into: idu_qa_avg_id_stats
+
++get_over_merged_ids_and_id_build_extracts_tables:
+  _parallel: true
+
+  +over_merged_tasks:
+
+    +create_syntax_schema_table:
+      td>: queries/qa/get_known_overmerge_syntax.sql
+      create_table: idu_qa_syntax_schema
+      
+    ### Get list of all canonical_ids that might be over-merged based on the count of known IDs associated with them
+    +get_over_merge_limit:
+      td>:
+        data: "SELECT over_merge_limit_cv AS merged_ids_limit,  filter_syntax FROM idu_qa_syntax_schema WHERE known_flag = 1"
+      store_last_results: true
+
+    #Get a table of all over-merged canonical_ids
+    +extract_overmerged_canonical_ids:
+      td>: queries/qa/extract_overmerged_canonical_ids.sql
+      insert_into: idu_qa_over_merged_canonical_ids
+
+    +create_over_merged_ids_stats_table:
+      td>: queries/qa/get_over_merged_stats.sql
+      create_table: idu_qa_over_merged_stats
+
+  +build_id_extracts_table:
+    td>: queries/qa/build_extract_qry_string_full.sql
+    create_table: idu_qa_build_id_extracts
+
++create_final_set_of_tables:
+  +get_keys: 
+    td>: queries/qa/get_keys.sql
+    store_last_results: true
+
+  +build_extract_query:
+    td>: queries/qa/build_extract_ids_final.sql
+    store_last_results: true
+
+  #get a table which is a graph-id of all IDs causing over-merging and their relationships to other IDs in the source tables
+  +extract_all_ids: 
+    td>: 
+    query: ${td.last_results.qry}
+    insert_into: ${sink_database}.idu_qa_over_merged_id_sets
+
+  +buid_aggregate_qry_string: 
+    td>: queries/qa/build_aggregate_qry_string.sql
+    store_last_results: true
+
+  #get an aggregate table of all the IDs causing over-merging and the arrays of other IDs they are linked to
+  +extract_common_ids: 
+    for_each>: 
+      key: ${keys}
+
+    _parallel: true
+    
+    _do:
+      +extract_id: 
+        td>: queries/qa/extract_common_ids.sql
+        insert_into: ${sink_database}.idu_qa_common_ids
+
+  +check_size_of_common_ids_table:
+    td>:
+      data: "SELECT COUNT(*) as num_records FROM idu_qa_common_ids"
+    store_last_results: true
+
+  +check_if_need_to_reduce_table_size:
+    if>: ${td.last_results.num_records >= 350000}
+
+    _do:
+      +reduce_table_size:
+        td>: queries/qa/reduce_common_ids_size.sql
+        create_table: idu_qa_common_ids_temp
+
+      +rename_tamp_table:
+        td_ddl>:
+        rename_tables: [{from: "idu_qa_common_ids_temp", to: "idu_qa_common_ids"}]
+
+  +for_each_column_get_top_k_values:
+    td_for_each>: queries/qa/select_tables_cols.sql
+
+    _parallel:
+      limit: 10
+
+    _do:
+      ### Select Top-K values for each ID by count of rows it occurs in each source table
+      +insert_into_frequent_ids_temp:
+        td>: queries/qa/most_frequent_ids_insert_temp.sql
+        insert_into: idu_qa_frequent_ids_temp
+
+  #### Create final table with most frequent TOP-K IDs for each unification source column
+  +create_most_frequent_ids_table:
+    td>: queries/qa/most_frequent_ids_final_table.sql
+    create_table: idu_qa_frequent_ids
+
+  ### Delete Temp Table
+  +clean_temp_tables:
+      td_ddl>: 
+      drop_tables: ["idu_qa_frequent_ids_temp", "idu_qa_syntax_schema"]
+
+
+      

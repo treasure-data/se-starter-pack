@@ -31,25 +31,23 @@ _export:
     workflow_to_run: wf3_validate
   call>: wf2_run_workflow_with_logging.dig
 
++staging:
+  _export:
+    step_name: staging
+    workflow_to_run: wf4_stage
+  call>: wf2_run_workflow_with_logging.dig
 
-# +staging:
-#   _export:
-#     step_name: staging
-#     workflow_to_run: wf4_stage
-#   call>: wf2_run_workflow_with_logging.dig
++unification:
+  _export:
+    step_name: unification
+    workflow_to_run: wf5_unify
+  call>: wf2_run_workflow_with_logging.dig
 
-
-# +unification:
-#   _export:
-#     step_name: unification
-#     workflow_to_run: wf5_unify
-#   call>: wf2_run_workflow_with_logging.dig
-
-# +unification_dashboard:
-#   _export:
-#     step_name: unification_dashboard
-#     workflow_to_run: idu_dashboard/idu_dashboard_launch
-#   call>: wf2_run_workflow_with_logging.dig
++unification_dashboard:
+  _export:
+    step_name: unification_dashboard
+    workflow_to_run: idu_dashboard/idu_dashboard_launch
+  call>: wf2_run_workflow_with_logging.dig
 
 # +golden:
 #   _export:

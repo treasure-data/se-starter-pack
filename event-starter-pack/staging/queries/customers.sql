@@ -1,4 +1,4 @@
-∆∆SELECT
+SELECT
 *,
 case
   when nullif(lower(ltrim(rtrim("country"))), 'null') is null then null

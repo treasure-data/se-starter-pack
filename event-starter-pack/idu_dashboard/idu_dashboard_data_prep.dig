@@ -1,0 +1,202 @@
+_export:
+  !include : config/params.yml
+  td:
+    database: ${reporting_db}
+
+############## CREATE REPORTING DATABASE IF NOT EXIST ###############################
++create_sink_database:
+  td_ddl>:
+  create_databases: ["${sink_database}"]
+
+#Create column context and type mapping table
++create_empty_column_mapping_table:
+  td_ddl>:
+  empty_tables: ["${prefix}col_mapping_temp", "${prefix}identities_temp", "${prefix}session_information_temp", "${prefix}stats_joined"]
+
++loop_through_dist_id_list:
+    for_each>:
+      dist_id: ${distinct_ids}
+
+    _parallel:
+      limit: 10
+
+    _do:
+      +insert_into_col_mapping_temp:
+        td>: queries/insert_col_mapping_temp.sql
+        insert_into: ${prefix}col_mapping_temp
+
+###-- Create column_mappings source table
++check_if_all_cols_should_be_included:
+  if>: ${include_all_cols == 'yes'}
+  _do:
+    +get_column_mapping_info_all_cols_from_id_lookup:
+      td>: queries/column_mappings_final_all.sql
+      create_table: ${prefix}column_mapping
+
+  _else_do:
+    +get_column_mapping_info_yml_list_only:
+      td>: queries/column_mappings_final.sql
+      create_table: ${prefix}column_mapping
+
+###-- Get Known Unknown profile stats
++get_knwon_stats:
+  td>: queries/known_unknown_stats.sql
+  create_table: ${prefix}known_unknown_stats
+
+###-- Get top records from source and results table from ID Unification Workflow database
++source:
+  td>: queries/source_top.sql
+  create_table: ${prefix}canonical_id_source_key_stats_top
+
++results:
+  td>: queries/result_top.sql
+  create_table: ${prefix}canonical_id_result_key_stats_top
+
++get_id_types:
+  +transform:
+    _export:
+      source_tbl: ${prefix}canonical_id_source_key_stats_top
+    td>: queries/columns_temp.sql
+    create_table: ${prefix}columns_temp
+
++calc_metrics:
+  _export:
+    source_tbl: ${prefix}canonical_id_source_key_stats_top
+    result_tbl: ${prefix}canonical_id_result_key_stats_top
+
+  td_for_each>: queries/id_columns.sql
+  _do:
+    td>: queries/calculation_temp.sql
+    create_table: ${prefix}calculations_temp
+
++id_calcs:
+  _export:
+    source_tbl: ${prefix}canonical_id_source_key_stats_top
+    result_tbl: ${prefix}canonical_id_result_key_stats_top
+
+  td_for_each>: queries/identities_list.sql
+  _do:
+    td>: queries/identities_temp.sql
+    insert_into: ${prefix}identities_temp
+
+##### -- Extract Session info of previous runs and latest WF runs of ID Unification Process ############
++get_session_info:
+
+  +get_attempts:
+    http>: "https://${workflow_api_url}/api/attempts?project=${unification_project}&workflow=${unification_workflow}&include_retried=true&page_size=${num_runs}"
+    method: GET
+    headers:
+      - Authorization: "TD1 ${secret:td.apikey}"
+    store_content: true
+
+  +save_attempts_info:
+    for_each>:
+      attempt: ${JSON.parse(http.last_content).attempts}
+
+    _parallel:
+      limit: 20
+
+    _do:
+      td>: queries/store_session_info.sql
+      insert_into: ${prefix}session_information_temp
+
+
+  +get_last_successful:
+    td>:
+      data: "SELECT TD_TIME_FORMAT(TD_TIME_PARSE(created_at),'MMM dd, YYYY') as date,
+                TD_TIME_PARSE(session_time) as session_unixtime,
+                session_time,
+                SUBSTR(CAST(parse_duration(CAST(CAST((TD_TIME_PARSE(finished_at)-TD_TIME_PARSE(created_at))/60.00 as DECIMAL(38, 15)) AS VARCHAR)||'m') as varchar),3,8) as duration,
+                1 as join_key, 0 as index
+            FROM ${prefix}session_information_temp WHERE status = 'success' ORDER BY created_at desc LIMIT 1"
+    create_table: ${prefix}session_information
+
+### --Merge calculations_temp and sessions information in one table
++calculations_temp:
+  td>: queries/calculation_merge.sql
+  insert_into: ${prefix}calculations_2
+
++calculations_final:
+  td>: queries/calculation_final.sql
+  create_table: ${prefix}calculations
+
++identities:
+  td>: queries/identities_final.sql
+  create_table: ${prefix}identities
+
+## -- Matching rate
++matching_rate:
+  td>: queries/matching_rate.sql
+  create_table: ${prefix}matching_rate
+
++create_empty_histogram_table:
+  td_ddl>:
+  empty_tables: ["${prefix}ids_histogram_temp", "${prefix}merge_keys_updated_temp"]
+
++loop_through_id_list_from_col_mapping:
+  td_for_each>: queries/select_distinct_for_histogram.sql
+
+  _parallel:
+    limit: 12
+  _do:
+    +insert_into_histogramp_temp:
+      td>: queries/insert_histogram_temp.sql
+      insert_into: ${prefix}ids_histogram_temp
+
+## -- create a table showing histogram of IDs by Source Table
++ids_histogram:
+  td>: queries/ids_histogram_new.sql
+  create_table: ${prefix}ids_histogram
+
+
+## -- Avg min and max calculations for key IDs
++avg_min_max:
+  td>: queries/avg_min_max.sql
+  create_table: ${prefix}avg_min_max
+
++generate_query:
+  td>: queries/avg_generate_query.sql
+  store_last_results: true
+
++avg_calculations:
+  td>: queries/avg_calculation_final_automated.sql
+  create_table: ${prefix}avg_calculations
+
++for_each_distinct_id:
+  td_for_each>: queries/select_distinct_ids.sql
+  _parallel: true
+
+  _do:
+    +insert_into_merge_keys_temp:
+      td>: queries/insert_merge_keys_temp.sql
+      insert_into: ${prefix}merge_keys_updated_temp
+
+### -- merge_keys data from latest Unification run into one table
++merge_keys_updated:
+  td>: queries/merge_keys_individual_automated.sql
+  insert_into: ${prefix}merge_keys_updated
+
+#### Get ID stats from the source tables
++check_if_new_or_old_unification_output:
+  if>: ${unification_output == 'old'}
+  _do:
+
+    +for_each_distinct_ids:
+      td_for_each>: queries/select_source_ids.sql
+      _parallel: true
+
+      _do:
+        ### -- uses queries/join_top_stats_old.sql for new uni wf outputs nad _old for old ones
+        +create_key_stats_join_old:
+          td>: queries/join_top_stats_${unification_output}.sql
+          insert_into: ${prefix}stats_joined
+
+  _else_do:
+
+    +generate_query_for_enriched_master:
+      td>: queries/generate_enriched_master_query.sql
+      store_last_results: true
+
+    +create_key_stats_join_new:
+      td>: queries/join_top_stats_${unification_output}.sql
+      create_table: ${prefix}stats_joined

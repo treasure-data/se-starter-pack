@@ -93,12 +93,6 @@ tables:
     key_columns:
       - {column: trfmd_phone_number, key: phone_number}
 
-  - database: ${stg}_${sub}
-    table: favorites
-    key_columns:
-      - {column: unique_loyalty_id, key: unique_loyalty_id}
-      - {column: trfmd_email, key: email}
-
 
 #####################################################
 ##
