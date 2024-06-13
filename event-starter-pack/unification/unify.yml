@@ -1,0 +1,153 @@
+name: ${sub}
+
+#####################################################
+##
+##Declare Validation logic for unification keys
+##
+#####################################################
+
+keys:
+  - name: email
+    invalid_texts: ['', null]
+  - name: td_global_id
+    invalid_texts: ['', null]
+  - name: phone_number
+    invalid_texts: ['', null]
+  - name: order_no
+    invalid_texts: ['', null]
+  - name: unique_loyalty_id
+    invalid_texts: ['', null]
+
+#####################################################
+##
+## Declare databases, tables, and keys to use during unification
+##
+#####################################################
+
+tables:
+  - database: ${stg}_${sub}
+    table: customers
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+
+  - database: ${stg}_${sub}
+    table: pageviews
+    key_columns:
+      - {column: td_global_id, key: td_global_id}
+
+  - database: ${stg}_${sub}
+    table: email_activity
+    key_columns:
+      - {column: trfmd_email, key: email}
+
+  - database: ${stg}_${sub}
+    table: ticket_transactions
+    key_columns:
+      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: event_concessions_transactions
+    key_columns:
+      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: event_merchandise_transactions
+    key_columns:
+      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: event_concessions_order_details
+    key_columns:
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: online_merchandise_transactions
+    key_columns:
+      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: merchandise_order_details
+    key_columns:
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: consents_email
+    key_columns:
+      - {column: trfmd_email, key: email}
+
+  - database: ${stg}_${sub}
+    table: consents_phone
+    key_columns:
+      - {column: trfmd_phone_number, key: phone_number}
+
+
+#####################################################
+##
+##Declare hierarchy for unification. Define keys to use for each level.
+##
+#####################################################
+
+canonical_ids:
+  - name: event_unification_id
+    merge_by_keys: [email, phone_number, td_global_id, unique_loyalty_id, order_no]
+
+
+#####################################################
+##
+##Declare Survivorship Rules to Determine Best Value for Each Attribute
+##
+#####################################################
+
+master_tables:
+  - name: parent_table
+    canonical_id: event_unification_id
+    attributes:
+      - name: email
+        source_columns:
+          - {table: customers, column: trfmd_email, priority: 1}
+          - {table: email_activity, column: trfmd_email, priority: 2}
+          - {table: ticket_transactions, column: trfmd_email, priority: 2}
+          - {table: event_concessions_transactions, column: trfmd_email, priority: 2}
+          - {table: event_merchandise_transactions, column: trfmd_email, priority: 2}
+          - {table: online_merchandise_transactions, column: trfmd_email, priority: 2}
+          - {table: consents_email, column: trfmd_email, priority: 2}
+          - {table: favorites, column: trfmd_email, priority: 2}
+      - name: phone_number
+        source_columns:
+          - {table: customers, column: trfmd_phone_number, priority: 1}
+          - {table: ticket_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: event_concessions_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: event_merchandise_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: online_merchandise_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: consents_phone, column: trfmd_phone_number, priority: 2}
+      - name: td_global_id
+        source_columns:
+          - {table: pageviews, column: td_global_id, priority: 1}
+      - name: order_no
+        source_columns:
+          - {table: ticket_transactions, column: order_no, priority: 1}
+          - {table: event_concessions_transactions, column: order_no, priority: 2}
+          - {table: event_merchandise_transactions, column: order_no, priority: 2}
+          - {table: online_merchandise_transactions, column: order_no, priority: 2}
+          - {table: merchandise_order_details, column: order_no, priority: 2}
+          - {table: event_concessions_order_details, column: order_no, priority: 2}
+      - name: unique_loyalty_id
+        source_columns:
+          - {table: ticket_transactions, column: unique_loyalty_id, priority: 1}
+          - {table: event_concessions_transactions, column: unique_loyalty_id, priority: 2}
+          - {table: event_merchandise_transactions, column: unique_loyalty_id, priority: 2}
+          - {table: online_merchandise_transactions, column: unique_loyalty_id, priority: 2}
+          - {table: favorites, column: unique_loyalty_id, priority: 2}
