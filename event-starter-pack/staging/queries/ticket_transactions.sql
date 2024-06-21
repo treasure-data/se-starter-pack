@@ -73,6 +73,8 @@ case
   else array_join((transform((split(lower(trim("event_name")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_event_name",
 --
+TD_TIME_PARSE(event_datetime) as trfmd_event_datetime_unix,
+--
 case
   when nullif(lower(ltrim(rtrim("seat_category"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("seat_category"))), '') is null then null

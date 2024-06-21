@@ -6,7 +6,6 @@ create table email_activity_tmp
    campaign_id varchar ,
    campaign_name varchar ,
    email varchar ,
-   unique_guest_id varchar ,
    activity_type varchar ,
    time bigint
 );
@@ -59,7 +58,9 @@ create table  ticket_transactions_tmp (
    venue_postal_code varchar ,
    venue_country varchar ,
    amount double ,
+   event_id varchar ,
    event_name varchar ,
+   event_datetime varchar ,
    quantity bigint ,
    seat_category varchar ,
    time bigint
@@ -84,6 +85,7 @@ create table event_concessions_transactions_tmp (
    venue_postal_code varchar ,
    venue_country varchar ,
    amount double ,
+   event_id varchar ,
    event_name varchar ,
    time bigint
 );
@@ -107,6 +109,7 @@ create table event_merchandise_transactions_tmp (
    venue_postal_code varchar ,
    venue_country varchar ,
    amount double ,
+   event_id varchar ,
    event_name varchar ,
    time bigint
 );
@@ -147,6 +150,7 @@ create table customers_tmp (
    gender varchar ,
    date_of_birth varchar ,
    loyalty_tier varchar ,
+   unique_loyalty_id varchar ,
    time bigint
 );
 

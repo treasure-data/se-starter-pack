@@ -14,10 +14,6 @@ _export:
         td>: golden/queries/copy_table.sql
         database: ${gld}_${sub}
 
-+prepare_pre_preferred_season_table:
-  td>: golden/queries/pre_preferred_season.sql
-  database: ${gld}_${sub}
-
 +attributes:
   td>: golden/queries/attributes.sql
   database: ${gld}_${sub}

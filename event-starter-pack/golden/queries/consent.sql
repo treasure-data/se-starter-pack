@@ -2,9 +2,9 @@ select
 trfmd_email as id,
 trfmd_id_type,
 trfmd_consent_type,
-retail_unification_id,
+event_unification_id,
 trfmd_consent_flag
-from cdp_unification_${sub}.enriched_consents_email
+from enriched_consents_email
 
 UNION ALL
 
@@ -13,5 +13,5 @@ trfmd_phone_number as id,
 trfmd_id_type,
 trfmd_consent_type,
 retail_unification_id,
-trfmd_consent_flag
-from cdp_unification_${sub}.enriched_consents_phone
+event_consent_flag
+from enriched_consents_phone

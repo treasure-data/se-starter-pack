@@ -1,3 +1,17 @@
+-- Ticket Average Order Value --done
+-- Event Average Order Value
+-- Average Tickets Per Order --done
+-- Last Ticket Purchase Date --done
+-- Web Visits in Last 7 Days --done
+-- No. of Events in Last 365 Days
+-- https://hub.docker.com/layers/library/python/3.12.4-alpine3.20/images/sha256-4390b9ecec62e2be0dc50a034aeb418968a37477b9d0e4e5914a42d1840850df?context=repo&tab=vulnerabilities
+-- Drink Purchaser
+-- Merch Purchaser
+-- LTV --
+-- Last Event Date
+-- Last Email Date --done
+-- Hardbounce --done
+-- More Than 5 Soft bounces --done
 
 with pageviews_cte as (select
 time as time,
@@ -5,10 +19,10 @@ retail_unification_id as retail_unification_id
  from enriched_pageviews),
 
 transactions_cte as (
-select 
-  *, 
+select
+  *,
   date_diff('day', LAG(FROM_UNIXTIME(trfmd_order_datetime_unix)) OVER (PARTITION BY retail_unification_id ORDER BY trfmd_order_datetime_unix), FROM_UNIXTIME(trfmd_order_datetime_unix)) as days_between_transactions
-from 
+from
 (
   select
     retail_unification_id as retail_unification_id,
@@ -83,6 +97,7 @@ where rnk = 1),
 pageviews_attributes as (select
 retail_unification_id,
 count(CASE WHEN time >= try_cast(to_unixtime(date_trunc('day', now()) - interval '7' day) as integer) THEN retail_unification_id ELSE NULL END) AS web_visits_last_7days
+
  from
 pageviews_cte
 group by retail_unification_id),
@@ -120,16 +135,19 @@ purchase_average as (
   group by retail_unification_id
 )
 
-select coalesce(base_1.retail_unification_id, 'no_retail_unification_id') as retail_unification_id, coalesce(aov, null) as aov,
-case when coalesce(email_hardbounce, null) > 0 then 'True' else 'False' end as email_hardbounce,
-case when coalesce(email_softbounce_gt5, null) = 'email_softbounced' then 'True' else 'False' end as email_softbounce_gt5,
-coalesce(last_email_date_unix, null) as last_email_date_unix,
+select coalesce(base_1.event_unification_id, 'no_event_unification_id') as event_unification_id
+, coalesce(aov, null) as aov
+, case when coalesce(email_hardbounce, null) > 0 then 'True' else 'False' end as email_hardbounce
+, case when coalesce(email_softbounce_gt5, null) = 'email_softbounced' then 'True' else 'False' end as email_softbounce_gt5,
+, coalesce(last_email_date_unix, null) as last_email_date_unix,
 coalesce(last_purchase_date_unix, null) as last_purchase_date_unix,
 coalesce(last_store_visit_unix, null) as last_store_visit_unix,
 coalesce(ltv, null) as ltv,
 coalesce(preferred_season, null) as preferred_season,
 coalesce(purchases_last_30days, null) as purchases_last_30days,
 coalesce(web_visits_last_7days, null) as web_visits_last_7days,
+
+
 coalesce(avg_days_between_transactions, null) as avg_days_between_transactions,
 case when time_since_last_purchase > (average_purchase + ceiling(0.1*average_purchase)) then 'Yes' ELSE 'No' END as churn_risk
 from base_1
