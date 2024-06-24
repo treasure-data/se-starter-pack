@@ -4,7 +4,6 @@ _export:
     database: cdp_unification_${sub}
     src_database: cdp_unification_${sub}
 
-
 +move_unified:
   +get_table_name:
     td_for_each>: golden/queries/unified_table_name.sql
@@ -20,11 +19,6 @@ _export:
     td>: golden/queries/event_average_order_value.sql
     database: ${gld}_${sub}
     create_table: ${gld}_${sub}.event_average_order_value
-
-  +ticket_average_order_value:
-    td>: golden/queries/ticket_average_order_value.sql
-    database: ${gld}_${sub}
-    create_table: ${gld}_${sub}.ticket_average_order_value
 
   +ticket_average_order_value:
     td>: golden/queries/ticket_average_order_value.sql
