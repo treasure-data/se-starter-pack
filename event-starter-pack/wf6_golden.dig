@@ -55,6 +55,11 @@ _export:
     database: ${gld}_${sub}
     create_table: ${gld}_${sub}.web_visits_last_7days
 
+  +last_event_date:
+    td>: golden/queries/last_event_date.sql
+    database: ${gld}_${sub}
+    create_table: ${gld}_${sub}.last_event_date
+
   +number_of_events_in_last_365days:
     td>: golden/queries/number_of_events_in_last_365days.sql
     database: ${gld}_${sub}
