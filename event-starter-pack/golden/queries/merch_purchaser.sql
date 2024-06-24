@@ -1,0 +1,2 @@
+select distinct event_unification_id, 'True' as merch_purchaser
+from enriched_merchandise_order_details

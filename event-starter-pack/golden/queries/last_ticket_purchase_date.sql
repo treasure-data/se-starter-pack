@@ -1,0 +1,5 @@
+select
+  event_unification_id
+, max(trfmd_order_datetime_unix) last_ticket_purchase_datetime_unix
+from enriched_ticket_transactions
+group by event_unification_id
