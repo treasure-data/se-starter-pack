@@ -12,6 +12,6 @@ select
 trfmd_phone_number as id,
 trfmd_id_type,
 trfmd_consent_type,
-retail_unification_id,
+event_unification_id,
 event_consent_flag
 from enriched_consents_phone
