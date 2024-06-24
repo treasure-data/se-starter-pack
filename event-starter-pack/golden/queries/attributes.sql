@@ -1,5 +1,5 @@
 with base as (
-  select distinct retail_unification_id from parent_table
+  select distinct event_unification_id from parent_table
 )
 select coalesce(a.event_unification_id, 'no_event_unification_id') as event_unification_id
 , coalesce(ltv, null) as ltv
@@ -19,15 +19,15 @@ select coalesce(a.event_unification_id, 'no_event_unification_id') as event_unif
 from base a
 left join ltv b ON a.event_unification_id = b.event_unification_id
 left join merch_purchaser c ON a.event_unification_id = c.event_unification_id
-left join drink_purchaser d ON a.retail_unification_id = d.retail_unification_id
-left join food_purchaser e ON a.retail_unification_id = e.retail_unification_id
-left join number_of_events_in_last_365days f ON a.retail_unification_id = f.retail_unification_id
-left join last_event_date g ON a.retail_unification_id = g.retail_unification_id
-left join web_visits_last_7days h ON a.retail_unification_id = h.retail_unification_id
-left join more_than_5_soft_bounces i ON a.retail_unification_id = i.retail_unification_id
-left join hardbounce j ON a.retail_unification_id = j.retail_unification_id
-left join last_email_date k ON a.retail_unification_id = k.retail_unification_id
-left join last_ticket_purchase_date l ON a.retail_unification_id = l.retail_unification_id
-left join average_tickets_per_order m ON a.retail_unification_id = m.retail_unification_id
-left join ticket_average_order_value n ON a.retail_unification_id = n.retail_unification_id
-left join event_average_order_value o ON a.retail_unification_id = o.retail_unification_id
+left join drink_purchaser d ON a.event_unification_id = d.event_unification_id
+left join food_purchaser e ON a.event_unification_id = e.event_unification_id
+left join number_of_events_in_last_365days f ON a.event_unification_id = f.event_unification_id
+left join last_event_date g ON a.event_unification_id = g.event_unification_id
+left join web_visits_last_7days h ON a.event_unification_id = h.event_unification_id
+left join more_than_5_soft_bounces i ON a.event_unification_id = i.event_unification_id
+left join hardbounce j ON a.event_unification_id = j.event_unification_id
+left join last_email_date k ON a.event_unification_id = k.event_unification_id
+left join last_ticket_purchase_date l ON a.event_unification_id = l.event_unification_id
+left join average_tickets_per_order m ON a.event_unification_id = m.event_unification_id
+left join ticket_average_order_value n ON a.event_unification_id = n.event_unification_id
+left join event_average_order_value o ON a.event_unification_id = o.event_unification_id
