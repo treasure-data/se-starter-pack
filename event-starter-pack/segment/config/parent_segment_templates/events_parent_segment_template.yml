@@ -1,0 +1,745 @@
+id: null
+name: Value Accelerator - Events
+description: Events Value Accelerator
+scheduleType: none
+scheduleOption: ""
+timezone: UTC
+matrixUpdatedAt: ""
+workflowHiveOnly: false
+hiveEngineVersion: cdpaudience
+hivePoolName: ""
+prestoPoolName: ""
+population:
+maxActivationBehaviorRow: 20
+allowActivationBehavior: false
+rootFolderId: ""
+master:
+  parentDatabaseName: gld_events
+  parentTableName: parent_table
+attributes:
+- audienceId: null
+  id: null
+  name: Age
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: enriched_customers
+  parentColumn: trfmd_age
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: trfmd_age
+  groupingName: Demographics
+- audienceId: null
+  id: null
+  name: Name
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: enriched_customers
+  parentColumn: trfmd_full_name
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: trfmd_full_name
+  groupingName: Identity
+- audienceId: null
+  id: null
+  name: Gender
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: enriched_customers
+  parentColumn: trfmd_gender
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: trfmd_gender
+  groupingName: Demographics
+- audienceId: null
+  id: null
+  name: Full Address
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: enriched_customers
+  parentColumn: trfmd_address
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: trfmd_address
+  groupingName: Geo
+- audienceId: null
+  id: null
+  name: Country
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: enriched_customers
+  parentColumn: country
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: country
+  groupingName: Geo
+- audienceId: null
+  id: null
+  name: Loyalty Tier
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: enriched_customers
+  parentColumn: trfmd_loyalty_tier
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: trfmd_loyalty_tier
+  groupingName: Loyalty
+- audienceId: null
+  id: null
+  name: Email
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: parent_table
+  parentColumn: email
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: email
+  groupingName: Identity
+- audienceId: null
+  id: null
+  name: Phone Number
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: parent_table
+  parentColumn: phone_number
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: phone_number
+  groupingName: Identity
+- audienceId: null
+  id: null
+  name: Ticket Average Order Value
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: ticket_avg_order_value
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: ticket_avg_order_value
+  groupingName: Purchase
+- audienceId: null
+  id: null
+  name: Event Average Order Value
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: event_avg_order_value
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: event_avg_order_value
+  groupingName: Purchase
+- audienceId: null
+  id: null
+  name: Average Tickets Per Order
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: avg_tickets_per_order
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: avg_tickets_per_order
+  groupingName: Purchase
+- audienceId: null
+  id: null
+  name: Web Visits Last 7 Days
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: web_visits_last_7days
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: web_visits_last_7days
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Purchases in Last 30 Days
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: purchases_last_30days
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: purchases_last_30days
+  groupingName: Purchase
+- audienceId: null
+  id: null
+  name: Lifetime Value
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: ltv
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: ltv
+  groupingName: Purchase
+- audienceId: null
+  id: null
+  name: Last Event Date
+  type: timestamp
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: last_event_datetime_unix
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: last_event_datetime_unix
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Last Email Date
+  type: timestamp
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: last_email_date_unix
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: last_email_date_unix
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Hardbounce
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: hardbounce
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: hardbounce
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: More Than 5 Soft bounces
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: more_than_5_softbounce
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: more_than_5_softbounce
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Last Ticket Purchase Date
+  type: timestamp
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: last_ticket_purchase_datetime_unix
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: last_ticket_purchase_datetime_unix
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Num of Events in Last 365 Days
+  type: number
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: no_of_events_last_365
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: no_of_events_last_365
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Food Purchaser
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: food_purchaser
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: food_purchaser
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Drink Purchaser
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: drink_purchaser
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: drink_purchaser
+  groupingName: Engagement
+- audienceId: null
+  id: null
+  name: Merch Purchaser
+  type: string
+  parentDatabaseName: gld_events
+  parentTableName: derived_attributes
+  parentColumn: merch_purchaser
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixColumnName: merch_purchaser
+  groupingName: Engagement
+behaviors:
+- audienceId: null
+  id: null
+  name: Email Activity
+  parentDatabaseName: gld_events
+  parentTableName: enriched_email_activity
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_email_activity
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Activity Type
+    type: string
+    parentColumn: trfmd_activity_type
+    matrixColumnName: trfmd_activity_type
+  - name: Campaign Name
+    type: string
+    parentColumn: trfmd_campaign_name
+    matrixColumnName: trfmd_campaign_name
+  - name: Activity Date
+    type: timestamp
+    parentColumn: trfmd_activity_date_unix
+    matrixColumnName: trfmd_activity_date_unix
+- audienceId: null
+  id: null
+  name: Ticket Transactions
+  parentDatabaseName: gld_events
+  parentTableName: enriched_ticket_transactions
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_ticket_transactions
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Event Name
+    type: string
+    parentColumn: trfmd_event_name
+    matrixColumnName: trfmd_event_name
+  - name: Payment Method
+    type: string
+    parentColumn: trfmd_payment_method
+    matrixColumnName: trfmd_payment_method
+  - name: Season
+    type: string
+    parentColumn: trfmd_season
+    matrixColumnName: trfmd_season
+  - name: Promo
+    type: number
+    parentColumn: promo_flag
+    matrixColumnName: promo_flag
+  - name: Amount
+    type: number
+    parentColumn: amount
+    matrixColumnName: amount
+  - name: Quantuty
+    type: number
+    parentColumn: quantity
+    matrixColumnName: quantity
+  - name: Order Date
+    type: timestamp
+    parentColumn: trfmd_order_datetime_unix
+    matrixColumnName: trfmd_order_datetime_unix
+  - name: Event Date
+    type: timestamp
+    parentColumn: trfmd_event_datetime_unix
+    matrixColumnName: trfmd_event_datetime_unix
+  - name: Seat Category
+    type: string
+    parentColumn: trfmd_seat_category
+    matrixColumnName: trfmd_seat_category
+  - name: Venue Address
+    type: string
+    parentColumn: trfmd_venue_address
+    matrixColumnName: trfmd_venue_address
+  - name: Venue City
+    type: string
+    parentColumn: trfmd_venue_city
+    matrixColumnName: trfmd_venue_city
+  - name: Venue Country
+    type: string
+    parentColumn: trfmd_venue_country
+    matrixColumnName: trfmd_venue_country
+  - name: Venue Postalcode
+    type: string
+    parentColumn: trfmd_venue_postal_code
+    matrixColumnName: trfmd_venue_postal_code
+  - name: Venue State
+    type: string
+    parentColumn: trfmd_venue_state
+    matrixColumnName: trfmd_venue_state
+- audienceId: null
+  id: null
+  name: Event Concessions Transactions
+  parentDatabaseName: gld_events
+  parentTableName: enriched_event_concessions_transactions
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_event_concessions_transactions
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Amount
+    type: number
+    parentColumn: amount
+    matrixColumnName: amount
+  - name: Payment Method
+    type: string
+    parentColumn: trfmd_payment_method
+    matrixColumnName: trfmd_payment_method
+  - name: Order Date
+    type: timestamp
+    parentColumn: trfmd_order_datetime_unix
+    matrixColumnName: trfmd_order_datetime_unix
+  - name: Season
+    type: string
+    parentColumn: trfmd_season
+    matrixColumnName: trfmd_season
+  - name: Event Name
+    type: string
+    parentColumn: trfmd_event_name
+    matrixColumnName: trfmd_event_name
+  - name: Venue Address
+    type: string
+    parentColumn: trfmd_venue_address
+    matrixColumnName: trfmd_venue_address
+  - name: Venue City
+    type: string
+    parentColumn: trfmd_venue_city
+    matrixColumnName: trfmd_venue_city
+  - name: Venue Country
+    type: string
+    parentColumn: trfmd_venue_country
+    matrixColumnName: trfmd_venue_country
+  - name: Venue Postalcode
+    type: string
+    parentColumn: trfmd_venue_postal_code
+    matrixColumnName: trfmd_venue_postal_code
+  - name: Venue State
+    type: string
+    parentColumn: trfmd_venue_state
+    matrixColumnName: trfmd_venue_state
+- audienceId: null
+  id: null
+  name: Events Concessions Transaction Details
+  parentDatabaseName: gld_events
+  parentTableName: enriched_event_concessions_order_details
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_event_concessions_order_details
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Discount
+    type: number
+    parentColumn: discount_offered
+    matrixColumnName: discount_offered
+  - name: Order Transaction Type
+    type: string
+    parentColumn: trfmd_order_transaction_type
+    matrixColumnName: trfmd_order_transaction_type
+  - name: Product Department
+    type: string
+    parentColumn: trfmd_product_department
+    matrixColumnName: trfmd_product_department
+  - name: Product Description
+    type: string
+    parentColumn: trfmd_product_description
+    matrixColumnName: trfmd_product_description
+  - name: Product Name
+    type: string
+    parentColumn: trfmd_product_name
+    matrixColumnName: trfmd_product_name
+  - name: Product Size
+    type: string
+    parentColumn: trfmd_product_size
+    matrixColumnName: trfmd_product_size
+  - name: Product Sub Department
+    type: string
+    parentColumn: trfmd_product_sub_department
+    matrixColumnName: trfmd_product_sub_department
+  - name: List Price
+    type: number
+    parentColumn: list_price
+    matrixColumnName: list_price
+  - name: Net Price
+    type: number
+    parentColumn: net_price
+    matrixColumnName: net_price
+  - name: Quantity
+    type: number
+    parentColumn: quantity
+    matrixColumnName: quantity
+- audienceId: null
+  id: null
+  name: Event Merchandise Transactions
+  parentDatabaseName: gld_events
+  parentTableName: enriched_event_merchandise_transactions
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_event_merchandise_transactions
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Amount
+    type: number
+    parentColumn: amount
+    matrixColumnName: amount
+  - name: Payment Method
+    type: string
+    parentColumn: trfmd_payment_method
+    matrixColumnName: trfmd_payment_method
+  - name: Order Date
+    type: timestamp
+    parentColumn: trfmd_order_datetime_unix
+    matrixColumnName: trfmd_order_datetime_unix
+  - name: Season
+    type: string
+    parentColumn: trfmd_season
+    matrixColumnName: trfmd_season
+  - name: Event Name
+    type: string
+    parentColumn: trfmd_event_name
+    matrixColumnName: trfmd_event_name
+  - name: Venue Address
+    type: string
+    parentColumn: trfmd_venue_address
+    matrixColumnName: trfmd_venue_address
+  - name: Venue City
+    type: string
+    parentColumn: trfmd_venue_city
+    matrixColumnName: trfmd_venue_city
+  - name: Venue Country
+    type: string
+    parentColumn: trfmd_venue_country
+    matrixColumnName: trfmd_venue_country
+  - name: Venue Postalcode
+    type: string
+    parentColumn: trfmd_venue_postal_code
+    matrixColumnName: trfmd_venue_postal_code
+  - name: Venue State
+    type: string
+    parentColumn: trfmd_venue_state
+    matrixColumnName: trfmd_venue_state
+- audienceId: null
+  id: null
+  name: Online Merchandise Transactions
+  parentDatabaseName: gld_events
+  parentTableName: enriched_online_merchandise_transactions
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_online_merchandise_transactions
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Amount
+    type: number
+    parentColumn: amount
+    matrixColumnName: amount
+  - name: Payment Method
+    type: string
+    parentColumn: trfmd_payment_method
+    matrixColumnName: trfmd_payment_method
+  - name: Order Date
+    type: timestamp
+    parentColumn: trfmd_order_datetime_unix
+    matrixColumnName: trfmd_order_datetime_unix
+  - name: Season
+    type: string
+    parentColumn: trfmd_season
+    matrixColumnName: trfmd_season
+  - name: Promo
+    type: number
+    parentColumn: promo_flag
+    matrixColumnName: promo_flag
+  - name: Markdown
+    type: number
+    parentColumn: markdown_flag
+    matrixColumnName: markdown_flag
+  - name: Guest Checkout
+    type: number
+    parentColumn: guest_checkout_flag
+    matrixColumnName: guest_checkout_flag
+  - name: Amount
+    type: number
+    parentColumn: amount
+    matrixColumnName: amount
+  - name: Order Date
+    type: timestamp
+    parentColumn: trfmd_order_datetime_unix
+    matrixColumnName: trfmd_order_datetime_unix
+  - name: Projected Delivery Date
+    type: timestamp
+    parentColumn: trfmd_projected_delivery_date_unix
+    matrixColumnName: trfmd_projected_delivery_date_unix
+- audienceId: null
+  id: null
+  name: Merchandise Transaction Details
+  parentDatabaseName: gld_events
+  parentTableName: enriched_merchandise_order_details
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_merchandise_order_details
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Discount
+    type: number
+    parentColumn: discount_offered
+    matrixColumnName: discount_offered
+  - name: Order Transaction Type
+    type: string
+    parentColumn: trfmd_order_transaction_type
+    matrixColumnName: trfmd_order_transaction_type
+  - name: Product Color
+    type: string
+    parentColumn: trfmd_product_color
+    matrixColumnName: trfmd_product_color
+  - name: Product Department
+    type: string
+    parentColumn: trfmd_product_department
+    matrixColumnName: trfmd_product_department
+  - name: Product Description
+    type: string
+    parentColumn: trfmd_product_description
+    matrixColumnName: trfmd_product_description
+  - name: Product Name
+    type: string
+    parentColumn: trfmd_product_name
+    matrixColumnName: trfmd_product_name
+  - name: Product Size
+    type: string
+    parentColumn: trfmd_product_size
+    matrixColumnName: trfmd_product_size
+  - name: Product Sub Department
+    type: string
+    parentColumn: trfmd_product_sub_department
+    matrixColumnName: trfmd_product_sub_department
+  - name: List Price
+    type: number
+    parentColumn: list_price
+    matrixColumnName: list_price
+  - name: Net Price
+    type: number
+    parentColumn: net_price
+    matrixColumnName: net_price
+  - name: Quantity
+    type: number
+    parentColumn: quantity
+    matrixColumnName: quantity
+- audienceId: null
+  id: null
+  name: Pageviews
+  parentDatabaseName: gld_events
+  parentTableName: enriched_pageviews
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_pageviews
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Browser
+    type: string
+    parentColumn: td_browser
+    matrixColumnName: td_browser
+  - name: Browser Version
+    type: string
+    parentColumn: td_browser_version
+    matrixColumnName: td_browser_version
+  - name: Charset
+    type: string
+    parentColumn: td_charset
+    matrixColumnName: td_charset
+  - name: Color
+    type: string
+    parentColumn: td_color
+    matrixColumnName: td_color
+  - name: Description
+    type: string
+    parentColumn: td_description
+    matrixColumnName: td_description
+  - name: Host
+    type: string
+    parentColumn: td_host
+    matrixColumnName: td_host
+  - name: Language
+    type: string
+    parentColumn: td_language
+    matrixColumnName: td_language
+  - name: OS
+    type: string
+    parentColumn: td_os
+    matrixColumnName: td_os
+  - name: Path
+    type: string
+    parentColumn: td_path
+    matrixColumnName: td_path
+  - name: Platform
+    type: string
+    parentColumn: td_platform
+    matrixColumnName: td_platform
+  - name: Referrer
+    type: string
+    parentColumn: td_referrer
+    matrixColumnName: td_referrer
+  - name: Screen
+    type: string
+    parentColumn: td_screen
+    matrixColumnName: td_screen
+  - name: Title
+    type: string
+    parentColumn: td_title
+    matrixColumnName: td_title
+  - name: URL
+    type: string
+    parentColumn: td_url
+    matrixColumnName: td_url
+  - name: User Agent
+    type: string
+    parentColumn: td_user_agent
+    matrixColumnName: td_user_agent
+- audienceId: null
+  id: null
+  name: Consent
+  parentDatabaseName: gld_events
+  parentTableName: gld_consents
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_gld_consents
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: ID Type
+    type: string
+    parentColumn: trfmd_id_type
+    matrixColumnName: trfmd_id_type
+  - name: Consent Flag
+    type: string
+    parentColumn: trfmd_consent_flag
+    matrixColumnName: trfmd_consent_flag
+  - name: Consent Type
+    type: string
+    parentColumn: trfmd_consent_type
+    matrixColumnName: trfmd_consent_type
+- audienceId: null
+  id: null
+  name: Favorites
+  parentDatabaseName: gld_events
+  parentTableName: enriched_favorites
+  parentKey: event_unification_id
+  foreignKey: event_unification_id
+  matrixTableName: behavior_enriched_favorites
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Favorite
+    type: string
+    parentColumn: favorite
+    matrixColumnName: favorite
+  - name: Favorite Type
+    type: string
+    parentColumn: trfmd_favorite_type
+    matrixColumnName: trfmd_favorite_type

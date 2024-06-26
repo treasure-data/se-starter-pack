@@ -1,0 +1,27 @@
+type: segment-batch
+id: null
+relationships:
+  parentFolder:
+    data:
+      id: ${rootfolder_id}
+      type: folder-segment
+attributes:
+  - audienceId: ${audience_id}
+    countPopulation: true
+    name: High Value Customers
+    rule:
+          type: And
+          conditions:
+            - conditions:
+                - type: Value
+                  leftValue:
+                    name: ltv
+                    visibility: clear
+                  operator:
+                    not: false
+                    rightValue: 1500
+                    type: Greater
+                  exclude: false
+              type: And
+              description: 'High Value Customers'
+              segmentInsightDashboardId: null
