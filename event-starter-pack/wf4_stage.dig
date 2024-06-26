@@ -4,7 +4,7 @@ _export:
     database: ${src}_${sub}
 +transformed:
   for_each>:
-    tbl: ['customers', 'consents_email', 'consents_phone', 'email_activity', 'pageviews', 'ticket_transactions', 'event_concessions_transactions', 'event_concessions_order_details','online_merchandise_transactions',  'event_merchandise_transactions', 'merchandise_order_details', 'favorites']
+    tbl: ['customers', 'consents_email', 'consents_phone', 'email_activity', 'pageviews', 'ticket_transactions', 'event_concessions_transactions', 'event_concessions_order_details','online_merchandise_transactions',  'event_merchandise_transactions', 'merchandise_order_details', 'favorites', 'formfills']
   _do:
     td>: staging/queries/${tbl}.sql
     create_table: ${stg}_${sub}.${tbl}

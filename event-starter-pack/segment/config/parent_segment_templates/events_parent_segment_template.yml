@@ -151,17 +151,6 @@ attributes:
   groupingName: Engagement
 - audienceId: null
   id: null
-  name: Purchases in Last 30 Days
-  type: number
-  parentDatabaseName: gld_events
-  parentTableName: derived_attributes
-  parentColumn: purchases_last_30days
-  parentKey: event_unification_id
-  foreignKey: event_unification_id
-  matrixColumnName: purchases_last_30days
-  groupingName: Purchase
-- audienceId: null
-  id: null
   name: Lifetime Value
   type: number
   parentDatabaseName: gld_events
@@ -559,14 +548,6 @@ behaviors:
     type: number
     parentColumn: guest_checkout_flag
     matrixColumnName: guest_checkout_flag
-  - name: Amount
-    type: number
-    parentColumn: amount
-    matrixColumnName: amount
-  - name: Order Date
-    type: timestamp
-    parentColumn: trfmd_order_datetime_unix
-    matrixColumnName: trfmd_order_datetime_unix
   - name: Projected Delivery Date
     type: timestamp
     parentColumn: trfmd_projected_delivery_date_unix

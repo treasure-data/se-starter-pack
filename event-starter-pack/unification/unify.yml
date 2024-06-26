@@ -99,6 +99,12 @@ tables:
       - {column: unique_loyalty_id, key: unique_loyalty_id}
       - {column: trfmd_email, key: email}
 
+  - database: ${stg}_${sub}
+    table: formfills
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: td_global_id, key: td_global_id}
 
 #####################################################
 ##
@@ -142,6 +148,7 @@ master_tables:
       - name: td_global_id
         source_columns:
           - {table: pageviews, column: td_global_id, priority: 1}
+          - {table: formfills, column: td_global_id, priority: 2}
       # - name: order_no
       #   source_columns:
       #     - {table: ticket_transactions, column: order_no, priority: 1}
