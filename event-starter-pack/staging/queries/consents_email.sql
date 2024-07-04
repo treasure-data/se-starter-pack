@@ -21,6 +21,7 @@ case
   when nullif(lower(ltrim(rtrim("consent_flag"))), '') in ('0', 'false') then 'False'
   when nullif(lower(ltrim(rtrim("consent_flag"))), '') in ('1', 'true') then 'True'
 end   AS  "trfmd_consent_flag",
+--
 case
   when nullif(lower(ltrim(rtrim("id_type"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("id_type"))), '') is null then null

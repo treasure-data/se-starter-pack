@@ -15,7 +15,9 @@ keys:
     invalid_texts: ['', null]
   - name: order_no
     invalid_texts: ['', null]
-  - name: unique_loyalty_id
+  - name: token
+    invalid_texts: ['', null]
+  - name: customer_id
     invalid_texts: ['', null]
 
 #####################################################
@@ -30,6 +32,7 @@ tables:
     key_columns:
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
+      - {column: customer_id, key: customer_id}
 
   - database: ${stg}_${sub}
     table: pageviews
@@ -44,26 +47,29 @@ tables:
   - database: ${stg}_${sub}
     table: ticket_transactions
     key_columns:
-      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: customer_id, key: customer_id}
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
+      - {column: token, key: token}
 
   - database: ${stg}_${sub}
     table: event_concessions_transactions
     key_columns:
-      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: customer_id, key: customer_id}
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
+      - {column: token, key: token}
 
   - database: ${stg}_${sub}
     table: event_merchandise_transactions
     key_columns:
-      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: customer_id, key: customer_id}
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
+      - {column: token, key: token}
 
   - database: ${stg}_${sub}
     table: event_concessions_order_details
@@ -73,10 +79,11 @@ tables:
   - database: ${stg}_${sub}
     table: online_merchandise_transactions
     key_columns:
-      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: customer_id, key: customer_id}
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
       - {column: order_no, key: order_no}
+      - {column: token, key: token}
 
   - database: ${stg}_${sub}
     table: merchandise_order_details
@@ -96,7 +103,7 @@ tables:
   - database: ${stg}_${sub}
     table: favorites
     key_columns:
-      - {column: unique_loyalty_id, key: unique_loyalty_id}
+      - {column: customer_id, key: customer_id}
       - {column: trfmd_email, key: email}
 
   - database: ${stg}_${sub}
@@ -114,7 +121,7 @@ tables:
 
 canonical_ids:
   - name: event_unification_id
-    merge_by_keys: [email, phone_number, td_global_id, unique_loyalty_id, order_no]
+    merge_by_keys: [email, phone_number, td_global_id, customer_id, order_no, token]
 
 
 #####################################################
@@ -157,10 +164,11 @@ master_tables:
       #     - {table: online_merchandise_transactions, column: order_no, priority: 2}
       #     - {table: merchandise_order_details, column: order_no, priority: 2}
       #     - {table: event_concessions_order_details, column: order_no, priority: 2}
-      - name: unique_loyalty_id
+      - name: customer_id
         source_columns:
-          - {table: ticket_transactions, column: unique_loyalty_id, priority: 1}
-          - {table: event_concessions_transactions, column: unique_loyalty_id, priority: 2}
-          - {table: event_merchandise_transactions, column: unique_loyalty_id, priority: 2}
-          - {table: online_merchandise_transactions, column: unique_loyalty_id, priority: 2}
-          - {table: favorites, column: unique_loyalty_id, priority: 2}
+          - {table: customers, column: customer_id, priority: 1}
+          - {table: ticket_transactions, column: customer_id, priority: 2}
+          - {table: event_concessions_transactions, column: customer_id, priority: 2}
+          - {table: event_merchandise_transactions, column: customer_id, priority: 2}
+          - {table: online_merchandise_transactions, column: customer_id, priority: 2}
+          - {table: favorites, column: customer_id, priority: 2}

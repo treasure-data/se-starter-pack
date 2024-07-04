@@ -79,7 +79,14 @@ case
   when nullif(lower(ltrim(rtrim("seat_category"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("seat_category"))), '') is null then null
   else array_join((transform((split(lower(trim("seat_category")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_seat_category"
+end   AS  "trfmd_seat_category",
+--
+case
+  when nullif(lower(ltrim(rtrim("promo_flag"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("promo_flag"))), '') is null then null
+  when nullif(lower(ltrim(rtrim("promo_flag"))), '') in ('0', 'false') then 'False'
+  when nullif(lower(ltrim(rtrim("promo_flag"))), '') in ('1', 'true') then 'True'
+end   AS  "trfmd_promo_flag"
 
 FROM
 

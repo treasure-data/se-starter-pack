@@ -35,21 +35,20 @@ create table pageviews_tmp
    td_browser_version varchar ,
    td_os varchar ,
    td_os_version varchar ,
-   variant varchar ,
    time bigint
 );
 
 drop table if exists ticket_transactions_tmp;
 
 create table  ticket_transactions_tmp (
-   unique_loyalty_id varchar ,
+   customer_id varchar ,
    email varchar ,
    phone_number varchar ,
    token bigint ,
    order_no varchar ,
    order_datetime varchar ,
    payment_method varchar ,
-   promo_flag bigint ,
+   promo_flag varchar ,
    venue_id varchar ,
    venue_name varchar ,
    venue_address varchar ,
@@ -69,14 +68,14 @@ create table  ticket_transactions_tmp (
 drop table if exists event_concessions_transactions_tmp;
 
 create table event_concessions_transactions_tmp (
-   unique_loyalty_id varchar ,
+   customer_id varchar ,
    email varchar ,
    phone_number varchar ,
    token varchar ,
    order_no varchar ,
    order_datetime varchar ,
    payment_method varchar ,
-   promo_flag bigint ,
+   promo_flag varchar ,
    venue_id varchar ,
    venue_name varchar ,
    venue_address varchar ,
@@ -93,14 +92,14 @@ create table event_concessions_transactions_tmp (
 drop table if exists event_merchandise_transactions_tmp;
 
 create table event_merchandise_transactions_tmp (
-   unique_loyalty_id varchar ,
+   customer_id varchar ,
    email varchar ,
    phone_number varchar ,
    token bigint ,
    order_no varchar ,
    order_datetime varchar ,
    payment_method varchar ,
-   promo_flag bigint ,
+   promo_flag varchar ,
    venue_id varchar ,
    venue_name varchar ,
    venue_address varchar ,
@@ -119,10 +118,8 @@ drop table if exists event_concessions_order_details_tmp;
 create table event_concessions_order_details_tmp (
    order_no varchar ,
    order_line_no varchar ,
-   order_transaction_type varchar ,
    product_id varchar ,
    quantity double ,
-   shipping_cost double ,
    list_price double ,
    discount_offered double ,
    tax double ,
@@ -150,7 +147,7 @@ create table customers_tmp (
    gender varchar ,
    date_of_birth varchar ,
    loyalty_tier varchar ,
-   unique_loyalty_id varchar ,
+   customer_id varchar ,
    time bigint
 );
 
@@ -167,22 +164,23 @@ create table consents_tmp (
 drop table if exists online_merchandise_transactions_tmp;
 
 create table online_merchandise_transactions_tmp (
-   unique_loyalty_id varchar ,
+   customer_id varchar ,
    email varchar ,
    phone_number varchar ,
    token bigint ,
    order_no varchar ,
    order_datetime varchar ,
-   order_type varchar ,
    payment_method varchar ,
-   expidated_ship_flag bigint ,
-   promo_flag bigint ,
-   markdown_flag bigint ,
-   guest_checkout_flag bigint ,
+   expedited_ship_flag varchar ,
+   promo_flag varchar ,
+   markdown_flag varchar ,
+   guest_checkout_flag varchar ,
    order_create_datetime varchar ,
    projected_delivery_date varchar ,
    amount double ,
    shipping_cost bigint ,
+   store_id varchar ,
+   store_name varchar ,
    time bigint
 );
 
@@ -211,7 +209,7 @@ create table merchandise_order_details_tmp (
 drop table if exists favorites_tmp;
 
 create table favorites_tmp (
-   unique_loyalty_id varchar ,
+   customer_id varchar ,
    email varchar ,
    favorite varchar ,
    favorite_type varchar ,
@@ -225,7 +223,6 @@ create table formfills_tmp (
    phone_number varchar,
    td_global_id varchar,
    td_client_id varchar,
-   td_ssc_id varchar,
    form_type varchar,
    time bigint
 );

@@ -1,3 +1,3 @@
 select distinct event_unification_id, 'True' as drink_purchaser
 from enriched_event_concessions_order_details
-where trfmd_product_department = 'Drink'
+where trfmd_product_department in ('Drink', 'Beverage')

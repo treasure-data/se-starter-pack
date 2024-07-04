@@ -38,6 +38,40 @@ case
   when nullif(lower(ltrim(rtrim("payment_method"))), '') is null then null
   else array_join((transform((split(lower(trim("payment_method")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_payment_method"
+--
+case
+  when nullif(lower(ltrim(rtrim("store_name"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_name"))), '') is null then null
+  else array_join((transform((split(lower(trim("store_name")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_store_name",
+--
+case
+  when nullif(lower(ltrim(rtrim("expedited_ship_flag"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("expedited_ship_flag"))), '') is null then null
+  when nullif(lower(ltrim(rtrim("expedited_ship_flag"))), '') in ('0', 'false') then 'False'
+  when nullif(lower(ltrim(rtrim("expedited_ship_flag"))), '') in ('1', 'true') then 'True'
+end   AS  "trfmd_expedited_ship_flag",
+--
+case
+  when nullif(lower(ltrim(rtrim("promo_flag"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("promo_flag"))), '') is null then null
+  when nullif(lower(ltrim(rtrim("promo_flag"))), '') in ('0', 'false') then 'False'
+  when nullif(lower(ltrim(rtrim("promo_flag"))), '') in ('1', 'true') then 'True'
+end   AS  "trfmd_promo_flag",
+--
+case
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), '') is null then null
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), '') in ('0', 'false') then 'False'
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), '') in ('1', 'true') then 'True'
+end   AS  "trfmd_markdown_flag",
+--
+case
+  when nullif(lower(ltrim(rtrim("guest_checkout_flag"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("guest_checkout_flag"))), '') is null then null
+  when nullif(lower(ltrim(rtrim("guest_checkout_flag"))), '') in ('0', 'false') then 'False'
+  when nullif(lower(ltrim(rtrim("guest_checkout_flag"))), '') in ('1', 'true') then 'True'
+end   AS  "trfmd_guest_checkout_flag"
 
 FROM
 
