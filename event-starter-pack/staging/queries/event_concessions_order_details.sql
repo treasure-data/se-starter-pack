@@ -9,12 +9,6 @@ case
 end   AS  "trfmd_product_name",
 --
 case
-  when nullif(lower(ltrim(rtrim("order_transaction_type"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("order_transaction_type"))), '') is null then null
-  else array_join((transform((split(lower(trim("order_transaction_type")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_order_transaction_type",
---
-case
   when nullif(lower(ltrim(rtrim("product_department"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("product_department"))), '') is null then null
   else array_join((transform((split(lower(trim("product_department")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
