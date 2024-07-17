@@ -39,32 +39,35 @@ _export:
 
     ### Generate simple count statistics by various dimensions
     +web_analytics_agg_others:
-      +create_agg_tmp:
-        td>: analytics/queries/web_analytics_agg_tmp.sql
-        create_table: ${ana}.web_analytics_agg_tmp
-        database: ${gld}_${sub}
-      +sub_agg_table:
-        for_each>:
-          parray: ["td_url", "utm_source", "utm_medium", "utm_campaign", "utm_content", "search_engine", "country_by_ip", "subdivision_by_ip_list", "city_by_ip", "connectiontype_by_ip", "domain_by_ip", "device_type", "os_name", "browser_name"]
-        _do:
-          +insert_sub_agg:
-            td>: analytics/queries/web_analytics_from_tmp.sql
-            insert_into: ${ana}.web_analytics_${parray}_agg
-            database: ${ana}
-      +sub_agg_conversion_table:
-        _export:
-          column: td_url
-        for_each>:
-          parray: ["utm_source", "utm_medium", "utm_campaign"]
-        _do:
-          +insert_sub_agg:
-            td>: analytics/queries/web_analytics_conversion_from_tmp.sql
-            insert_into: ${ana}.web_analytics_conv_${parray}
-            database: ${ana}
-      +drop_tmp:
-        td_ddl>:
-        drop_tables: ["web_analytics_agg_tmp"]
-        database: ${ana}
+      td>: analytics/queries/web_analytics_agg_others.sql
+      create_table: ${ana}.web_analytics_agg_others
+      database: ${gld}_${sub}
+      # +create_agg_tmp:
+      #   td>: analytics/queries/web_analytics_agg_tmp.sql
+      #   create_table: ${ana}.web_analytics_agg_tmp
+      #   database: ${gld}_${sub}
+      # +sub_agg_table:
+      #   for_each>:
+      #     parray: ["td_url", "utm_source", "utm_medium", "utm_campaign", "utm_content", "search_engine", "country_by_ip", "subdivision_by_ip_list", "city_by_ip", "connectiontype_by_ip", "domain_by_ip", "device_type", "os_name", "browser_name"]
+      #   _do:
+      #     +insert_sub_agg:
+      #       td>: analytics/queries/web_analytics_from_tmp.sql
+      #       insert_into: ${ana}.web_analytics_${parray}_agg
+      #       database: ${ana}
+      # +sub_agg_conversion_table:
+      #   _export:
+      #     column: td_url
+      #   for_each>:
+      #     parray: ["utm_source", "utm_medium", "utm_campaign"]
+      #   _do:
+      #     +insert_sub_agg:
+      #       td>: analytics/queries/web_analytics_conversion_from_tmp.sql
+      #       insert_into: ${ana}.web_analytics_conv_${parray}
+      #       database: ${ana}
+      # +drop_tmp:
+      #   td_ddl>:
+      #   drop_tables: ["web_analytics_agg_tmp"]
+      #   database: ${ana}
 
     +web_analytics_sankey:
         _export:

@@ -60,72 +60,76 @@
                 },
                 {
                     "db": "sink_database",
-                    "name": "web_analytics_td_url_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_utm_source_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_utm_medium_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_utm_campaign_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_utm_content_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_search_engine_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_country_by_ip_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_subdivision_by_ip_list_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_city_by_ip_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_connectiontype_by_ip_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_domain_by_ip_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_device_type_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_os_name_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_browser_name_agg"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_conv_utm_campaign"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_conv_utm_medium"
-                },
-                {
-                    "db": "sink_database",
-                    "name": "web_analytics_conv_utm_source"
+                    "name": "web_analytics_agg_others"
                 }
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_td_url_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_utm_source_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_utm_medium_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_utm_campaign_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_utm_content_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_search_engine_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_country_by_ip_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_subdivision_by_ip_list_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_city_by_ip_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_connectiontype_by_ip_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_domain_by_ip_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_device_type_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_os_name_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_browser_name_agg"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_conv_utm_campaign"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_conv_utm_medium"
+                // },
+                // {
+                //     "db": "sink_database",
+                //     "name": "web_analytics_conv_utm_source"
+                // }
             ],
             "change_schema_cols": {
                 "date": ["run_date"],
@@ -140,113 +144,113 @@
                         "tb1": "web_analytics_agg",
                         "join_key1": "run_date",
                         "db2": "sink_database",
-                        "tb2": "web_analytics_td_url_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_utm_source_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_utm_medium_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_utm_campaign_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_utm_content_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_search_engine_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_country_by_ip_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_subdivision_by_ip_list_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_city_by_ip_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_connectiontype_by_ip_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_domain_by_ip_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_device_type_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_os_name_agg",
-                        "join_key2": "run_date"
-                    },
-                    {
-                        "db1": "sink_database",
-                        "tb1": "web_analytics_agg",
-                        "join_key1": "run_date",
-                        "db2": "sink_database",
-                        "tb2": "web_analytics_browser_name_agg",
+                        "tb2": "web_analytics_agg_others",
                         "join_key2": "run_date"
                     }
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_utm_source_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_utm_medium_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_utm_campaign_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_utm_content_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_search_engine_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_country_by_ip_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_subdivision_by_ip_list_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_city_by_ip_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_connectiontype_by_ip_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_domain_by_ip_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_device_type_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_os_name_agg",
+                    //     "join_key2": "run_date"
+                    // },
+                    // {
+                    //     "db1": "sink_database",
+                    //     "tb1": "web_analytics_agg",
+                    //     "join_key1": "run_date",
+                    //     "db2": "sink_database",
+                    //     "tb2": "web_analytics_browser_name_agg",
+                    //     "join_key2": "run_date"
+                    // }
                 ]
             },
             "shared_user_list": [
