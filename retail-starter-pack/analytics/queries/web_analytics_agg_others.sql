@@ -55,7 +55,7 @@ with base as (select
   , TD_SESSIONIZE_WINDOW(time, cast ('${conversion.sessionize_time_range}' as int)) OVER (PARTITION BY retail_unification_id ORDER BY time) AS session_id
   , retail_unification_id
 --   , cast(regexp_like(td_url, 'checkout') as varchar) conversion_flag
-  , cast(regexp_like(${column}, '${conversion.pattern}') as varchar) conversion_flag
+  , cast(regexp_like(td_url, '${conversion.pattern}') as varchar) conversion_flag
   from gld_retail.enriched_pageviews a
   where TD_INTERVAL(a.time, '-365d')
 )
