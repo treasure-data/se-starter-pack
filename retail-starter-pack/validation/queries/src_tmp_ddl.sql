@@ -63,19 +63,19 @@ drop table if exists order_online_transactions_tmp;
 create table order_online_transactions_tmp (
    email varchar,
    phone_number varchar,
+   token varchar,
    order_no varchar,
    order_datetime varchar,
    payment_method varchar,
    shipping_cost double,
-   expidated_ship_flag int,
-   promo_flag int,
-   markdown_flag int,
-   guest_checkout_flag int,
+   expidated_ship_flag varchar,
+   promo_flag varchar,
+   markdown_flag varchar,
+   guest_checkout_flag varchar,
    order_create_datetime varchar,
    projected_delivery_date varchar,
    amount double,
-   time bigint,
-   
+   time bigint
 );
 
 drop table if exists order_offline_transactions_tmp;
@@ -84,10 +84,12 @@ create table order_offline_transactions_tmp (
    customer_id varchar,
    email varchar,
    phone_number varchar,  
+   token varchar,
    order_no varchar,
    order_datetime varchar,
    payment_method varchar,
-   promo_flag int,
+   promo_flag varchar,
+   markdown_flag varchar,
    store_id varchar,
    store_address varchar,
    store_city varchar,
