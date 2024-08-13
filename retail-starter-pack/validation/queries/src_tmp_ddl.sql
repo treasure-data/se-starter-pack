@@ -107,7 +107,7 @@ create table order_details_tmp (
    order_line_no varchar,
    order_transaction_type varchar,
    product_id varchar,
-   quantity double,
+   quantity bigint,
    list_price double,
    discount_offered double,
    tax double,
