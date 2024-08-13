@@ -65,7 +65,6 @@ create table order_online_transactions_tmp (
    phone_number varchar,
    order_no varchar,
    order_datetime varchar,
-   order_type varchar,
    payment_method varchar,
    shipping_cost double,
    expidated_ship_flag int,
