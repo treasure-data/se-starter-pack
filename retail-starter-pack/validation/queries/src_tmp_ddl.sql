@@ -53,7 +53,7 @@ create table  email_activity_tmp (
   campaign_id varchar,
   campaign_name varchar,
   email varchar,
-  unique_guest_id varchar,
+  customer_id varchar,
   activity_type varchar,
   time bigint
 );
@@ -65,8 +65,8 @@ create table order_online_transactions_tmp (
    phone_number varchar,
    order_no varchar,
    order_datetime varchar,
-   order_type varchar,
    payment_method varchar,
+   shipping_cost double,
    expidated_ship_flag int,
    promo_flag int,
    markdown_flag int,
@@ -74,13 +74,14 @@ create table order_online_transactions_tmp (
    order_create_datetime varchar,
    projected_delivery_date varchar,
    amount double,
-   time bigint
+   time bigint,
+   
 );
 
 drop table if exists order_offline_transactions_tmp;
 
 create table order_offline_transactions_tmp (
-   unique_loyalty_id varchar,
+   customer_id varchar,
    email varchar,
    phone_number varchar,  
    order_no varchar,
@@ -105,7 +106,6 @@ create table order_details_tmp (
    order_transaction_type varchar,
    product_id varchar,
    quantity double,
-   shipping_cost double,
    list_price double,
    discount_offered double,
    tax double,
@@ -126,7 +126,6 @@ create table formfills_tmp (
    phone_number varchar,
    td_global_id varchar,
    td_client_id varchar, 
-   td_ssc_id varchar,
    form_type varchar,  
    time bigint
 );
