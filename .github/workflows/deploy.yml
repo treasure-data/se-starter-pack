@@ -52,18 +52,18 @@ jobs:
                   $json = Get-Content ./package.json | ConvertFrom-Json
                   echo "::set-output name=latest_ver::$(echo $json.version)"
 
-            #   Custom code for LS update environment specific YAML within WF (s)-  update appropriately for other customers
-            - name: Update yml
-              shell: pwsh
-              run: |
-                  sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./orchestration_eu/config/database.yml
-                  sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./orchestration_eu/error_handling/config/email_ids.yml
-                  sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS }}]/g" ./ingestion_eu/config/config.yml
-                  sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS_2 }}]/g" ./ingestion_eu/config/config_2.yml
-                  sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./ingestion_eu/config/email_ids.yml
-                  sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./dsar_eu/config/database.yml
-                  sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./dsar_eu/config/email_ids.yml
-                  sed -i "s/parent_segment_ids:.*/parent_segment_ids: [${{ vars.TD_PS_IDS }}]/g" ./parent_segment_eu/parent_segment.yml
+            # #   Custom code for LS update environment specific YAML within WF (s)-  update appropriately for other customers
+            # - name: Update yml
+            #   shell: pwsh
+            #   run: |
+            #       sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./orchestration_eu/config/database.yml
+            #       sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./orchestration_eu/error_handling/config/email_ids.yml
+            #       sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS }}]/g" ./ingestion_eu/config/config.yml
+            #       sed -i "s/conn:.*/conn: [${{ vars.TD_CONNS_2 }}]/g" ./ingestion_eu/config/config_2.yml
+            #       sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./ingestion_eu/config/email_ids.yml
+            #       sed -i "s/env:.*/env: _${{github.event.inputs.env}}/g" ./dsar_eu/config/database.yml
+            #       sed -i "s/email_ids:.*/email_ids: [${{ vars.ALERT_EMAILS }}]/g" ./dsar_eu/config/email_ids.yml
+            #       sed -i "s/parent_segment_ids:.*/parent_segment_ids: [${{ vars.TD_PS_IDS }}]/g" ./parent_segment_eu/parent_segment.yml
 
             ##call td_push deployment action
             - name: td_push
@@ -77,34 +77,34 @@ jobs:
                   wf_endpoint: ${{ vars.TD_WF_API_ENDPOINT }} #full endpoint
                   env_label: ${{ github.event.inputs.env }}
 
-            - name: Send custom JSON data to Slack workflow on Success
-              id: slack_success
-              if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }}
-              uses: slackapi/slack-github-action@v1.24.0
-              with:
-                  payload: |
-                      {
-                        "workflow_name": "${{ github.job }}",
-                        "version": "${{ github.event.inputs.version }}",
-                        "branch": "${{ github.event.ref }}",
-                        "repo": "${{ github.repository }}",
-                        "err": "Success"
-                      }
-              env:
-                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            # - name: Send custom JSON data to Slack workflow on Success
+            #   id: slack_success
+            #   if: ${{ success() && env.SLACK_WEBHOOK_URL != ''  }}
+            #   uses: slackapi/slack-github-action@v1.24.0
+            #   with:
+            #       payload: |
+            #           {
+            #             "workflow_name": "${{ github.job }}",
+            #             "version": "${{ github.event.inputs.version }}",
+            #             "branch": "${{ github.event.ref }}",
+            #             "repo": "${{ github.repository }}",
+            #             "err": "Success"
+            #           }
+            #   env:
+            #       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-            - name: Send custom JSON data to Slack workflow on failure
-              id: slack_failure
-              if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }}
-              uses: slackapi/slack-github-action@v1.24.0
-              with:
-                  payload: |
-                      {
-                        "workflow_name": "${{ github.job }}",
-                        "version": "${{ github.event.inputs.version }}",
-                        "branch": "${{ github.event.ref }}",
-                        "repo": "${{ github.repository }}",
-                        "err": "Error-check the github actions logs for the description!"
-                      }
-              env:
-                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            # - name: Send custom JSON data to Slack workflow on failure
+            #   id: slack_failure
+            #   if: ${{ failure() && env.SLACK_WEBHOOK_URL != '' }}
+            #   uses: slackapi/slack-github-action@v1.24.0
+            #   with:
+            #       payload: |
+            #           {
+            #             "workflow_name": "${{ github.job }}",
+            #             "version": "${{ github.event.inputs.version }}",
+            #             "branch": "${{ github.event.ref }}",
+            #             "repo": "${{ github.repository }}",
+            #             "err": "Error-check the github actions logs for the description!"
+            #           }
+            #   env:
+            #       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
