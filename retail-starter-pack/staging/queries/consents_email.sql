@@ -30,4 +30,4 @@ end   AS  "trfmd_id_type"
 FROM
 
 consents
-where id_type = 'email'
+where lower(id_type) = 'email'
