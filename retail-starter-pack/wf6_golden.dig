@@ -26,5 +26,5 @@ _export:
 +consent_transformation:
   td>: golden/queries/consent.sql
   database: ${gld}_${sub}
-  create_table: ${gld}_${sub}.${gld}_consents
+  create_table: ${gld}_${sub}.gld_consents
 

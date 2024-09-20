@@ -15,6 +15,7 @@ td_cdp_endpoint: "https://api-cdp.treasuredata.com"
 # td_cdp_endpoint: "https://api-cdp.eu01.treasuredata.com"
 
 segment:
+  # set 'create' for first run. after that, set 'update'
   run_type: update
   tables:
     parent_segment_templates: parent_segment_template

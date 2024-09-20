@@ -21,7 +21,7 @@ _export:
     +sales_market_basket_analysis:
       td>: analytics/queries/sales_market_basket_analysis.sql
       engine: hive
-      create_table: ${ana}.sales_market_basket_analytics
+      create_table: ${ana}.sales_market_basket_analysis
       database: ${gld}_${sub} #query fails to get the source tables otherwise
 
   ### Generate Data Needed for Web Analytics Dashboard
@@ -92,6 +92,5 @@ _export:
   +idu_dashboard:
     call>: idu_dashboard/idu_dashboard_launch
 
-
-+dashboards:
-  call>: analytics/dashboard/analytics_dashboard_launch.dig
+  +dashboards:
+    call>: analytics/dashboard/analytics_dashboard_launch.dig

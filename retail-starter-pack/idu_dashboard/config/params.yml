@@ -1,5 +1,5 @@
 ###Database created by unification workflow where the id_lookup and key_stats tables live
-source_db: cdp_unification_retail_starter_pack
+source_db: cdp_unification_${sub}
 
 ##Reporting database (output DB where idu_dashboard tables are written) --> sink_database should be SAME as reporting_db
 reporting_db: analytics
