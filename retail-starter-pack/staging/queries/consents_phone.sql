@@ -29,4 +29,4 @@ end AS "trfmd_phone_number"
 FROM
 
 consents
-where id_type = 'phone'
+where lower(id_type) = 'phone'
