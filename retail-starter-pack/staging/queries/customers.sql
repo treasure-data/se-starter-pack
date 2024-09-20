@@ -70,7 +70,17 @@ case
   else array_join((transform((split(lower(trim("city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_city",
 --
-date_diff('year', date_parse(date_of_birth, '%Y-%m-%d'), current_date)   AS  "trfmd_age",
+date_diff(
+  'year',
+  coalesce(
+    try(date_parse(date_of_birth, '%Y-%m-%d %H:%i:%s.%f')),  -- Full datetime with milliseconds
+    try(date_parse(date_of_birth, '%Y-%m-%d %H:%i:%s')),     -- Full datetime without milliseconds
+    try(date_parse(date_of_birth, '%Y-%m-%d')),              -- Date only (no time)
+    try(date_parse(date_of_birth, '%m/%d/%Y %H:%i:%s.%f')),  -- MM/DD/YYYY format with milliseconds
+    try(date_parse(date_of_birth, '%m/%d/%Y %H:%i:%s')),     -- MM/DD/YYYY format without milliseconds
+    try(date_parse(date_of_birth, '%m/%d/%Y'))               -- MM/DD/YYYY format (no time)
+  ), current_date
+  )  AS  "trfmd_age",
 --
 case
   when nullif(lower(ltrim(rtrim("email"))), 'null') is null then null
