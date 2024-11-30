@@ -28,10 +28,10 @@ case
 end   AS  "trfmd_phone_number",
 --
 case
-  when nullif(lower(ltrim(rtrim("order_type"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("order_type"))), '') is null then null
-  else array_join((transform((split(lower(trim("order_type")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_order_type",
+  when nullif(lower(ltrim(rtrim("order_transaction_type"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("order_transaction_type"))), '') is null then null
+  else array_join((transform((split(lower(trim("order_transaction_type")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_order_transaction_type",
 --
 case
   when nullif(lower(ltrim(rtrim("payment_method"))), 'null') is null then null

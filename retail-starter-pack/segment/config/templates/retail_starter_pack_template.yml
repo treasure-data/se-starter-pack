@@ -245,8 +245,8 @@ behaviors:
   schema:
   - name: Order Type
     type: string
-    parentColumn: trfmd_order_type
-    matrixColumnName: trfmd_order_type
+    parentColumn: trfmd_order_transaction_type
+    matrixColumnName: trfmd_order_transaction_type
   - name: Payment Method
     type: string
     parentColumn: trfmd_payment_method
