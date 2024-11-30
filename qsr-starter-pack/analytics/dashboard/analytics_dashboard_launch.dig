@@ -1,0 +1,21 @@
+_export:
+  !include : config/params.yml
+  td:
+    database: ${reporting_db}
+
+############## CREATE REPORTING DATABASE IF NOT EXIST ###############################
++create_sink_database:
+  td_ddl>:
+  create_databases: ["${sink_database}"]
+
+############## DATAMODEL BUILDOUT & UPDATE #########################################
++check_if_need_to_create_dashboard:
+  if>: ${create_dashboard=='yes'}
+  _do:
+    +run_model_create_wf:
+      call>: analytics_datamodel_create.dig
+
+    +run_model_refresh_build_wf:
+      call>:  analytics_datamodel_build.dig
+
+
