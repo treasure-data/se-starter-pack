@@ -6,7 +6,7 @@ sub: qsr_va_dev
 gld: gld
 ana: analytics
 run_all: true
-
+ 
 tables: 
   - consents
   - email_activity
