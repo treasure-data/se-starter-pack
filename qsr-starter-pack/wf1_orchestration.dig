@@ -10,7 +10,7 @@ _export:
     database: va_config_${sub}
 
 +prepare_db:
-  td_ddl>:
+  td_ddl>: 
   create_databases: ["va_config_${sub}", "${stg}_${sub}", "${gld}_${sub}"]
 
 +prepare_log_table:
