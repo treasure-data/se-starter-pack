@@ -13,7 +13,7 @@ from
   select
     retail_unification_id as retail_unification_id,
     trfmd_order_datetime_unix as trfmd_order_datetime_unix,
-    amount as amount
+    amount as amount, 
     from enriched_order_offline_transactions
     union all
     select

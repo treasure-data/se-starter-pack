@@ -1,0 +1,24 @@
+schema_change:
+  - raw_table_name: consents
+    src_table_name: consents
+  - raw_table_name: email_activity
+    src_table_name: email_activity
+  - raw_table_name: formfills
+    src_table_name: formfills
+  - raw_table_name: loyalty_profile
+    src_table_name: loyalty_profile
+    columns:  
+    - customer_id: cust_id
+    - email: email_address
+  # - raw_table_name: loyalty_redemptions
+  #   src_table_name: loyalty_redemptions
+  # - raw_table_name: loyalty_rewards
+  #   src_table_name: loyalty_rewards
+  # - raw_table_name: order_details
+  #   src_table_name: order_details
+  # - raw_table_name: order_digital_transactions
+  #   src_table_name: order_digital_transactions
+  # - raw_table_name: order_offline_transactions
+  #   src_table_name: order_offline_transactions
+  # - raw_table_name: pageviews
+  #   src_table_name: pageviews

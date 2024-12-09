@@ -1,7 +1,12 @@
 -- @TD enable_cartesian_product:true
-WITH total_orders AS (
+WITH 
+order_details_window as (
+    SELECT * FROM order_details where td_interval(trfmd_order_datetime_unix, '-365d')
+),
+
+total_orders AS (
     SELECT COUNT(DISTINCT order_no) AS total_count
-    FROM ${src_database}.enriched_order_details
+    FROM order_details_window
 ),
 pair_counts AS (
     SELECT
@@ -9,9 +14,9 @@ pair_counts AS (
         b.trfmd_product_name AS product2,
         COUNT(DISTINCT a.order_no) AS order_count
     FROM
-        ${src_database}.enriched_order_details a
+        order_details_window a
     JOIN
-        enriched_order_details b ON a.order_no = b.order_no AND a.trfmd_product_name < b.trfmd_product_name
+        order_details_window b ON a.order_no = b.order_no AND a.trfmd_product_name < b.trfmd_product_name
     GROUP BY
         a.trfmd_product_name, b.trfmd_product_name
 ),
@@ -20,7 +25,7 @@ product_counts AS (
         trfmd_product_name,
         COUNT(DISTINCT order_no) AS product_count
     FROM
-        ${src_database}.enriched_order_details
+        order_details_window
     GROUP BY
         trfmd_product_name
 ) 

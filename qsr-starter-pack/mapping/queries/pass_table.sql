@@ -1,0 +1,1 @@
+select  * from ${tbl.raw_table_name}

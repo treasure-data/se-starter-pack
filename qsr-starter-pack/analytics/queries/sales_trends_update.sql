@@ -10,4 +10,4 @@ APPROX_PERCENTILE(avg_days_between_transactions, .25) as avg_days_between_transa
 APPROX_PERCENTILE(avg_days_between_transactions, .50) as avg_days_between_transactions_median,
 APPROX_PERCENTILE(avg_days_between_transactions, .75) as avg_days_between_transactions_third_quartile
 from
-${src_database}.derived_attributes;
+${src_database}.transactions_drvd_attr;

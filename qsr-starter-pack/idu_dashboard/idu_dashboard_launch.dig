@@ -1,9 +1,8 @@
-_export:
-  !include : config/params.yml
-  td:
-    database: ${reporting_db}
+
 
 # timezone: America/Los_Angeles
+_export:
+  !include : config/params.yml
 
 ###################### SCHEDULE PARAMS ##################################  
 # schedule:
@@ -14,6 +13,17 @@ _export:
 #   mail>: body.txt
 #   subject: IDU Dashboard Workflow Failed - Client Name
 #   to: ['ps-ml-analytics@treasure-data.com']
+
+##################### SET PARAMS INHERITED FROM PARENT WORKFLOW ############################  
++set_params:
+  _export:
+    wf_project_name: ${project_name}
+    unif_id: ${unification_id}
+    proj_sub: ${sub}
+    api_site: ${site}
+  py>: python_files.set_params.main
+  docker:
+    image: "digdag/digdag-python:3.9" 
 
 ############## IDU MAIN STATS Data Prep ##########################################
 +run_main_data_prep:
@@ -31,6 +41,7 @@ _export:
     +check_todays_date:
       td>:
         data: "SELECT substr('${session_date}', 9) in ('05', '15', '25') AS run_idu_qa"
+      database: ${reporting_db}
       store_last_results: true
 
     +check_if_joined_must_run_today:
