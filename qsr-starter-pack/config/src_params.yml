@@ -36,8 +36,9 @@ dash_users_list: ['global-presales-demo+dev@treasure-data.com']
 
 ## PARENT SEGMENT/SEGMENT CONFIG ## 
 segment:
-  # set 'create' for first run. after that, set 'update'
-  run_type: update
+  # create if first time and no changes need each run 
+  # update if changes to parent segment are made in config
+  run_type: create
   tables:
     parent_segment_templates: parent_segment_template
     segment_templates: segment_templates

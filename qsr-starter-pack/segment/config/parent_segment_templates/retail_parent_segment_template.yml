@@ -74,10 +74,10 @@ attributes:
   groupingName: Loyalty
 - audienceId: null
   id: null
-  name: Email
+  name: Primary Email
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: attributes
+  parentTableName: profile_identifiers
   parentColumn: email
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -85,10 +85,10 @@ attributes:
   groupingName: Identity
 - audienceId: null
   id: null
-  name: Phone Number
+  name: Primary Phone Number
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: attributes
+  parentTableName: profile_identifiers
   parentColumn: phone_number
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
