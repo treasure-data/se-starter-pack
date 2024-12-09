@@ -2,3 +2,5 @@ SELECT canonical_id AS over_merged_id, count(*) as count_raw_ids from ${id_looku
 ${td.last_results.filter_syntax}
 GROUP BY 1 
 HAVING count(*) >= ${td.last_results.merged_ids_limit}
+ORDER BY count(*) desc
+limit 100000
