@@ -1,15 +1,15 @@
 schema_change:
-  - raw_table_name: consents
-    src_table_name: consents
-  - raw_table_name: email_activity
-    src_table_name: email_activity
-  - raw_table_name: formfills
-    src_table_name: formfills
+  # - raw_table_name: consents
+  #   src_table_name: consents
+  # - raw_table_name: email_activity
+  #   src_table_name: email_activity
+  # - raw_table_name: formfills
+  #   src_table_name: formfills
   - raw_table_name: loyalty_profile
     src_table_name: loyalty_profile
     columns:  
     - customer_id: cust_id
-    - email: email_address
+    # - email: email_address
   # - raw_table_name: loyalty_redemptions
   #   src_table_name: loyalty_redemptions
   # - raw_table_name: loyalty_rewards
