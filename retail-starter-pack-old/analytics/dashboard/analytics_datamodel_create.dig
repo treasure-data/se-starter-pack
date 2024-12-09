@@ -1,0 +1,15 @@
+_export:
+  !include : 'config/params.yml'
+
+##### Create Datamodel for the first time
++create_datamodel:
+    py>: python.create_datamodel.main
+    _env:
+      TD_API_KEY: '${secret:td_apikey}'
+      TD_API_SERVER: '${api_endpoint}'
+      SINK_DB: '${sink_database}'
+      OUTPUT_TABLE: '${model_config_table}'
+    _export:
+      filename: 'config/config.json'
+    docker:
+      image: "digdag/digdag-python:3.9"

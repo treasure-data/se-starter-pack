@@ -1,0 +1,82 @@
+timezone: UTC
+##
+_export:
+  !include : 'config/src_params.yml'
+  !include : 'config/email_ids.yml'
+  mail:
+    from: "wf-error-alert@treasure-data.com"
+  td:
+    database: va_config_${sub}
+
+
++prepare_tables:
+  for_each>: 
+    tbl: ${tables}
+  _parallel: true
+  _do: 
+    +validate_schema: 
+      td>: "validation/queries/schema/${tbl}.sql"
+
++prepare_report_base:
+  td>: "validation/queries/check_src_vs_ref.sql"
+
++prepare_report:
+  td>: "validation/queries/report_deviations.sql"
+
++query_to_find_warning_error:
+  td>:
+  query: "select sum(cnt) as cnt from report_deviation"
+  store_last_results: true
+
++prepare_email_html:
+  if>: ${td.last_results.cnt > 0}
+  _do:
+    +drop_email_content_table:
+      td_ddl>:
+      drop_tables: ["email_content"]
+      database: va_config_${sub}
+
+    +prepare_email_content:
+      _export:
+        database: va_config_${sub}
+        td_write_table: 'email_content'
+      docker:
+          image: "digdag/digdag-python:3.10.1"
+      py>: validation.python.gen_html.main
+      _env:
+        TD_SITE: ${site}
+        TD_API_KEY: ${secret:td_apikey}
+
+    +send_email:
+      td_for_each>: "validation/queries/fetch_email_body.sql"
+      _do:
+        +prepare_email_content:
+          echo>: 'email content fetched'
+
+        +send_email:
+          for_each>:
+            email: ${email_ids}
+          _do:
+            mail>: utilities/generic.txt
+            html: true
+            subject: 'Validation Report'
+            to: ${email}
+            body: ${td.each.html_content}
+
++drop_table:
+  for_each>: 
+    tbl: ${tables}
+  _parallel: true
+  _do: 
+    +drop: 
+      td>: "validation/queries/src_tmp_drop_ddl.sql"
+
++query_to_raise_error:
+  td>:
+  query: "select sum(cnt) as cnt from ( select count(1) as cnt from report_missing_src_columns union all select count(1) as cnt from report_column_type_mismatches union all select count(1) as cnt from report_missing_tables_in_src) x"
+  store_last_results: true
+
++raise_error_if_necessary:
+  if>: ${td.last_results.cnt > 0}
+  _do:
+    fail>: "Detected issues with missing tables columns or column type mismatches. Check va_config_${sub}.report_missing_src_columns for missing columns.  Check va_config_${sub}.report_column_type_mismatches for column type mismatches. Check va_config_${sub}.report_missing_tables_in_src for missing source tables"

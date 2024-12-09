@@ -1,0 +1,62 @@
+_export:
+  !include : 'config/src_params.yml'
+  td: 
+    database: va_config_${sub}
+
++create_tmp_tables:
+  td_ddl>:
+  empty_tables: ["${segment.tables.parent_segment_templates}"]
+
++create_tables:
+  td_ddl>:
+  create_tables: ["${segment.tables.parent_segment_creation}"]
+
++list_all_templates:
+  _export:
+    folder_path: segment/config/parent_segment_templates
+    db: va_config_${sub}
+    table: ${segment.tables.parent_segment_templates}
+  docker:
+    image: "digdag/digdag-python:3.9"
+  py>: segment.python.list_templates.main
+  _env:
+    TD_SITE: ${site}
+    TD_API_KEY: ${secret:td_apikey}
+
++create_parent_segments:
+  _export:
+    !include : 'config/src_params.yml'
+  _parallel: true
+  td_for_each>: segment/queries/lookup_templates.sql
+  _do:
+    +create:
+      _export:
+        folder: ${td.each.folder}
+        file_name: ${td.each.file}
+        database: va_config_${sub}
+        table: ${segment.tables.parent_segment_creation}
+        parent_db: ${gld}_${sub}
+        unif_id: ${unification_id}
+        run_type: ${segment.run_type}
+      docker:
+        image: "digdag/digdag-python:3.9"
+      py>: segment.python.create_parent_segments.main
+      _env:
+        TD_SITE: ${site}
+        TD_API_KEY: ${secret:td_apikey}
+
++clean_log:
+  td>: segment/queries/cleanup_log.sql
+
++active_audience:
+  td>: segment/queries/active_audience.sql
+  create_table: ${segment.tables.active_audience}
+  
++refresh_parent_segments:
+  _parallel: true
+  td_for_each>: segment/queries/get_active_audience.sql
+  _do:
+      +parent_segment_refresh:
+          require>: audience
+          project_name: cdp_audience_${td.each.audience_id}
+          session_time: ${moment(session_time).format()}

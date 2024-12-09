@@ -1,0 +1,40 @@
+type: segment-batch
+id: null
+relationships:
+  parentFolder:
+    data:
+      id: ${rootfolder_id}
+      type: folder-segment
+attributes:
+  - audienceId: ${audience_id}
+    name: Marketable Users
+    countPopulation: true
+    description: Marketable Users - Users who have given consent
+    rule:
+      type: And
+      conditions:
+        - conditions:
+          - type: Value
+            leftValue:
+              aggregation:
+                type: Count
+              source:
+                name: behavior_gld_consents
+              filter:
+                type: And
+                conditions:
+                - type: Column
+                  column: trfmd_consent_flag
+                  operator:
+                    not: false
+                    rightValue: 'True'
+                    type: Equal
+                  visibility: clear
+            operator:
+              not: false
+              rightValue: 1
+              type: GreaterEqual
+            exclude: false
+          type: And
+          description: ''
+      segmentInsightDashboardId: null

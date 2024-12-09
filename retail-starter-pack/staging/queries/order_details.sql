@@ -1,3 +1,7 @@
+drop table if exists ${stg}_${sub}.${tbl}; 
+
+create table ${stg}_${sub}.${tbl} as 
+
 SELECT
 *,
 --
@@ -18,12 +22,6 @@ case
   when nullif(lower(ltrim(rtrim("product_department"))), '') is null then null
   else array_join((transform((split(lower(trim("product_department")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_product_department",
---
-case
-  when nullif(lower(ltrim(rtrim("product_color"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("product_color"))), '') is null then null
-  else array_join((transform((split(lower(trim("product_color")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_product_color",
 --
 case
   when nullif(lower(ltrim(rtrim("product_description"))), 'null') is null then null

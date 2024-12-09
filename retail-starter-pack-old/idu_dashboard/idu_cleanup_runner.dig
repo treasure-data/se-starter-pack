@@ -1,0 +1,14 @@
+_export:
+  !include : 'config/params.yml'
+  td:
+    database: ${reporting_db}
+        
++clean_tables:
+  _parallel: true
+  for_each>:
+    temp_table: ${temporary_tables}
+  _do:
+    +clean_table:
+        database: ${reporting_db}
+        td_ddl>: 
+        drop_tables: ["${prefix}${temp_table}"]

@@ -1,0 +1,9 @@
+##Reporting database (output DB where idu_dashboard tables are written) --> sink_database should be SAME as reporting_db
+reporting_db: analytics
+sink_database: analytics
+
+##Global Prams
+api_endpoint: api.treasuredata.com
+workflow_api_url: api-workflow.treasuredata.com     ##- use 'api-workflow.eu01.treasuredata.com' for EU Region
+model_config_table: 'analytics_datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
+create_dashboard: 'yes'

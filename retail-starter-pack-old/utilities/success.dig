@@ -1,0 +1,10 @@
+timezone: UTC
+
+_export:
+    mail:
+      from: "wf-success-alert@treasure-data.com"
+
++send_alert:
+  mail>: success_body.txt
+  subject: "Success! ${subject}"
+  to: ${receive_email}

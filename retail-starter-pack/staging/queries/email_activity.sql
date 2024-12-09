@@ -1,3 +1,7 @@
+drop table if exists ${stg}_${sub}.${tbl}; 
+
+create table ${stg}_${sub}.${tbl} as 
+
 SELECT
 *,
 --

@@ -1,0 +1,15 @@
+Workflow encoutered an ERROR. Please check details below for further troubleshooting.
+
+https://console.treasuredata.com/app/workflows/sessions/${session_id}
+
+# session_local_time
+${session_local_time}
+
+# task_name
+${task_name}
+
+# error_message
+${error.message}
+
+# error_stacktrace
+${error.stacktrace}

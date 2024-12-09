@@ -1,0 +1,30 @@
+{
+  "model_name":  "Retail Value Accelerator - IDU Dashboard"
+  ,
+  "model_tables": [
+    {"db": "sink_database","name":"idu_canonical_id_source_key_stats_top"},
+    {"db": "sink_database","name":"idu_canonical_id_result_key_stats_top"}, 
+    {"db": "sink_database","name":"idu_calculations"}, 
+    {"db": "sink_database","name":"idu_identities"}, 
+    {"db": "sink_database","name":"idu_matching_rate"}, 
+    {"db": "sink_database","name":"idu_ids_histogram"}, 
+    {"db": "sink_database","name":"idu_avg_min_max"}, 
+    {"db": "sink_database","name":"idu_merge_keys_updated"},  
+    {"db": "sink_database","name":"idu_stats_joined"},
+    {"db": "sink_database","name":"idu_known_unknown_stats"},
+    {"db": "sink_database","name":"idu_qa_common_ids"},
+    {"db": "sink_database","name":"idu_qa_frequent_ids"},
+    {"db": "sink_database","name":"idu_qa_over_merged_stats"} 
+                  ]
+  ,
+  "shared_user_list": ["biswadip.paul+demodata@treasure-data.com"],
+  
+  "change_schema_cols": {"date": ["run_time", "datetime"], "text": ["ENTER_NAME"], "float": ["ENTER_NAME"], "bigint": ["ENTER_NAME"]}, 
+  
+  "join_relations": {"pairs": [
+    {"db1": "sink_database", "tb1":"idu_canonical_id_source_key_stats_top","join_key1":"total_distinct","db2": "sink_database","tb2":"idu_calculations","join_key2":"profiles_before_unification"},
+    {"db1": "sink_database", "tb1":"idu_canonical_id_source_key_stats_top","join_key1":"from_table","db2": "sink_database","tb2":"idu_canonical_id_result_key_stats_top","join_key2":"from_table"},
+    {"db1": "sink_database", "tb1":"idu_avg_min_max","join_key1":"key_name","db2": "sink_database","tb2":"idu_qa_common_ids","join_key2":"id_type"},
+    {"db1": "sink_database", "tb1":"idu_avg_min_max","join_key1":"key_name","db2": "sink_database","tb2":"idu_qa_frequent_ids","join_key2":"column_name"}
+  ]}
+                    }

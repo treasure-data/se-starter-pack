@@ -1,4 +1,4 @@
-drop table if exists ${td.each.table_name};
+drop table if exists ${tbl};
 
-create table if not exists ${td.each.table_name} as
-select * from ${src_database}.${td.each.table_name};
+create table if not exists ${tbl} as
+select * from ${src_database}.${tbl}; 
