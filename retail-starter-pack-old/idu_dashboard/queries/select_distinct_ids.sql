@@ -1,1 +1,0 @@
-SELECT DISTINCT distinct_id as distinct_id FROM ${prefix}ids_histogram_temp

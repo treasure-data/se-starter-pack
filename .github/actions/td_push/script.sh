@@ -52,7 +52,7 @@ function push_workflow_td() {
     --request PUT "$INPUT_WF_ENDPOINT/api/projects?project=$td_project_name&revision=$project_rev" \
     --header "Authorization: TD1 $INPUT_API_TOKEN" \
     --header "Content-Type: application/gzip" \
-    --data-binary "@${GITHUB_WORKSPACE}/$1.tar.gz")
+    --data-binary "@${GITHUB_WORKSPACE}/$2.tar.gz")
 
   #Here's some boilerplate to deal with the status code
   echo -e "===== Response status code $status_code"
@@ -84,7 +84,7 @@ for proj_dir in $changed_dirs; do
   if [[ $proj_dir =~ $dir_regex ]]; then
     echo -e "===== proj_dir $proj_dir dir_regex $dir_regex "
     create_tarball $proj_dir
-    push_workflow_td $proj_dir
+    push_workflow_td $INPUT_PROJ_NAME $proj_dir
   fi
 done
 echo -e "===== Done ====="

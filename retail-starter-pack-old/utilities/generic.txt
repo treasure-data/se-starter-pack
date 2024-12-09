@@ -1,8 +1,0 @@
-Hi All,
-
-${subject}
-
-${body}
-
-Regards,
-Treasure Data
