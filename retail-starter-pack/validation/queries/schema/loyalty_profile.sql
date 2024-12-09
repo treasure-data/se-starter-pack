@@ -29,5 +29,6 @@ create table loyalty_profile_tmp
     store_city varchar,
     created_at varchar,
     updated_at varchar,
+    wishlist_item varchar
     time bigint
 );

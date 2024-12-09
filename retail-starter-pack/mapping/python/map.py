@@ -2,7 +2,10 @@ import digdag
 import json
 
 def main(schema): 
-    schema_change = json.loads(schema)
+    if schema: 
+        schema_change = json.loads(schema)
+    else: 
+        schema_change = []
     processed_tables = []
     for table in schema_change:
         raw_table_name = table["raw_table_name"]

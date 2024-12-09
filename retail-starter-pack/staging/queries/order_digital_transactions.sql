@@ -6,6 +6,7 @@ SELECT
 *,
 --
 TD_TIME_PARSE(order_datetime) as trfmd_order_datetime_unix,
+TD_TIME_PARSE(projected_delivery_date) as projected_delivery_date_unix,
 case
   when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (12, 1, 2) then 'Winter'
   when month(from_unixtime(TD_TIME_PARSE(order_datetime))) in (3, 4, 5) then 'Spring'
@@ -47,6 +48,13 @@ case
 end   AS  "trfmd_promo_code",
 --
 case
+  when nullif(lower(ltrim(rtrim("bopis_flag"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("bopis_flag"))), '') is null then null
+  when nullif(lower(ltrim(rtrim("bopis_flag"))), '') in ('0', 'false') then 'False'
+  when nullif(lower(ltrim(rtrim("bopis_flag"))), '') in ('1', 'true') then 'True'
+end   AS  "trfmd_bopis_flag",
+--
+case
   when nullif(lower(ltrim(rtrim("markdown_flag"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("markdown_flag"))), '') is null then null
   when nullif(lower(ltrim(rtrim("markdown_flag"))), '') in ('0', 'false') then 'False'
@@ -61,28 +69,28 @@ case
 end   AS  "trfmd_guest_checkout_flag", 
 -- 
 case
-  when nullif(lower(ltrim(rtrim("location_address"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("location_address"))), '') is null then null
-  else array_join((transform((split(lower(trim("location_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_location_address",
+  when nullif(lower(ltrim(rtrim("store_address"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_address"))), '') is null then null
+  else array_join((transform((split(lower(trim("store_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_store_address",
 --
 case
-  when nullif(lower(ltrim(rtrim("location_postal_code"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("location_postal_code"))), '') is null then null
-  else lower(ltrim(rtrim("location_postal_code")))
-end   AS  "trfmd_location_postal_code",
+  when nullif(lower(ltrim(rtrim("store_postal_code"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_postal_code"))), '') is null then null
+  else lower(ltrim(rtrim("store_postal_code")))
+end   AS  "trfmd_store_postal_code",
 --
 case
-  when nullif(lower(ltrim(rtrim("location_city"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("location_city"))), '') is null then null
-  else array_join((transform((split(lower(trim("location_city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_location_city",
+  when nullif(lower(ltrim(rtrim("store_city"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_city"))), '') is null then null
+  else array_join((transform((split(lower(trim("store_city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_store_city",
 --
 case
-  when nullif(lower(ltrim(rtrim("location_state"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("location_state"))), '') is null then null
-  else array_join((transform((split(lower(trim("location_state")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_location_state"
+  when nullif(lower(ltrim(rtrim("store_state"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_state"))), '') is null then null
+  else array_join((transform((split(lower(trim("store_state")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_store_state"
 FROM
 
 order_digital_transactions
