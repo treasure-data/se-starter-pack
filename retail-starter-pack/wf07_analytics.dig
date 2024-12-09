@@ -21,7 +21,44 @@ _export:
       engine: hive
       create_table: ${ana}_${sub}.sales_market_basket_analysis
       database: ${gld}_${sub} #query fails to get the source tables otherwise
-          
+  +web_analytics:
+    +prep_web_analytics_base:
+      td>: analytics/queries/web_analytics.sql
+      create_table: ${ana}.web_analytics
+      database: ${gld}_${sub}
+
+    ### Generate New Visitor, Known Customer and Sales Statistics
+    +prep_web_analytics_agg:
+      td>: analytics/queries/web_analytics_agg.sql
+      insert_into: ${ana}.web_analytics_agg
+      database: ${gld}_${sub}
+
+    ### Generate simple count statistics by various dimensions
+    +web_analytics_agg_others:
+      td>: analytics/queries/web_analytics_agg_others.sql
+      create_table: ${ana}.web_analytics_agg_others
+      database: ${gld}_${sub}
+
+    +web_analytics_sankey:
+        _export:
+          tblname: enriched_pageviews
+          column: td_url
+        +create_sub_agg:
+          td>: analytics/queries/sankey_web_conversion.sql
+          create_table: ${ana}.web_conversion
+          database: ${gld}_${sub}
+        +generate_step_stats:
+            td>: analytics/queries/sankey_step_statistics.sql
+            create_table: web_conversion_step_statistics
+            database: ${ana}
+        +generate_labels:
+          td>: analytics/queries/sankey_generate_labels.sql
+          create_table: web_conversion_labels
+          database: ${ana}
+        +generate_data_model:
+          td>: analytics/queries/sankey_data_model_final.sql
+          create_table: web_conversion_analytics_final
+          database: ${ana}
   +idu_dashboard:
     call>: idu_dashboard/idu_dashboard_launch
 #### Create model_config table if not exists
