@@ -1,0 +1,17 @@
+_export:
+  !include : 'config/src_params.yml'
+  td:
+    database: ${stg}_${sub}
+
++unification:
+  http_call>: https://api-cdp.treasuredata.com/unifications/workflow_call
+  headers:
+    #Enter your apikey as a secret to this workflow
+    - authorization: ${secret:td.apikey}
+  method: POST
+  retry: true
+  content_format: json
+  content:
+    early_access: true
+    unification:
+      !include : unification/unify.yml     # Set YAML config file name

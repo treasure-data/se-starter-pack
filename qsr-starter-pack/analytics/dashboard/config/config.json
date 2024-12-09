@@ -1,0 +1,116 @@
+{
+    "models": [
+        {
+            "model_name": "analytics_dash_retail_starter_pack_test",
+            "model_tables": [
+                {
+                    "db": "sink_database",
+                    "name": "sales_market_basket_analysis"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "sales_trends"
+                }
+            ],
+            "shared_user_list": ["biswadip.paul+demodata@treasure-data.com"],
+            "change_schema_cols": {
+                "date": ["date"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
+            },
+            "join_relations": {
+                "pairs": []
+            }
+        },
+        {
+            "model_name": "Retail Value Accelerator - Sales Analytics",
+            "model_tables": [
+                {
+                    "db": "sink_database",
+                    "name": "sales_market_basket_analysis"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "sales_trends"
+                }
+            ],
+            "change_schema_cols": {
+                "date": ["date"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
+            },
+            "join_relations": {
+                "pairs": []
+            },
+            "shared_user_list": [
+                "biswadip.paul+demodata@treasure-data.com",
+                "charles.vatin+demodata@treasure-data.com",
+                "nidhi.gotgi+demodata@treasure-data.com",
+                "vishal.patel+demodata@treasure-data.com"
+            ]
+        },
+        {
+            "model_name": "Retail Value Accelerator - Web Analytics Agg",
+            "model_tables": [
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_agg"
+                },
+                {
+                    "db": "sink_database",
+                    "name": "web_analytics_agg_others"
+                }
+            ],
+            "change_schema_cols": {
+                "date": ["run_date", "date"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
+            },
+            "join_relations": {
+                "pairs": [
+                    {
+                        "db1": "sink_database",
+                        "tb1": "web_analytics_agg",
+                        "join_key1": "run_date",
+                        "db2": "sink_database",
+                        "tb2": "web_analytics_agg_others",
+                        "join_key2": "run_date"
+                    }
+                ]
+            },
+            "shared_user_list": [
+                "biswadip.paul+demodata@treasure-data.com",
+                "charles.vatin+demodata@treasure-data.com",
+                "nidhi.gotgi+demodata@treasure-data.com",
+                "vishal.patel+demodata@treasure-data.com"
+            ]
+        },
+        {
+            "model_name": "Retail Value Accelerator - Web Sankey",
+            "model_tables": [
+                {
+                    "db": "sink_database",
+                    "name": "web_conversion_analytics_final"
+                }
+            ],
+            "change_schema_cols": {
+                "date": ["ENTER_NAME"],
+                "text": ["ENTER_NAME"],
+                "float": ["ENTER_NAME"],
+                "bigint": ["ENTER_NAME"]
+            },
+            "join_relations": {
+                "pairs": []
+            },
+            "shared_user_list": [
+                "biswadip.paul+demodata@treasure-data.com",
+                "charles.vatin+demodata@treasure-data.com",
+                "nidhi.gotgi+demodata@treasure-data.com",
+                "vishal.patel+demodata@treasure-data.com"
+            ]
+        }
+    ]
+}

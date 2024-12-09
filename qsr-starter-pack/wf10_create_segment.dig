@@ -2,7 +2,7 @@
 +create_tables:
   td_ddl>:
   empty_tables: [ "${segment.tables.segment_logs}", "${segment.tables.segment_templates}"]
- 
+
 +list_all_templates:
   _export:
     folder_path: segment/config/segment_templates

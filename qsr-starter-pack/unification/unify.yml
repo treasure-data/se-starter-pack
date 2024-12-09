@@ -1,0 +1,121 @@
+name: ${sub}
+
+#####################################################
+##
+##Declare Validation logic for unification keys
+##
+#####################################################
+
+keys:
+  - name: email
+    invalid_texts: ['', null]
+  - name: td_client_id
+    invalid_texts: ['', null]
+  - name: phone_number
+    invalid_texts: ['', null]
+  - name: order_no
+    invalid_texts: ['', null]
+  - name: credit_card_token
+    invalid_texts: ['', null]
+
+#####################################################
+##
+## Declare databases, tables, and keys to use during unification
+##
+#####################################################
+
+tables:
+  - database: ${stg}_${sub}
+    table: loyalty_profile
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+
+  - database: ${stg}_${sub}
+    table: pageviews
+    key_columns:
+      - {column: td_client_id, key: td_client_id}
+
+  - database: ${stg}_${sub}
+    table: email_activity
+    key_columns:
+      - {column: trfmd_email, key: email}
+
+  - database: ${stg}_${sub}
+    table: order_digital_transactions
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: token, key: credit_card_token}
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: order_offline_transactions
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: token, key: credit_card_token}
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: order_details
+    key_columns:
+      - {column: order_no, key: order_no}
+
+  - database: ${stg}_${sub}
+    table: formfills
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: td_client_id, key: td_client_id}
+
+  - database: ${stg}_${sub}
+    table: consents_email
+    key_columns:
+      - {column: trfmd_email, key: email}
+      
+  - database: ${stg}_${sub}
+    table: consents_phone
+    key_columns:
+      - {column: trfmd_phone_number, key: phone_number}
+
+
+#####################################################
+##
+##Declare hierarchy for unification. Define keys to use for each level.
+##
+#####################################################
+
+canonical_ids:
+  - name: ${unification_id}
+    merge_by_keys: [email, phone_number, credit_card_token, td_client_id, order_no]
+
+#####################################################
+##
+##Declare Survivorship Rules to Determine Best Value for Each Attribute
+##
+#####################################################
+
+master_tables:
+  - name: profile_identifiers
+    canonical_id: ${unification_id}
+    attributes:
+      - name: email
+        source_columns:
+          - {table: loyalty_profile, column: trfmd_email, priority: 1}
+          - {table: email_activity, column: trfmd_email, priority: 2}
+          - {table: order_digital_transactions, column: trfmd_email, priority: 2}
+          - {table: order_offline_transactions, column: trfmd_email, priority: 2}
+          - {table: formfills, column: trfmd_email, priority: 2}
+          - {table: consents_email, column: trfmd_email, priority: 2}
+      - name: phone_number
+        source_columns:
+          - {table: loyalty_profile, column: trfmd_phone_number, priority: 1}
+          - {table: order_digital_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: order_offline_transactions, column: trfmd_phone_number, priority: 2}
+          - {table: formfills, column: trfmd_phone_number, priority: 2}
+          - {table: consents_phone, column: trfmd_phone_number, priority: 2}
+      - name: td_client_id
+        source_columns:
+          - {table: pageviews, column: td_client_id, priority: 1}
+          - {table: formfills, column: td_client_id, priority: 2}

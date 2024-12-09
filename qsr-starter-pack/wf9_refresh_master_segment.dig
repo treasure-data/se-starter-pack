@@ -1,0 +1,11 @@
+_export:
+  !include : 'config/src_params.yml'
+
++refresh_parent_segments:
+  _parallel: true
+  td_for_each>: segment/queries/get_active_audience.sql
+  _do:
+      +parent_segment_refresh:
+          require>: audience
+          project_name: cdp_audience_${td.each.audience_id}
+          session_time: ${moment(session_time).format()}

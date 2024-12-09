@@ -1,0 +1,110 @@
+# timezone: US/Eastern
+# schedule:
+#  cron>: 0 */4 * * *
+
+_export:
+  !include : 'config/src_params.yml'
+  !include : 'config/email_ids.yml'
+
+  td:
+    database: va_config_${sub}
+
++prepare_db:
+  td_ddl>:
+  create_databases: ["va_config_${sub}", "${stg}_${sub}", "${gld}_${sub}", "${ana}_${sub}"]
+
++prepare_log_table:
+  database: va_config_${sub}
+  td>: "utilities/queries/log_tbl.sql"
+
++empty_log_table:
+  if>: ${run_all==true}
+  _do:
+    +del_log:
+      td>:
+      query: "delete from log_tbl where 1=1"
+      database: va_config_${sub}
+
++set_global_params:
+  _export: 
+    wf_project_name: ${project_name}
+    unif_id: ${unification_id}
+    global_sub: ${sub}
+    api_site: ${site}
+  py>: utilities.python.set_params.main
+  docker:
+    image: "digdag/digdag-python:3.9" 
+
++mapping: 
+  _export: 
+    step_name: mapping 
+    workflow_to_run: wf02_mapping
+  call>: wf01_run_workflow_with_logging.dig
+
++validation:
+  _export:
+    step_name: validation
+    workflow_to_run: wf03_validate
+  call>: wf01_run_workflow_with_logging.dig
+
++staging:
+  _export:
+    step_name: staging
+    workflow_to_run: wf04_stage
+  call>: wf01_run_workflow_with_logging.dig
+
++unification:
+  _export:
+    step_name: unification
+    workflow_to_run: wf05_unify
+  call>: wf01_run_workflow_with_logging.dig
+
+
++golden:
+  _export:
+    step_name: golden
+    workflow_to_run: wf06_golden
+  call>: wf01_run_workflow_with_logging.dig
+
++run_master_segment_and_analytics:
+  _parallel: true
+
+  +analytics:
+    _export:
+      step_name: create_master_segment
+      workflow_to_run: wf07_analytics
+    call>: wf01_run_workflow_with_logging.dig
+
+  +create_refresh_master_segment:
+    _export:
+      step_name: create_refresh_master_segment
+      workflow_to_run: wf08_create_refresh_master_segment
+    call>: wf01_run_workflow_with_logging.dig
+
++create_segment:
+  _export:
+    step_name: create_segment
+    workflow_to_run: wf09_create_segment
+  call>: wf01_run_workflow_with_logging.dig
+
+# Send mail success
++send_success_alert:
+  for_each>:
+    email: ${email_ids}
+  _do:
+    _export:
+
+      subject: "Treasure Data Value Accelerator completed Successfully!"
+      receive_email: ${email}
+    call>: utilities/success.dig
+
+#Send Error Alert
+_error:
+  +send_error_alert:
+    for_each>:
+      email: ${email_ids}
+    _do:
+      _export:
+        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
+        receive_email: ${email}
+      call>: utilities/error.dig

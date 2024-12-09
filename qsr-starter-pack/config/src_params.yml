@@ -1,0 +1,47 @@
+## DATABASE CONFIG ##
+raw: raw
+src: src
+stg: stg
+gld: gldn
+ana: analytics 
+sub: qsr_va_dev
+
+## WORKFLOW CONFIG ##
+run_all: true
+project_name: qsr-starter-pack_qa_br-qsr
+
+## INSTANCE CONFIG ## 
+site: us # us | eu 
+
+## STAGING CONFIG ## 
+## DO NOT CHANGE ## 
+tables: 
+  - consents
+  - email_activity
+  - formfills
+  - loyalty_profile
+  - order_details 
+  - order_digital_transactions 
+  - order_offline_transactions 
+  - pageviews
+
+## UNIFICATION CONFIG ## 
+unification_id : qsr_unification_id
+
+## ANALYTICS CONFIG ## 
+model_config_table: 'analytics_datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
+create_dashboard: 'yes'
+dashboards: ['sales_analytics', 'idu_dashboard']
+dash_users_list: ['global-presales-demo+dev@treasure-data.com']
+
+## PARENT SEGMENT/SEGMENT CONFIG ## 
+segment:
+  # set 'create' for first run. after that, set 'update'
+  run_type: update
+  tables:
+    parent_segment_templates: parent_segment_template
+    segment_templates: segment_templates
+    parent_segment_creation: automation_parent_segments
+    active_audience: active_audience
+    segment_logs: segment_logs
+

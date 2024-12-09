@@ -1,0 +1,63 @@
+_export:
+  !include : 'config/params.yml'
+  !include : 'config.json'
+  td:
+    database: ${sink_database}
+
+#####Check if any datamodels were built and if history table exists
++check_if_model_history_table_exists:
+  td>:
+    data: "SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE REGEXP_LIKE(table_schema, '${sink_database}') AND table_name = '${model_config_table}' "
+  store_last_results: true
+
++if_table_exists_check_if_model_was_built:
+  if>: ${td.last_results.table_name == model_config_table}
+  _do:
+    +echo1:
+      echo>: 'History Table ${model_config_table} Exists. Check if datamodel ${model_name} exists in history table, or if it needs to be built for the first time'
+
+    ##### Check if Model has already been created
+    +check_if_model_was_built:
+      td>:
+        data: "SELECT name FROM ${sink_database}.${model_config_table} WHERE name  = '${model_name}' "
+      store_last_results: true
+
+    +check_if_modename_exists_in_history:
+      if>: ${td.last_results.name == model_name}
+      _do:
+        +echo1:
+          echo>: 'Datamodel with the name ${model_name} already exists'
+
+      _else_do:
+        +echo2:
+          echo>: 'Datamodel ${model_name} will be created next...'
+
+        ##### Create Datamodel for the first time
+        +create_datamodel_for_the_first_time:   
+            py>: python_files.create_datamodel.create_model
+            _env:
+              TD_API_KEY: '${secret:td_apikey}'
+              TD_API_SERVER: '${api_endpoint}'
+              SINK_DB: '${sink_database}'
+              OUTPUT_TABLE: '${model_config_table}'
+            docker:
+              image: "digdag/digdag-python:3.9"
+
+  _else_do:
+    +echo2:
+      echo>: 'Datamodel ${model_name} will be created next...'
+
+    +create_empty_table:
+      td_ddl>:
+      empty_tables: ["${model_config_table}"]
+
+    ##### Create Datamodel for the first time
+    +create_datamodel_for_the_first_time:   
+        py>: python_files.create_datamodel.create_model
+        _env:
+          TD_API_KEY: '${secret:td_apikey}'
+          TD_API_SERVER: '${api_endpoint}'
+          SINK_DB: '${sink_database}'
+          OUTPUT_TABLE: '${model_config_table}'
+        docker:
+          image: "digdag/digdag-python:3.9"
