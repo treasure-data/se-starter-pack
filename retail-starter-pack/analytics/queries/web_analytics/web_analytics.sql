@@ -95,6 +95,6 @@ select
   , element_at(td_parse_agent(td_user_agent), 'version')                                                                      as browser_version
   , td_language
 from
-    ${src_database}.enriched_pageviews
+    ${src_database}.pageviews
 where (td_client_id is not null or td_client_id != '')
 ;

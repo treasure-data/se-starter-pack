@@ -56,7 +56,7 @@ with base as (select
   , retail_unification_id
 --   , cast(regexp_like(td_url, 'checkout') as varchar) conversion_flag
   , cast(regexp_like(td_url, '${conversion.pattern}') as varchar) conversion_flag
-  from ${gld}_${sub}.enriched_pageviews a
+  from ${gld}_${sub}.pageviews a
   where TD_INTERVAL(a.time, '-365d')
 )
 select today_datetime as run_date, date, session_id, td_url, utm_source, utm_medium, utm_campaign, utm_content, search_engine, country_by_ip, subdivision_by_ip_list, city_by_ip, connectiontype_by_ip, domain_by_ip, device_type, os_name, browser_name, retail_unification_id, conversion_flag, count(1) count

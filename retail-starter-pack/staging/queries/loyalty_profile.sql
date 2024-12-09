@@ -111,16 +111,16 @@ case
 end   AS  "trfmd_secondary_email", 
 --
 case
-  when nullif(lower(ltrim(rtrim("location_address"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("location_address"))), '') is null then null
-  else array_join((transform((split(lower(trim("location_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_location_address",
+  when nullif(lower(ltrim(rtrim("store_address"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_address"))), '') is null then null
+  else array_join((transform((split(lower(trim("store_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_store_address",
 -- 
 case
-  when nullif(lower(ltrim(rtrim("location_city"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("location_city"))), '') is null then null
-  else array_join((transform((split(lower(trim("location_city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_location_city"
+  when nullif(lower(ltrim(rtrim("store_city"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_city"))), '') is null then null
+  else array_join((transform((split(lower(trim("store_city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_store_city"
 
 FROM
 

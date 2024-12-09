@@ -1,6 +1,6 @@
 id: null
-name: Value Accelerator - QSR
-description: QSR Value Accelerator
+name: Value Accelerator - Retail
+description: Retail Value Accelerator
 scheduleType: none
 scheduleOption: ""
 timezone: UTC
@@ -74,10 +74,10 @@ attributes:
   groupingName: Loyalty
 - audienceId: null
   id: null
-  name: Email
+  name: Primary Email
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: attributes
+  parentTableName: profile_identifiers
   parentColumn: email
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -85,10 +85,10 @@ attributes:
   groupingName: Identity
 - audienceId: null
   id: null
-  name: Phone Number
+  name: Primary Phone Number
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: attributes
+  parentTableName: profile_identifiers
   parentColumn: phone_number
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -306,24 +306,24 @@ behaviors:
     matrixColumnName: trfmd_season
   - name: Store Address
     type: string
-    parentColumn: trfmd_location_address
-    matrixColumnName: trfmd_location_address
+    parentColumn: trfmd_store_address
+    matrixColumnName: trfmd_store_address
   - name: Store City
     type: string
-    parentColumn: trfmd_location_city
-    matrixColumnName: trfmd_location_city
+    parentColumn: trfmd_store_city
+    matrixColumnName: trfmd_store_city
   - name: Store Country
     type: string
-    parentColumn: trfmd_location_country
-    matrixColumnName: trfmd_location_country
+    parentColumn: trfmd_store_country
+    matrixColumnName: trfmd_store_country
   - name: Store Postalcode
     type: string
-    parentColumn: trfmd_location_postal_code
-    matrixColumnName: trfmd_location_postal_code
+    parentColumn: trfmd_store_postal_code
+    matrixColumnName: trfmd_store_postal_code
   - name: Store State
     type: string
-    parentColumn: trfmd_location_state
-    matrixColumnName: trfmd_location_state
+    parentColumn: trfmd_store_state
+    matrixColumnName: trfmd_store_state
 - audienceId: null
   id: null
   name: All Transaction Details

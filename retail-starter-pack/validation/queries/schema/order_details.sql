@@ -5,7 +5,7 @@ create table order_details_tmp (
     order_transaction_type varchar,
     quantity bigint,
     product_id varchar,
-    product_color as varchar,
+    product_color varchar,
     product_name varchar,
     product_size varchar,
     product_description varchar,

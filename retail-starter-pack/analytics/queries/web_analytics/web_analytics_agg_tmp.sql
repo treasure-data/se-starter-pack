@@ -57,7 +57,7 @@ base as (select
   , td_language
   , TD_SESSIONIZE_WINDOW(time, cast ('${conversion.sessionize_time_range}' as int)) OVER (PARTITION BY retail_unification_id ORDER BY time) AS session_id
   , retail_unification_id
-  from enriched_pageviews a, cal
+  from pageviews a, cal
   where TD_TIME_RANGE(a.time, st_dt , end_dt)
 )
 select * from base
