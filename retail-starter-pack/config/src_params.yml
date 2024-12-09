@@ -4,11 +4,11 @@ src: src
 stg: stg
 gld: gldn
 ana: analytics 
-sub: qsr_va_dev
+sub: retail_va_dev
 
 ## WORKFLOW CONFIG ##
 run_all: true
-project_name: qsr-starter-pack_qa_br-qsr
+project_name: retail-starter-pack_qa_br-retail
 
 ## INSTANCE CONFIG ## 
 site: us # us | eu 
@@ -26,18 +26,18 @@ tables:
   - pageviews
 
 ## UNIFICATION CONFIG ## 
-unification_id : qsr_unification_id
+unification_id : retail_unification_id
 
 ## ANALYTICS CONFIG ## 
 model_config_table: 'analytics_datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
 create_dashboard: 'yes'
-dashboards: ['sales_analytics', 'idu_dashboard']
+dashboards: ['sales_analytics', 'idu_dashboard', 'web_analytics']
 dash_users_list: ['global-presales-demo+dev@treasure-data.com']
 
 ## PARENT SEGMENT/SEGMENT CONFIG ## 
 segment:
   # set 'create' for first run. after that, set 'update'
-  run_type: update
+  run_type: create
   tables:
     parent_segment_templates: parent_segment_template
     segment_templates: segment_templates

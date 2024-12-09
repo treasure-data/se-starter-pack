@@ -24,9 +24,9 @@ create table loyalty_profile_tmp
     membership_points_pending bigint,
     total_loyalty_purchases bigint,
     current_membership_level_expiration varchar,
-    location_id varchar,
-    location_address varchar,
-    location_city varchar,
+    store_id varchar,
+    store_address varchar,
+    store_city varchar,
     created_at varchar,
     updated_at varchar,
     time bigint
