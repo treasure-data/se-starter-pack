@@ -2,16 +2,16 @@
 source_db: cdp_unification_${sub}
 
 ##Reporting database (output DB where idu_dashboard tables are written) --> sink_database should be SAME as reporting_db
-reporting_db: analytics
-sink_database: analytics 
+# reporting_db: analytics_${sub}
+# sink_database: analytics_${sub}
 
 ##Global Prams
-canonical_id_col: 'retail_unification_id'                 #name of the canonical ID col output by unification workflow
+canonical_id_col: ${unification_id}                 #name of the canonical ID col output by unification workflow
 prefix: 'idu_'
 api_endpoint: api.treasuredata.com
 workflow_api_url: api-workflow.treasuredata.com     ##- use 'api-workflow.eu01.treasuredata.com' for EU Region
 model_config_table: 'datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
-create_dashboard: 'yes'
+create_dashboard: 'no'
 
 ##Input Tables with ID Stats before and after Unification Process
 canonical_id_source_key_stats: canonical_id_source_key_stats   #leave as DEFAULT
@@ -20,8 +20,8 @@ id_lookup_table: ${source_db}.${canonical_id_col}_lookup       #leave as DEFAULT
 user_master_id_table: ${source_db}.parent_table             #ONLY needed if source table id stats are output in enriched_master table in unification
 
 ##ID unification Project & Workflow
-unification_project: 'retail_starter_pack_deterministic_unification'          #name of the unification WF project
-unification_workflow: 'retail_starter_pack_deterministic_unification'         #name of the sub-wf .dig that runs unification process in the above project
+# unification_project: ${project_name}          #name of the unification WF project
+unification_workflow: 'wf05_unify'                         #name of the sub-wf .dig that runs unification process in the above project
 num_runs: 30                                                  #Gets runtimes on the last n-runs of unification WF
 unification_output: 'old'         ###-- use 'old' = when source tables are present in source_key_stats tables from IDU, use 'new' = source tables are in enriched_user_master
 
@@ -37,18 +37,18 @@ distinct_ids:
     id_type: 'phone'
     known: 1
     addressable: 1
-  # - col_name: td_client_id
-  #   id_type: 'cookie_1p'
-  #   known: 0
-  #   addressable: 1
-  - col_name: td_global_id
-    id_type: 'cookie_3p'
+  - col_name: td_client_id
+    id_type: 'cookie_1p'
     known: 0
     addressable: 0
-  # - col_name: token_id
-  #   id_type: 'custom'
+  # - col_name: td_global_id
+  #   id_type: 'cookie_3p'
   #   known: 0
   #   addressable: 0
+  - col_name: token
+    id_type: 'custom'
+    known: 0
+    addressable: 1
 
 
 ########### IDU QA Params #######

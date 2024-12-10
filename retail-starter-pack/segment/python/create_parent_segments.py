@@ -62,12 +62,15 @@ def delete_and_create(body):
     return audience_id, name, message
 
 
-def main(folder, file_name, database, table, parent_db, run_type="create"):
+def main(folder, file_name, database, table, parent_db, unification_id, run_type="create"):
     df_log = pd.DataFrame()
     body = convert_yaml_to_json(folder, file_name)
     print(parent_db)
     body_ = body.replace('gld_retail', f'{parent_db}')
+    print(unification_id)
+    body_ = body_.replace('retail_unification_id', f'{unification_id}')
     
+    print(body_)
     if run_type == "create":
         audience_id, name, message = check_and_create(body_)
     elif run_type == "update":

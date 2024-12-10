@@ -1,0 +1,34 @@
+ 
++create_tables:
+  td_ddl>:
+  empty_tables: [ "${segment.tables.segment_logs}", "${segment.tables.segment_templates}"]
+
++list_all_templates:
+  _export:
+    folder_path: segment/config/segment_templates
+    db: va_config_${sub}
+    table: ${segment.tables.segment_templates}
+  docker:
+    image: "digdag/digdag-python:3.9"
+  py>: segment.python.list_templates.main
+  _env:
+    TD_SITE: ${site}
+    TD_API_KEY: ${secret:td_apikey}
+    
++create_segments:
+  _parallel: true
+  td_for_each>: segment/queries/lookup_segment_templates/audiences.sql
+  _do:
+    +create_segment:
+      _export:
+        folder: segment/config/segment_templates
+        file_name: ${td.each.file}
+        database: va_config_${sub}
+        table: ${segment.tables.segment_logs}
+        audience_id: ${td.each.audience_id}
+      docker:
+        image: "digdag/digdag-python:3.9"
+      py>: segment.python.create_segment.main
+      _env:
+        TD_SITE: ${site}
+        TD_API_KEY: ${secret:td_apikey}

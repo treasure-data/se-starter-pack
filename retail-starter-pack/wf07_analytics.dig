@@ -1,0 +1,134 @@
+_export:
+  !include : 'config/src_params.yml'
+  !include : 'analytics/config/web_analytics.yml'
+  td:
+    database: ${ana}_${sub}
+    src_database: ${gld}_${sub}
+
++prepare_db:
+  td_ddl>:
+  create_databases: ["${ana}_${sub}"]
+
++analytics:
+  _parallel: true
+  ### Generate Data Need for Sales Dashboard
+  +sales_analytics:
+    +update_sales_trends:
+      td>: analytics/queries/sales/sales_trends_update.sql
+      insert_into: ${ana}_${sub}.sales_trends
+
+    +sales_market_basket_analysis:
+      td>: analytics/queries/sales/sales_market_basket_analysis.sql
+      engine: hive
+      create_table: ${ana}_${sub}.sales_market_basket_analysis
+      database: ${gld}_${sub} #query fails to get the source tables otherwise
+  +web_analytics:
+    +prep_web_analytics_base:
+      td>: analytics/queries/web_analytics/web_analytics.sql
+      create_table: ${ana}_${sub}.web_analytics
+      database: ${gld}_${sub}
+
+    ### Generate New Visitor, Known Customer and Sales Statistics
+    +prep_web_analytics_agg:
+      td>: analytics/queries/web_analytics/web_analytics_agg.sql
+      insert_into: ${ana}_${sub}.web_analytics_agg
+      database: ${gld}_${sub}
+
+    ### Generate simple count statistics by various dimensions
+    +web_analytics_agg_others:
+      td>: analytics/queries/web_analytics/web_analytics_agg_others.sql
+      create_table: ${ana}_${sub}.web_analytics_agg_others
+      database: ${gld}_${sub}
+
+    +web_analytics_sankey:
+        _export:
+          tblname: pageviews
+          column: td_url
+        +create_sub_agg:
+          td>: analytics/queries/web_analytics/sankey_web_conversion.sql
+          create_table: ${ana}_${sub}.web_conversion
+          database: ${gld}_${sub}
+        +generate_step_stats:
+            td>: analytics/queries/web_analytics/sankey_step_statistics.sql
+            create_table: web_conversion_step_statistics
+            database: ${ana}_${sub}
+        +generate_labels:
+          td>: analytics/queries/web_analytics/sankey_generate_labels.sql
+          create_table: web_conversion_labels
+          database: ${ana}_${sub}
+        +generate_data_model:
+          td>: analytics/queries/web_analytics/sankey_data_model_final.sql
+          create_table: web_conversion_analytics_final
+          database: ${ana}_${sub}
+  +idu_dashboard:
+    call>: idu_dashboard/idu_dashboard_launch
+#### Create model_config table if not exists
+
++create_model_conig:
+  td>: analytics/queries/create_model_config.sql 
+
+#### Create Datamodel for the first time
++create_all_dashboards: 
+  for_each>: 
+    dash: ${dashboards}
+  _parellel: true
+  _do: 
+    +check_if_data_model_exists: 
+      td>:
+        data: "SELECT oid FROM ${ana}_${sub}.${model_config_table} WHERE dashboard  = '${dash}' "
+      store_last_results: true
+
+    +create_update_datamodel: 
+      if>: ${td.last_results.oid == null}
+      _do: 
+        +create_datamodel:
+            py>: analytics.python.create_datamodel.main
+            _env:
+              TD_API_KEY: '${secret:td_apikey}'
+              TD_API_SERVER: '${api_endpoint}'
+              OUTPUT_TABLE: '${model_config_table}'
+            _export:
+              filename: 'analytics/config/datamodels/${dash}.json'
+              dashboard: ${dash}
+              users: ${dash_users_list}
+              sink_db: ${ana}_${sub}
+            docker:
+              image: "digdag/digdag-python:3.9"
+
+    +get_datamodel_oid: 
+      td>:
+        data: "SELECT oid FROM ${ana}_${sub}.${model_config_table} WHERE dashboard  = '${dash}' "
+      store_last_results: true
+    
+    ###-- Workflow to refresh the datamodel with updated tables and data schema
+    +call_post_builds:
+      http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds"
+      method: POST
+      headers:
+        - authorization: "${secret:td.apikey}"
+        - cache-control: "no-cache"
+        - accept: "application/json"
+        - content-type: "application/json"
+      content:
+        buildType: "full"
+      content_format: "json"
+      store_content: true
+
+    +echo_post:
+      echo>: ${http.last_content}
+
+            # +call_get_builds:
+            #   http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds/${http.last_content.oid}"
+            #   method: GET
+            #   headers:
+            #     - authorization: "${secret:td.apikey}"
+            #     - cache-control: "no-cache"
+            #     - accept: "application/json"
+            #     - content-type: "application/json"
+            #   store_content: true
+
+            # +echo_get:
+            #   echo>: ${http.last_content}
+
+
+

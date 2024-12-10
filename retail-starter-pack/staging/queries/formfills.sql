@@ -1,3 +1,7 @@
+drop table if exists ${stg}_${sub}.${tbl}; 
+
+create table ${stg}_${sub}.${tbl} as 
+
 SELECT
 *,
 --
@@ -13,7 +17,13 @@ case
   when nullif(lower(ltrim(rtrim("phone_number"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("phone_number"))), '') is null then null
   else ARRAY_JOIN(REGEXP_EXTRACT_ALL(replace(lower(ltrim(rtrim("phone_number"))), ' ', ''), '([0-9]+)?'), '')
-end AS "trfmd_phone_number"
+end AS "trfmd_phone_number", 
+--
+case
+  when nullif(lower(ltrim(rtrim("form_type"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("form_type"))), '') is null then null
+  else array_join((transform((split(lower(trim("form_type")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_form_type"
 
 FROM
 

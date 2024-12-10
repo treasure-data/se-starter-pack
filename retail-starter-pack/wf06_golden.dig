@@ -1,0 +1,56 @@
+_export:
+  !include : 'config/src_params.yml'
+  td:
+    database: cdp_unification_${sub}
+    src_database: cdp_unification_${sub}
+
++move_unified:
+  +get_table_name:
+    for_each>: 
+      tbl: ${tables}
+    _parallel: true
+    _do:
+      +check_consent: 
+        if>: ${tbl != 'consents'}
+        _do: 
+          +copy_data:
+            td>: golden/queries/copy_enriched_table.sql
+            database: ${gld}_${sub}
+  
+  +move_parent_table: 
+    for_each>:  
+      tbl: ['parent_table', 'profile_identifiers']
+    _do: 
+      +move: 
+        td>: golden/queries/copy_table.sql
+        database: ${gld}_${sub}
+
++attributes:
+  for_each>: 
+    attr: ['email_activity', 'pageviews', 'transactions']
+  _parallel: true
+  _do: 
+    +create_attr_table: 
+      td>: golden/queries/attributes/${attr}.sql
+      database: ${gld}_${sub}
+      create_table: ${gld}_${sub}.${attr}_drvd_attr
+
++consent_transformation:
+  td>: golden/queries/consent.sql
+  database: cdp_unification_${sub}
+  create_table: ${gld}_${sub}.consents
+
++gld_transformation: 
+  for_each>: 
+    tbl: ['order_details', 'order_digital_transactions', 'order_offline_transactions']
+  _do: 
+    +transform: 
+      td>: golden/queries/${tbl}.sql 
+      create_table: ${tbl}_tmp
+      database: ${gld}_${sub}
+    
+    +rename: 
+      td_ddl>:
+      rename_tables: [{from: "${tbl}_tmp", to: "${tbl}"}]
+      database: ${gld}_${sub}
+

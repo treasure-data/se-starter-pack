@@ -1,0 +1,56 @@
+_export:
+  !include : 'config/src_params.yml'
+  td:
+    database: va_config_${sub}
+##
++echo:
+  echo>: va_config_${sub}
+ 
++src_checks:
+  if>: ${run_all!=true}
+  _do:
+    +query_log_tables: 
+      td>:
+      query: "select case when status = 'success' or status is null then 1 else 0 end status  from log_tbl where step_name = '${step_name}' order by time desc"
+      store_last_results: true
+
+    +check_to_run:
+      if>: ${td.last_results.status==true}
+      _do:
+          +skip_run:
+            echo>: "Skipping run for step ${step_name} of src_checks. Previous run was successfull..."
+
+      _else_do:
+        +print:
+          echo>: "Running step ${step_name} and workflow name ${workflow_to_run} when run_all ${run_all} and historical run are empty or failed."
+
+        +delete_log:
+          td>:
+          query: "delete from log_tbl where step_name = '${step_name}'"
+
+        +run_workflow:
+          # echo>: "Running step ${step_name} and workflow name ${workflow_to_run} when run_all ${run_all} and historical run are empty or failed."
+          _export:
+          require>: ${workflow_to_run}
+
+        +update_log:
+          td>:
+          query: "select '${step_name}' as step_name, 'success' as status, null as error_msg"
+          insert_into: log_tbl
+  _else_do:
+    +print:
+      echo>: "Running step ${step_name} and workflow name ${workflow_to_run} when run_all ${run_all} and no historical run is checked."
+
+    +delete_log:
+      td>:
+      query: "delete from log_tbl where step_name = '${step_name}'"
+
+    +run_workflow:
+      # echo>: "Running step ${step_name} and workflow name ${workflow_to_run} when run_all ${run_all} and no historical run is checked."
+      _export:
+      require>: ${workflow_to_run}
+
+    +update_log:
+      td>:
+      query: "select '${step_name}' as step_name, 'success' as status, null as error_msg"
+      insert_into: log_tbl

@@ -1,7 +1,18 @@
+
+drop table if exists ${stg}_${sub}.${tbl}; 
+
+create table ${stg}_${sub}.${tbl} as 
+
 SELECT
 *,
 --
 TD_TIME_PARSE(order_datetime) as trfmd_order_datetime_unix,
+--
+case
+  when nullif(lower(ltrim(rtrim("store_address"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("store_address"))), '') is null then null
+  else array_join((transform((split(lower(trim("store_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_store_address",
 --
 case
   when nullif(lower(ltrim(rtrim("store_postal_code"))), 'null') is null then null
@@ -38,12 +49,6 @@ case
 end   AS  "trfmd_email",
 --
 case
-  when nullif(lower(ltrim(rtrim("store_address"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("store_address"))), '') is null then null
-  else array_join((transform((split(lower(trim("store_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_store_address",
---
-case
   when nullif(lower(ltrim(rtrim("phone_number"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("phone_number"))), '') is null then null
   else ARRAY_JOIN(REGEXP_EXTRACT_ALL(replace(lower(ltrim(rtrim("phone_number"))), ' ', ''), '([0-9]+)?'), '')
@@ -59,8 +64,20 @@ case
   when nullif(lower(ltrim(rtrim("store_country"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("store_country"))), '') is null then null
   else array_join((transform((split(lower(trim("store_country")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_store_country"
-
+end   AS  "trfmd_store_country",
+--
+case
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), '') is null then null
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), '') in ('0', 'false') then 'False'
+  when nullif(lower(ltrim(rtrim("markdown_flag"))), '') in ('1', 'true') then 'True'
+end   AS  "trfmd_markdown_flag",
+--
+case
+  when nullif(lower(ltrim(rtrim("promo_code"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("promo_code"))), '') is null then null
+  else array_join((transform((split(lower(trim("promo_code")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_promo_code"
 FROM
 
 order_offline_transactions

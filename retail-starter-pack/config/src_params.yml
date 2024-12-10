@@ -1,22 +1,44 @@
-site: us
+## DATABASE CONFIG ##
 raw: raw
 src: src
 stg: stg
-sub: retail2
-gld: gld
-ana: analytics
+gld: gldn
+ana: analytics 
+sub: retail_va_dev
+
+## WORKFLOW CONFIG ##
 run_all: true
+project_name: retail-starter-pack_qa_br-retail
 
-# US
-td_cdp_endpoint: "https://api-cdp.treasuredata.com"
-# APAC
-# td_cdp_endpoint: "https://api-cdp.ap02.treasuredata.com"
-# EMEA
-# td_cdp_endpoint: "https://api-cdp.eu01.treasuredata.com"
+## INSTANCE CONFIG ## 
+site: us # us | eu 
 
+## STAGING CONFIG ## 
+## DO NOT CHANGE ## 
+tables: 
+  - consents
+  - email_activity
+  - formfills
+  - loyalty_profile
+  - order_details 
+  - order_digital_transactions 
+  - order_offline_transactions 
+  - pageviews
+
+## UNIFICATION CONFIG ## 
+unification_id : retail_unification_id
+
+## ANALYTICS CONFIG ## 
+model_config_table: 'analytics_datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
+create_dashboard: 'yes'
+dashboards: ['sales_analytics', 'idu_dashboard', 'web_analytics']
+dash_users_list: ['global-presales-demo+dev@treasure-data.com']
+
+## PARENT SEGMENT/SEGMENT CONFIG ## 
 segment:
-  # set 'create' for first run. after that, set 'update'
-  run_type: update
+  # create if first time and no changes need each run 
+  # update if changes to parent segment are made in config
+  run_type: create
   tables:
     parent_segment_templates: parent_segment_template
     segment_templates: segment_templates
@@ -24,46 +46,3 @@ segment:
     active_audience: active_audience
     segment_logs: segment_logs
 
-analytics:
-  dashboards:
-    sankey:
-      register:
-        pattern: 'register'
-        stage: 'Account Creation/Sign-Up'
-        indexno: 0
-      login:
-        pattern: 'login'
-        stage: 'Sign-In/Login'
-        indexno: 1
-      products:
-        pattern: 'products'
-        stage: 'Product Page Visit'
-        indexno: 2
-      wishlist:
-        pattern: 'wishlist'
-        stage: 'Wishlist/Favorites'
-        indexno: 3
-      cart:
-        pattern: 'cart'
-        stage: 'Add to Cart'
-        indexno: 4
-      checkout:
-        pattern: 'checkout'
-        stage: 'Checkout Initiation'
-        indexno: 5
-      loyalty:
-        pattern: 'loyalty'
-        stage: 'Loyalty Program Enrollment'
-        indexno: 6
-      return:
-        pattern: 'return'
-        stage: 'Returns/Exchanges'
-        indexno: 7
-      review:
-        pattern: 'review'
-        stage: 'Write a Review'
-        indexno: 8
-      support:
-        pattern: 'support'
-        stage: 'Customer Support Ticket'
-        indexno: 9

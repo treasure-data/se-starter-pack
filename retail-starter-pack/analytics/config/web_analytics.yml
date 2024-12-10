@@ -1,0 +1,44 @@
+conversion:
+  sessionize_time_range: 1800
+  pattern: 'checkout'
+sankey:
+  register:
+    pattern: 'register'
+    stage: 'Account Creation/Sign-Up'
+    indexno: 0
+  login:
+    pattern: 'login'
+    stage: 'Sign-In/Login'
+    indexno: 1
+  products:
+    pattern: 'products'
+    stage: 'Product Page Visit'
+    indexno: 2
+  wishlist:
+    pattern: 'wishlist'
+    stage: 'Wishlist/Favorites'
+    indexno: 3
+  cart:
+    pattern: 'cart'
+    stage: 'Add to Cart'
+    indexno: 4
+  checkout:
+    pattern: 'checkout'
+    stage: 'Checkout Initiation'
+    indexno: 5
+  loyalty:
+    pattern: 'loyalty'
+    stage: 'Loyalty Program Enrollment'
+    indexno: 6
+  return:
+    pattern: 'return'
+    stage: 'Returns/Exchanges'
+    indexno: 7
+  review:
+    pattern: 'review'
+    stage: 'Write a Review'
+    indexno: 8
+  support:
+    pattern: 'support'
+    stage: 'Customer Support Ticket'
+    indexno: 9

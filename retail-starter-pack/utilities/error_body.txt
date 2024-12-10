@@ -9,6 +9,20 @@ Additionally, you can find further details in the workflow log below.
 Regards,
 Treasure Data
 
+
+
+# session_local_time
+${session_local_time}
+
+--------------Task--------------
+# task_name
+${task_name}
+
 ---------------Log---------------
 
+# error_message
 ${error.message}
+
+-----------Stacktrace-----------
+# error_stacktrace
+${error.stacktrace}

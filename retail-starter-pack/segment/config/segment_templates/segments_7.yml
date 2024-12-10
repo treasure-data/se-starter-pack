@@ -18,7 +18,7 @@ attributes:
             aggregation:
               type: Count
             source:
-              name: behavior_enriched_order_online_transactions
+              name: behavior_order_digital_transactions
             filter:
               type: And
               conditions:
@@ -43,7 +43,7 @@ attributes:
             aggregation:
               type: Count
             source:
-              name: behavior_enriched_order_offline_transactions
+              name: behavior_order_offline_transactions
             filter:
               type: And
               conditions:

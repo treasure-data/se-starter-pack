@@ -22,7 +22,7 @@ attributes:
   name: Age
   type: number
   parentDatabaseName: gld_retail
-  parentTableName: enriched_customers
+  parentTableName: loyalty_profile
   parentColumn: trfmd_age
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -33,7 +33,7 @@ attributes:
   name: Name
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: enriched_customers
+  parentTableName: loyalty_profile
   parentColumn: trfmd_full_name
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -44,7 +44,7 @@ attributes:
   name: Gender
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: enriched_customers
+  parentTableName: loyalty_profile
   parentColumn: trfmd_gender
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -55,7 +55,7 @@ attributes:
   name: Country
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: enriched_customers
+  parentTableName: loyalty_profile
   parentColumn: country
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -66,18 +66,18 @@ attributes:
   name: Loyalty Status
   type: number
   parentDatabaseName: gld_retail
-  parentTableName: enriched_customers
-  parentColumn: loyalty_status
+  parentTableName: loyalty_profile
+  parentColumn: membership_status
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
-  matrixColumnName: loyalty_status
+  matrixColumnName: membership_status
   groupingName: Loyalty
 - audienceId: null
   id: null
-  name: Email
+  name: Primary Email
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: parent_table
+  parentTableName: profile_identifiers
   parentColumn: email
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -85,10 +85,10 @@ attributes:
   groupingName: Identity
 - audienceId: null
   id: null
-  name: Phone Number
+  name: Primary Phone Number
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: parent_table
+  parentTableName: profile_identifiers
   parentColumn: phone_number
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -99,7 +99,7 @@ attributes:
   name: Average Order Value
   type: number
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: transactions_drvd_attr
   parentColumn: aov
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -110,7 +110,7 @@ attributes:
   name: Last Purchase Date
   type: timestamp
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: transactions_drvd_attr
   parentColumn: last_purchase_date_unix
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -121,7 +121,7 @@ attributes:
   name: Web Visits Last 7 Days
   type: number
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: pageviews_drvd_attr
   parentColumn: web_visits_last_7days
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -132,7 +132,7 @@ attributes:
   name: Purchases in Last 30 Days
   type: number
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: transactions_drvd_attr
   parentColumn: purchases_last_30days
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -143,7 +143,7 @@ attributes:
   name: Lifetime Value
   type: number
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: transactions_drvd_attr
   parentColumn: ltv
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -154,18 +154,18 @@ attributes:
   name: Last Store Visit
   type: timestamp
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
-  parentColumn: last_store_visit_unix
+  parentTableName: transactions_drvd_attr
+  parentColumn: last_instore_purchase_date_unix
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
-  matrixColumnName: last_store_visit_unix
+  matrixColumnName: last_instore_purchase_date_unix
   groupingName: Engagement
 - audienceId: null
   id: null
   name: Last Email Date
   type: timestamp
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: email_activity_drvd_attr
   parentColumn: last_email_date_unix
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -176,29 +176,29 @@ attributes:
   name: Email Hardbounce
   type: number
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: email_activity_drvd_attr
   parentColumn: email_hardbounce
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixColumnName: email_hardbounce
   groupingName: Engagement
-- audienceId: null
-  id: null
-  name: Email SoftBounce Greater Than 5
-  type: string
-  parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
-  parentColumn: email_softbounce_gt5
-  parentKey: retail_unification_id
-  foreignKey: retail_unification_id
-  matrixColumnName: email_softbounce_gt5
-  groupingName: Engagement
+# - audienceId: null
+#   id: null
+#   name: Email SoftBounce Greater Than 5
+#   type: string
+#   parentDatabaseName: gld_retail
+#   parentTableName: email_activity_drvd_attr
+#   parentColumn: email_softbounce_gt5
+#   parentKey: retail_unification_id
+#   foreignKey: retail_unification_id
+#   matrixColumnName: email_softbounce_gt5
+  # groupingName: Engagement
 - audienceId: null
   id: null
   name: Preferred Season
   type: string
   parentDatabaseName: gld_retail
-  parentTableName: derived_attributes
+  parentTableName: transactions_drvd_attr
   parentColumn: preferred_season
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
@@ -209,11 +209,11 @@ behaviors:
   id: null
   name: Email Activity
   parentDatabaseName: gld_retail
-  parentTableName: enriched_email_activity
+  parentTableName: email_activity
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixDatabaseName: cdp_audience_670285
-  matrixTableName: behavior_enriched_email_activity
+  matrixTableName: behavior_email_activity
   allColumns: false
   defaultTimeFilterEnabled: false
   isRealtime: false
@@ -234,11 +234,11 @@ behaviors:
   id: null
   name: Online Transactions
   parentDatabaseName: gld_retail
-  parentTableName: enriched_order_online_transactions
+  parentTableName: order_digital_transactions
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixDatabaseName: cdp_audience_670285
-  matrixTableName: behavior_enriched_order_online_transactions
+  matrixTableName: behavior_order_digital_transactions
   allColumns: false
   defaultTimeFilterEnabled: false
   isRealtime: false
@@ -255,10 +255,10 @@ behaviors:
     type: string
     parentColumn: trfmd_season
     matrixColumnName: trfmd_season
-  - name: Promo
+  - name: Promo Code
     type: number
-    parentColumn: promo_flag
-    matrixColumnName: promo_flag
+    parentColumn: promo_code
+    matrixColumnName: promo_code
   - name: Markdown
     type: number
     parentColumn: markdown_flag
@@ -275,19 +275,15 @@ behaviors:
     type: timestamp
     parentColumn: trfmd_order_datetime_unix
     matrixColumnName: trfmd_order_datetime_unix
-  - name: Projected Delivery Date
-    type: timestamp
-    parentColumn: trfmd_projected_delivery_date_unix
-    matrixColumnName: trfmd_projected_delivery_date_unix
 - audienceId: null
   id: null
   name: Offline Transactions
   parentDatabaseName: gld_retail
-  parentTableName: enriched_order_offline_transactions
+  parentTableName: order_offline_transactions
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixDatabaseName: cdp_audience_670285
-  matrixTableName: behavior_enriched_order_offline_transactions
+  matrixTableName: behavior_order_offline_transactions
   allColumns: false
   defaultTimeFilterEnabled: false
   isRealtime: false
@@ -332,11 +328,11 @@ behaviors:
   id: null
   name: All Transaction Details
   parentDatabaseName: gld_retail
-  parentTableName: enriched_order_details
+  parentTableName: order_details
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixDatabaseName: cdp_audience_670285
-  matrixTableName: behavior_enriched_order_details
+  matrixTableName: behavior_order_details
   allColumns: false
   defaultTimeFilterEnabled: false
   isRealtime: false
@@ -349,10 +345,6 @@ behaviors:
     type: string
     parentColumn: trfmd_order_transaction_type
     matrixColumnName: trfmd_order_transaction_type
-  - name: Product Color
-    type: string
-    parentColumn: trfmd_product_color
-    matrixColumnName: trfmd_product_color
   - name: Product Department
     type: string
     parentColumn: trfmd_product_department
@@ -385,11 +377,11 @@ behaviors:
   id: null
   name: Pageviews
   parentDatabaseName: gld_retail
-  parentTableName: enriched_pageviews
+  parentTableName: pageviews
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixDatabaseName: cdp_audience_670285
-  matrixTableName: behavior_enriched_pageviews
+  matrixTableName: behavior_pageviews
   allColumns: false
   defaultTimeFilterEnabled: false
   isRealtime: false
@@ -458,11 +450,11 @@ behaviors:
   id: null
   name: Consent
   parentDatabaseName: gld_retail
-  parentTableName: gld_consents
+  parentTableName: consents
   parentKey: retail_unification_id
   foreignKey: retail_unification_id
   matrixDatabaseName: cdp_audience_670285
-  matrixTableName: behavior_gld_consents
+  matrixTableName: behavior_consents
   allColumns: false
   defaultTimeFilterEnabled: false
   isRealtime: false
