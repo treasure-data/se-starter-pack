@@ -82,7 +82,7 @@ echo -e "===== dir_regex $dir_regex"
 for proj_dir in $changed_dirs; do
   echo -e "===== proj_dir $proj_dir"
   if [[ $proj_dir =~ $dir_regex ]]; then
-    echo -e "===== proj_dir $proj_dir dir_regex $dir_regex "
+    echo -e "===== proj_dir $proj_dir dir_regex $dir_regex input_name $INPUT_PROJ_NAME "
     create_tarball $proj_dir
     push_workflow_td $INPUT_PROJ_NAME $proj_dir
   fi
