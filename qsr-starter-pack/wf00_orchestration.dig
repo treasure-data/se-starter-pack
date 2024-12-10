@@ -81,11 +81,11 @@ _export:
       workflow_to_run: wf08_create_refresh_master_segment
     call>: wf01_run_workflow_with_logging.dig
 
-+create_segment:
-  _export:
-    step_name: create_segment
-    workflow_to_run: wf09_create_segment
-  call>: wf01_run_workflow_with_logging.dig
+# +create_segment:
+#   _export:
+#     step_name: create_segment
+#     workflow_to_run: wf09_create_segment
+#   call>: wf01_run_workflow_with_logging.dig
 
 # Send mail success
 +send_success_alert:
