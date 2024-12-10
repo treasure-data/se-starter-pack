@@ -32,6 +32,7 @@ runs:
       shell: bash
       env:
         INPUT_PROJ_DIRS: ${{ inputs.proj_dirs }}
+        INPUT_PROJ_NAME: ${{ inputs.project_name }}
         INPUT_FBRANCH: ${{ inputs.fbranch }}
         INPUT_PREV_SHA: ${{ inputs.prev_build_sha }}
         INPUT_CURR_SHA: ${{ inputs.curr_build_sha }}
