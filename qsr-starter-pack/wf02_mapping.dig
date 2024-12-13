@@ -10,6 +10,7 @@ _export:
     _do: 
         +map: 
             td>: mapping/queries/map.sql 
+            database: ${src}_${sub}
 # +generate_map: 
 #     _export: 
 #         schema: ${schema_change}
