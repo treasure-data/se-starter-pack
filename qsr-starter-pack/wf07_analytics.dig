@@ -8,6 +8,16 @@ _export:
   td_ddl>:
   create_databases: ["${ana}_${sub}"]
 
++set_global_params:
+  _export: 
+    wf_project_name: ${project_name}
+    unif_id: ${unification_id}
+    global_sub: ${sub}
+    api_site: ${site}
+  py>: utilities.python.set_params.main
+  docker:
+    image: "digdag/digdag-python:3.9" 
+
 +analytics:
   _parallel: true
   ### Generate Data Need for Sales Dashboard
