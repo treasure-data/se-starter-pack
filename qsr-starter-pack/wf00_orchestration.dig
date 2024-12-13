@@ -41,45 +41,45 @@ _export:
     workflow_to_run: wf02_mapping
   call>: wf01_run_workflow_with_logging.dig
 
-+validation:
-  _export:
-    step_name: validation
-    workflow_to_run: wf03_validate
-  call>: wf01_run_workflow_with_logging.dig
+# +validation:
+#   _export:
+#     step_name: validation
+#     workflow_to_run: wf03_validate
+#   call>: wf01_run_workflow_with_logging.dig
 
-+staging:
-  _export:
-    step_name: staging
-    workflow_to_run: wf04_stage
-  call>: wf01_run_workflow_with_logging.dig
+# +staging:
+#   _export:
+#     step_name: staging
+#     workflow_to_run: wf04_stage
+#   call>: wf01_run_workflow_with_logging.dig
 
-+unification:
-  _export:
-    step_name: unification
-    workflow_to_run: wf05_unify
-  call>: wf01_run_workflow_with_logging.dig
+# +unification:
+#   _export:
+#     step_name: unification
+#     workflow_to_run: wf05_unify
+#   call>: wf01_run_workflow_with_logging.dig
 
 
-+golden:
-  _export:
-    step_name: golden
-    workflow_to_run: wf06_golden
-  call>: wf01_run_workflow_with_logging.dig
+# +golden:
+#   _export:
+#     step_name: golden
+#     workflow_to_run: wf06_golden
+#   call>: wf01_run_workflow_with_logging.dig
 
-+run_master_segment_and_analytics:
-  _parallel: true
+# +run_master_segment_and_analytics:
+#   _parallel: true
 
-  +analytics:
-    _export:
-      step_name: create_master_segment
-      workflow_to_run: wf07_analytics
-    call>: wf01_run_workflow_with_logging.dig
+#   +analytics:
+#     _export:
+#       step_name: create_master_segment
+#       workflow_to_run: wf07_analytics
+#     call>: wf01_run_workflow_with_logging.dig
 
-  +create_refresh_master_segment:
-    _export:
-      step_name: create_refresh_master_segment
-      workflow_to_run: wf08_create_refresh_master_segment
-    call>: wf01_run_workflow_with_logging.dig
+#   +create_refresh_master_segment:
+#     _export:
+#       step_name: create_refresh_master_segment
+#       workflow_to_run: wf08_create_refresh_master_segment
+#     call>: wf01_run_workflow_with_logging.dig
 
 # +create_segment:
 #   _export:

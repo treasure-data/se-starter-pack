@@ -10,6 +10,8 @@ schema_change:
     columns:  
     - customer_id: cust_id
     - email: email_address
+    - amount: null 
+    - phone_number: phone_number
   # - raw_table_name: loyalty_redemptions
   #   src_table_name: loyalty_redemptions
   # - raw_table_name: loyalty_rewards
