@@ -8,7 +8,7 @@ sub: column_test
 
 ## WORKFLOW CONFIG ##
 run_all: true
-project_name: qsr-starter-pack_qa_br-qsr
+project_name: qsr-column-mapper
 
 ## INSTANCE CONFIG ## 
 site: us # us | eu 
