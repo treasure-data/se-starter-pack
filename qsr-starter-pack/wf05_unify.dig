@@ -23,3 +23,14 @@ _export:
     data: 'SELECT distinct canonical_id as ${unification_id} from ${unification_id}_lookup'
   create_table: parent_table
   database: cdp_unification_${sub}
+
+#Send Error Alert
+_error:
+  +send_error_alert:
+    for_each>:
+      email: ${email_ids}
+    _do:
+      _export:
+        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
+        receive_email: ${email}
+      call>: utilities/error.dig
