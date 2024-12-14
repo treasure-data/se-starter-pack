@@ -11,7 +11,7 @@ _export:
 
 +prepare_db:
   td_ddl>:
-  create_databases: ["va_config_${sub}", "${stg}_${sub}", "${gld}_${sub}", "${ana}_${sub}"]
+  create_databases: ["va_config_${sub}", "${src}_${sub}","${stg}_${sub}", "${gld}_${sub}", "${ana}_${sub}"]
 
 +prepare_log_table:
   database: va_config_${sub}
@@ -24,16 +24,6 @@ _export:
       td>:
       query: "delete from log_tbl where 1=1"
       database: va_config_${sub}
-
-+set_global_params:
-  _export: 
-    wf_project_name: ${project_name}
-    unif_id: ${unification_id}
-    global_sub: ${sub}
-    api_site: ${site}
-  py>: utilities.python.set_params.main
-  docker:
-    image: "digdag/digdag-python:3.9" 
 
 +mapping: 
   _export: 
@@ -58,7 +48,6 @@ _export:
     step_name: unification
     workflow_to_run: wf05_unify
   call>: wf01_run_workflow_with_logging.dig
-
 
 +golden:
   _export:
@@ -98,13 +87,13 @@ _export:
       receive_email: ${email}
     call>: utilities/success.dig
 
-#Send Error Alert
-_error:
-  +send_error_alert:
-    for_each>:
-      email: ${email_ids}
-    _do:
-      _export:
-        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
-        receive_email: ${email}
-      call>: utilities/error.dig
+# #Send Error Alert
+# _error:
+#   +send_error_alert:
+#     for_each>:
+#       email: ${email_ids}
+#     _do:
+#       _export:
+#         subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
+#         receive_email: ${email}
+#       call>: utilities/error.dig

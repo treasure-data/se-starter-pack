@@ -60,3 +60,14 @@ _export:
           require>: audience
           project_name: cdp_audience_${td.each.audience_id}
           session_time: ${moment(session_time).format()}
+
+#Send Error Alert
+_error:
+  +send_error_alert:
+    for_each>:
+      email: ${email_ids}
+    _do:
+      _export:
+        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
+        receive_email: ${email}
+      call>: utilities/error.dig

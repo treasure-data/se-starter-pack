@@ -1,24 +1,152 @@
 schema_change:
   - raw_table_name: consents
     src_table_name: consents
+    columns:
+      - id: id
+      - id_type: id_type
+      - consent_type: consent_type
+      - consent_flag: consent_flag
+      - time: time
   - raw_table_name: email_activity
     src_table_name: email_activity
+    columns:
+      - activity_date: activity_date
+      - campaign_id: campaign_id
+      - campaign_name: campaign_name
+      - email: email
+      - customer_id: customer_id
+      - activity_type: activity_type
+      - time: time  
   - raw_table_name: formfills
     src_table_name: formfills
+    columns:
+      - email: email
+      - phone_number: phone_number
+      - td_global_id: td_global_id
+      - td_client_id: td_client_id
+      - form_type: form_type
+      - time: time
   - raw_table_name: loyalty_profile
     src_table_name: loyalty_profile
-    columns:  
-    - customer_id: cust_id
-    - email: email_address
+    columns:
+      - customer_id: customer_id
+      - email: email 
+      - secondary_email: secondary_email
+      - phone_number: phone_number
+      - first_name: first_name
+      - last_name: last_name
+      - address: address
+      - country: country
+      - city: city
+      - state: state
+      - postal_code: postal_code
+      - gender: gender
+      - date_of_birth: date_of_birth
+      - membership_status: membership_status
+      - membership_tier: membership_tier
+      - net_redeemable_balance: net_redeemable_balance
+      - net_debits: net_debits
+      - membership_points_earned: membership_points_earned
+      - membership_points_balance: membership_points_balance
+      - membership_points_pending: membership_points_pending
+      - total_loyalty_purchases: total_loyalty_purchases
+      - current_membership_level_expiration: current_membership_level_expiration
+      - location_id: location_id
+      - location_address: location_address
+      - location_city: location_city
+      - created_at: created_at
+      - updated_at: updated_at
+      - time: time
   # - raw_table_name: loyalty_redemptions
   #   src_table_name: loyalty_redemptions
   # - raw_table_name: loyalty_rewards
   #   src_table_name: loyalty_rewards
-  # - raw_table_name: order_details
-  #   src_table_name: order_details
-  # - raw_table_name: order_digital_transactions
-  #   src_table_name: order_digital_transactions
-  # - raw_table_name: order_offline_transactions
-  #   src_table_name: order_offline_transactions
-  # - raw_table_name: pageviews
-  #   src_table_name: pageviews
+  - raw_table_name: order_details
+    src_table_name: order_details
+    columns:
+      - order_no: order_no
+      - order_transaction_type: order_transaction_type
+      - quantity: quantity
+      - product_id: product_id
+      - product_name: product_name
+      - product_size: product_size
+      - product_description: product_description
+      - product_department: product_department
+      - product_sub_department: product_sub_department
+      - list_price: list_price
+      - discount_offered: discount_offered
+      - tax: tax
+      - net_price: net_price
+      - order_line_no: order_line_no
+      - time: time
+  - raw_table_name: order_digital_transactions
+    src_table_name: order_digital_transactions
+    columns:
+      - customer_id: customer_id
+      - email: email
+      - phone_number: phone_number
+      - token: token
+      - order_no: order_no
+      - order_datetime: order_datetime
+      - payment_method: payment_method
+      - promo_code: promo_code
+      - markdown_flag: markdown_flag
+      - guest_checkout_flag: guest_checkout_flag
+      - location_id: location_id
+      - location_address: location_address
+      - location_city: location_city
+      - location_state: location_state
+      - location_postal_code: location_postal_code
+      - location_country: location_country
+      - order_transaction_type: order_transaction_type
+      - amount: amount
+      - discount_amount: discount_amount
+      - net_amount: net_amount
+      - time: time
+  - raw_table_name: order_offline_transactions
+    src_table_name: order_offline_transactions
+    columns:
+      - customer_id: customer_id
+      - email: email
+      - phone_number: phone_number
+      - token: token
+      - order_no: order_no
+      - order_datetime: order_datetime
+      - payment_method: payment_method
+      - promo_code: promo_code
+      - markdown_flag: markdown_flag
+      - location_id: location_id
+      - location_address: location_address
+      - location_city: location_city
+      - location_state: location_state
+      - location_postal_code: location_postal_code
+      - location_country: location_country
+      - amount: amount
+      - discount_amount: discount_amount
+      - net_amount: net_amount
+      - time: time
+  - raw_table_name: pageviews
+    src_table_name: pageviews
+    columns:
+      - td_url: td_url
+      - td_path: td_path
+      - td_title: td_title
+      - td_description: td_description
+      - td_host: td_host
+      - td_language: td_language
+      - td_charset: td_charset
+      - td_os: td_os
+      - td_os_version: td_os_version
+      - td_user_agent: td_user_agent
+      - td_platform: td_platform
+      - td_screen: td_screen
+      - td_viewport: td_viewport
+      - td_color: td_color
+      - td_version: td_version
+      - td_global_id: td_global_id
+      - td_client_id: td_client_id
+      - td_ip: td_ip
+      - td_referrer: td_referrer
+      - td_browser: td_browser
+      - td_browser_version: td_browser_version
+      - time: time    
