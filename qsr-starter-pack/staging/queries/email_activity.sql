@@ -1,6 +1,6 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_${sub}.${tbl} as 
+create table ${stg}_${sub}.${tbl} as
 
 SELECT
 *,
@@ -24,6 +24,7 @@ end   AS  "trfmd_campaign_name",
 case
   when nullif(lower(ltrim(rtrim("email"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("email"))), '') is null then null
+  when nullif(lower(trim("email")), '') in (select lower(trim(invalid_email)) from ${stg}_${sub}.invalid_emails ) then null
   else lower(ltrim(rtrim(regexp_replace("email", '[^a-zA-Z0-9.@_+-]', ''))))
 end   AS  "trfmd_email"
 

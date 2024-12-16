@@ -1,6 +1,6 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_${sub}.${tbl} as 
+create table ${stg}_${sub}.${tbl} as
 
 SELECT
 *,
@@ -19,6 +19,7 @@ cast(COALESCE(regexp_like( "email", '^(?=.{1,256})(?=.{1,64}@.{1,255}$)[A-Za-z0-
 case
   when nullif(lower(ltrim(rtrim("email"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("email"))), '') is null then null
+  when nullif(lower(trim("email")), '') in (select lower(trim(invalid_email)) from ${stg}_${sub}.invalid_emails ) then null
   else lower(ltrim(rtrim(regexp_replace("email", '[^a-zA-Z0-9.@_+-]', ''))))
 end   AS  "trfmd_email",
 --
@@ -58,8 +59,8 @@ case
   when nullif(lower(ltrim(rtrim("guest_checkout_flag"))), '') is null then null
   when nullif(lower(ltrim(rtrim("guest_checkout_flag"))), '') in ('0', 'false') then 'False'
   when nullif(lower(ltrim(rtrim("guest_checkout_flag"))), '') in ('1', 'true') then 'True'
-end   AS  "trfmd_guest_checkout_flag", 
--- 
+end   AS  "trfmd_guest_checkout_flag",
+--
 case
   when nullif(lower(ltrim(rtrim("location_address"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("location_address"))), '') is null then null

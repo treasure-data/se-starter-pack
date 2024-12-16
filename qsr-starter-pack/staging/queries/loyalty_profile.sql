@@ -1,6 +1,6 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_${sub}.${tbl} as 
+create table ${stg}_${sub}.${tbl} as
 
 SELECT
 *,
@@ -101,6 +101,7 @@ date_diff(
 case
   when nullif(lower(ltrim(rtrim("email"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("email"))), '') is null then null
+  when nullif(lower(trim("email")), '') in (select lower(trim(invalid_email)) from ${stg}_${sub}.invalid_emails ) then null
   else lower(ltrim(rtrim(regexp_replace("email", '[^a-zA-Z0-9.@_+-]', ''))))
 end   AS  "trfmd_email",
 --
@@ -108,14 +109,14 @@ case
   when nullif(lower(ltrim(rtrim("secondary_email"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("secondary_email"))), '') is null then null
   else lower(ltrim(rtrim(regexp_replace("secondary_email", '[^a-zA-Z0-9.@_+-]', ''))))
-end   AS  "trfmd_secondary_email", 
+end   AS  "trfmd_secondary_email",
 --
 case
   when nullif(lower(ltrim(rtrim("location_address"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("location_address"))), '') is null then null
   else array_join((transform((split(lower(trim("location_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_location_address",
--- 
+--
 case
   when nullif(lower(ltrim(rtrim("location_city"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("location_city"))), '') is null then null
