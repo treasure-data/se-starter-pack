@@ -1,8 +1,8 @@
 drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_{sub}.${tbl} (invalid_email varchar);
+create table ${stg}_${sub}.${tbl} (invalid_email varchar);
 
-INSERT INTO ${stg}_{sub}.${tbl}
+INSERT INTO ${stg}_${sub}.${tbl}
     (invalid_email)
 VALUES
     ('NOEMAIL@GMAIL.COM'),
