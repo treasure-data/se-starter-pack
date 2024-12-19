@@ -2,6 +2,10 @@ _export:
   !include : 'config/src_params.yml'
   td:
     database: ${src}_${sub}
++bad_emails:
+    _export:
+      tbl: invalid_emails
+    td>: staging/queries/${tbl}.sql
 +transformed:
   for_each>:
     tbl: ${tables}

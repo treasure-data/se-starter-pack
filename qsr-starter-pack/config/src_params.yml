@@ -3,40 +3,40 @@ raw: raw
 src: src
 stg: stg
 gld: gldn
-ana: analytics 
-sub: column_test
+ana: analytics
+sub: qsr_test
 include_all_raw_cols: true
 ## WORKFLOW CONFIG ##
 run_all: true
-project_name: qsr-column-mapper
+project_name: raw_qsr_test
 
-## INSTANCE CONFIG ## 
-site: us # us | eu 
+## INSTANCE CONFIG ##
+site: us # us | eu
 
-## STAGING CONFIG ## 
-## DO NOT CHANGE ## 
-tables: 
+## STAGING CONFIG ##
+## DO NOT CHANGE ##
+tables:
   - consents
   - email_activity
   - formfills
   - loyalty_profile
-  - order_details 
-  - order_digital_transactions 
-  - order_offline_transactions 
+  - order_details
+  - order_digital_transactions
+  - order_offline_transactions
   - pageviews
 
-## UNIFICATION CONFIG ## 
+## UNIFICATION CONFIG ##
 unification_id : qsr_unification_id
 
-## ANALYTICS CONFIG ## 
+## ANALYTICS CONFIG ##
 model_config_table: 'analytics_datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
 create_dashboard: 'yes'
 dashboards: ['sales_analytics', 'idu_dashboard']
 dash_users_list: ['global-presales-demo+dev@treasure-data.com']
 
-## PARENT SEGMENT/SEGMENT CONFIG ## 
+## PARENT SEGMENT/SEGMENT CONFIG ##
 segment:
-  # create if first time and no changes need each run 
+  # create if first time and no changes need each run
   # update if changes to parent segment are made in config
   run_type: create
   tables:

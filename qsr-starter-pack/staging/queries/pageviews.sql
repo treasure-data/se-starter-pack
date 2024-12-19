@@ -1,6 +1,6 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_${sub}.${tbl} as 
+create table ${stg}_${sub}.${tbl} as
 
 SELECT
 *,
