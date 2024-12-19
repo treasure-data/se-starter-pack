@@ -29,20 +29,21 @@ function push_workflow_td() {
     project_rev=$(echo $INPUT_DPLY_VERSION | sed "s/\./_/g")
   fi
 
-  #Determine the project name
-  if [[ $INPUT_FBRANCH == '' ]]; then
+project_base=${1:-$2}
+
+if [[ $INPUT_FBRANCH == '' ]]; then
     if [[ $INPUT_ENV_LABEL == '' ]]; then
-      td_project_name="$1" #project
+        td_project_name="$project_base" #project
     else
-      td_project_name="$1"_"$INPUT_ENV_LABEL" #project_qa
+        td_project_name="${project_base}_${INPUT_ENV_LABEL}" #project_qa
     fi
-  else
+else
     if [[ $INPUT_ENV_LABEL == '' ]]; then
-      td_project_name="$1"_"$INPUT_FBRANCH" #project_f123
+        td_project_name="${project_base}_${INPUT_FBRANCH}" #project_f123
     else
-      td_project_name="$1"_"$INPUT_ENV_LABEL"_"$INPUT_FBRANCH" #project_qa_f123
+        td_project_name="${project_base}_${INPUT_ENV_LABEL}_${INPUT_FBRANCH}" #project_qa_f123
     fi
-  fi
+fi
 
   #how to make a put request is documented here:
   #https://td-internal.redoc.ly/pages/td-digdag-sever_v1-private/operation/putProject/
