@@ -73,7 +73,7 @@ tables:
     table: consents_email
     key_columns:
       - {column: trfmd_email, key: email}
-      
+
   - database: ${stg}_${sub}
     table: consents_phone
     key_columns:
@@ -97,7 +97,7 @@ canonical_ids:
 #####################################################
 
 master_tables:
-  - name: profile_identifiers
+  - name: primary_profile_identifiers
     canonical_id: ${unification_id}
     attributes:
       - name: email
