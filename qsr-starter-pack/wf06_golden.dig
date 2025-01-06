@@ -76,11 +76,18 @@ _export:
         database: ${gld}_${sub}
         query: |
           select distinct '${td.each.key_name}' as id_type, trfmd_${td.each.key_name} as id from cdp_unification_${sub}.${td.each.table_name}
-        insert_into: all_profile_identifiers
+        insert_into: all_profile_identifiers_tmp
+
+  +create_table:
+    td>:
+    database: ${gld}_${sub}
+    query: |
+      select distinct id_type, id from all_profile_identifiers_tmp where id is not null
+    create_table: all_profile_identifiers
 
   +drop:
     td_ddl>:
-    drop_tables: ['all_profile_identifiers_metadata_tmp']
+    drop_tables: ['all_profile_identifiers_metadata_tmp', 'all_profile_identifiers_tmp']
     database: ${gld}_${sub}
 
 #Send Error Alert
