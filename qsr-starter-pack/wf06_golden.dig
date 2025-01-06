@@ -55,40 +55,9 @@ _export:
       database: ${gld}_${sub}
 
 +all_profile_identifiers:
-  +get_tables:
-    td>: golden/queries/all_profile_identifiers.sql
-    database: ${gld}_${sub}
-    create_table: ${gld}_${sub}.all_profile_identifiers_metadata_tmp
-
-  +create_tables:
-    td_ddl>:
-    create_tables: ['all_profile_identifiers']
-    database: ${gld}_${sub}
-
-  +loop:
-    td_for_each>:
-    database: ${gld}_${sub}
-    query: |
-      select key_name, concat('enriched_', table_name) as table_name from ${gld}_${sub}.all_profile_identifiers_metadata_tmp
-    _parallel: true
-    _do:
-        td>:
-        database: ${gld}_${sub}
-        query: |
-          select distinct '${td.each.key_name}' as id_type, trfmd_${td.each.key_name} as id from cdp_unification_${sub}.${td.each.table_name}
-        insert_into: all_profile_identifiers_tmp
-
-  +create_table:
-    td>:
-    database: ${gld}_${sub}
-    query: |
-      select distinct id_type, id from all_profile_identifiers_tmp where id is not null
-    create_table: all_profile_identifiers
-
-  +drop:
-    td_ddl>:
-    drop_tables: ['all_profile_identifiers_metadata_tmp', 'all_profile_identifiers_tmp']
-    database: ${gld}_${sub}
+  td>: golden/queries/all_profile_identifiers.sql
+  database: ${gld}_${sub}
+  create_table: all_profile_identifiers
 
 #Send Error Alert
 _error:

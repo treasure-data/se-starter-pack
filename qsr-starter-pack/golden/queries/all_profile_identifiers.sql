@@ -1,20 +1,24 @@
-with keys as (select key_type, key_name
-from ${src_database}.${unification_id}_keys
-where key_name in ('email', 'phone_number')
+with email as  (
+    SELECT DISTINCT id AS id,
+    'email' as id_type,
+    canonical_id_first_seen_at AS timestamp
+    FROM ${src_database}.${unification_id}_lookup
+    WHERE id_key_type =
+        (SELECT key_type
+         FROM ${src_database}.${unification_id}_keys
+         WHERE key_name ='email')
 ),
-table_ids as (select key_name, id_key_type, id_source_table_ids
-from ${src_database}.${unification_id}_lookup a join keys b
-on (a.id_key_type = b.key_type)
-),
-table_nm as (SELECT distinct
-    key_name,
-    -- id_key_type, id_source_table_ids,
-    value AS table_id
-FROM table_ids
-CROSS JOIN UNNEST(id_source_table_ids) AS t(value)
+phone as (
+    SELECT DISTINCT id AS id,
+    'phone_number' as id_type,
+    canonical_id_first_seen_at AS timestamp
+    FROM ${src_database}.${unification_id}_lookup
+    WHERE id_key_type =
+        (SELECT KEY_TYPE
+         FROM ${src_database}.${unification_id}_keys
+         WHERE key_name ='phone_number')
 )
-select key_name, table_name
-from table_nm a join ${src_database}.${unification_id}_tables b
-on (a.table_id = b.table_id)
-order by key_name
+select * from email
+union all
+select * from phone
 ;
