@@ -1,1 +1,0 @@
-select *, ${tbl.mappings} from ${tbl.raw_table_name}
