@@ -4,43 +4,25 @@ _export:
   !include : 'config/src_params.yml'
   !include : 'config/schema_map.yml'
 
-+loop_through_tables: 
-    for_each>:
-        tbl: ${schema_change}
-    _parallel: true
++generate_map: 
+    _export: 
+        schema: ${schema_change}
+    py>: mapping.python.map.main
+    docker:
+        image: "digdag/digdag-python:3.10.1"
++map_all_tables:
+    for_each>: 
+        tbl: ${schema_map}
     _do: 
-      +check_if_table: 
-        if>: ${tbl.raw_table_name != 'not exists'}
-        _do: 
-          +map: 
-              td>: mapping/queries/map.sql 
-              database: ${src}_${sub}
-              store_last_results: true
-
-          +create_tbl: 
-              td>: 
-                  data: ${td.last_results.qry}
-              database: ${raw}_${sub}
-              create_table: ${src}_${sub}.${tbl.src_table_name}
-        _else_do: 
-          +map:
-            td>: validation/queries/schema/${tbl.src_table_name}.sql
-            database: ${src}_${sub}
-            store_last_results: true
-
-          +rename: 
-            td_ddl>:
-            rename_tables: [{from: "${tbl.src_table_name}_tmp", to: "${tbl.src_table_name}"}]
-            database: ${src}_${sub}
-              
-
-#Send Error Alert
-_error:
-  +send_error_alert:
-    for_each>:
-      email: ${email_ids}
-    _do:
-      _export:
-        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
-        receive_email: ${email}
-      call>: utilities/error.dig
+        +check_if_columns: 
+            if>: ${tbl.mappings.length > 0}
+            _do: 
+                +map: 
+                    td>: mapping/queries/map_table.sql
+                    database: ${raw}_${sub}
+                    create_table: ${src}_${sub}.${tbl.src_table_name}
+            _else_do: 
+                +passthrough: 
+                    td>: mapping/queries/pass_table.sql
+                    database: ${raw}_${sub}
+                    create_table: ${src}_${sub}.${tbl.src_table_name}
