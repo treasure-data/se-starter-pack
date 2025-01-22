@@ -9,16 +9,30 @@ _export:
         tbl: ${schema_change}
     _parallel: true
     _do: 
-        +map: 
-            td>: mapping/queries/map.sql 
+      +check_if_table: 
+        if>: ${tbl.raw_table_name != 'not exists'}
+        _do: 
+          +map: 
+              td>: mapping/queries/map.sql 
+              database: ${src}_${sub}
+              store_last_results: true
+
+          +create_tbl: 
+              td>: 
+                  data: ${td.last_results.qry}
+              database: ${raw}_${sub}
+              create_table: ${src}_${sub}.${tbl.src_table_name}
+        _else_do: 
+          +map:
+            td>: validation/queries/schema/${tbl.src_table_name}.sql
             database: ${src}_${sub}
             store_last_results: true
 
-        +create_tbl: 
-            td>: 
-                data: ${td.last_results.qry}
-            database: ${raw}_${sub}
-            create_table: ${src}_${sub}.${tbl.raw_table_name}
+          +rename: 
+            td_ddl>:
+            rename_tables: [{from: "${tbl.src_table_name}_tmp", to: "${tbl.src_table_name}"}]
+            database: ${src}_${sub}
+              
 
 #Send Error Alert
 _error:
