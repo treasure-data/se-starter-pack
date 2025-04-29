@@ -1,3 +1,7 @@
+## [1.1.27](https://github.com/treasure-data/se-starter-pack/compare/1.1.26...1.1.27) (2025-04-29)
+
+
+
 ## [1.1.26](https://github.com/treasure-data/se-starter-pack/compare/1.1.25...1.1.26) (2025-01-22)
 
 
@@ -11,10 +15,6 @@
 
 
 ## [1.1.23](https://github.com/treasure-data/se-starter-pack/compare/1.1.22...1.1.23) (2024-12-19)
-
-
-
-## [1.1.22](https://github.com/treasure-data/se-starter-pack/compare/1.1.21...1.1.22) (2024-12-19)
 
 
 
