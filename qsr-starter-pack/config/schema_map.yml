@@ -2,198 +2,495 @@ schema_change:
   - raw_table_name: consents
     src_table_name: consents
     columns:
-      - src: id
-        raw: id
+      - raw: id
+        src: id
         type: varchar
-      - src: id_type
-        raw: id_type
+      - raw: id_type
+        src: id_type
         type: varchar
-      - src: consent_type
-        raw: consent_type
+      - raw: consent_type
+        src: consent_type
         type: varchar
-      - src: consent_flag
-        raw: consent_flag
+      - raw: consent_flag
+        src: consent_flag
         type: varchar
-      - src: time
-        raw: time
+      - raw: time
+        src: time
         type: bigint
   - raw_table_name: 'not exists'
     src_table_name: email_activity
     columns:
-      - src: activity_date
-        raw: activity_date
+      - raw: activity_date
+        src: activity_date
         type: varchar
-      - src: campaign_id
-        raw: campaign_id
+      - raw: campaign_id
+        src: campaign_id
         type: varchar
-      - src: campaign_name
-        raw: campaign_name
+      - raw: campaign_name
+        src: campaign_name
         type: varchar
-      - src: email
-        raw: email
+      - raw: email
+        src: email
         type: varchar
-      - src: customer_id
-        raw: customer_id
+      - raw: customer_id
+        src: customer_id
         type: varchar
-      - src: activity_type
-        raw: activity_type
+      - raw: activity_type
+        src: activity_type
         type: varchar
-      - src: time
-        raw: time
+      - raw: time
+        src: time
         type: bigint
   - raw_table_name: 'not exists'
     src_table_name: formfills
     columns:
-      - src: email
-        raw: email
+      - raw: email
+        src: email
         type: varchar
-      - src: phone_number
-        raw: phone_number
+      - raw: phone_number
+        src: phone_number
         type: varchar
-      - src: td_global_id
-        raw: td_global_id
+      - raw: td_global_id
+        src: td_global_id
         type: varchar
-      - src: td_client_id
-        raw: td_client_id
+      - raw: td_client_id
+        src: td_client_id
         type: varchar
-      - src: form_type
-        raw: form_type
+      - raw: form_type
+        src: form_type
         type: varchar
-      - src: time
-        raw: time
+      - raw: time
+        src: time
         type: bigint   
   - raw_table_name: loyalty_profile
     src_table_name: loyalty_profile
     columns:
-      - src: customer_id
-        raw: crmid
+      - raw: crmid
+        src: customer_id
         type: varchar
-      - src: email
-        raw: emailaddress
+      - raw: emailaddress
+        src: email
         type: varchar
-      - src: secondary_email
-        raw: null
+      - raw: null
+        src: secondary_email
         type: varchar
-      - src: phone_number
-        raw: phonenumber
+      - raw: phonenumber
+        src: phone_number
         type: varchar
-      - src: first_name
-        raw: firstname
+      - raw: firstname
+        src: first_name
         type: varchar
-      - src: last_name
-        raw: lastname
+      - raw: lastname
+        src: last_name
         type: varchar
-      - src: address
-        raw: null
+      - raw: null
+        src: address
         type: varchar
-      - src: country
-        raw: null
+      - raw: null
+        src: country
         type: varchar
-      - src: city
-        raw: null
+      - raw: null
+        src: city
         type:  varchar
-      - src: state
-        raw: null
+      - raw: null
+        src: state
         type: varchar
-      - src: postal_code
-        raw: null
+      - raw: null
+        src: postal_code
         type: varchar
-      - src: gender
-        raw: null
+      - raw: null
+        src: gender
         type: varchar
-      - src: date_of_birth
-        raw: birthdate
+      - raw: birthdate
+        src: date_of_birth
         type: varchar
-      - src: membership_status
-        raw: null
+      - raw: null
+        src: membership_status
         type: varchar
-      - src: membership_tier
-        raw: null
+      - raw: null
+        src: membership_tier
         type: varchar
-      - src: net_redeemable_balance
-        raw: null
+      - raw: null
+        src: net_redeemable_balance
         type: double
-      - src: net_debits
-        raw: null
+      - raw: null
+        src: net_debits
         type: double
-      - src: membership_points_earned
-        raw: null
+      - raw: null
+        src: membership_points_earned
         type: bigint
-      - src: membership_points_balance
-        raw: null
+      - raw: null
+        src: membership_points_balance
         type: bigint
-      - src: membership_points_pending
-        raw: null
+      - raw: null
+        src: membership_points_pending
         type: bigint
-      - src: total_loyalty_purchases
-        raw: null
+      - raw: null
+        src: total_loyalty_purchases
         type: bigint
-      - src: current_membership_level_expiration
-        raw: null
+      - raw: null
+        src: current_membership_level_expiration
         type: varchar
-      - src: location_id
-        raw: null
+      - raw: null
+        src: location_id
         type: varchar
-      - src: location_address
-        raw: null
+      - raw: null
+        src: location_address
         type: varchar
-      - src: location_city
-        raw: null
+      - raw: null
+        src: location_city
         type: varchar
-      - src: created_at
-        raw: null
+      - raw: null
+        src: created_at
         type: varchar
-      - src: updated_at
-        raw: null
+      - raw: null
+        src: updated_at
         type: varchar
-      - src: time
-        raw: time
+      - raw: time
+        src: time
         type: bigint
   - raw_table_name: order_details
     src_table_name: order_details
     columns:
-      - src: order_no
-        raw: transactionid
+      - raw: transactionid
+        src: order_no
         type: varchar
-      - src: order_transaction_type
-        raw: paytypename
+      - raw: paytypename
+        src: order_transaction_type
         type: varchar
-      - src: quantity
-        raw: quantity 
+      - raw: quantity
+        src: quantity
         type: bigint
-      - src: product_id
-        raw: sku
+      - raw: sku
+        src: product_id
         type: varchar
-      - src: product_name
-        raw: itemdescription
+      - raw: itemdescription
+        src: product_name
         type: varchar
-      - src: product_size
-        raw: null
+      - raw: null
+        src: product_size
         type: varchar
-      - src: product_description
-        raw: itemdescription
+      - raw: itemdescription
+        src: product_description
         type: varchar
-      - src: product_department
-        raw: storeproductdepartmentname
+      - raw: storeproductdepartmentname
+        src: product_department
         type: varchar
-      - src: product_sub_department
-        raw: storeproductsubdepartmentname
+      - raw: storeproductsubdepartmentname
+        src: product_sub_department
         type: varchar
-      - src: list_price
-        raw: null
+      - raw: null
+        src: list_price
         type: double
-      - src: discount_offered
-        raw: null
+      - raw: null
+        src: discount_offered
         type: double
-      - src: tax
-        raw: null
+      - raw: null
+        src: tax
         type: double
-      - src: net_price
-        raw: amount
+      - raw: amount
+        src: net_price
         type: double
-      - src: order_line_no
-        raw: lineitemid
+      - raw: lineitemid
+        src: order_line_no
         type: bigint
-      - src: time
-        raw: time
+      - raw: time
+        src: time
+        type: bigint
+  - raw_table_name: pageviews
+    src_table_name: pageviews
+    columns:
+      - raw: td_url
+        src: td_url
+        type: varchar
+      - raw: td_path
+        src: td_path
+        type: varchar
+      - raw: td_title
+        src: td_title
+        type: varchar
+      - raw: td_description
+        src: td_description
+        type: varchar
+      - raw: td_host
+        src: td_host
+        type: varchar
+      - raw: td_language
+        src: td_language
+        type: varchar
+      - raw: td_charset
+        src: td_charset
+        type: varchar
+      - raw: td_os
+        src: td_os
+        type: varchar
+      - raw: td_os_version
+        src: td_os_version
+        type: varchar
+      - raw: td_user_agent
+        src: td_user_agent
+        type: varchar
+      - raw: td_platform
+        src: td_platform
+        type: varchar
+      - raw: td_screen
+        src: td_screen
+        type: varchar
+      - raw: td_viewport
+        src: td_viewport
+        type: varchar
+      - raw: td_color
+        src: td_color
+        type: varchar
+      - raw: td_version
+        src: td_version
+        type: varchar
+      - raw: td_global_id
+        src: td_global_id
+        type: varchar
+      - raw: td_client_id
+        src: td_client_id
+        type: varchar
+      - raw: td_ip
+        src: td_ip
+        type: varchar
+      - raw: td_referrer
+        src: td_referrer
+        type: varchar
+      - raw: td_browser
+        src: td_browser
+        type: varchar
+      - raw: td_browser_version
+        src: td_browser_version
+        type: varchar
+      - raw: time
+        src: time
+        type: bigint
+  - raw_table_name: app_analytics
+    src_table_name: app_analytics
+    columns:
+      - raw: app_name
+        src: app_name
+        type: bigint
+      - raw: analytics_id
+        src: analytics_id
+        type: bigint
+      - raw: user_id
+        src: user_id
+        type: varchar
+      - raw: device_id
+        src: device_id
+        type: varchar
+      - raw: event_time
+        src: event_time
+        type: varchar
+      - raw: event_id
+        src: event_id
+        type: bigint
+      - raw: session_id
+        src: session_id
+        type: bigint
+      - raw: event_type
+        src: event_type
+        type: varchar
+      - raw: version_name
+        src: version_name
+        type: varchar
+      - raw: adid
+        src: adid
+        type: varchar
+      - raw: groups
+        src: groups
+        type: varchar
+      - raw: idfa
+        src: idfa
+        type: varchar
+      - raw: platform
+        src: platform
+        type: varchar
+      - raw: os_name
+        src: os_name
+        type: varchar
+      - raw: os_version
+        src: os_version
+        type: varchar
+      - raw: device_brand
+        src: device_brand
+        type: varchar
+      - raw: device_manufacturer
+        src: device_manufacturer
+        type: varchar
+      - raw: device_model
+        src: device_model
+        type: varchar
+      - raw: device_carrier
+        src: device_carrier
+        type: varchar
+      - raw: device_type
+        src: device_type
+        type: varchar
+      - raw: device_family
+        src: device_family
+        type: varchar
+      - raw: location_lat
+        src: location_lat
+        type: double
+      - raw: location_lng
+        src: location_lng
+        type: double
+      - raw: country
+        src: country
+        type: varchar
+      - raw: language
+        src: language
+        type: varchar
+      - raw: city
+        src: city
+        type: varchar
+      - raw: region
+        src: region
+        type: varchar
+      - raw: dma
+        src: dma
+        type: varchar
+      - raw: ip_address
+        src: ip_address
+        type: varchar
+      - raw: event_properties
+        src: event_properties
+        type: varchar
+      - raw: user_properties
+        src: user_properties
+        type: varchar
+      - raw: uuid
+        src: uuid
+        type: varchar
+      - raw: time
+        src: time
+        type: bigint
+  - raw_table_name: order_offline_transactions
+    src_table_name: order_offline_transactions
+    columns:
+      - raw: customer_id
+        src: customer_id
+        type: varchar
+      - raw: email
+        src: email
+        type: varchar
+      - raw: phone_number
+        src: phone_number
+        type: varchar
+      - raw: token
+        src: token
+        type: varchar
+      - raw: order_no
+        src: order_no
+        type: varchar
+      - raw: order_datetime
+        src: order_datetime
+        type: varchar
+      - raw: payment_method
+        src: payment_method
+        type: varchar
+      - raw: promo_code
+        src: promo_code
+        type: varchar
+      - raw: markdown_flag
+        src: markdown_flag
+        type: varchar
+      - raw: location_id
+        src: location_id
+        type: varchar
+      - raw: location_address
+        src: location_address
+        type: varchar
+      - raw: location_city
+        src: location_city
+        type: varchar
+      - raw: location_state
+        src: location_state
+        type: varchar
+      - raw: location_postal_code
+        src: location_postal_code
+        type: varchar
+      - raw: location_country
+        src: location_country
+        type: varchar
+      - raw: amount
+        src: amount
+        type: double
+      - raw: discount_amount
+        src: discount_amount
+        type: double
+      - raw: net_amount
+        src: net_amount
+        type: double
+      - raw: time
+        src: time
+        type: bigint
+  - raw_table_name: order_digital_transactions
+    src_table_name: order_digital_transactions
+    columns:
+      - raw: customer_id
+        src: customer_id
+        type: varchar
+      - raw: email
+        src: email
+        type: varchar
+      - raw: phone_number
+        src: phone_number
+        type: varchar
+      - raw: token
+        src: token
+        type: varchar
+      - raw: order_no
+        src: order_no
+        type: varchar
+      - raw: order_datetime
+        src: order_datetime
+        type: varchar
+      - raw: payment_method
+        src: payment_method
+        type: varchar
+      - raw: promo_code
+        src: promo_code
+        type: varchar
+      - raw: markdown_flag
+        src: markdown_flag
+        type: varchar
+      - raw: guest_checkout_flag
+        src: guest_checkout_flag
+        type: varchar
+      - raw: location_id
+        src: location_id
+        type: varchar
+      - raw: location_address
+        src: location_address
+        type: varchar
+      - raw: location_city
+        src: location_city
+        type: varchar
+      - raw: location_state
+        src: location_state
+        type: varchar
+      - raw: location_postal_code
+        src: location_postal_code
+        type: varchar
+      - raw: location_country
+        src: location_country
+        type: varchar
+      - raw: order_transaction_type
+        src: order_transaction_type
+        type: varchar
+      - raw: amount
+        src: amount
+        type: double
+      - raw: discount_amount
+        src: discount_amount
+        type: double
+      - raw: net_amount
+        src: net_amount
+        type: double
+      - raw: time
+        src: time
         type: bigint
