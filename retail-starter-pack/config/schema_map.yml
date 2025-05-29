@@ -494,3 +494,39 @@ schema_change:
       - raw: time
         src: time
         type: bigint
+  - raw_table_name: survey_responses
+    src_table_name: survey_responses
+    columns:
+      - raw: survey_id
+        src: survey_id
+        type: varchar
+      - raw: respondent_id
+        src: respondent_id
+        type: varchar
+      - raw: question_id
+        src: question_id
+        type: varchar
+      - raw: question_text
+        src: question_text
+        type: varchar
+      - raw: answer
+        src: answer
+        type: varchar
+      - raw: answer_numeric
+        src: answer_numeric
+        type: double
+      - raw: submitted_at
+        src: submitted_at
+        type: varchar
+      - raw: customer_id
+        src: customer_id
+        type: varchar
+      - raw: email
+        src: email
+        type: varchar
+      - raw: phone_number
+        src: phone_number
+        type: varchar
+      - raw: time
+        src: time
+        type: bigint

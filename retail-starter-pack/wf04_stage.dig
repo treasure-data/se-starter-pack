@@ -2,9 +2,24 @@ _export:
   !include : 'config/src_params.yml'
   td:
     database: ${src}_${sub}
++bad_emails:
+    _export:
+      tbl: invalid_emails
+    td>: staging/queries/${tbl}.sql
 +transformed:
   for_each>:
     tbl: ${tables}
   _parallel: true
   _do:
     td>: staging/queries/${tbl}.sql
+
+#Send Error Alert
+_error:
+  +send_error_alert:
+    for_each>:
+      email: ${email_ids}
+    _do:
+      _export:
+        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
+        receive_email: ${email}
+      call>: utilities/error.dig

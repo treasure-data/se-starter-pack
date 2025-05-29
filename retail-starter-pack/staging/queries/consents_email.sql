@@ -12,6 +12,7 @@ end   AS  "trfmd_consent_type",
 case
   when nullif(lower(ltrim(rtrim("id"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("id"))), '') is null then null
+  when nullif(lower(trim("id")), '') in (select lower(trim(invalid_email)) from ${stg}_${sub}.invalid_emails ) then null
   else lower(ltrim(rtrim(regexp_replace("id", '[^a-zA-Z0-9.@_+-]', ''))))
 end   AS  "trfmd_email",
 --

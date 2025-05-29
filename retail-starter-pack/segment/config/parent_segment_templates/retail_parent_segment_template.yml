@@ -204,6 +204,61 @@ attributes:
   foreignKey: retail_unification_id
   matrixColumnName: preferred_season
   groupingName: 
+- audienceId: null
+  id: null
+  name: Survey Response Count
+  type: number
+  parentDatabaseName: gld_retail
+  parentTableName: survey_responses
+  parentColumn: survey_response_count
+  parentKey: retail_unification_id
+  foreignKey: retail_unification_id
+  matrixColumnName: survey_response_count
+  groupingName: Survey
+- audienceId: null
+  id: null
+  name: Last Survey Response Date
+  type: timestamp
+  parentDatabaseName: gld_retail
+  parentTableName: survey_responses
+  parentColumn: last_survey_response_date
+  parentKey: retail_unification_id
+  foreignKey: retail_unification_id
+  matrixColumnName: last_survey_response_date
+  groupingName: Survey
+- audienceId: null
+  id: null
+  name: Average Survey Score
+  type: number
+  parentDatabaseName: gld_retail
+  parentTableName: survey_responses
+  parentColumn: avg_survey_score
+  parentKey: retail_unification_id
+  foreignKey: retail_unification_id
+  matrixColumnName: avg_survey_score
+  groupingName: Survey
+- audienceId: null
+  id: null
+  name: Last Survey Score
+  type: number
+  parentDatabaseName: gld_retail
+  parentTableName: survey_responses
+  parentColumn: last_survey_score
+  parentKey: retail_unification_id
+  foreignKey: retail_unification_id
+  matrixColumnName: last_survey_score
+  groupingName: Survey
+- audienceId: null
+  id: null
+  name: Last Survey Answer
+  type: string
+  parentDatabaseName: gld_retail
+  parentTableName: survey_responses
+  parentColumn: last_survey_answer
+  parentKey: retail_unification_id
+  foreignKey: retail_unification_id
+  matrixColumnName: last_survey_answer
+  groupingName: Survey
 behaviors:
 - audienceId: null
   id: null
@@ -492,3 +547,40 @@ behaviors:
       type: string
       parentColumn: id_type
       matrixColumnName: id_type
+- audienceId: null
+  id: null
+  name: Survey Responses
+  parentDatabaseName: gld_retail
+  parentTableName: survey_responses
+  parentKey: retail_unification_id
+  foreignKey: retail_unification_id
+  matrixDatabaseName: cdp_audience_670285
+  matrixTableName: behavior_survey_responses
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Survey ID
+    type: string
+    parentColumn: survey_id
+    matrixColumnName: survey_id
+  - name: Question ID
+    type: string
+    parentColumn: question_id
+    matrixColumnName: question_id
+  - name: Question Text
+    type: string
+    parentColumn: question_text
+    matrixColumnName: question_text
+  - name: Answer
+    type: string
+    parentColumn: answer
+    matrixColumnName: answer
+  - name: Answer Numeric
+    type: number
+    parentColumn: answer_numeric
+    matrixColumnName: answer_numeric
+  - name: Submitted At
+    type: timestamp
+    parentColumn: submitted_at
+    matrixColumnName: submitted_at

@@ -17,6 +17,8 @@ keys:
     invalid_texts: ['', null]
   - name: credit_card_token
     invalid_texts: ['', null]
+  - name: customer_id
+    invalid_texts: ['', null]
 
 #####################################################
 ##
@@ -30,6 +32,7 @@ tables:
     key_columns:
       - {column: trfmd_email, key: email}
       - {column: trfmd_phone_number, key: phone_number}
+      - {column: customer_id, key: customer_id}
 
   - database: ${stg}_${sub}
     table: pageviews
@@ -48,6 +51,7 @@ tables:
       - {column: trfmd_phone_number, key: phone_number}
       - {column: token, key: credit_card_token}
       - {column: order_no, key: order_no}
+      - {column: customer_id, key: customer_id}
 
   - database: ${stg}_${sub}
     table: order_offline_transactions
@@ -56,6 +60,7 @@ tables:
       - {column: trfmd_phone_number, key: phone_number}
       - {column: token, key: credit_card_token}
       - {column: order_no, key: order_no}
+      - {column: customer_id, key: customer_id}
 
   - database: ${stg}_${sub}
     table: order_details
@@ -79,6 +84,13 @@ tables:
     key_columns:
       - {column: trfmd_phone_number, key: phone_number}
 
+  - database: ${stg}_${sub}
+    table: survey_responses
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
+      - {column: customer_id, key: customer_id}
+
 
 #####################################################
 ##
@@ -88,7 +100,7 @@ tables:
 
 canonical_ids:
   - name: ${unification_id}
-    merge_by_keys: [email, phone_number, credit_card_token, td_client_id, order_no]
+    merge_by_keys: [email, phone_number, credit_card_token, td_client_id, order_no, customer_id]
 
 #####################################################
 ##
@@ -108,6 +120,8 @@ master_tables:
           - {table: order_offline_transactions, column: trfmd_email, priority: 2}
           - {table: formfills, column: trfmd_email, priority: 2}
           - {table: consents_email, column: trfmd_email, priority: 2}
+          - {table: survey_responses, column: trfmd_email, priority: 3}
+
       - name: phone_number
         source_columns:
           - {table: loyalty_profile, column: trfmd_phone_number, priority: 1}
@@ -115,7 +129,16 @@ master_tables:
           - {table: order_offline_transactions, column: trfmd_phone_number, priority: 2}
           - {table: formfills, column: trfmd_phone_number, priority: 2}
           - {table: consents_phone, column: trfmd_phone_number, priority: 2}
+          - {table: survey_responses, column: trfmd_phone_number, priority: 3}
+          
       - name: td_client_id
         source_columns:
           - {table: pageviews, column: td_client_id, priority: 1}
           - {table: formfills, column: td_client_id, priority: 2}
+      - name: customer_id
+        source_columns:
+          - {table: loyalty_profile, column: customer_id, priority: 1}
+          - {table: order_digital_transactions, column: customer_id, priority: 2}
+          - {table: order_offline_transactions, column: customer_id, priority: 2}
+          - {table: survey_responses, column: customer_id, priority: 2}
+          

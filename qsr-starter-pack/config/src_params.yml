@@ -16,6 +16,7 @@ site: us # us | eu
 ## STAGING CONFIG ##
 ## DO NOT CHANGE ##
 tables:
+  - app_analytics
   - consents
   - email_activity
   - formfills

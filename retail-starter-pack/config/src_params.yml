@@ -17,6 +17,7 @@ site: us # us | eu
 ## DO NOT CHANGE ## 
 tables: 
   - consents
+  - app_analytics
   - email_activity
   - formfills
   - loyalty_profile
@@ -24,6 +25,7 @@ tables:
   - order_digital_transactions 
   - order_offline_transactions 
   - pageviews
+  - survey_responses
 
 ## UNIFICATION CONFIG ## 
 unification_id : retail_unification_id
