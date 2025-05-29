@@ -392,3 +392,105 @@ schema_change:
       - raw: time
         src: time
         type: bigint     
+  - raw_table_name: app_analytics
+    src_table_name: app_analytics
+    columns:
+      - raw: app_name
+        src: app_name
+        type: bigint
+      - raw: analytics_id
+        src: analytics_id
+        type: bigint
+      - raw: user_id
+        src: user_id
+        type: varchar
+      - raw: device_id
+        src: device_id
+        type: varchar
+      - raw: event_time
+        src: event_time
+        type: varchar
+      - raw: event_id
+        src: event_id
+        type: bigint
+      - raw: session_id
+        src: session_id
+        type: bigint
+      - raw: event_type
+        src: event_type
+        type: varchar
+      - raw: version_name
+        src: version_name
+        type: varchar
+      - raw: adid
+        src: adid
+        type: varchar
+      - raw: groups
+        src: groups
+        type: varchar
+      - raw: idfa
+        src: idfa
+        type: varchar
+      - raw: platform
+        src: platform
+        type: varchar
+      - raw: os_name
+        src: os_name
+        type: varchar
+      - raw: os_version
+        src: os_version
+        type: varchar
+      - raw: device_brand
+        src: device_brand
+        type: varchar
+      - raw: device_manufacturer
+        src: device_manufacturer
+        type: varchar
+      - raw: device_model
+        src: device_model
+        type: varchar
+      - raw: device_carrier
+        src: device_carrier
+        type: varchar
+      - raw: device_type
+        src: device_type
+        type: varchar
+      - raw: device_family
+        src: device_family
+        type: varchar
+      - raw: location_lat
+        src: location_lat
+        type: double
+      - raw: location_lng
+        src: location_lng
+        type: double
+      - raw: country
+        src: country
+        type: varchar
+      - raw: language
+        src: language
+        type: varchar
+      - raw: city
+        src: city
+        type: varchar
+      - raw: region
+        src: region
+        type: varchar
+      - raw: dma
+        src: dma
+        type: varchar
+      - raw: ip_address
+        src: ip_address
+        type: varchar
+      - raw: event_properties
+        src: event_properties
+        type: varchar
+      - raw: user_properties
+        src: user_properties
+        type: varchar
+      - raw: uuid
+        src: uuid
+        type: varchar
+      - raw: time
+        src: time
+        type: bigint

@@ -471,3 +471,24 @@ behaviors:
     type: string
     parentColumn: trfmd_consent_type
     matrixColumnName: trfmd_consent_type
+- audienceId: null
+  id: null
+  name: All Profile Identifiers
+  parentDatabaseName: gld_retail
+  parentTableName: all_profile_identifiers
+  parentKey: retail_unification_id
+  foreignKey: retail_unification_id
+  matrixDatabaseName: cdp_audience_670285
+  matrixTableName: behavior_all_profile_identifiers
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+    - name: ID
+      type: string
+      parentColumn: id
+      matrixColumnName: id
+    - name: ID Type
+      type: string
+      parentColumn: id_type
+      matrixColumnName: id_type
