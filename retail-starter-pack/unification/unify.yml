@@ -19,6 +19,12 @@ keys:
     invalid_texts: ['', null]
   - name: customer_id
     invalid_texts: ['', null]
+  - name: device_id
+    invalid_texts: ['', null]
+  - name: adid
+    invalid_texts: ['', null]
+  - name: idfa
+    invalid_texts: ['', null]
 
 #####################################################
 ##
@@ -91,6 +97,15 @@ tables:
       - {column: trfmd_phone_number, key: phone_number}
       - {column: customer_id, key: customer_id}
 
+  - database: ${stg}_${sub}
+    table: app_analytics
+    key_columns:
+      - {column: device_id, key: device_id}
+      - {column: adid, key: adid}
+      - {column: idfa, key: idfa}
+      - {column: user_id, key: user_id}
+      - {column: uuid, key: uuid}
+
 
 #####################################################
 ##
@@ -100,7 +115,7 @@ tables:
 
 canonical_ids:
   - name: ${unification_id}
-    merge_by_keys: [email, phone_number, credit_card_token, td_client_id, order_no, customer_id]
+    merge_by_keys: [email, phone_number, credit_card_token, td_client_id, order_no, customer_id, device_id, adid, idfa]
 
 #####################################################
 ##
@@ -121,6 +136,7 @@ master_tables:
           - {table: formfills, column: trfmd_email, priority: 2}
           - {table: consents_email, column: trfmd_email, priority: 2}
           - {table: survey_responses, column: trfmd_email, priority: 3}
+          - {table: app_analytics, column: trfmd_email, priority: 3}
 
       - name: phone_number
         source_columns:
@@ -130,6 +146,7 @@ master_tables:
           - {table: formfills, column: trfmd_phone_number, priority: 2}
           - {table: consents_phone, column: trfmd_phone_number, priority: 2}
           - {table: survey_responses, column: trfmd_phone_number, priority: 3}
+          - {table: app_analytics, column: trfmd_phone_number, priority: 3}
           
       - name: td_client_id
         source_columns:
@@ -141,4 +158,13 @@ master_tables:
           - {table: order_digital_transactions, column: customer_id, priority: 2}
           - {table: order_offline_transactions, column: customer_id, priority: 2}
           - {table: survey_responses, column: customer_id, priority: 2}
-          
+
+      - name: device_id
+        source_columns:
+          - {table: app_analytics, column: device_id, priority: 1}
+      - name: adid
+        source_columns:
+          - {table: app_analytics, column: adid, priority: 1}
+      - name: idfa
+        source_columns:
+          - {table: app_analytics, column: idfa, priority: 1}

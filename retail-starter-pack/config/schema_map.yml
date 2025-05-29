@@ -491,6 +491,12 @@ schema_change:
       - raw: uuid
         src: uuid
         type: varchar
+      - raw: email
+        src: email
+        type: varchar
+      - raw: phone_number
+        src: phone_number
+        type: varchar
       - raw: time
         src: time
         type: bigint
