@@ -10,6 +10,13 @@ raw as (
   where table_name = '${tbl.raw_table_name}' 
   and table_schema = '${raw}_${sub}'
 ),
+
+-- Get the max time from the destination table
+max_time_existing AS (
+    SELECT COALESCE(MAX(time), 0) as max_time
+    FROM ${src}_${sub}.${tbl.src_table_name}
+),
+
 flattened AS (
     SELECT 
         ARRAY_JOIN(ARRAY_AGG(CONCAT(
@@ -40,7 +47,8 @@ SELECT
         WHEN ${JSON.parse(include_all_raw_cols)} = true THEN CONCAT(mapped_cols,',', raw_cols)
         ELSE mapped_cols END,
       ' FROM ', 
-      '${tbl.raw_table_name}'
+      '${tbl.raw_table_name}',
+      ' WHERE time > ', (SELECT CAST(max_time as VARCHAR) FROM max_time_existing)
       ) as qry
 FROM flattened, raw
  
