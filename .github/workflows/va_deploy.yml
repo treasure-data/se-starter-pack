@@ -1,0 +1,90 @@
+name: Deploy Workflow
+
+on:
+    workflow_dispatch:
+        inputs:
+            td_region:
+                description: Specify your TD account region (aws|aws-tokyo|eu01|ap01)
+                default: aws
+                required: true
+            workflow_name:
+                description: Specify vertical you want to upload (retail|qsr)
+                required: true
+            project_name:
+                description: Name to give workflow project in instancea
+                required: true
+            td_apikey:
+                description: Specify your master api key for target TD account
+                required: true
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        environment: ${{ inputs.td_region }}
+
+        steps:
+            - name: Input parameter validations
+              if: ${{ !contains('retail, qsr', inputs.workflow_name) }}
+              run: |
+                  echo "Error: Workflow Name is not correct. Please specify correct workflow name"
+                  exit 1
+
+            - name: Prepare variable
+              id: prep_var
+              run: |
+                  if [[ "${{ inputs.workflow_name }}" == "retail" ]]; then
+                    td_wf_project="retail-starter-pack"
+                  elif [[ "${{ inputs.workflow_name }}" == "qsr" ]]; then
+                    td_wf_project="qsr-starter-pack"
+                  else
+                    td_wf_project="default_value" # Fallback option if no match is found
+                  fi
+
+                  echo "td_wf_project=${td_wf_project}" >> $GITHUB_OUTPUT
+
+            - name: Prepare Environment API
+              id: prep_env_var
+              run: |
+                  if [[ "${{ inputs.td_region }}" == "aws" ]]; then
+                    td_wf_url="https://api-workflow.treasuredata.com"
+                  elif [[ "${{ inputs.td_region }}" == "aws-tokyo" ]]; then
+                    td_wf_url="https://api-workflow.treasuredata.co.jp"
+                  elif [[ "${{ inputs.td_region }}" == "eu01" ]]; then
+                    td_wf_url="https://api-workflow.eu01.treasuredata.com/"
+                  elif [[ "${{ inputs.td_region }}" == "ap01" ]]; then
+                    td_wf_url="https://api-workflow.ap01.treasuredata.com/"
+                  else
+                    td_wf_url="default_value" # Fallback option if no match is found
+                  fi
+
+                  echo "td_wf_url=${td_wf_url}" >> $GITHUB_OUTPUT
+
+            - name: Mask and Set API Key as Environment Variable
+              env:
+                  API_KEY: ${{ github.event.inputs.td_apikey }}
+              run: |
+                  echo "::add-mask::$API_KEY"
+
+                  echo "API_KEY=$API_KEY" >> $GITHUB_ENV
+
+            - name: Checkout the repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 2
+
+            - name: Get GitHub SHA and Save in Output Variable
+              id: chkout_ver
+              run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+            - name: td_push
+              uses: ./.github/actions/td_push
+              with:
+                  proj_dirs: ${{ steps.prep_var.outputs.td_wf_project }}
+                  project_name: ${{ inputs.project_name }}
+                  prev_build_sha: ${{ github.event.before }}
+                  curr_build_sha: ${{ steps.chkout_ver.outputs.sha }}
+                  dply_version: ""
+                  api_token: ${{ env.API_KEY }}
+                  wf_endpoint: ${{ steps.prep_env_var.outputs.td_wf_url }}
+                  env_label: ""
+                  fbranch: ""
