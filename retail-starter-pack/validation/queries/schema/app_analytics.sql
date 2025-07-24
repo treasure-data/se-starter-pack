@@ -4,6 +4,8 @@ create table app_analytics_tmp (
   app_name BIGINT,
   analytics_id BIGINT,
   user_id VARCHAR,
+  email VARCHAR,
+  phone_number VARCHAR,
   device_id VARCHAR,
   event_time VARCHAR,
   event_id BIGINT,

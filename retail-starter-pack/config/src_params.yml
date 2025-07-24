@@ -1,5 +1,6 @@
 ## DATABASE CONFIG ##
 raw: raw
+prp: prp
 src: src
 stg: stg
 gld: gldn
@@ -26,6 +27,7 @@ tables:
   - order_offline_transactions 
   - pageviews
   - survey_responses
+  - sms_activity
 
 ## UNIFICATION CONFIG ## 
 unification_id : retail_unification_id

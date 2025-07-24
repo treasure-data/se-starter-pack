@@ -103,9 +103,12 @@ tables:
       - {column: device_id, key: device_id}
       - {column: adid, key: adid}
       - {column: idfa, key: idfa}
-      - {column: user_id, key: user_id}
-      - {column: uuid, key: uuid}
 
+  - database: ${stg}_${sub}
+    table: sms_activity
+    key_columns:
+      - {column: trfmd_email, key: email}
+      - {column: trfmd_phone_number, key: phone_number}
 
 #####################################################
 ##
@@ -116,6 +119,9 @@ tables:
 canonical_ids:
   - name: ${unification_id}
     merge_by_keys: [email, phone_number, credit_card_token, td_client_id, order_no, customer_id, device_id, adid, idfa]
+    merge_iterations: 5
+    incremental_merge_iterations: 2
+
 
 #####################################################
 ##
@@ -137,6 +143,7 @@ master_tables:
           - {table: consents_email, column: trfmd_email, priority: 2}
           - {table: survey_responses, column: trfmd_email, priority: 3}
           - {table: app_analytics, column: trfmd_email, priority: 3}
+          - {table: sms_activity, column: trfmd_email, priority: 3}
 
       - name: phone_number
         source_columns:
@@ -147,7 +154,8 @@ master_tables:
           - {table: consents_phone, column: trfmd_phone_number, priority: 2}
           - {table: survey_responses, column: trfmd_phone_number, priority: 3}
           - {table: app_analytics, column: trfmd_phone_number, priority: 3}
-          
+          - {table: sms_activity, column: trfmd_phone_number, priority: 3}
+
       - name: td_client_id
         source_columns:
           - {table: pageviews, column: td_client_id, priority: 1}
