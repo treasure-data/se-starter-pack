@@ -6,12 +6,19 @@ _export:
     _export:
       tbl: invalid_emails
     td>: staging/queries/${tbl}.sql
+
 +transformed:
   for_each>:
     tbl: ${tables}
   _parallel: true
   _do:
-    td>: staging/queries/${tbl}.sql
+    +create_tables:
+      td_ddl>:
+      create_tables: ["${tbl}"]
+      database: ${stg}_${sub}
+      
+    +stage: 
+      td>: staging/queries/${tbl}.sql
 
 #Send Error Alert
 _error:
