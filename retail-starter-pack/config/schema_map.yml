@@ -145,6 +145,30 @@ schema_change:
   - prp: account_updated_at
     src: updated_at
     type: varchar
+  - prp: null
+    src: date_of_birth
+    type: varchar
+  - prp: null
+    src: store_city
+    type: varchar
+  - prp: null
+    src: store_id
+    type: varchar
+  - prp: null
+    src: store_address
+    type: varchar
+  - prp: null
+    src: wishlist_item
+    type: varchar
+  - prp: null
+    src: membership_status
+    type: varchar
+  - prp: null
+    src: gender
+    type: varchar
+  - prp: null
+    src: secondary_email
+    type: varchar
   - prp: time
     src: time
     type: bigint
@@ -645,7 +669,7 @@ schema_change:
     type: varchar
   - prp: score
     src: answer_numeric
-    type: bigint
+    type: double
   - prp: created_at
     src: submitted_at
     type: varchar
