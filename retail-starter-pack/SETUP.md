@@ -10,9 +10,19 @@ Before starting, ensure you have:
 
 ## Setup Overview
 
-The setup process involves configuring two main files:
-1. **`config/src_params.yml`** - Main configuration parameters
-2. **`config/schema_map.yml`** - Data mapping between your source and target schemas
+The setup process involves configuring three main components in order:
+
+1. **`config/src_params.yml`** - Environment and database configuration
+2. **`config/schema_map.yml`** - Data mapping between your source and target schemas  
+3. **`prep/queries/{table_name}.sql`** - Custom preparation queries for data normalization
+
+The Value Accelerator follows this automated pipeline:
+```
+Raw Data → Prep → Mapping → Validation → Staging → Unification → Golden Layer → Parent Segment
+```
+
+Each step requires specific configuration to match your data structure.
+
 
 ---
 
@@ -103,31 +113,39 @@ dash_users_list: ['user1@company.com', 'user2@company.com']
 
 ## Step 2: Configure schema_map.yml
 
-The `schema_map.yml` file maps your source data fields to the standardized retail schema. This is the most critical configuration step.
+The `schema_map.yml` file maps your source data fields to the standardized retail schema. This is the most critical configuration step as it determines how your data flows through the entire pipeline.
 
-### 2.1 Understanding the Schema Map Structure
+### 2.1 Understanding the Mapping Configuration
 
 Each table mapping follows this pattern:
 
 ```yaml
 - columns:
-  - prp: target_field_name        # Field name in PRP/processed schema
-    src: your_source_field_name   # Field name in your raw data
-    type: data_type               # Expected data type
-  - prp: null                     # Set to null if field not needed in PRP
-    src: your_field_name
+  - prp: source_field_name        # Field name in your raw data (PRP layer)
+    src: target_field_name        # Target field name in standardized schema  
+    type: data_type               # Expected data type (varchar, bigint, double)
+  - prp: null                     # No source field available
+    src: target_field_name        # Create empty field in target schema
     type: varchar
-  prp_table_name: table_name      # Name for PRP table, or "not exists" to skip PRP
-  src_table_name: source_table    # Your source table name
+  prp_table_name: table_name      # PRP table name, or "not exists" to skip PRP
+  src_table_name: target_table    # Target table name in SRC database
 ```
 
-### 2.2 Key Configuration Concepts
+### 2.2 Key Mapping Concepts
 
-**PRP Processing**: Tables with `prp_table_name: not exists` skip PRP processing and go directly to source processing.
+**PRP Processing Control**: 
+- `prp_table_name: table_name` → Enables PRP processing with custom transformations
+- `prp_table_name: "not exists"` → Skips PRP, data goes directly to mapping
 
-**Field Mapping**: Each column maps your source field to the standardized field name used by the retail accelerator.
+**Field Mapping Logic**:
+- Maps your raw data field names (`prp`) to standardized Value Accelerator field names (`src`)
+- Creates missing fields as null values when source data doesn't have required fields
+- Handles data type conversions automatically
 
-**Null Fields**: Use `prp: null` for fields you want to ignore in PRP but keep in source processing.
+**Processing Flow**:
+```
+Your Raw Table → [PRP Transformation] → Mapping (schema_map.yml) → SRC Table → Validation
+```
 
 ### 2.3 Table-by-Table Configuration Guide
 
@@ -269,11 +287,11 @@ Map your email engagement data:
 
 ---
 
-## Step 2.6: Setting Up PRP Queries for JSON Field Transformation
+## Step 3: Configure PRP Queries
 
-The Profile-Ready Processing (PRP) layer allows you to create custom SQL queries to transform complex data, particularly JSON fields, before they enter the main processing pipeline.
+The PRP (Prep) layer allows you to create custom SQL queries to transform complex data before schema mapping. This is only needed when your raw data requires preprocessing like JSON parsing or field concatenation.
 
-### 2.6.1 Understanding PRP Query Execution
+### 3.1 When to Use PRP Queries
 
 For tables with `prp_table_name` set (not "not exists"), the workflow executes custom transformation queries:
 
@@ -286,7 +304,7 @@ For tables with `prp_table_name` set (not "not exists"), the workflow executes c
 
 This means for each table with PRP enabled, you can create a corresponding SQL file in `prep/queries/` to transform your raw data.
 
-### 2.6.2 Creating PRP Query Files
+### 3.2 Creating PRP Query Files
 
 Create SQL files in the `prep/queries/` directory with the same name as your source table:
 
@@ -300,7 +318,7 @@ prep/
     └── survey_responses.sql     # For survey_responses table
 ```
 
-### 2.6.3 JSON Field Transformation Examples
+### 3.3 JSON Field Transformation Examples
 
 #### Example 1: App Analytics with JSON Event Properties
 
@@ -417,7 +435,7 @@ FROM ${raw}_${sub}.survey_responses_tmp
 WHERE time >= {{ moment(session_time).subtract(1, 'day').unix() }}
 ```
 
-### 2.6.4 Advanced JSON Transformation Techniques
+### 3.4 Advanced JSON Transformation Techniques
 
 #### Flattening Array Fields
 ```sql
@@ -457,7 +475,7 @@ FROM ${raw}_${sub}.events_tmp
 WHERE time >= {{ moment(session_time).subtract(1, 'day').unix() }}
 ```
 
-### 2.6.5 Updating Schema Map for PRP-Transformed Fields
+### 3.5 Updating Schema Map for PRP-Transformed Fields
 
 After creating PRP queries, update your `schema_map.yml` to map the transformed fields:
 
@@ -483,7 +501,7 @@ After creating PRP queries, update your `schema_map.yml` to map the transformed 
   src_table_name: app_analytics
 ```
 
-### 2.6.6 Time-based Incremental Processing
+### 3.6 Time-based Incremental Processing
 
 Include time-based filtering in your PRP queries for incremental processing:
 
@@ -495,7 +513,7 @@ WHERE time >= {{ moment(session_time).subtract(1, 'day').unix() }}
 WHERE DATE(time_column) >= DATE('{{ session_date }}') - INTERVAL '1' DAY
 ```
 
-### 2.6.7 Data Quality Validation in PRP
+### 3.7 Data Quality Validation in PRP
 
 Add data quality checks to your PRP queries:
 
@@ -523,7 +541,7 @@ WHERE time >= {{ moment(session_time).subtract(1, 'day').unix() }}
   AND customer_id IS NOT NULL  -- Basic data quality filter
 ```
 
-### 2.6.8 Testing PRP Queries
+### 3.8 Testing PRP Queries
 
 Before running the full workflow, test your PRP queries:
 
@@ -544,7 +562,7 @@ SELECT
 FROM ${raw}_${sub}.your_table_tmp;
 ```
 
-### 2.6.9 Common JSON Functions in Treasure Data
+### 3.9 Common JSON Functions in Treasure Data
 
 | Function | Purpose | Example |
 |----------|---------|---------|
@@ -556,72 +574,124 @@ FROM ${raw}_${sub}.your_table_tmp;
 
 ---
 
-## Step 3: Data Preparation
+## Step 4: Development and Testing
 
-### 3.1 Verify Your Raw Data
+### 4.1 Validate Your Configuration
 
-Before running the workflow, ensure your raw data tables exist and contain the expected fields:
+Before running the full pipeline, validate your configuration:
 
 ```sql
--- Check if your tables exist
-SELECT * FROM INFORMATION_SCHEMA.TABLES where schema_name = 'your_database_name';
+-- Check if your raw data tables exist
+SELECT table_name, row_count 
+FROM INFORMATION_SCHEMA.TABLES 
+WHERE schema_name = 'your_raw_database_name';
 
+-- Verify required fields exist in your source tables
+DESCRIBE your_raw_database.loyalty_profile;
+DESCRIBE your_raw_database.order_digital_transactions;
 ```
----
 
-## Step 4: Initial Workflow Execution
+### 4.2 Test with Mapping Workflow
 
-### 4.1 Test Configuration
-
-Start with a validation-only run to test your configuration:
-
-1. Set `run_all: true` in `src_params.yml`
-2. Run only the validation workflow first:
+Start with prep and mapping to test prep queries and mapping:
 
 ```bash
-# In Treasure Data CLI, run:
-td workflow run retail-starter-pack wf03_validate
+# Test configuration without full processing locally
+td workflow run wf02_mapping
+
+# Test configuration without full processing in TD instance
+td workflow start your-project-name wf02_mapping --session now  
 ```
 
-### 4.2 Full Pipeline Execution
 
-Once validation passes, run the complete pipeline:
+### 4.3 Development Approach
+
+**Recommended development sequence:**
+
+1. **Configure Core Tables First**: Start with `loyalty_profile` and `order_digital_transactions`
+2. **Test Mapping**: Run mapping workflow after each table configuration
+3. **Add PRP Queries**: Only if needed if required columns are not readily availalbe in raw/prp without normalization
+4. **Iterative Testing**: Test each component/table before moving to the next
+
+### 4.4 Validation 
+After prep and mapping are completed proceed with the validation step. 
 
 ```bash
-# Run the main orchestration workflow
-td workflow run retail-starter-pack wf00_orchestration
+# Test configuration without full processing locally 
+# Requires Docker to be running
+td wf secrets --local --set td_apikey=your_secret_value 
+td workflow run wf03_validate
+
+# Test configuration without full processing in TD instance
+td workflow start your-project-name wf03_validate --session now  
 ```
 
-### 4.3 Monitor Execution
 
-Monitor workflow progress in the Treasure Data console:
-- Check workflow status and logs
-- Verify databases and tables are created
-- Review email notifications for success/failure
+### 4.5 Full Pipeline Testing
+
+Once validation passes, test the complete pipeline:
+
+```bash
+# Run the full orchestration workflow locally
+td workflow run your-project-name wf00_orchestration 
+
+# Run the full orchestration workflow in TD Instance
+td workflow start your-project-name wf00_orchestration --session now  
+```
+
+**Monitor execution:**
+- Check workflow status in TD Console → Workflows
+- Verify databases are created: `prp_`, `src_`, `stg_`, `gld_`, `ana_`
+- Review email notifications for any issues
+- Check logs for each workflow step
 
 ---
 
-## Step 5: Post-Setup Configuration
+## Step 5: Deployment and Production
 
-### 5.1 Segment Configuration
+### 5.1 Environment Configuration
 
-After successful initial run, configure customer segments:
+For production deployment:
 
-1. Review segment templates in `segment/config/segment_templates/`
-2. Modify segment criteria to match your business needs
-3. Update `src_params.yml` segment configuration:
+1. **Configure scheduling**: Set up regular workflow schedules in TD Console
+2. **Verify email notifications**: Ensure alerts go to appropriate teams
 
-```yaml
-## PARENT SEGMENT/SEGMENT CONFIG ##
-segment:
-  run_type: create    # Change to 'update' after first run
+### 5.2 Production Deployment Checklist
+
+- [ ] All required raw data tables are populated
+- [ ] Schema mapping validated in development environment
+- [ ] PRP queries tested (if used)
+- [ ] Email notification lists configured
+- [ ] Workflow schedules configured
+- [ ] Success/failure monitoring in place
+
+### 5.3 Post-Deployment Verification
+
+After successful deployment, verify the complete pipeline:
+
+```sql
+-- Check data flow through all layers
+SELECT 'raw' as layer, COUNT(*) FROM your_raw_db.loyalty_profile
+UNION ALL
+SELECT 'staging' as layer, COUNT(*) FROM stg_customer.loyalty_profile  
+UNION ALL
+SELECT 'golden' as layer, COUNT(*) FROM gld_customer.loyalty_profile;
+
+-- Verify unification results
+SELECT COUNT(DISTINCT canonical_customer_id) as unified_customers
+FROM gld_customer.loyalty_profile;
+
+-- Check parent segment creation
+SELECT audience_id, name, status 
+FROM va_config_customer.parent_segment_creation;
 ```
 
-### 5.2 Analytics Dashboard Setup
+### 5.4 Analytics and Segmentation Access
 
-If dashboards were created, access them through:
-- Treasure Data console → Treasure Insights
-- Share with users listed in `dash_users_list`
+After successful setup:
+- **Audience Studio**: Access unified customer data for segmentation
+- **Treasure Insights**: View auto-generated dashboards (if enabled)
+- **Customer Segments**: Available in TD Audience Studio for activation
 
 ---
 
@@ -647,44 +717,6 @@ If dashboards were created, access them through:
 - Update `type` field in `schema_map.yml` to match actual data types
 - Consider data transformations if needed
 
-#### Issue: Workflow fails during unification
-**Solution:**
-- Check for data quality issues (null emails, invalid formats)
-- Verify identity keys (email, phone, customer_id) have good coverage
-- Review staging data for completeness
-
-#### Issue: No data in golden layer
-**Solution:**
-- Verify unification completed successfully
-- Check identity resolution results
-- Ensure identity keys are properly mapped
-
-### Validation Queries
-
-Run these queries to validate your setup:
-
-```sql
--- Check row counts match between raw and staged data
-SELECT 
-  'raw' as layer, COUNT(*) as row_count 
-FROM your_raw_database.customer_table
-UNION ALL
-SELECT 
-  'staged' as layer, COUNT(*) as row_count 
-FROM your_staging_database.loyalty_profile;
-
--- Verify identity resolution worked
-SELECT 
-  COUNT(DISTINCT canonical_id) as unique_customers,
-  SUM(CASE WHEN email IS NOT NULL THEN 1 ELSE 0 END) as customers_with_email
-FROM your_golden_database.unified_customers;
-
--- Check segment creation
-SELECT segment_name, COUNT(*) as customer_count
-FROM your_analytics_database.active_segments
-GROUP BY segment_name;
-```
-
 ### Getting Help
 
 If you encounter issues:
@@ -695,43 +727,3 @@ If you encounter issues:
 5. **Support**: Contact your Treasure Data support team with specific error messages
 
 ---
-
-## Best Practices
-
-### Configuration Management
-- **Version Control**: Keep configuration files in version control
-- **Environment-Specific**: Use different configs for dev/staging/prod  
-- **Documentation**: Document any custom field mappings
-- **Testing**: Always test configuration changes in development first
-
-### Data Quality
-- **Validation**: Run data quality checks before initial setup
-- **Monitoring**: Set up ongoing data quality monitoring
-- **Consistency**: Ensure consistent data formats across sources
-- **Completeness**: Verify key identity fields have high completion rates
-
-### Performance
-- **Incremental Processing**: Consider incremental data loading after initial setup
-- **Scheduling**: Set up appropriate workflow schedules
-- **Resource Management**: Monitor workflow resource usage
-- **Optimization**: Optimize queries for large datasets
-
-### Security
-- **PII Handling**: Ensure proper handling of personal data
-- **Access Control**: Limit access to sensitive data
-- **Compliance**: Follow data privacy regulations
-- **Encryption**: Use appropriate data encryption
-
----
-
-## Next Steps
-
-After successful setup:
-
-1. **Schedule Workflows**: Set up regular workflow schedules
-2. **Create Segments**: Build customer segments for marketing campaigns  
-3. **Set up Activations**: Connect segments to marketing platforms
-4. **Monitor Performance**: Set up monitoring and alerting
-5. **Iterate**: Continuously improve based on business needs
-
-For advanced configuration and customization, refer to the [Workflow Deep Dive Documentation](workflows/README.md).
