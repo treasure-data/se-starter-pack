@@ -665,6 +665,7 @@ Ensure your `schema_map.yml` references any prp tables under `prp_table_name` th
 
 > [!NOTE]
 > If prp_table_name = 'not exsits' no processing will occur for that table. 
+>
 > If prp_table_name does not match sql file name in `prep/queries/{table_name}.sql` the workflow will error out. 
 
 ```yaml
