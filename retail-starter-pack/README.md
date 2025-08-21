@@ -27,11 +27,18 @@ The retail starter pack includes a PRP layer that sits between raw data ingestio
 
 For further details, and specific details on the schema required see Data Ingestion.
 
-### Mapping 
-### Processing Flow
-In the mapping stage, PRP columns are mapped to required schema on schema_map. yml configurations
-3. Mapped data moves to the SRC database
-4. Standard validation and staging processes continue
+### Mapping
+
+The mapping stage transforms data from the PRP layer to conform to the required schema structure for downstream processing.
+
+#### Processing Flow
+
+1. **Schema Configuration**: Column mappings are defined in `schema_map.yml` configuration files
+2. **Field Transformation**: PRP columns are mapped to standardized field names and data types
+3. **Data Movement**: Mapped data is loaded into the SRC (Source) database
+4. **Pipeline Continuation**: Standard validation and staging processes continue with the mapped data
+
+The mapping ensures consistent data structure across all source systems while preserving data lineage and maintaining referential integrity.
 
 ## Data Validation & Transformation
 
@@ -572,3 +579,106 @@ The retail starter pack includes comprehensive validation queries that:
 5. Apply PRP transformations where configured
 
 Validation results are logged and can trigger email notifications for critical issues.
+
+## PRP (Prep) Layer Customization
+
+The PRP layer provides a flexible preprocessing step that allows custom data transformations before the standard schema mapping occurs. This is essential when your raw data doesn't directly match the expected table structure.
+
+### Why PRP is Required
+
+Many source systems provide data that needs transformation before it can be mapped to the standard Value Accelerator schema:
+
+- **Nested JSON**: Event properties stored as JSON objects need to be unpacked into separate columns
+- **Concatenated Fields**: Single fields containing multiple values (e.g., "John Doe" → first_name, last_name)
+- **Field Separation**: Combined addresses that need splitting into components
+- **Data Type Conversion**: String dates that need parsing or numeric fields stored as text
+
+### Common Use Cases
+
+#### 1. JSON Unpacking
+```sql
+-- Raw data has: event_properties = '{"product_id": "123", "category": "electronics"}'
+-- PRP query unpacks to separate columns:
+SELECT 
+  *,
+  JSON_EXTRACT_SCALAR(event_properties, '$.product_id') as product_id,
+  JSON_EXTRACT_SCALAR(event_properties, '$.category') as category
+FROM raw_app_analytics
+```
+
+#### 2. Field Concatenation/Separation
+```sql
+-- Combine separate name fields
+SELECT 
+  *,
+  CONCAT(first_name, ' ', last_name) as full_name
+FROM raw_loyalty_profile
+
+-- Or separate combined fields
+SELECT 
+  *,
+  SPLIT_PART(full_address, ',', 1) as street_address,
+  SPLIT_PART(full_address, ',', 2) as city,
+  SPLIT_PART(full_address, ',', 3) as state
+FROM raw_customer_data
+```
+
+### How to Implement Custom PRP Queries
+
+#### Step 1: Check Configuration
+In `config/schema_map.yml`, find your table configuration:
+```yaml
+- columns: [...]
+  prp_table_name: loyalty_profile  # If this exists, PRP processing will run
+  src_table_name: loyalty_profile 
+```
+
+If `prp_table_name` is set to `"not exists"`, no PRP processing occurs and data passes directly to mapping.
+
+#### Step 2: Create Custom PRP Query
+Create or modify the file: `prep/queries/{table_name}.sql`
+
+**Example**: `prep/queries/loyalty_profile.sql`
+```sql
+-- Custom transformation for loyalty profile data
+SELECT 
+  customer_id,
+  email,
+  -- Unpack JSON preferences
+  JSON_EXTRACT_SCALAR(preferences, '$.communication_email') as email_opt_in,
+  JSON_EXTRACT_SCALAR(preferences, '$.communication_sms') as sms_opt_in,
+  -- Separate full name
+  SPLIT_PART(full_name, ' ', 1) as first_name,
+  SPLIT_PART(full_name, ' ', -1) as last_name,
+  -- Calculate age from birthdate string
+  DATE_DIFF('year', DATE_PARSE(birth_date, '%m/%d/%Y'), CURRENT_DATE) as age,
+  -- Pass through other fields
+  phone_number,
+  address,
+  time
+FROM ${raw}_${sub}.loyalty_profile
+WHERE time > ${last_load_time}
+```
+
+#### Step 3: Update Schema Mapping
+Ensure your `schema_map.yml` references any prp tables under `prp_table_name` that are in scope for processing. 
+
+> [!NOTE]
+> If prp_table_name = 'not exsits' no processing will occur for that table. 
+> If prp_table_name does not match sql file name in `prep/queries/{table_name}.sql` the workflow will error out. 
+
+```yaml
+  prp_table_name: loyalty_profile  # Enables PRP processing
+  src_table_name: loyalty_profile
+```
+
+### File Locations
+
+- **PRP Queries**: `prep/queries/{table_name}.sql`
+- **Configuration**: `config/schema_map.yml`
+- **Workflow**: `wf02_mapping.dig` (handles PRP execution)
+
+### When No PRP is Needed
+
+If your raw data already matches the expected structure, no action is needed, the data will just pass through to the ${prp}_${sub} database
+
