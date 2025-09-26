@@ -17,6 +17,11 @@ _export:
           database: ${raw}_${sub}
           # insert_into: ${prp}_${sub}.${tbl.src_table_name}
 
++remove_tables_for_full_replace: 
+  td_ddl>:
+  drop_tables: ["loyalty_profile","order_digital_transactions", "order_offline_transactions", "order_details", "consents", "formfills"]
+  database: ${src}_${sub}
+
 +loop_through_tables: 
     for_each>:
         tbl: ${schema_change}
@@ -52,13 +57,13 @@ _export:
             database: ${src}_${sub}
               
 
-#Send Error Alert
-# _error:
-#   +send_error_alert:
-#     for_each>:
-#       email: ${email_ids}
-#     _do:
-#       _export:
-#         subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
-#         receive_email: ${email}
-#       call>: utilities/error.dig
+# Send Error Alert
+_error:
+  +send_error_alert:
+    for_each>:
+      email: ${email_ids}
+    _do:
+      _export:
+        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
+        receive_email: ${email}
+      call>: utilities/error.dig

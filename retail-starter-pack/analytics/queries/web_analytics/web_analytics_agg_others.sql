@@ -51,14 +51,14 @@ with base as (select
   , if(td_parse_user_agent(td_user_agent, 'ua_family') = 'Other', 'UNKNOWN', td_parse_user_agent(td_user_agent, 'ua_family')) as browser_name
   , element_at(td_parse_agent(td_user_agent), 'version')                                                                      as browser_version
   , td_language
---   , TD_SESSIONIZE_WINDOW(time, cast ('1800' as int)) OVER (PARTITION BY retail_unification_id ORDER BY time) AS session_id
-  , TD_SESSIONIZE_WINDOW(time, cast ('${conversion.sessionize_time_range}' as int)) OVER (PARTITION BY retail_unification_id ORDER BY time) AS session_id
-  , retail_unification_id
+--   , TD_SESSIONIZE_WINDOW(time, cast ('1800' as int)) OVER (PARTITION BY ${unification_id} ORDER BY time) AS session_id
+  , TD_SESSIONIZE_WINDOW(time, cast ('${conversion.sessionize_time_range}' as int)) OVER (PARTITION BY ${unification_id} ORDER BY time) AS session_id
+  , ${unification_id} 
 --   , cast(regexp_like(td_url, 'checkout') as varchar) conversion_flag
   , cast(regexp_like(td_url, '${conversion.pattern}') as varchar) conversion_flag
   from ${gld}_${sub}.pageviews a
   where TD_INTERVAL(a.time, '-365d')
 )
-select today_datetime as run_date, date, session_id, td_url, utm_source, utm_medium, utm_campaign, utm_content, search_engine, country_by_ip, subdivision_by_ip_list, city_by_ip, connectiontype_by_ip, domain_by_ip, device_type, os_name, browser_name, retail_unification_id, conversion_flag, count(1) count
+select today_datetime as run_date, date, session_id, td_url, utm_source, utm_medium, utm_campaign, utm_content, search_engine, country_by_ip, subdivision_by_ip_list, city_by_ip, connectiontype_by_ip, domain_by_ip, device_type, os_name, browser_name, ${unification_id}, conversion_flag, count(1) count
 from base
-group by today_datetime, date, session_id, td_url, utm_source, utm_medium, utm_campaign, utm_content, search_engine, country_by_ip, subdivision_by_ip_list, city_by_ip, connectiontype_by_ip, domain_by_ip, device_type, os_name, browser_name, retail_unification_id, conversion_flag
+group by today_datetime, date, session_id, td_url, utm_source, utm_medium, utm_campaign, utm_content, search_engine, country_by_ip, subdivision_by_ip_list, city_by_ip, connectiontype_by_ip, domain_by_ip, device_type, os_name, browser_name, ${unification_id}, conversion_flag

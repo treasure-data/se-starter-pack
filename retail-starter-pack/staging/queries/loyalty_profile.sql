@@ -1,6 +1,14 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_${sub}.${tbl} as 
+CREATE TABLE IF NOT EXISTS ${stg}_${sub}.${tbl} (
+  time bigint
+);
+
+INSERT INTO ${stg}_${sub}.${tbl}
+
+with max_time as (
+  select COALESCE(max(time),0) as max_time from ${stg}_${sub}.${tbl}
+) 
 
 SELECT
 *,
@@ -126,3 +134,4 @@ end   AS  "trfmd_store_city"
 FROM
 
 loyalty_profile
+-- WHERE time > (SELECT max_time FROM max_time)

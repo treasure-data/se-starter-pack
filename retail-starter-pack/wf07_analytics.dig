@@ -67,7 +67,7 @@ _export:
 +create_model_conig:
   td>: analytics/queries/create_model_config.sql 
 
-#### Create Datamodel for the first time
+# #### Create Datamodel for the first time
 +create_all_dashboards: 
   for_each>: 
     dash: ${dashboards}
@@ -100,7 +100,7 @@ _export:
         data: "SELECT oid FROM ${ana}_${sub}.${model_config_table} WHERE dashboard  = '${dash}' "
       store_last_results: true
     
-    ###-- Workflow to refresh the datamodel with updated tables and data schema
+#     ###-- Workflow to refresh the datamodel with updated tables and data schema
     +call_post_builds:
       http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds"
       method: POST
@@ -117,18 +117,18 @@ _export:
     +echo_post:
       echo>: ${http.last_content}
 
-            # +call_get_builds:
-            #   http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds/${http.last_content.oid}"
-            #   method: GET
-            #   headers:
-            #     - authorization: "${secret:td.apikey}"
-            #     - cache-control: "no-cache"
-            #     - accept: "application/json"
-            #     - content-type: "application/json"
-            #   store_content: true
+            +call_get_builds:
+              http>: "https://${api_endpoint}/reporting/datamodels/${td.last_results.oid}/builds/${http.last_content.oid}"
+              method: GET
+              headers:
+                - authorization: "${secret:td.apikey}"
+                - cache-control: "no-cache"
+                - accept: "application/json"
+                - content-type: "application/json"
+              store_content: true
 
-            # +echo_get:
-            #   echo>: ${http.last_content}
+            +echo_get:
+              echo>: ${http.last_content}
 
 
 

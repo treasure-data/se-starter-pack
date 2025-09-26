@@ -10,8 +10,8 @@ cast(COALESCE(regexp_like( "id", '^(?=.{1,256})(?=.{1,64}@.{1,255}$)[A-Za-z0-9._
 case
   when nullif(lower(ltrim(rtrim("consent_type"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("consent_type"))), '') is null then null
-  else array_join((transform((split(lower(trim("consent_type")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_consent_type",
+  else array_join(transform(split(replace(lower(trim("consent_type")), '_', ' '), ' '), x -> concat(upper(substr(x, 1, 1)), substr(x, 2, length(x)))), ' ')
+end AS "trfmd_consent_type",
 --
 case
   when nullif(lower(ltrim(rtrim("id"))), 'null') is null then null
@@ -22,9 +22,8 @@ end   AS  "trfmd_email",
 case
   when nullif(lower(ltrim(rtrim("consent_flag"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("consent_flag"))), '') is null then null
-  when nullif(lower(ltrim(rtrim("consent_flag"))), '') in ('0', 'false') then 'False'
-  when nullif(lower(ltrim(rtrim("consent_flag"))), '') in ('1', 'true') then 'True'
-end   AS  "trfmd_consent_flag",
+  else array_join(transform(split(replace(lower(trim("consent_flag")), '_', ' '), ' '), x -> concat(upper(substr(x, 1, 1)), substr(x, 2, length(x)))), ' ')
+end AS "trfmd_consent_flag",
 case
   when nullif(lower(ltrim(rtrim("id_type"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("id_type"))), '') is null then null
@@ -46,8 +45,8 @@ SELECT
 case
   when nullif(lower(ltrim(rtrim("consent_type"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("consent_type"))), '') is null then null
-  else array_join((transform((split(lower(trim("consent_type")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_consent_type",
+  else array_join(transform(split(replace(lower(trim("consent_type")), '_', ' '), ' '), x -> concat(upper(substr(x, 1, 1)), substr(x, 2, length(x)))), ' ')
+end AS "trfmd_consent_type",
 -- 
 case
   when nullif(lower(ltrim(rtrim("id_type"))), 'null') is null then null
@@ -58,9 +57,8 @@ end   AS  "trfmd_id_type",
 case
   when nullif(lower(ltrim(rtrim("consent_flag"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("consent_flag"))), '') is null then null
-  when nullif(lower(ltrim(rtrim("consent_flag"))), '') in ('0', 'false') then 'False'
-  when nullif(lower(ltrim(rtrim("consent_flag"))), '') in ('1', 'true') then 'True'
-end   AS  "trfmd_consent_flag",
+  else array_join(transform(split(replace(lower(trim("consent_flag")), '_', ' '), ' '), x -> concat(upper(substr(x, 1, 1)), substr(x, 2, length(x)))), ' ')
+end AS "trfmd_consent_flag",
 --
 case
   when nullif(lower(ltrim(rtrim("id"))), 'null') is null then null

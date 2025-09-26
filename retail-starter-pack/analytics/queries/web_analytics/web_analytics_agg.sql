@@ -1,9 +1,9 @@
 with known_cust as (
-  select distinct retail_unification_id as  kc
+  select distinct ${unification_id} as  kc
   from profile_identifiers where email is not null
 ),
 all_web_cust as (
-  select distinct retail_unification_id as wc
+  select distinct ${unification_id} as wc
   from pageviews
   where TD_INTERVAL(time, '-1d')
 ),

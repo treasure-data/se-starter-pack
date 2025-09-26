@@ -16,5 +16,6 @@ create table order_details_tmp (
     tax double,
     net_price double,
     order_line_no bigint,
+    order_datetime varchar,
     time bigint
 );

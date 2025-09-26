@@ -1,6 +1,14 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_${sub}.${tbl} as 
+CREATE TABLE IF NOT EXISTS ${stg}_${sub}.${tbl} (
+  time bigint
+);
+
+INSERT INTO ${stg}_${sub}.${tbl}
+
+with max_time as (
+  select COALESCE(max(time),0) as max_time from ${stg}_${sub}.order_details
+)
 
 SELECT
 *,
@@ -39,8 +47,10 @@ case
   when nullif(lower(ltrim(rtrim("product_sub_department"))), 'null') is null then null
   when nullif(lower(ltrim(rtrim("product_sub_department"))), '') is null then null
   else array_join((transform((split(lower(trim("product_sub_department")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_product_sub_department"
-
+end   AS  "trfmd_product_sub_department", 
+TD_TIME_PARSE(order_datetime) as trfmd_order_datetime_unix
 FROM
 
 order_details
+-- WHERE
+--   time > (SELECT max_time FROM max_time)

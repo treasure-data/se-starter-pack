@@ -1,5 +1,5 @@
 {
-  "title": "QSR Sales Analytics",
+  "title": "Retail Sales Analytics",
   "desc": "",
   "source": null,
   "type": "dashboard",
@@ -32,7 +32,7 @@
                     "maxWidth": 2048,
                     "height": 32,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0c5"
+                    "widgetid": "67582f2b5b61dd0040cef6be"
                   }
                 ],
                 "width": 100,
@@ -52,7 +52,7 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0c8",
+                    "widgetid": "67582f2b5b61dd0040cef6c1",
                     "height": "184px"
                   }
                 ],
@@ -69,7 +69,7 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0c9",
+                    "widgetid": "67582f2b5b61dd0040cef6c2",
                     "height": "184px"
                   }
                 ],
@@ -86,7 +86,7 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0ce",
+                    "widgetid": "67582f2b5b61dd0040cef6c7",
                     "height": "184px"
                   }
                 ],
@@ -108,7 +108,7 @@
                     "maxWidth": 2048,
                     "height": "188px",
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0c6"
+                    "widgetid": "67582f2b5b61dd0040cef6bf"
                   }
                 ],
                 "width": 54.215581643543224,
@@ -125,7 +125,7 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0c7"
+                    "widgetid": "67582f2b5b61dd0040cef6c0"
                   }
                 ],
                 "width": 25.18676627534685,
@@ -141,7 +141,7 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0cd",
+                    "widgetid": "67582f2b5b61dd0040cef6c6",
                     "height": "188px"
                   }
                 ],
@@ -162,7 +162,7 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0ca",
+                    "widgetid": "67582f2b5b61dd0040cef6c4",
                     "height": "232px"
                   }
                 ],
@@ -179,7 +179,7 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0cb",
+                    "widgetid": "67582f2b5b61dd0040cef6c3",
                     "height": "232px"
                   }
                 ],
@@ -196,7 +196,7 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0cc",
+                    "widgetid": "67582f2b5b61dd0040cef6c5",
                     "height": "232px"
                   }
                 ],
@@ -218,7 +218,7 @@
                     "maxWidth": 2048,
                     "height": "500px",
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0c3"
+                    "widgetid": "67582f2b5b61dd0040cef6bc"
                   }
                 ],
                 "width": 100,
@@ -239,7 +239,7 @@
                     "maxWidth": 2048,
                     "height": "316px",
                     "defaultWidth": 512,
-                    "widgetid": "675456b1e945a2003e09a0c4"
+                    "widgetid": "67582f2b5b61dd0040cef6bd"
                   }
                 ],
                 "width": 100,
@@ -267,10 +267,10 @@
     }
   },
   "original": null,
+  "previewLayout": [],
   "dataExploration": false,
   "lastOpened": null,
-  "previewLayout": [],
-  "oid": "675456b1e945a2003e09a0c2",
+  "oid": "67582f2b5b61dd0040cef6bb",
   "datasource": {
     "fullname": "localhost/dm_11874_QSR VA - Sales Analytics",
     "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaSalesIAAaAnalytics",
@@ -287,7 +287,7 @@
         "dim": "[sales_market_basket_analysis.product1]",
         "datatype": "text",
         "merged": true,
-        "collapsed": true,
+        "collapsed": false,
         "title": "product1",
         "isDashboardFilter": true,
         "datasource": {
@@ -299,11 +299,9 @@
           "title": "dm_11874_QSR VA - Sales Analytics"
         },
         "filter": {
-          "explicit": true,
+          "explicit": false,
           "multiSelection": true,
-          "members": [
-            "Apple Pie"
-          ]
+          "all": true
         }
       },
       "instanceid": "8678A-E8C2-99",
@@ -319,8 +317,9 @@
   "filterRelations": [],
   "filterToDatasourceMapping": {},
   "allowChangeSubscription": false,
+  "isPublic": null,
+  "parentFolder": "6757692d7a93ec0040b1e6c6",
   "subscription": {
-    "subscribe": false,
     "executionPerDay": 1,
     "schedule": "* * * * * *",
     "isDataChange": true,
@@ -333,21 +332,20 @@
       "isPdf": false
     },
     "context": {
-      "dashboardid": "675456b1e945a2003e09a0c2"
+      "dashboardid": "67582f2b5b61dd0040cef6bb"
     },
-    "startAt": "2024-04-23",
+    "startAt": "2025-04-10",
     "tzName": "America/New_York",
     "timezone": 240,
-    "active": false
+    "active": false,
+    "subscribe": false
   },
-  "isPublic": null,
-  "parentFolder": "674ddae06101af003fcf774c",
   "widgets": [
     {
       "title": "Lift",
       "type": "chart/bar",
       "subtype": "bar/classic",
-      "oid": "675456b1e945a2003e09a0c3",
+      "oid": "67582f2b5b61dd0040cef6bc",
       "desc": null,
       "source": null,
       "datasource": {
@@ -612,14 +610,15 @@
           "max": null
         }
       },
-      "dashboardid": "675456b1e945a2003e09a0c2",
-      "script": "(function (factory) {\n  \"use strict\";\n  if (typeof module === \"object\" && module.exports) {\n    module.exports = factory;\n  } else {\n    factory(Highcharts);\n  }\n}(function (H) {\n  var rel = H.relativeLength;\n\n  H.wrap(H.seriesTypes.column.prototype, 'translate', function (proceed) {\n    var options = this.options,\n    topMargin = options.topMargin || 0,\n    bottomMargin = options.bottomMargin || 0;\n\n    proceed.call(this);\n\n    this.points.forEach(function (point) {\n      var shapeArgs = point.shapeArgs,\n      w = shapeArgs.width,\n      h = shapeArgs.height,\n      x = shapeArgs.x,\n      y = shapeArgs.y;\n\n      // Get the radius\n      var rTopLeft = rel(options.borderRadiusTopLeft || 0, w),\n      rTopRight = rel(options.borderRadiusTopRight || 0, w),\n      rBottomRight = rel(options.borderRadiusBottomRight || 0, w),\n      rBottomLeft = rel(options.borderRadiusBottomLeft || 0, w);\n\n      if (rTopLeft || rTopRight || rBottomRight || rBottomLeft) {\n        var maxR = Math.min(w, h) / 2\n\n        if (rTopLeft > maxR) {\n          rTopLeft = maxR;\n        }\n\n        if (rTopRight > maxR) {\n          rTopRight = maxR;\n        }\n\n        if (rBottomRight > maxR) {\n          rBottomRight = maxR;\n        }\n\n        if (rBottomLeft > maxR) {\n          rBottomLeft = maxR;\n        }\n\n        // Preserve the box for data labels\n        point.dlBox = point.shapeArgs;\n        point.shapeType = 'path';\n\n        point.shapeArgs = {\n          d: [\n            ['M', x + rTopLeft, y + topMargin],\n            ['L', x + w - rTopRight, y + topMargin],\n            ['C', x + w - rTopRight / 2, y, x + w, y + rTopRight / 2, x + w, y + rTopRight],\n            ['L', x + w, y + h - rBottomRight],\n            ['C', x + w, y + h - rBottomRight / 2, x + w - rBottomRight / 2, y + h, x + w - rBottomRight, y + h + bottomMargin],\n            ['L', x + rBottomLeft, y + h + bottomMargin],\n            ['C', x + rBottomLeft / 2, y + h, x, y + h - rBottomLeft / 2, x, y + h - rBottomLeft],\n            ['L', x, y + rTopLeft],\n            ['C', x, y + rTopLeft / 2, x + rTopLeft / 2, y, x + rTopLeft, y],\n            ['Z']\n          ]\n        };\n\n        point.shapeArgs.d = point.shapeArgs.d.join(' ').replaceAll(',',' ');\n      }\n    });\n  });\n}));\n\nwidget.on('processresult',function(widget,result) { \n  result.result.series[0].borderRadiusTopLeft = '20%'\n  result.result.series[0].borderRadiusTopRight = '20%'\n});\n\n\nwidget.on('ready', ()=> {\n   $(element).parent().css('border-radius', '20px');\n   $(element).parent().parent().css('border-radius', '20px');\n})"
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "script": "(function (factory) {\n  \"use strict\";\n  if (typeof module === \"object\" && module.exports) {\n    module.exports = factory;\n  } else {\n    factory(Highcharts);\n  }\n}(function (H) {\n  var rel = H.relativeLength;\n\n  H.wrap(H.seriesTypes.column.prototype, 'translate', function (proceed) {\n    var options = this.options,\n    topMargin = options.topMargin || 0,\n    bottomMargin = options.bottomMargin || 0;\n\n    proceed.call(this);\n\n    this.points.forEach(function (point) {\n      var shapeArgs = point.shapeArgs,\n      w = shapeArgs.width,\n      h = shapeArgs.height,\n      x = shapeArgs.x,\n      y = shapeArgs.y;\n\n      // Get the radius\n      var rTopLeft = rel(options.borderRadiusTopLeft || 0, w),\n      rTopRight = rel(options.borderRadiusTopRight || 0, w),\n      rBottomRight = rel(options.borderRadiusBottomRight || 0, w),\n      rBottomLeft = rel(options.borderRadiusBottomLeft || 0, w);\n\n      if (rTopLeft || rTopRight || rBottomRight || rBottomLeft) {\n        var maxR = Math.min(w, h) / 2\n\n        if (rTopLeft > maxR) {\n          rTopLeft = maxR;\n        }\n\n        if (rTopRight > maxR) {\n          rTopRight = maxR;\n        }\n\n        if (rBottomRight > maxR) {\n          rBottomRight = maxR;\n        }\n\n        if (rBottomLeft > maxR) {\n          rBottomLeft = maxR;\n        }\n\n        // Preserve the box for data labels\n        point.dlBox = point.shapeArgs;\n        point.shapeType = 'path';\n\n        point.shapeArgs = {\n          d: [\n            ['M', x + rTopLeft, y + topMargin],\n            ['L', x + w - rTopRight, y + topMargin],\n            ['C', x + w - rTopRight / 2, y, x + w, y + rTopRight / 2, x + w, y + rTopRight],\n            ['L', x + w, y + h - rBottomRight],\n            ['C', x + w, y + h - rBottomRight / 2, x + w - rBottomRight / 2, y + h, x + w - rBottomRight, y + h + bottomMargin],\n            ['L', x + rBottomLeft, y + h + bottomMargin],\n            ['C', x + rBottomLeft / 2, y + h, x, y + h - rBottomLeft / 2, x, y + h - rBottomLeft],\n            ['L', x, y + rTopLeft],\n            ['C', x, y + rTopLeft / 2, x + rTopLeft / 2, y, x + rTopLeft, y],\n            ['Z']\n          ]\n        };\n\n        point.shapeArgs.d = point.shapeArgs.d.join(' ').replaceAll(',',' ');\n      }\n    });\n  });\n}));\n\nwidget.on('processresult',function(widget,result) { \n  result.result.series[0].borderRadiusTopLeft = '20%'\n  result.result.series[0].borderRadiusTopRight = '20%'\n});\n\n\nwidget.on('ready', ()=> {\n   $(element).parent().css('border-radius', '20px');\n   $(element).parent().parent().css('border-radius', '20px');\n})",
+      "lastOpened": null
     },
     {
       "title": "Market Basket Analysis",
       "type": "tablewidget",
       "subtype": "tablewidget",
-      "oid": "675456b1e945a2003e09a0c4",
+      "oid": "67582f2b5b61dd0040cef6bd",
       "desc": null,
       "source": null,
       "datasource": {
@@ -876,8 +875,8 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "675456b1e945a2003e09a0c2",
-      "script": "\n//Naz Updated the widget style here Dec 9 2024\nwidget.on('domready', function(se, ev){\n \tvar heads = $(\".dataTable.no-footer tr th\");\n\theads.css(\"font-size\", \"14px\");\n\theads.css(\"font-family\", \"Nunito, sans-serif\");\n\theads.css(\"font-weight\", \"600\");\n\theads.css(\"color\",\"#8d4e3c\");\n\t\n\tvar rows = $(\".dataTable.no-footer tbody tr\");\n    rows.each(function() {\n    var cols = $(this).find(\"td\");\n\t\tcols.css(\"font-size\", \"13px\");\n\t    cols.css(\"font-family\", \"Nunito, sans-serif\");\n\t    cols.css(\"font-weight\",  \"200\");\n\t\tcols.css(\"border-left\", \"0px\");\n     \tcols.css(\"border-right\", \"0px\");\n    \tcols.css(\"border-bottom\", \"1px solid #e7eeef\");\n\t\t\n\t});\n\n});\n\n\n",
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "script": "\n//Naz Updated the widget style here Dec 9 2024\nwidget.on('domready', function(se, ev){\n \tvar heads = $(\".dataTable.no-footer tr th\");\n\theads.css(\"font-size\", \"15px\");\n\theads.css(\"font-family\", \"Nunito, sans-serif\");\n\theads.css(\"font-weight\", \"600\");\n\theads.css(\"color\",\"#8d4e3c\");\n\t\n\tvar rows = $(\".dataTable.no-footer tbody tr\");\n    rows.each(function() {\n    var cols = $(this).find(\"td\");\n\t\tcols.css(\"font-size\", \"14px\");\n\t    cols.css(\"font-family\", \"Nunito, sans-serif\");\n\t    cols.css(\"font-weight\",  \"200\");\n\t\tcols.css(\"border-left\", \"0px\");\n     \tcols.css(\"border-right\", \"0px\");\n    \tcols.css(\"border-bottom\", \"1px solid #e7eeef\");\n\t\t\n\t});\n\n});\n\n\n",
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
         "drilledDashboardsFolderPrefix": "",
@@ -908,13 +907,14 @@
         "mergeTargetDashboardFilters": false,
         "saveDisabledTargetFilters": false,
         "drillToDashboardByName": false
-      }
+      },
+      "lastOpened": null
     },
     {
       "title": "",
       "type": "WidgetsTabber",
       "subtype": "WidgetsTabber",
-      "oid": "675456b1e945a2003e09a0c5",
+      "oid": "67582f2b5b61dd0040cef6be",
       "desc": null,
       "source": null,
       "datasource": {
@@ -956,43 +956,43 @@
         "selector": false,
         "autoUpdateOnEveryChange": true
       },
-      "dashboardid": "675456b1e945a2003e09a0c2",
-      "script": "\nwidget.on('render',function(w, e){e.prefixText = '';\ne.suffixText = '';\ne.selectedColor = '#3A4356'; /*The color of the chosen title*/\ne.fontColor = '#d1d1d1'; /*The color of the unchosen titles*/\n e.fontWeight = '300';\ne.fontFamily = 'Avenir';\ne.elementWidth = '100%';\ne.descColor = '#a5a5a5';\ne.parentMarginLeft = '-50px';\ne.height = 40; /* affects the tabber widget default high*/\n}); \n\n\nwidget.tabs = [\n{title: \"Market Basket Analysis\", \ndisplayWidgetIds : [\"675456b1e945a2003e09a0c3\", \"675456b1e945a2003e09a0c4\"],   \nhideWidgetIds : [\"675456b1e945a2003e09a0c8\",\"675456b1e945a2003e09a0c9\", \"675456b1e945a2003e09a0ce\", \"675456b1e945a2003e09a0c6\", \"675456b1e945a2003e09a0c7\", \"675456b1e945a2003e09a0cd\",\"675456b1e945a2003e09a0ca\",\"675456b1e945a2003e09a0cb\",\"675456b1e945a2003e09a0cc\"]},\n\n{title: \"Sales Trends\", \n displayWidgetIds : [\"675456b1e945a2003e09a0c8\",\"675456b1e945a2003e09a0c9\", \"675456b1e945a2003e09a0ce\", \"675456b1e945a2003e09a0c6\", \"675456b1e945a2003e09a0c7\", \"675456b1e945a2003e09a0cd\",\"675456b1e945a2003e09a0ca\",\"675456b1e945a2003e09a0cb\",\"675456b1e945a2003e09a0cc\"],   \nhideWidgetIds : [\"675456b1e945a2003e09a0c3\", \"675456b1e945a2003e09a0c4\"]}\n\n\t\n]; \n\nwidget.tabsConfig = 'multiply';\n\n//widget.on('ready', function(se, ev){\n//$(element).css('overflow','hidden'), \n//$(element).css('max-height','200px'),\n//$(element).css('padding-top','5px'),\n//$(element).css('margin-top','-10px'),\n//$(element).css('background-color','#f2f9ff'),\n//$(element).css('font-family','Avenir'),\n//$(element).css('font-weight','300'),\n//$(element).css('font-size','16px'),\n//$(element).css('float','left'),\n//$(element).css('align-self','end'),\n//$(element).css('align-self','end'),\n//$('.widget-body .listDefaultCSS').css('text-align','left'),\n//$('.widget-body .listDefaultCSS').css('margin-left','35px');\n//});\n\n//Naz code added here...\nwidget.on('ready', function(se, ev){\n$(element).css('height','50px'),\n$(element).css('max-height','50px'),\n$(element).css('font-family','Avenir'),\n$(element).css('font-weight','300'),\n$(element).css('font-size','16px'),\n$(element).css('float','left'),\n$(element).css('align-self','end'),\n$(element).css('align-self','end'),\n$(element).css('text-transform','capitalize')\n$('.widget-body .listDefaultCSS').css('text-align','left'),\n$('.widget-body .listDefaultCSS').css('height','50px'),\n$('.widget-body .listDefaultCSS').css('position','absolute'),\n$('.widget-body .listDefaultCSS').css('top','30%'),\n$('.widget-body .listDefaultCSS').css('transform','translateY(0%)'),\n$('.widget-body .listDefaultCSS').css('margin-left','35px');\n\t\n});\n\n\n\n",
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "script": "\nwidget.on('render',function(w, e){e.prefixText = '';\ne.suffixText = '';\ne.selectedColor = '#3A4356'; /*The color of the chosen title*/\ne.fontColor = '#d1d1d1'; /*The color of the unchosen titles*/\n e.fontWeight = '300';\ne.fontFamily = 'Avenir';\ne.elementWidth = '100%';\ne.descColor = '#a5a5a5';\ne.parentMarginLeft = '-50px';\ne.height = 40; /* affects the tabber widget default high*/\n}); \n\n\nwidget.tabs = [\n{title: \"Market Basket Analysis\", \ndisplayWidgetIds : [\"67582f2b5b61dd0040cef6bc\", \"67582f2b5b61dd0040cef6bd\"],   \nhideWidgetIds : [\"67582f2b5b61dd0040cef6c1\",\"67582f2b5b61dd0040cef6c2\", \"67582f2b5b61dd0040cef6c7\", \"67582f2b5b61dd0040cef6bf\", \"67582f2b5b61dd0040cef6c0\", \"67582f2b5b61dd0040cef6c6\",\"67582f2b5b61dd0040cef6c4\",\"67582f2b5b61dd0040cef6c3\",\"67582f2b5b61dd0040cef6c5\"]},\n\n{title: \"Sales Trends\", \n displayWidgetIds : [\"67582f2b5b61dd0040cef6c1\",\"67582f2b5b61dd0040cef6c2\", \"67582f2b5b61dd0040cef6c7\", \"67582f2b5b61dd0040cef6bf\", \"67582f2b5b61dd0040cef6c0\", \"67582f2b5b61dd0040cef6c6\",\"67582f2b5b61dd0040cef6c4\",\"67582f2b5b61dd0040cef6c3\",\"67582f2b5b61dd0040cef6c5\"],   \nhideWidgetIds : [\"67582f2b5b61dd0040cef6bc\", \"67582f2b5b61dd0040cef6bd\"]}\n\n\t\n]; \n\nwidget.tabsConfig = 'multiply';\n\n//widget.on('ready', function(se, ev){\n//$(element).css('overflow','hidden'), \n//$(element).css('max-height','200px'),\n//$(element).css('padding-top','5px'),\n//$(element).css('margin-top','-10px'),\n//$(element).css('background-color','#f2f9ff'),\n//$(element).css('font-family','Avenir'),\n//$(element).css('font-weight','300'),\n//$(element).css('font-size','16px'),\n//$(element).css('float','left'),\n//$(element).css('align-self','end'),\n//$(element).css('align-self','end'),\n//$('.widget-body .listDefaultCSS').css('text-align','left'),\n//$('.widget-body .listDefaultCSS').css('margin-left','35px');\n//});\n\n//Naz code added here...\nwidget.on('ready', function(se, ev){\n$(element).css('height','50px'),\n$(element).css('max-height','50px'),\n$(element).css('font-family','Avenir'),\n$(element).css('font-weight','300'),\n$(element).css('font-size','16px'),\n$(element).css('float','left'),\n$(element).css('align-self','end'),\n$(element).css('align-self','end'),\n$(element).css('text-transform','capitalize')\n$('.widget-body .listDefaultCSS').css('text-align','left'),\n$('.widget-body .listDefaultCSS').css('height','50px'),\n$('.widget-body .listDefaultCSS').css('position','absolute'),\n$('.widget-body .listDefaultCSS').css('top','30%'),\n$('.widget-body .listDefaultCSS').css('transform','translateY(0%)'),\n$('.widget-body .listDefaultCSS').css('margin-left','35px');\n\t\n});\n\n\n\n",
       "tabs": [
         {
           "title": "Market Basket Analysis",
           "displayWidgetIds": [
-            "675456b1e945a2003e09a0c3",
-            "675456b1e945a2003e09a0c4"
+            "67582f2b5b61dd0040cef6bc",
+            "67582f2b5b61dd0040cef6bd"
           ],
           "hideWidgetIds": [
-            "675456b1e945a2003e09a0c8",
-            "675456b1e945a2003e09a0c9",
-            "675456b1e945a2003e09a0ce",
-            "675456b1e945a2003e09a0c6",
-            "675456b1e945a2003e09a0c7",
-            "675456b1e945a2003e09a0cd",
-            "675456b1e945a2003e09a0ca",
-            "675456b1e945a2003e09a0cb",
-            "675456b1e945a2003e09a0cc"
+            "67582f2b5b61dd0040cef6c1",
+            "67582f2b5b61dd0040cef6c2",
+            "67582f2b5b61dd0040cef6c7",
+            "67582f2b5b61dd0040cef6bf",
+            "67582f2b5b61dd0040cef6c0",
+            "67582f2b5b61dd0040cef6c6",
+            "67582f2b5b61dd0040cef6c4",
+            "67582f2b5b61dd0040cef6c3",
+            "67582f2b5b61dd0040cef6c5"
           ]
         },
         {
           "title": "Sales Trends",
           "displayWidgetIds": [
-            "675456b1e945a2003e09a0c8",
-            "675456b1e945a2003e09a0c9",
-            "675456b1e945a2003e09a0ce",
-            "675456b1e945a2003e09a0c6",
-            "675456b1e945a2003e09a0c7",
-            "675456b1e945a2003e09a0cd",
-            "675456b1e945a2003e09a0ca",
-            "675456b1e945a2003e09a0cb",
-            "675456b1e945a2003e09a0cc"
+            "67582f2b5b61dd0040cef6c1",
+            "67582f2b5b61dd0040cef6c2",
+            "67582f2b5b61dd0040cef6c7",
+            "67582f2b5b61dd0040cef6bf",
+            "67582f2b5b61dd0040cef6c0",
+            "67582f2b5b61dd0040cef6c6",
+            "67582f2b5b61dd0040cef6c4",
+            "67582f2b5b61dd0040cef6c3",
+            "67582f2b5b61dd0040cef6c5"
           ],
           "hideWidgetIds": [
-            "675456b1e945a2003e09a0c3",
-            "675456b1e945a2003e09a0c4"
+            "67582f2b5b61dd0040cef6bc",
+            "67582f2b5b61dd0040cef6bd"
           ]
         }
       ],
@@ -1027,13 +1027,14 @@
         "mergeTargetDashboardFilters": false,
         "saveDisabledTargetFilters": false,
         "drillToDashboardByName": false
-      }
+      },
+      "lastOpened": null
     },
     {
       "title": "Median AOV Trend",
       "type": "chart/line",
       "subtype": "line/spline",
-      "oid": "675456b1e945a2003e09a0c6",
+      "oid": "67582f2b5b61dd0040cef6bf",
       "desc": null,
       "source": null,
       "datasource": {
@@ -1315,16 +1316,17 @@
           "max": null
         }
       },
-      "dashboardid": "675456b1e945a2003e09a0c2",
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
       "viewState": {
         "activeTab": "filters"
-      }
+      },
+      "lastOpened": null
     },
     {
       "title": "Median",
       "type": "indicator",
       "subtype": "indicator/numeric",
-      "oid": "675456b1e945a2003e09a0c7",
+      "oid": "67582f2b5b61dd0040cef6c0",
       "desc": null,
       "source": null,
       "datasource": {
@@ -1569,14 +1571,15 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "675456b1e945a2003e09a0c2",
-      "script": "\nwidget.on('processresult', function(w, e) {\n\n var options = {\n title: {\n fontFamily: 'Nunito, sans-serif',\n fontWeight: 'bold',\n fontSizes: {\n big: 40,\n medium: 30\n }\n },\n value: {\n fontFamily: 'Nunito, sans-serif',\n fontWeight: 'bold',\n\t color: '#486485',\n fontSizes: {\n big: 40,\n medium: 30\n }\n }\n }\n\t \nw.indicatorInstance.setOptions('numericSimple', options);\n\t });"
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "script": "\nwidget.on('processresult', function(w, e) {\n\n var options = {\n title: {\n fontFamily: 'Nunito, sans-serif',\n fontWeight: 'bold',\n fontSizes: {\n big: 40,\n medium: 30\n }\n },\n value: {\n fontFamily: 'Nunito, sans-serif',\n fontWeight: 'bold',\n\t color: '#486485',\n fontSizes: {\n big: 40,\n medium: 30\n }\n }\n }\n\t \nw.indicatorInstance.setOptions('numericSimple', options);\n\t });",
+      "lastOpened": null
     },
     {
       "title": "Median LTV Trend",
       "type": "chart/line",
       "subtype": "line/spline",
-      "oid": "675456b1e945a2003e09a0c8",
+      "oid": "67582f2b5b61dd0040cef6c1",
       "desc": null,
       "source": null,
       "datasource": {
@@ -1661,7 +1664,6 @@
                   "color": {
                     "type": "color",
                     "color": "#486485",
-                    "colorIndex": 0,
                     "isHandPickedColor": true
                   }
                 }
@@ -1810,16 +1812,17 @@
           "max": null
         }
       },
-      "dashboardid": "675456b1e945a2003e09a0c2",
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
       "viewState": {
         "activeTab": "filters"
-      }
+      },
+      "lastOpened": null
     },
     {
       "title": "Median",
       "type": "indicator",
       "subtype": "indicator/numeric",
-      "oid": "675456b1e945a2003e09a0c9",
+      "oid": "67582f2b5b61dd0040cef6c2",
       "desc": null,
       "source": null,
       "datasource": {
@@ -2073,13 +2076,14 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "675456b1e945a2003e09a0c2"
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "lastOpened": null
     },
     {
       "title": "Median",
       "type": "indicator",
       "subtype": "indicator/numeric",
-      "oid": "675456b1e945a2003e09a0cb",
+      "oid": "67582f2b5b61dd0040cef6c3",
       "desc": null,
       "source": null,
       "datasource": {
@@ -2332,13 +2336,14 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "675456b1e945a2003e09a0c2"
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "lastOpened": null
     },
     {
       "title": "Average Days Between Purchase Trend",
       "type": "chart/line",
       "subtype": "line/spline",
-      "oid": "675456b1e945a2003e09a0ca",
+      "oid": "67582f2b5b61dd0040cef6c4",
       "desc": null,
       "source": null,
       "datasource": {
@@ -2613,16 +2618,17 @@
           "max": null
         }
       },
-      "dashboardid": "675456b1e945a2003e09a0c2",
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
       "viewState": {
         "activeTab": "filters"
-      }
+      },
+      "lastOpened": null
     },
     {
       "title": "Low Frequency",
       "type": "indicator",
       "subtype": "indicator/numeric",
-      "oid": "675456b1e945a2003e09a0cc",
+      "oid": "67582f2b5b61dd0040cef6c5",
       "desc": null,
       "source": null,
       "datasource": {
@@ -2863,13 +2869,14 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "675456b1e945a2003e09a0c2"
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "lastOpened": null
     },
     {
       "title": "High AOV",
       "type": "indicator",
       "subtype": "indicator/numeric",
-      "oid": "675456b1e945a2003e09a0cd",
+      "oid": "67582f2b5b61dd0040cef6c6",
       "desc": null,
       "source": null,
       "datasource": {
@@ -3122,13 +3129,14 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "675456b1e945a2003e09a0c2"
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "lastOpened": null
     },
     {
       "title": "High LTV",
       "type": "indicator",
       "subtype": "indicator/numeric",
-      "oid": "675456b1e945a2003e09a0ce",
+      "oid": "67582f2b5b61dd0040cef6c7",
       "desc": null,
       "source": null,
       "datasource": {
@@ -3381,7 +3389,8 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "675456b1e945a2003e09a0c2"
+      "dashboardid": "67582f2b5b61dd0040cef6bb",
+      "lastOpened": null
     }
   ],
   "hierarchies": []

@@ -1,6 +1,6 @@
 with t1 as (
   select distinct
-  retail_unification_id,
+  ${unification_id},
   CASE
     WHEN regexp_like(${column}, '${sankey.register.pattern}') THEN '${sankey.register.stage}'
     WHEN regexp_like(${column}, '${sankey.login.pattern}') THEN '${sankey.login.stage}'
@@ -32,7 +32,7 @@ with t1 as (
 ),
 t2 as (
   select
-    retail_unification_id,
+    ${unification_id},
     stage,
     stage_indexno,
     time
@@ -41,16 +41,16 @@ t2 as (
 ),
 t3 as (
   select
-    retail_unification_id,
+    ${unification_id},
     stage as "from",
-    LEAD(stage, 1) OVER (PARTITION BY retail_unification_id ORDER BY time) AS "to",
+    LEAD(stage, 1) OVER (PARTITION BY ${unification_id} ORDER BY time) AS "to",
     stage_indexno from_num,
-    LEAD(stage_indexno, 1) OVER (PARTITION BY retail_unification_id ORDER BY time) AS to_num,
+    LEAD(stage_indexno, 1) OVER (PARTITION BY ${unification_id} ORDER BY time) AS to_num,
     time
   from t2
-  order by retail_unification_id, time
+  order by ${unification_id}, time
 )
 select *
 from t3
 where to_num > from_num
-order by retail_unification_id, time
+order by ${unification_id}, time

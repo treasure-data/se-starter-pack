@@ -1,10 +1,10 @@
 with get_utm as (
-  select retail_unification_id, session_id, max(utm_source) utm_source, max(utm_medium) utm_medium, max(utm_campaign) utm_campaign
+  select ${unification_id}, session_id, max(utm_source) utm_source, max(utm_medium) utm_medium, max(utm_campaign) utm_campaign
   from web_analytics_agg_tmp
-  group by retail_unification_id, session_id
+  group by ${unification_id}, session_id
 ),
 t1 as (
-  select distinct retail_unification_id, session_id
+  select distinct ${unification_id}, session_id
   from web_analytics_agg_tmp
   where regexp_like(${column}, '${conversion.pattern}')
 )

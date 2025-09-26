@@ -32,14 +32,3 @@
       _env:
         TD_SITE: ${site}
         TD_API_KEY: ${secret:td_apikey}
-
-#Send Error Alert
-_error:
-  +send_error_alert:
-    for_each>:
-      email: ${email_ids}
-    _do:
-      _export:
-        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
-        receive_email: ${email}
-      call>: utilities/error.dig
