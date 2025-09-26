@@ -1,5 +1,5 @@
 {
-  "title": "QSR IDU Dashboard",
+  "title": "Retail IDU Dashboard",
   "desc": "",
   "source": "67339a5446b6b5003f248814",
   "type": "dashboard",
@@ -27,17 +27,17 @@
                 "elements": [
                   {
                     "minHeight": 68,
-                    "maxHeight": 1012,
+                    "maxHeight": 744,
                     "minWidth": 128,
                     "maxWidth": 2048,
-                    "height": "212px",
+                    "height": 167.2,
                     "defaultWidth": 512,
-                    "widgetid": "675784e4bf3fcf003f594e0c"
+                    "widgetid": "675769357a93ec0040b1e6ca"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -48,17 +48,17 @@
                 "elements": [
                   {
                     "minHeight": 68,
-                    "maxHeight": 1012,
+                    "maxHeight": 744,
                     "minWidth": 128,
                     "maxWidth": 2048,
-                    "height": "304px",
+                    "height": "328px",
                     "defaultWidth": 512,
-                    "widgetid": "67586a2c29afe5003fc2c99f"
+                    "widgetid": "675769357a93ec0040b1e6cb"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -72,14 +72,14 @@
                     "maxHeight": 2048,
                     "minWidth": 64,
                     "maxWidth": 2048,
-                    "height": "48px",
+                    "height": "44px",
                     "defaultWidth": 128,
-                    "widgetid": "6755dfc75c02df003f2ba68b"
+                    "widgetid": "675769357a93ec0040b1e6d3"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -94,13 +94,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba687",
+                    "widgetid": "675769357a93ec0040b1e6d1",
                     "height": "596px"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -115,13 +115,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba691",
+                    "widgetid": "675769357a93ec0040b1e6dc",
                     "height": "592px"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -137,12 +137,12 @@
                     "maxWidth": 2048,
                     "height": 384,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba681"
+                    "widgetid": "675769357a93ec0040b1e6cc"
                   }
                 ],
                 "width": 50,
                 "stretchable": false,
-                "pxlWidth": 567.101,
+                "pxlWidth": 1007,
                 "index": 0
               },
               {
@@ -153,13 +153,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba686",
+                    "widgetid": "675769357a93ec0040b1e6cf",
                     "height": 384
                   }
                 ],
                 "width": 50,
                 "stretchable": false,
-                "pxlWidth": 567.101,
+                "pxlWidth": 1007,
                 "index": 1
               }
             ]
@@ -175,12 +175,12 @@
                     "maxWidth": 2048,
                     "height": "44px",
                     "defaultWidth": 128,
-                    "widgetid": "6755dfc75c02df003f2ba68a"
+                    "widgetid": "675769357a93ec0040b1e6d9"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -196,12 +196,12 @@
                     "maxWidth": 2048,
                     "height": "368px",
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba682"
+                    "widgetid": "675769357a93ec0040b1e6cd"
                   }
                 ],
                 "width": 25.48521076389515,
                 "stretchable": false,
-                "pxlWidth": 289.054,
+                "pxlWidth": 513.266,
                 "index": 0
               },
               {
@@ -212,13 +212,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba688",
+                    "widgetid": "675769357a93ec0040b1e6d4",
                     "height": "368px"
                   }
                 ],
                 "width": 24.35831789816329,
                 "stretchable": false,
-                "pxlWidth": 276.267,
+                "pxlWidth": 490.562,
                 "index": 1
               },
               {
@@ -229,13 +229,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba689",
+                    "widgetid": "675769357a93ec0040b1e6d2",
                     "height": "368px"
                   }
                 ],
                 "width": 25.618317531495066,
                 "stretchable": false,
-                "pxlWidth": 290.564,
+                "pxlWidth": 515.938,
                 "index": 2
               },
               {
@@ -246,13 +246,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba685",
+                    "widgetid": "675769357a93ec0040b1e6d5",
                     "height": "368px"
                   }
                 ],
                 "width": 24.53815380644652,
                 "stretchable": false,
-                "pxlWidth": 278.307,
+                "pxlWidth": 494.188,
                 "index": 3
               }
             ]
@@ -266,15 +266,15 @@
                     "maxHeight": 1024,
                     "minWidth": 128,
                     "maxWidth": 2048,
-                    "height": "190px",
+                    "height": "183px",
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba690",
-                    "autoHeight": "190px"
+                    "widgetid": "675769357a93ec0040b1e6d8",
+                    "autoHeight": "183px"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -290,12 +290,12 @@
                     "maxWidth": 2048,
                     "height": "344px",
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba684"
+                    "widgetid": "675769357a93ec0040b1e6d0"
                   }
                 ],
                 "width": 25.722425722425722,
                 "stretchable": false,
-                "pxlWidth": 291.745,
+                "pxlWidth": 518.047,
                 "index": 0
               },
               {
@@ -306,13 +306,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba694",
+                    "widgetid": "675769357a93ec0040b1e6e1",
                     "height": "344px"
                   }
                 ],
                 "width": 25.64102564102564,
                 "stretchable": false,
-                "pxlWidth": 290.816,
+                "pxlWidth": 516.406,
                 "index": 1
               },
               {
@@ -323,13 +323,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba683",
+                    "widgetid": "675769357a93ec0040b1e6ce",
                     "height": "344px"
                   }
                 ],
                 "width": 23.931623931623932,
                 "stretchable": false,
-                "pxlWidth": 271.432,
+                "pxlWidth": 481.969,
                 "index": 2
               },
               {
@@ -340,13 +340,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba695",
+                    "widgetid": "675769357a93ec0040b1e6dd",
                     "height": "344px"
                   }
                 ],
                 "width": 24.704924704924714,
                 "stretchable": false,
-                "pxlWidth": 280.2,
+                "pxlWidth": 497.547,
                 "index": 3
               }
             ]
@@ -361,13 +361,13 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba693",
+                    "widgetid": "675769357a93ec0040b1e6db",
                     "height": "408px"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -382,13 +382,13 @@
                     "minWidth": 64,
                     "maxWidth": 2048,
                     "defaultWidth": 128,
-                    "widgetid": "6755dfc75c02df003f2ba68c",
+                    "widgetid": "675769357a93ec0040b1e6d6",
                     "height": "44px"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 1134.21,
+                "pxlWidth": 2014,
                 "index": 0
               }
             ]
@@ -404,12 +404,12 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba68f"
+                    "widgetid": "675769357a93ec0040b1e6de"
                   }
                 ],
                 "width": 25.071225071225076,
                 "stretchable": false,
-                "pxlWidth": 284.358,
+                "pxlWidth": 504.922,
                 "index": 0
               },
               {
@@ -420,14 +420,14 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba696",
+                    "widgetid": "675769357a93ec0040b1e6e0",
                     "height": "212px",
-                    "autoHeight": "161px"
+                    "autoHeight": "168px"
                   }
                 ],
                 "width": 74.92877492877493,
                 "stretchable": false,
-                "pxlWidth": 849.844,
+                "pxlWidth": 1509.06,
                 "index": 1
               }
             ]
@@ -441,15 +441,15 @@
                     "maxHeight": 2048,
                     "minWidth": 128,
                     "maxWidth": 2048,
-                    "height": "801px",
+                    "height": "864px",
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba68d",
-                    "autoHeight": "656px"
+                    "widgetid": "675769357a93ec0040b1e6da",
+                    "autoHeight": "684px"
                   }
                 ],
-                "width": 40.695835529783885,
+                "width": 40.61538461538461,
                 "stretchable": false,
-                "pxlWidth": 461.571,
+                "pxlWidth": 817.984,
                 "index": 0
               },
               {
@@ -460,14 +460,14 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba68e",
-                    "height": "801px",
-                    "autoHeight": "801px"
+                    "widgetid": "675769357a93ec0040b1e6d7",
+                    "height": "864px",
+                    "autoHeight": "864px"
                   }
                 ],
-                "width": 59.30416447021611,
+                "width": 59.38461538461538,
                 "stretchable": false,
-                "pxlWidth": 672.63,
+                "pxlWidth": 1196,
                 "index": 1
               }
             ]
@@ -482,14 +482,14 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba692",
-                    "height": "532px",
+                    "widgetid": "675769357a93ec0040b1e6df",
+                    "height": "569px",
                     "autoHeight": "532px"
                   }
                 ],
                 "width": 47.86729857819905,
                 "stretchable": false,
-                "pxlWidth": 542.908,
+                "pxlWidth": 964.047,
                 "index": 0
               },
               {
@@ -500,30 +500,30 @@
                     "minWidth": 128,
                     "maxWidth": 2048,
                     "defaultWidth": 512,
-                    "widgetid": "6755dfc75c02df003f2ba697",
-                    "height": "532px",
-                    "autoHeight": "532px"
+                    "widgetid": "675769357a93ec0040b1e6e2",
+                    "height": "569px",
+                    "autoHeight": "569px"
                   }
                 ],
                 "width": 52.132701421800945,
                 "stretchable": false,
-                "pxlWidth": 591.293,
+                "pxlWidth": 1049.94,
                 "index": 1
               }
             ]
           }
         ],
-        "pxlWidth": 1134.21,
+        "pxlWidth": 2014,
         "index": 0
       }
     ],
     "container": {}
   },
   "original": null,
+  "previewLayout": [],
   "dataExploration": false,
   "lastOpened": null,
-  "previewLayout": [],
-  "oid": "6755dfc75c02df003f2ba67e",
+  "oid": "675769357a93ec0040b1e6c9",
   "allowChangeSubscription": false,
   "datasource": {
     "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
@@ -595,13 +595,12 @@
     }
   ],
   "isPublic": null,
-  "parentFolder": "674ddae06101af003fcf774c",
-  "script": "// Define custom theme variables to be used in styling syntax across the Dash\nvar dashboardBackgroundColor = '#f2f9ff'; //#9E6762\nvar widgetBackgroundColor = '#ffffff'; \nvar parentBackgroundColor = '#f2f9ff';\nvar borderRadius = '20px';\nvar fontFamily = 'Nunito, sans-serif';\nvar fontStyle = 'bold';\nvar eastHandleWidth = '0.5px';\nvar southHandleHeight = '0.5px';\nvar subCellVerticalBackgroundColor = 'white';\nvar subCellVerticalBoxShadow = '4px 5px 12px #00000078';\nvar subCellHostPadding = '10px';\nvar layoutPaddingRight = '10px';\nvar layoutPaddingLeft = '10px';\nvar IndicatorPrimaryColor = '#58799c';\nvar TableHeaderColor = '#D3EBF7'\nvar colorPalette = ['#BEDFEE', '#91BDD1', '#77A6BB', '#5D8BA0', '#C9EBE3','#A6D1C7', '#73A095','#578076', '#DAA7A3','#C18983','#9E6762','#F2CFCC', '#F4E2B6', '#E7D096', '#BB9E54', '#9A7D36']; //TD UI Color Palette used in all Widgets\n\n\n\ndashboard.on('widgetready', function(d) {\n\t\n\t//Below apply Styling changes at the Global Dashboard Level across individual widgets and DOM objects\n\t$('.table-grid__row-0 td.table-grid__cell--row-0').css({'background-color' :'#ffffff','font-weight':'500'}); \t//Controls Header Colors of Pivot Tables\n    $('.dashboard-layout-cell-horizontal-divider').css('display', 'none');\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Makes horizonatal divider invisible\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n    $('label.transput-input-placeholder').css('display', 'none');\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Makes 'LABEL HERE' Widget title palceholder invisible\n\t\n\t$('.dashboard-layout-column').css('background-color', dashboardBackgroundColor);\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls background color of columns/containers in Dash\n    $('.dashboard-layout').css('background-color', dashboardBackgroundColor);\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls Dashboard Main Background Color\n    $('.dashboard-layout-subcell-vertical').css('background-color','white').css('box-shadow', subCellVerticalBoxShadow);\t\t//Controls background and shadow color and size\n    $('.dashboard-layout-subcell-host').css('padding', subCellHostPadding);\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls padding\n    $('.dashboard-layout').css('padding-right', layoutPaddingRight).css('padding-left', layoutPaddingLeft);\n\t\n    $('.ui-resizable-handle.ui-resizable-e').css('width', eastHandleWidth);\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls how Dash looks when resized in the Browser Width\n    $('.ui-resizable-handle.ui-resizable-s').css('height', southHandleHeight);\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls how Dash looks when resized in the Browser Height\n\t\n\tvar optionsBar = {\n\t\tneedleColor: '#5d8ba0',  //Gauge Only\n\t\ttickColor: '#5d8ba0',\t  //Gauge Only\n\t\t//bracketColor: '#D3EBF7', //Box and Ticker\n\t\tbracketColor: '#5d8ba0', //Box and Ticker\n\n\t\ttitle: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tfontWeight: 500,\n\t\t\tfontSizes: {\n\t\t\t\tbig: 25,\n\t\t\t\tmedium: 20\n\t\t\t}\n\t\t},\n\t\tvalue: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tfontWeight: 'bold',\n\t\t\tcolor: '#58799c',\n\t\t\tfontSizes: {\n\t\t\t\tbig: 50,\n\t\t\t\tmedium: 35\n\t\t\t}\n\t\t},\n\t\tsecondaryTitle: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tfontWeight: 300,\n\t\t\tfontSizes: {\n\t\t\t\tbig: 20,\n\t\t\t\tmedium: 15\n\t\t\t}\n\t\t},\n\t\tsecondaryValue: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tcolor: '#8d4e3c',\n\t\t\tfontSizes: {\n\t\t\t\tbig: 20,\n\t\t\t\tmedium: 15\n\t\t\t}\n\t\t},\n\t\tlabel: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tcolor: '#77A6BB',\n\t\t\tfontSizes: {\n\t\t\t\tbig: 20,\n\t\t\t\tmedium: 15\n\t\t\t}\n\t\t}\n\n\n\t};\n\n\t\n\t\n    $('.widget').each(function() {\n        $(this).css({\n            'background-color': widgetBackgroundColor,\n            'border-radius': borderRadius\n        });\n        $(this).parent().css({\n            'background-color': parentBackgroundColor,\n            'border-radius': borderRadius,\n            'font-family': fontFamily,\n            'font-style': fontStyle\n        });\n    });\n\t\n\n\t\n\n});\n\n\n// Function to apply color palette to widget\nfunction applyColorPalette(widget) {\n  widget.on('processresult', function(se, ev) {\n\t  \n\tif (widget.indicatorInstance) {\n      var options = {\n\t\t  needleColor: '#5d8ba0',  //Gauge Only\n\t\t  tickColor: '#5d8ba0',\t  //Gauge Only\n\t\t  bracketColor: '#D3EBF7', //Box and Ticker\n\t\t  \n\t\t  title: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  fontWeight: 500,\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 25,\n\t\t\t\t  medium: 20\n\t\t\t  }\n\t\t  },\n\t\t  value: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  fontWeight: 'bold',\n\t\t\t  color: '#58799c',\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 50,\n\t\t\t\t  medium: 35\n\t\t\t  }\n\t\t  },\n\t\t  secondaryTitle: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  fontWeight: 300,\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 20,\n\t\t\t\t  medium: 15\n\t\t\t  }\n\t\t  },\n\t\t  secondaryValue: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  color: '#8d4e3c',\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 20,\n\t\t\t\t  medium: 15\n\t\t\t  }\n\t\t  },\n\t\t  label: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  color: '#77A6BB',\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 20,\n\t\t\t\t  medium: 15\n\t\t\t  }\n\t\t  }\n\n\t\t  \t  \n\t  }\n\n      widget.indicatorInstance.setOptions('numericSimple', options);\n      widget.indicatorInstance.setOptions('numericBar', optionsBar);\n  \t  widget.indicatorInstance.setOptions('ticker', options);\n  \t  widget.indicatorInstance.setOptions('gauge', options);\n    }\n  });\n}\n\n\n// Apply color palette to all widgets in the dashboard\ndashboard.on('widgetinitialized', function(se, ev) {\n  applyColorPalette(ev.widget);\n});\n\n\n// Apply color palette to all existing widgets in the dashboard\ndashboard.widgets().forEach(function(widget) {\n  applyColorPalette(widget);\n});\n\n\n",
+  "parentFolder": "6757692d7a93ec0040b1e6c6",
+  "script": "// Define custom theme variables to be used in styling syntax across the Dash\nvar dashboardBackgroundColor = '#f2f9ff'; //#9E6762\nvar widgetBackgroundColor = '#ffffff'; \nvar parentBackgroundColor = '#f2f9ff';\nvar borderRadius = '20px';\nvar fontFamily = 'Nunito, sans-serif';\nvar fontStyle = 'bold';\nvar eastHandleWidth = '0.5px';\nvar southHandleHeight = '0.5px';\nvar subCellVerticalBackgroundColor = 'white';\nvar subCellVerticalBoxShadow = '4px 5px 12px #00000078';\nvar subCellHostPadding = '10px';\nvar layoutPaddingRight = '10px';\nvar layoutPaddingLeft = '10px';\nvar IndicatorPrimaryColor = '#58799c';\nvar TableHeaderColor = '#D3EBF7'\nvar colorPalette = ['#BEDFEE', '#91BDD1', '#77A6BB', '#5D8BA0', '#C9EBE3','#A6D1C7', '#73A095','#578076', '#DAA7A3','#C18983','#9E6762','#F2CFCC', '#F4E2B6', '#E7D096', '#BB9E54', '#9A7D36']; //TD UI Color Palette used in all Widgets\n\n\n\ndashboard.on('widgetready', function(d) {\n\t\n\t//Below apply Styling changes at the Global Dashboard Level across individual widgets and DOM objects\n\t$('.table-grid__row-0 td.table-grid__cell--row-0').css({'background-color' :'#ffffff'}); \t//Controls Header Colors of Pivot Tables\n    $('.dashboard-layout-cell-horizontal-divider').css('display', 'none');\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Makes horizonatal divider invisible\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n    $('label.transput-input-placeholder').css('display', 'none');\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Makes 'LABEL HERE' Widget title palceholder invisible\n\t\n\t$('.dashboard-layout-column').css('background-color', dashboardBackgroundColor);\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls background color of columns/containers in Dash\n    $('.dashboard-layout').css('background-color', dashboardBackgroundColor);\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls Dashboard Main Background Color\n    $('.dashboard-layout-subcell-vertical').css('background-color','white').css('box-shadow', subCellVerticalBoxShadow);\t\t//Controls background and shadow color and size\n    $('.dashboard-layout-subcell-host').css('padding', subCellHostPadding);\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls padding\n    $('.dashboard-layout').css('padding-right', layoutPaddingRight).css('padding-left', layoutPaddingLeft);\n\t\n    $('.ui-resizable-handle.ui-resizable-e').css('width', eastHandleWidth);\t\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls how Dash looks when resized in the Browser Width\n    $('.ui-resizable-handle.ui-resizable-s').css('height', southHandleHeight);\t\t\t\t\t\t\t\t\t\t\t\t\t//Controls how Dash looks when resized in the Browser Height\n\t\n\tvar optionsBar = {\n\t\tneedleColor: '#5d8ba0',  //Gauge Only\n\t\ttickColor: '#5d8ba0',\t  //Gauge Only\n\t\t//bracketColor: '#D3EBF7', //Box and Ticker\n\t\tbracketColor: '#5d8ba0', //Box and Ticker\n\n\t\ttitle: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tfontWeight: 500,\n\t\t\tfontSizes: {\n\t\t\t\tbig: 25,\n\t\t\t\tmedium: 20\n\t\t\t}\n\t\t},\n\t\tvalue: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tfontWeight: 'bold',\n\t\t\tcolor: '#58799c',\n\t\t\tfontSizes: {\n\t\t\t\tbig: 50,\n\t\t\t\tmedium: 35\n\t\t\t}\n\t\t},\n\t\tsecondaryTitle: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tfontWeight: 300,\n\t\t\tfontSizes: {\n\t\t\t\tbig: 20,\n\t\t\t\tmedium: 15\n\t\t\t}\n\t\t},\n\t\tsecondaryValue: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tcolor: '#8d4e3c',\n\t\t\tfontSizes: {\n\t\t\t\tbig: 20,\n\t\t\t\tmedium: 15\n\t\t\t}\n\t\t},\n\t\tlabel: {\n\t\t\tfontFamily: 'Nunito, sans-serif',\n\t\t\tcolor: '#77A6BB',\n\t\t\tfontSizes: {\n\t\t\t\tbig: 20,\n\t\t\t\tmedium: 15\n\t\t\t}\n\t\t}\n\n\n\t};\n\n\t\n\t\n    $('.widget').each(function() {\n        $(this).css({\n            'background-color': widgetBackgroundColor,\n            'border-radius': borderRadius\n        });\n        $(this).parent().css({\n            'background-color': parentBackgroundColor,\n            'border-radius': borderRadius,\n            'font-family': fontFamily,\n            'font-style': fontStyle\n        });\n    });\n\t\n\n\t\n\n});\n\n\n// Function to apply color palette to widget\nfunction applyColorPalette(widget) {\n  widget.on('processresult', function(se, ev) {\n\t  \n\tif (widget.indicatorInstance) {\n      var options = {\n\t\t  needleColor: '#5d8ba0',  //Gauge Only\n\t\t  tickColor: '#5d8ba0',\t  //Gauge Only\n\t\t  bracketColor: '#D3EBF7', //Box and Ticker\n\t\t  \n\t\t  title: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  fontWeight: 500,\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 25,\n\t\t\t\t  medium: 20\n\t\t\t  }\n\t\t  },\n\t\t  value: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  fontWeight: 'bold',\n\t\t\t  color: '#58799c',\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 50,\n\t\t\t\t  medium: 35\n\t\t\t  }\n\t\t  },\n\t\t  secondaryTitle: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  fontWeight: 300,\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 20,\n\t\t\t\t  medium: 15\n\t\t\t  }\n\t\t  },\n\t\t  secondaryValue: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  color: '#8d4e3c',\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 20,\n\t\t\t\t  medium: 15\n\t\t\t  }\n\t\t  },\n\t\t  label: {\n\t\t\t  fontFamily: 'Nunito, sans-serif',\n\t\t\t  color: '#77A6BB',\n\t\t\t  fontSizes: {\n\t\t\t\t  big: 20,\n\t\t\t\t  medium: 15\n\t\t\t  }\n\t\t  }\n\n\t\t  \t  \n\t  }\n\n      widget.indicatorInstance.setOptions('numericSimple', options);\n      widget.indicatorInstance.setOptions('numericBar', optionsBar);\n  \t  widget.indicatorInstance.setOptions('ticker', options);\n  \t  widget.indicatorInstance.setOptions('gauge', options);\n    }\n  });\n}\n\n\n// Apply color palette to all widgets in the dashboard\ndashboard.on('widgetinitialized', function(se, ev) {\n  applyColorPalette(ev.widget);\n});\n\n\n// Apply color palette to all existing widgets in the dashboard\ndashboard.widgets().forEach(function(widget) {\n  applyColorPalette(widget);\n});\n\n\n",
   "settings": {
     "autoUpdateOnFiltersChange": true
   },
   "subscription": {
-    "subscribe": false,
     "executionPerDay": 1,
     "schedule": "* * * * * *",
     "isDataChange": true,
@@ -614,19 +613,900 @@
       "isPdf": false
     },
     "context": {
-      "dashboardid": "6755dfc75c02df003f2ba67e"
+      "dashboardid": "675769357a93ec0040b1e6c9"
     },
-    "startAt": "2024-05-03",
+    "startAt": "2025-04-10",
     "tzName": "America/New_York",
     "timezone": 240,
-    "active": false
+    "active": false,
+    "subscribe": false
   },
   "widgets": [
+    {
+      "title": "ID Unification Metrics",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "675769357a93ec0040b1e6ca",
+      "desc": null,
+      "source": "67339a5446b6b5003f24882f",
+      "datasource": {
+        "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+        "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+        "address": "LocalHost",
+        "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+        "live": false,
+        "title": "dm_11874_QSR VA - IDU Dashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": [
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "profiles_before_unification",
+                  "dim": "[idu_calculations.profiles_before_unification]",
+                  "datatype": "numeric",
+                  "title": "Pre Unification Profiles",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  }
+                },
+                "PanelName": "Pre Unification Profiles",
+                "format": {
+                  "mask": {
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "number": {
+                      "separated": true
+                    }
+                  }
+                },
+                "instanceid": "07254-0ECB-A9"
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "canonical_ids",
+                  "dim": "[idu_calculations.canonical_ids]",
+                  "datatype": "numeric",
+                  "title": "Unified Profiles",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  }
+                },
+                "PanelName": "Unified Profiles",
+                "format": {
+                  "mask": {
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "number": {
+                      "separated": true
+                    }
+                  }
+                },
+                "instanceid": "98457-CB56-66"
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "addresable_id_non_unique",
+                  "dim": "[idu_calculations.addresable_id_non_unique]",
+                  "datatype": "numeric",
+                  "title": "Addressable IDs"
+                },
+                "PanelName": "Addressable IDs",
+                "format": {
+                  "mask": {
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "number": {
+                      "separated": true
+                    }
+                  }
+                },
+                "instanceid": "45B63-248C-96"
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "date",
+                  "dim": "[idu_calculations.date]",
+                  "datatype": "text",
+                  "title": "Last Update"
+                },
+                "PanelName": "Last Update",
+                "instanceid": "08F6B-82BE-DB"
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "duration",
+                  "dim": "[idu_calculations.duration]",
+                  "datatype": "text",
+                  "title": "Duration",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  }
+                },
+                "PanelName": "Duration",
+                "instanceid": "C0CBF-AEE6-16"
+              }
+            ]
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "time_unixtime",
+                  "dim": "[idu_calculations.time_unixtime]",
+                  "datatype": "numeric",
+                  "filter": {
+                    "top": 1,
+                    "by": {
+                      "table": "idu_calculations",
+                      "column": "time_unixtime",
+                      "dim": "[idu_calculations.time_unixtime]",
+                      "datatype": "numeric",
+                      "agg": "max"
+                    },
+                    "rankingMessage": "Max time_unixtime"
+                  },
+                  "title": "time_unixtime",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  },
+                  "collapsed": false
+                },
+                "instanceid": "C96E3-494B-AB"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": ".carousel-button{display:none !important;} span.label:after { content: '';display: block; width: 100px; background-color: #5069a9; height: 1px; margin:5px auto; } #val{color:#5f7899; font-weight:500;}",
+          "script": "",
+          "title": "",
+          "titleStyle": [
+            {
+              "display": "none"
+            }
+          ],
+          "showCarousel": true,
+          "body": [
+            {
+              "type": "Container",
+              "style": {
+                "padding": "0px"
+              },
+              "items": [
+                {
+                  "type": "ColumnSet",
+                  "class": "listholder",
+                  "columns": [
+                    {}
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Avenir",
+          "fontSizes": {
+            "default": 16,
+            "small": 12,
+            "medium": 22,
+            "large": 30,
+            "extraLarge": 40
+          },
+          "fontWeights": {
+            "default": 300,
+            "light": 100,
+            "medium": 400,
+            "bold": 900
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffffff",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#3A4356"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#dcdcdc"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "blue": {
+                  "normal": "#5e3ca7"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#93c0c0"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "smaller": 48,
+            "medium": 70,
+            "notsmall": 75,
+            "notbig": 60,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 5,
+            "medium": 10,
+            "large": 26,
+            "big": 24,
+            "extraLarge": 26,
+            "padding": 20
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#dedddd"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": ""
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "pre_unification_profiles",
+              "title": "Pre Unification Profiles",
+              "singular": "Pre Unification Profiles",
+              "plural": "Pre Unification Profiles"
+            },
+            {
+              "id": "unified_profiles",
+              "title": "Unified Profiles",
+              "singular": "Unified Profiles",
+              "plural": "Unified Profiles"
+            },
+            {
+              "id": "addressable_ids",
+              "title": "Addressable IDs",
+              "singular": "Addressable IDs",
+              "plural": "Addressable IDs"
+            },
+            {
+              "id": "last_update",
+              "title": "Last Update",
+              "singular": "Last Update",
+              "plural": "Last Update"
+            },
+            {
+              "id": "duration",
+              "title": "duration",
+              "singular": "duration",
+              "plural": "duration"
+            },
+            {
+              "id": "time_unixtime",
+              "title": "time_unixtime",
+              "singular": "time_unixtime",
+              "plural": "time_unixtime"
+            }
+          ]
+        }
+      },
+      "instanceid": "DB2CF-EAC9-1E",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "autoUpdateOnEveryChange": true,
+        "triggersDomready": true
+      },
+      "dashboardid": "675769357a93ec0040b1e6c9",
+      "lastOpened": null,
+      "prevSortObjects": [],
+      "realTimeRefreshing": false,
+      "script": "//Naz recreated this widget Dec 11 2024\nwidget.on('ready', function(w, args) {\nvar attributes = w.queryResult;\n\tvar json = JSON.stringify(attributes);\n    var obj = JSON.parse(json);\n    var listArray = [];\n    for (let i = 0; i < obj.length; i++) {\n\t\tvar newobj = Object.values(obj[i]);\n\t    var objcount = Object.keys(newobj).length;\n\t\t//console.log(objcount);\n\t\tfor (let j =0; j < newobj.length; j++){\n\t\t\t//console.log(newobj[j]);\n\t  var element_key = newobj[j].Panel;\n      var element_value = newobj[j].Text;\n\t\t\tif(element_value !== 'N\\A'){\n\t\t\t\n             listArray.push(\"<div class='column spacing-none' style='flex-grow: 1; background-size: 100% 100%; background-repeat: no-repeat;'><div id='listItm' style='width:100%; padding-top:40px; padding-bottom:30px;' class='flex-container spacing-none' ><div class='column spacing-none' ><div class='text-block font-size-default font-weight-light color-default spacing-one horizontal-left' style='text-align:center;'><span class='label'>\" + element_key + \"</span> </div> <div class='text-block font-size-medium font-weight-normalcolor-default spacing-one horizontal-left' style='text-align:center;'><span id='val' class=\"+ element_value +\">\" + element_value + \"</span> </div></div></div></div>\");\n\t\t\t}\n\t}\n   }\n\tlistArray = listArray.slice(0, objcount);\n\t$(element).find(\".listholder\").html(listArray);\n});"
+    },
+    {
+      "title": "Unification Overview",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "675769357a93ec0040b1e6cb",
+      "desc": null,
+      "source": "67339a5446b6b5003f248830",
+      "datasource": {
+        "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+        "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+        "address": "LocalHost",
+        "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+        "live": false,
+        "title": "dm_11874_QSR VA - IDU Dashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false,
+          "ids": []
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": [
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "total_source_ids",
+                  "dim": "[idu_calculations.total_source_ids]",
+                  "datatype": "numeric",
+                  "title": "Total IDs",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  }
+                },
+                "PanelName": "Total IDs",
+                "format": {
+                  "mask": {
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "number": {
+                      "separated": true
+                    }
+                  }
+                },
+                "instanceid": "EC974-95C8-1A"
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "composite_ids",
+                  "dim": "[idu_calculations.composite_ids]",
+                  "datatype": "numeric",
+                  "title": "Composite IDs"
+                },
+                "instanceid": "CBB83-BF2F-30",
+                "PanelName": "Composite IDs"
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "addresable_id_non_unique",
+                  "dim": "[idu_calculations.addresable_id_non_unique]",
+                  "datatype": "numeric",
+                  "title": "Addressable IDs",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  }
+                },
+                "PanelName": "Addressable IDs",
+                "format": {
+                  "mask": {
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "number": {
+                      "separated": true
+                    }
+                  }
+                },
+                "instanceid": "13E52-B919-41"
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "non_addressable_ids",
+                  "dim": "[idu_calculations.non_addressable_ids]",
+                  "datatype": "numeric",
+                  "title": "Non Addressable IDs"
+                },
+                "instanceid": "763B9-C5DF-54",
+                "PanelName": "Non Addressable IDs",
+                "format": {
+                  "mask": {
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "number": {
+                      "separated": true
+                    }
+                  }
+                }
+              },
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "overall_deduplication_rate",
+                  "dim": "[idu_calculations.overall_deduplication_rate]",
+                  "datatype": "numeric",
+                  "title": "Deduplication Rate",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  }
+                },
+                "PanelName": "Deduplication Rate",
+                "format": {
+                  "mask": {
+                    "decimals": "auto",
+                    "percent": true
+                  }
+                },
+                "instanceid": "B3B1F-F529-4F"
+              }
+            ]
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "idu_calculations",
+                  "column": "time_unixtime",
+                  "dim": "[idu_calculations.time_unixtime]",
+                  "datatype": "numeric",
+                  "filter": {
+                    "top": 1,
+                    "by": {
+                      "type": "measure",
+                      "formula": "[29F56-CD7]",
+                      "context": {
+                        "[29F56-CD7]": {
+                          "table": "idu_calculations",
+                          "column": "time_unixtime",
+                          "dim": "[idu_calculations.time_unixtime]",
+                          "datatype": "numeric",
+                          "agg": "max",
+                          "title": "Max time_unixtime"
+                        }
+                      },
+                      "title": "[Max time_unixtime]"
+                    },
+                    "rankingMessage": "[Max time_unixtime]"
+                  },
+                  "title": "time_unixtime",
+                  "datasource": {
+                    "fullname": "localhost/dm_11874_QSR VA - IDU Dashboard",
+                    "id": "localhost_admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard",
+                    "live": false,
+                    "title": "dm_11874_QSR VA - IDU Dashboard"
+                  },
+                  "collapsed": false
+                },
+                "instanceid": "E3744-344D-63"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": ".circular-chart { stroke: 486485; display:block; margin:10px auto; max-width: 60%;  }.circle-bg { fill: none; stroke: #dae4ec; stroke-width: 3.8; }.circle { fill: none; stroke-width: 2.8; stroke-linecap: round; }.circular-chart.orange .circle { stroke: #be9c40; }.percentage { fill: #666; font-family: Avenir, sans-serif; font-size: 0.3em; text-anchor: middle; }.circular-chart.purple .circle { stroke: #a363a5; }.circular-chart.blue .circle{stroke: #179bf2}.circular-chart.red .circle{stroke:rgb(174, 53, 124)}.circular-chart .circle{stroke: #5069a9}",
+          "script": "",
+          "title": "",
+          "showCarousel": true,
+          "body": [
+            {
+              "type": "Container",
+              "style": {
+                "padding": "0px"
+              },
+              "items": [
+                {
+                  "type": "ColumnSet",
+                  "class": "ringholder",
+                  "style": {
+                    "display": "flex"
+                  },
+                  "columns": [
+                    {}
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Avenir",
+          "fontSizes": {
+            "default": 16,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 200,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffffff",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": ""
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "total",
+              "title": "total",
+              "singular": "total",
+              "plural": "total"
+            },
+            {
+              "id": "addressables",
+              "title": "addressables",
+              "singular": "addressables",
+              "plural": "addressables"
+            },
+            {
+              "id": "custom",
+              "title": "custom",
+              "singular": "custom",
+              "plural": "custom"
+            },
+            {
+              "id": "dedupe_rate",
+              "title": "dedupe_rate",
+              "singular": "dedupe_rate",
+              "plural": "dedupe_rate"
+            },
+            {
+              "id": "composite_ids",
+              "title": "composite_ids",
+              "singular": "composite_ids",
+              "plural": "composite_ids"
+            },
+            {
+              "id": "time_unixtime",
+              "title": "time_unixtime",
+              "singular": "time_unixtime",
+              "plural": "time_unixtime"
+            }
+          ]
+        }
+      },
+      "instanceid": "97C58-5761-3D",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "autoUpdateOnEveryChange": true,
+        "triggersDomready": true
+      },
+      "dashboardid": "675769357a93ec0040b1e6c9",
+      "lastOpened": null,
+      "prevSortObjects": [],
+      "realTimeRefreshing": false,
+      "script": "//Naz recreated this widget Dec 10 2024\nwidget.on('ready', function(w, args) {\n    var maxCount = 5; // Based on the number of the items in the panel (not the values) adjust the variable here.\n    var attributes = w.queryResult;\n\tvar json = JSON.stringify(attributes);\n    var obj = JSON.parse(json);\n    var listArray = [];\n\n    for (let i = 0;   i < obj.length; i++) {\n\t\tvar newobj = Object.values(obj[i]);\n\t    var objcount = Object.keys(newobj).length;\n\t\tfor (let j =0;  j < newobj.length; j++){\n\n\t     var element_key = newobj[j].Panel;\n         var element_value = newobj[j].Text;\n\t     var element_data = newobj[j].Value;\n\t     var percentage;\n\t     var element_base = newobj[0].Value;\n\t\t\t\n\t      if (typeof element_value === 'string' && element_value.endsWith('%')){\n\t\t\n          percentage = element_data * 100;\n\t\t \n\t      } else {\n\t\t  percentage = (element_data / element_base) * 100;\n\t      }\n\t   \n\t\t  if(element_value !== 'N\\A'){\n\t\t\t\n             listArray.push(\"<div class='column spacing-none' style=' flex-basis:100%; background-size: 100% 100%; background-repeat: no-repeat;'><div id='listItm' style='width:100%; padding-top:40px; padding-bottom:30px;' class='flex-container spacing-none' ><div class='column spacing-none' ><div class='text-block font-size-default font-weight-light color-default spacing-one horizontal-left' style='text-align:center;'> <div class='single-chart'> <svg viewBox='0 0 36 36' class='circular-chart'><path class='circle-bg' d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831' /><path class='circle' stroke-dasharray='\"+ percentage  +\", 100' d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831' /><text x='18' y='20.35' class='percentage'>\" + element_value + \"</text> </svg> <p>\" + element_key + \"</p></div></div></div></div></div>\");\n\t\t  }\n\t    \n         }\n\t }\n\tlistArray = listArray.slice(0, maxCount);\n\t//console.log(listArray);\n\t$(element).find(\".ringholder\").html(listArray);\n});"
+    },
     {
       "title": "Unification Trend",
       "type": "chart/line",
       "subtype": "line/spline",
-      "oid": "6755dfc75c02df003f2ba681",
+      "oid": "675769357a93ec0040b1e6cc",
       "desc": null,
       "source": "67339a5446b6b5003f248831",
       "datasource": {
@@ -938,7 +1818,7 @@
           "max": null
         }
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "realTimeRefreshing": false,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n  var colorPalette = ['#b75537','#5f7899','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; \n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
@@ -947,7 +1827,7 @@
       "title": "Known Profiles",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba682",
+      "oid": "675769357a93ec0040b1e6cd",
       "desc": null,
       "source": "67339a5446b6b5003f248832",
       "datasource": {
@@ -1211,7 +2091,7 @@
         "autoUpdateOnEveryChange": true,
         "drillToAnywhere": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "prevSortObjects": [],
       "realTimeRefreshing": false,
@@ -1221,7 +2101,7 @@
       "title": "1p Cookie - Distinct IDs per Profile",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba683",
+      "oid": "675769357a93ec0040b1e6ce",
       "desc": null,
       "source": "67339a5446b6b5003f248833",
       "datasource": {
@@ -1477,7 +2357,7 @@
         "drillToAnywhere": true,
         "selectorLocked": false
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "prevSortObjects": [],
       "realTimeRefreshing": false,
@@ -1487,7 +2367,7 @@
       "title": "Deduplication Rate",
       "type": "chart/line",
       "subtype": "line/spline",
-      "oid": "6755dfc75c02df003f2ba686",
+      "oid": "675769357a93ec0040b1e6cf",
       "desc": null,
       "source": "67339a5446b6b5003f248835",
       "datasource": {
@@ -1567,9 +2447,8 @@
                     "percentMultiplier": 100
                   },
                   "color": {
-                    "type": "color",
-                    "color": "#58799c",
-                    "isHandPickedColor": true
+                    "colorIndex": 0,
+                    "type": "color"
                   }
                 },
                 "y2": true,
@@ -1635,7 +2514,7 @@
         },
         "legend": {
           "enabled": true,
-          "position": "bottom"
+          "position": "top"
         },
         "seriesLabels": {
           "enabled": true,
@@ -1777,7 +2656,7 @@
           "max": null
         }
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "realTimeRefreshing": false,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n  var colorPalette = ['#58799c','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n//var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n \n\t// Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
@@ -1786,7 +2665,7 @@
       "title": "Email - Distinct IDs per Profile",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba684",
+      "oid": "675769357a93ec0040b1e6d0",
       "desc": null,
       "source": "67339a5446b6b5003f248834",
       "datasource": {
@@ -2043,7 +2922,7 @@
         "drillToAnywhere": true,
         "selectorLocked": false
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "prevSortObjects": [],
       "realTimeRefreshing": false,
@@ -2053,7 +2932,7 @@
       "title": "Count of Source IDs - Before Unification",
       "type": "chart/bar",
       "subtype": "bar/classic",
-      "oid": "6755dfc75c02df003f2ba687",
+      "oid": "675769357a93ec0040b1e6d1",
       "desc": null,
       "source": "67339a5446b6b5003f248836",
       "datasource": {
@@ -2084,7 +2963,7 @@
                   "dim": "[idu_identities.id_type]",
                   "datatype": "text",
                   "merged": true,
-                  "title": "ID Type"
+                  "title": "id_type"
                 },
                 "instanceid": "2C7D5-228B-45",
                 "format": {},
@@ -2096,7 +2975,7 @@
                   "column": "column_name",
                   "dim": "[idu_identities.column_name]",
                   "datatype": "text",
-                  "title": "Column Name"
+                  "title": "column_name"
                 },
                 "format": {
                   "continuous": false
@@ -2311,7 +3190,7 @@
           "max": null
         }
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "realTimeRefreshing": false,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n  var colorPalette = ['#5f7899','#8d4e3c','#5e708c', '#95a9c0', '#b75537', '#626f8a']; // Add more colors as needed\n  // var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; \n\t\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});\n\nwidget.on('beforeviewloaded', function(widget, ev){\n\n    var label = ev.options.xAxis.labels.style;\n\tconsole.log(label);\n\tev.options.xAxis.labels.style = function(){\n\t\treturn this.value.css(\"text-transform\", \"capitalize\");\n\t}\n\t\n\tev.options.xAxis.labels.formatter = function(){\n        return this.value.replace(/_/g, \" \");\n    }\n\n});\n\nwidget.on('domready', function(se, ev) {\n\t\n\t//change color of header cells\n\tvar labels = $(\".highcharts-container  svg .highcharts-axis-labels text\");\n\tconsole.log(labels);\n\tlabels.css(\"text-transform\", \"capitalize\");\n\t\n});"
@@ -2320,7 +3199,7 @@
       "title": "Profiles With Valid Email",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba689",
+      "oid": "675769357a93ec0040b1e6d2",
       "desc": null,
       "source": "67339a5446b6b5003f248837",
       "datasource": {
@@ -2586,7 +3465,7 @@
         "autoUpdateOnEveryChange": true,
         "drillToAnywhere": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n    var colorPalette = ['#58799c','#B36E5A','#8d4e3c','#B96A4C','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
     },
@@ -2594,7 +3473,7 @@
       "title": "RICHTEXT_MAIN.TITLE",
       "type": "richtexteditor",
       "subtype": "richtexteditor",
-      "oid": "6755dfc75c02df003f2ba68b",
+      "oid": "675769357a93ec0040b1e6d3",
       "desc": null,
       "source": "67339a5446b6b5003f24883b",
       "datasource": {
@@ -2617,7 +3496,7 @@
       },
       "style": {
         "content": {
-          "html": "<font size=\"5\" color=\"#58799c\">Pre-Unification Summary</font>",
+          "html": "<font size=\"5\"><font color=\"#486485\" style=\"\">Pre-Unification Summar</font><font color=\"#486485\" style=\"\">y</font></font>",
           "vAlign": "valign-middle",
           "bgColor": "#ffffff",
           "textAlign": "center"
@@ -2640,7 +3519,7 @@
         "supportsHierarchies": false,
         "dashboardFiltersMode": "filter"
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -2679,7 +3558,7 @@
       "title": "Addressable Profiles",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba688",
+      "oid": "675769357a93ec0040b1e6d4",
       "desc": null,
       "source": "67339a5446b6b5003f248839",
       "datasource": {
@@ -2945,7 +3824,7 @@
         "autoUpdateOnEveryChange": true,
         "drillToAnywhere": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n    var colorPalette = ['#58799c','#B36E5A','#8d4e3c','#B96A4C','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762'];\n\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
     },
@@ -2953,7 +3832,7 @@
       "title": "Profiles With Valid Phone",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba685",
+      "oid": "675769357a93ec0040b1e6d5",
       "desc": null,
       "source": "67339a5446b6b5003f248838",
       "datasource": {
@@ -3219,7 +4098,7 @@
         "autoUpdateOnEveryChange": true,
         "drillToAnywhere": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n      var colorPalette = ['#58799c','#B36E5A','#8d4e3c','#B96A4C','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762'];\n\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
     },
@@ -3227,7 +4106,7 @@
       "title": "RICHTEXT_MAIN.TITLE",
       "type": "richtexteditor",
       "subtype": "richtexteditor",
-      "oid": "6755dfc75c02df003f2ba68c",
+      "oid": "675769357a93ec0040b1e6d6",
       "desc": null,
       "source": "67339a5446b6b5003f24883c",
       "datasource": {
@@ -3250,7 +4129,7 @@
       },
       "style": {
         "content": {
-          "html": "<font color=\"#58799c\" style=\"\" size=\"5\">Over-Merging Stats</font>",
+          "html": "<font size=\"5\" style=\"\" color=\"#3e5672\">Over-Merging Stats</font>",
           "vAlign": "valign-middle",
           "bgColor": "#ffffff",
           "textAlign": "center"
@@ -3304,7 +4183,7 @@
         "supportsHierarchies": false,
         "dashboardFiltersMode": "filter"
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on(\"ready\", function() {\n      $(\"div[id=editor-20]\").css(\"font-family\", \"Nunito,sans-serif\");\n      $(\"div[id=editor-20]\").css(\"font-size\", \"18px\");\n\t  $(\"div[id=editor-20]\").css(\"font-weight\", \"200\");\n\t  $(\"div[id=editor-20] font\").css(\"font-size\", \"18px !important\");\n})"
     },
@@ -3312,7 +4191,7 @@
       "title": "Top 10 IDs by Set Count of Relationships to Other IDs in Source Tables",
       "type": "pivot2",
       "subtype": "pivot2",
-      "oid": "6755dfc75c02df003f2ba68e",
+      "oid": "675769357a93ec0040b1e6d7",
       "desc": "ID Graph built by finding Sets of IDs linked to other IDs in any of the Source Tables used in Unification",
       "source": "67339a5446b6b5003f24883e",
       "datasource": {
@@ -3375,7 +4254,7 @@
                   "index": 1
                 },
                 "format": {
-                  "width": 224.30001831054688
+                  "width": 213.30001831054688
                 }
               }
             ]
@@ -3390,7 +4269,7 @@
                   "dim": "[idu_qa_common_ids.total_sets]",
                   "datatype": "numeric",
                   "agg": "max",
-                  "title": "Sets",
+                  "title": "Total ID Sets Linked",
                   "sort": "desc",
                   "sortDetails": {
                     "field": 2,
@@ -3435,8 +4314,8 @@
                       "title": "Total email_count"
                     }
                   },
-                  "datatype": "numeric",
-                  "title": "Email"
+                  "title": "Email Count",
+                  "datatype": "numeric"
                 },
                 "instanceid": "B2386-4325-A0",
                 "panel": "measures",
@@ -3473,8 +4352,8 @@
                       "title": "Total phone_number_count"
                     }
                   },
-                  "datatype": "numeric",
-                  "title": "Phone"
+                  "title": "Phone Number Count",
+                  "datatype": "numeric"
                 },
                 "instanceid": "0B456-63D5-C9",
                 "panel": "measures",
@@ -3513,7 +4392,7 @@
                     }
                   },
                   "datatype": "numeric",
-                  "title": "Token"
+                  "title": "Token Count"
                 },
                 "instanceid": "B2386-4325-A0",
                 "panel": "measures",
@@ -3544,7 +4423,7 @@
                   "dim": "[idu_qa_common_ids.td_client_id_count]",
                   "datatype": "numeric",
                   "agg": "sum",
-                  "title": "Client ID"
+                  "title": "Client ID Count"
                 },
                 "instanceid": "C0031-7CAB-88",
                 "panel": "measures",
@@ -3627,9 +4506,9 @@
         "pageSize": 25,
         "automaticHeight": true,
         "colors": {
-          "rows": true,
+          "rows": false,
           "columns": false,
-          "headers": false,
+          "headers": true,
           "members": false,
           "totals": false
         },
@@ -3696,7 +4575,7 @@
         "drillToAnywhere": true,
         "autoUpdateOnEveryChange": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('ready', function(se, ev){\n$('tbody tr td').css({\n'font-size': '12px', \n'font-family': 'Avenir', \n'font-weight':'200',\n'border-left':' 0px',\n'border-right': '0px',\n'border-bottom': '1px solid #e7eeef'\n\n})\n$('.table-grid__row-0 td.table-grid__cell--row-0').css({\n\t//'background-color' :'#a5c3d6',\n\t'border-bottom':'1px solid rgb(88, 121, 156)',\n\t'color':'#8d4e3c',\n\t'font-weight':'500 !important'\n})\n\n$('td.p-dim-member', element).css('border-right', '0px');\n \n\n});",
       "script_old": ""
@@ -3705,7 +4584,7 @@
       "title": "ID Count Stats Per Unified Profile",
       "type": "pivot2",
       "subtype": "pivot2",
-      "oid": "6755dfc75c02df003f2ba690",
+      "oid": "675769357a93ec0040b1e6d8",
       "desc": null,
       "source": "67339a5446b6b5003f248840",
       "datasource": {
@@ -3762,7 +4641,7 @@
                   "index": 1
                 },
                 "format": {
-                  "width": 91.8046875
+                  "width": 109.8046875
                 }
               }
             ]
@@ -4030,7 +4909,8 @@
                   },
                   "color": {
                     "type": "color"
-                  }
+                  },
+                  "width": 103.798828125
                 }
               },
               {
@@ -4060,7 +4940,7 @@
                   "color": {
                     "type": "color"
                   },
-                  "width": 142.97500610351562
+                  "width": 283.9750061035156
                 }
               }
             ]
@@ -4083,7 +4963,7 @@
         "colors": {
           "rows": false,
           "columns": false,
-          "headers": false,
+          "headers": true,
           "members": true,
           "totals": false
         },
@@ -4150,7 +5030,7 @@
         "drillToAnywhere": true,
         "autoUpdateOnEveryChange": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('ready', function(se, ev){\n$('tbody tr td').css({\n'font-size': '12px', \n'font-family': 'Avenir', \n'font-weight':'200',\n'border-left':' 0px',\n'border-right': '0px',\n'border-bottom': '1px solid #e7eeef'\n\n})\n$('.table-grid__row-0 td.table-grid__cell--row-0').css({\n\t//'background-color' :'#a5c3d6',\n\t'border-bottom':'1px solid rgb(88, 121, 156)',\n\t'color':'#8d4e3c',\n\t'font-weight':'500 !important'\n})\n\n$('td.p-dim-member', element).css('border-right', '0px');\n \n\n});",
       "script_old": ""
@@ -4159,7 +5039,7 @@
       "title": "RICHTEXT_MAIN.TITLE",
       "type": "richtexteditor",
       "subtype": "richtexteditor",
-      "oid": "6755dfc75c02df003f2ba68a",
+      "oid": "675769357a93ec0040b1e6d9",
       "desc": null,
       "source": "67339a5446b6b5003f24883a",
       "datasource": {
@@ -4182,7 +5062,7 @@
       },
       "style": {
         "content": {
-          "html": "<font style=\"\" size=\"5\" color=\"#58799c\">Post-Unification Summary</font>",
+          "html": "<font color=\"#3e5672\" style=\"\" size=\"5\">Post-Unification Summary</font>",
           "vAlign": "valign-middle",
           "bgColor": "#ffffff",
           "textAlign": "center"
@@ -4205,7 +5085,7 @@
         "supportsHierarchies": false,
         "dashboardFiltersMode": "filter"
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -4244,7 +5124,7 @@
       "title": "Over-Merged Canonical IDs",
       "type": "pivot2",
       "subtype": "pivot2",
-      "oid": "6755dfc75c02df003f2ba68d",
+      "oid": "675769357a93ec0040b1e6da",
       "desc": "Distinct Merge ID Counts per Unified Profile",
       "source": "67339a5446b6b5003f24883d",
       "datasource": {
@@ -4609,7 +5489,7 @@
         "colors": {
           "rows": true,
           "columns": false,
-          "headers": false,
+          "headers": true,
           "members": false,
           "totals": false
         },
@@ -4670,7 +5550,7 @@
         "drillToAnywhere": true,
         "autoUpdateOnEveryChange": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('ready', function(se, ev){\n$('tbody tr td').css({\n'font-size': '12px', \n'font-family': 'Avenir', \n'font-weight':'200',\n'border-left':' 0px',\n'border-right': '0px',\n'border-bottom': '1px solid #e7eeef'\n\n})\n$('.table-grid__row-0 td.table-grid__cell--row-0').css({\n\t//'background-color' :'#a5c3d6',\n\t'border-bottom':'1px solid rgb(88, 121, 156)',\n\t'color':'#8d4e3c',\n\t'font-weight':'500 !important'\n})\n\n$('td.p-dim-member', element).css('border-right', '0px');\n \n\n});",
       "script_old": ""
@@ -4679,7 +5559,7 @@
       "title": "ID Keys Contribution to Unified Profiles Count",
       "type": "chart/column",
       "subtype": "column/classic",
-      "oid": "6755dfc75c02df003f2ba693",
+      "oid": "675769357a93ec0040b1e6db",
       "desc": "# Distinct IDs from Source Tables - # of Distinct Canonical IDs with each ID",
       "source": "67339a5446b6b5003f248843",
       "datasource": {
@@ -4990,7 +5870,7 @@
           "max": null
         }
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n      var colorPalette = ['#58799c','#B96A4C','#8c9db7','#58799c','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762'];\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
     },
@@ -4998,7 +5878,7 @@
       "title": "IDs by Source Table - Before Unification",
       "type": "chart/bar",
       "subtype": "bar/stacked",
-      "oid": "6755dfc75c02df003f2ba691",
+      "oid": "675769357a93ec0040b1e6dc",
       "desc": null,
       "source": "67339a5446b6b5003f248841",
       "datasource": {
@@ -5085,10 +5965,10 @@
                 "instanceid": "4015B-7070-4B",
                 "format": {
                   "members": {
-                    "td_client_id": {
-                      "title": "td_client_id",
-                      "sortData": "td_client_id",
-                      "color": "#BCC7D3",
+                    "credit_card_token": {
+                      "title": "credit_card_token",
+                      "sortData": "credit_card_token",
+                      "color": "#DF8266",
                       "isHandPickedColor": true
                     },
                     "email": {
@@ -5097,22 +5977,22 @@
                       "color": "#708BA3",
                       "isHandPickedColor": true
                     },
-                    "phone_number": {
-                      "title": "phone_number",
-                      "sortData": "phone_number",
-                      "color": "#3E5672",
-                      "isHandPickedColor": true
-                    },
                     "order_no": {
                       "title": "order_no",
                       "sortData": "order_no",
                       "color": "#B96A4C",
                       "isHandPickedColor": true
                     },
-                    "credit_card_token": {
-                      "title": "credit_card_token",
-                      "sortData": "credit_card_token",
-                      "color": "#DF8266",
+                    "phone_number": {
+                      "title": "phone_number",
+                      "sortData": "phone_number",
+                      "color": "#3E5672",
+                      "isHandPickedColor": true
+                    },
+                    "td_client_id": {
+                      "title": "td_client_id",
+                      "sortData": "td_client_id",
+                      "color": "#BCC7D3",
                       "isHandPickedColor": true
                     }
                   }
@@ -5302,15 +6182,15 @@
           "max": null
         }
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
-      "script": "widget.on('beforeviewloaded', function(widget, ev){\n\n\tev.options.xAxis.labels.formatter = function(){\n        return this.value.replace(/_/g, \" \");\n    }\n\n});\n\nwidget.on('domready', function(se, ev) {\n\t\n\tvar labels = $(\".highcharts-container  svg .highcharts-axis-labels text\");\n\tlabels.css(\"text-transform\", \"capitalize\");\n\t\n});"
+      "script": "widget.on('beforeviewloaded', function(widget, ev){\n\n    var label = ev.options.xAxis.labels.style;\n\tconsole.log(label);\n\tev.options.xAxis.labels.style = function(){\n\t\treturn this.value.css(\"text-transform\", \"capitalize\");\n\t}\n\t\n\tev.options.xAxis.labels.formatter = function(){\n        return this.value.replace(/_/g, \" \");\n    }\n\n});\n\nwidget.on('domready', function(se, ev) {\n\t\n\t//change color of header cells\n\tvar labels = $(\".highcharts-container  svg .highcharts-axis-labels text\");\n\tconsole.log(labels);\n\tlabels.css(\"text-transform\", \"capitalize\");\n\t\n});"
     },
     {
       "title": "3p Cookie - Distinct IDs per Profile",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba695",
+      "oid": "675769357a93ec0040b1e6dd",
       "desc": null,
       "source": "67339a5446b6b5003f248845",
       "datasource": {
@@ -5568,15 +6448,15 @@
         "drillToAnywhere": true,
         "selectorLocked": false
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
-      "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n   var colorPalette = ['#8c9db7','#B96A4C','#58799c','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762'];\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n\t\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
+      "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n    var colorPalette = ['#8c9db7','#B96A4C','#58799c','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762'];\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
     },
     {
       "title": "",
       "type": "indicator",
       "subtype": "indicator/numeric",
-      "oid": "6755dfc75c02df003f2ba68f",
+      "oid": "675769357a93ec0040b1e6de",
       "desc": "Canonical IDs with Distinct Merge IDs > 15",
       "source": "67339a5446b6b5003f24883f",
       "datasource": {
@@ -5793,14 +6673,14 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null
     },
     {
       "title": "Most Frequent Emails",
       "type": "pivot2",
       "subtype": "pivot2",
-      "oid": "6755dfc75c02df003f2ba692",
+      "oid": "675769357a93ec0040b1e6df",
       "desc": null,
       "source": "67339a5446b6b5003f248842",
       "datasource": {
@@ -5834,7 +6714,7 @@
                 "instanceid": "2F58C-DC7A-11",
                 "format": {
                   "continuous": false,
-                  "width": 111.43181610107422
+                  "width": 126.43181610107422
                 },
                 "panel": "rows",
                 "field": {
@@ -5859,7 +6739,7 @@
                 },
                 "format": {
                   "continuous": false,
-                  "width": 247.15625
+                  "width": 244.15625
                 }
               }
             ]
@@ -5897,7 +6777,7 @@
                   "color": {
                     "type": "color"
                   },
-                  "width": 134.98863220214844
+                  "width": 145.98863220214844
                 },
                 "panel": "measures",
                 "field": {
@@ -6027,7 +6907,7 @@
         "drillToAnywhere": true,
         "autoUpdateOnEveryChange": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('ready', function(se, ev){\n$('tbody tr td').css({\n'font-size': '12px', \n'font-family': 'Avenir', \n'font-weight':'200',\n'border-left':' 0px',\n'border-right': '0px',\n'border-bottom': '1px solid #e7eeef'\n\n})\n$('.table-grid__row-0 td.table-grid__cell--row-0').css({\n\t//'background-color' :'#a5c3d6',\n\t'border-bottom':'1px solid rgb(88, 121, 156)',\n\t'color':'#8d4e3c',\n\t'font-weight':'500 !important'\n})\n\n$('td.p-dim-member', element).css('border-right', '0px');\n \n\n});",
       "script_old": ""
@@ -6036,7 +6916,7 @@
       "title": "ID Count Stats Per Over-Merged Profile",
       "type": "pivot2",
       "subtype": "pivot2",
-      "oid": "6755dfc75c02df003f2ba696",
+      "oid": "675769357a93ec0040b1e6e0",
       "desc": "Canonical IDs with Distinct Merge IDs > 15",
       "source": "67339a5446b6b5003f248846",
       "datasource": {
@@ -6414,7 +7294,7 @@
         "drillToAnywhere": true,
         "autoUpdateOnEveryChange": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('ready', function(se, ev){\n$('tbody tr td').css({\n'font-size': '12px', \n'font-family': 'Avenir', \n'font-weight':'200',\n'border-left':' 0px',\n'border-right': '0px',\n'border-bottom': '1px solid #e7eeef'\n\n})\n$('.table-grid__row-0 td.table-grid__cell--row-0').css({\n\t//'background-color' :'#a5c3d6',\n\t'border-bottom':'1px solid rgb(88, 121, 156)',\n\t'color':'#8d4e3c',\n\t'font-weight':'500 !important'\n})\n\n$('td.p-dim-member', element).css('border-right', '0px');\n \n\n});",
       "script_old": ""
@@ -6423,7 +7303,7 @@
       "title": "Phone - Distinct IDs per Profile",
       "type": "chart/pie",
       "subtype": "pie/donut",
-      "oid": "6755dfc75c02df003f2ba694",
+      "oid": "675769357a93ec0040b1e6e1",
       "desc": null,
       "source": "67339a5446b6b5003f248844",
       "datasource": {
@@ -6682,7 +7562,7 @@
         "drillToAnywhere": true,
         "selectorLocked": false
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('processresult', function(se, ev) {\n  // Define your color palette\n    var colorPalette = ['#8c9db7','#B96A4C','#58799c','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762'];\n  //var colorPalette = ['#91BDD1','#E7D096','#A6D1C7','#DAA7A3','#77A6BB','#BBA469','#73A095','#A06964', '#5DBBA0','#9A7D36','#578076','#9E6762']; // Add more colors as needed\n\n  // Apply the color palette to the pie/bar chart segments\n  if (ev.result.series) {\n    ev.result.series.forEach(function(series, seriesIndex) {\n      // Apply color to each data point and ensure the legend matches\n      series.data.forEach(function(dataPoint, index) {\n        // Apply the color to the data point\n        dataPoint.color = colorPalette[index % colorPalette.length];\n      });\n\n      // Update the series color for the legend\n      series.color = colorPalette[seriesIndex % colorPalette.length];\n    });\n  }\n});"
     },
@@ -6690,7 +7570,7 @@
       "title": "Most Frequent Custom IDs",
       "type": "pivot2",
       "subtype": "pivot2",
-      "oid": "6755dfc75c02df003f2ba697",
+      "oid": "675769357a93ec0040b1e6e2",
       "desc": null,
       "source": "67339a5446b6b5003f248847",
       "datasource": {
@@ -6724,7 +7604,7 @@
                 "instanceid": "2F58C-DC7A-11",
                 "format": {
                   "continuous": false,
-                  "width": 132.43181610107422
+                  "width": 137.43181610107422
                 },
                 "panel": "rows",
                 "field": {
@@ -6787,7 +7667,7 @@
                   "color": {
                     "type": "color"
                   },
-                  "width": 134.98863220214844
+                  "width": 112.98863220214844
                 },
                 "panel": "measures",
                 "field": {
@@ -6918,778 +7798,10 @@
         "drillToAnywhere": true,
         "autoUpdateOnEveryChange": true
       },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
+      "dashboardid": "675769357a93ec0040b1e6c9",
       "lastOpened": null,
       "script": "widget.on('ready', function(se, ev){\n$('tbody tr td').css({\n'font-size': '12px', \n'font-family': 'Avenir', \n'font-weight':'200',\n'border-left':' 0px',\n'border-right': '0px',\n'border-bottom': '1px solid #e7eeef'\n\n})\n$('.table-grid__row-0 td.table-grid__cell--row-0').css({\n\t//'background-color' :'#a5c3d6',\n\t'border-bottom':'1px solid rgb(88, 121, 156)',\n\t'color':'#8d4e3c',\n\t'font-weight':'500 !important'\n})\n\n$('td.p-dim-member', element).css('border-right', '0px');\n \n\n});",
       "script_old": ""
-    },
-    {
-      "title": "ID Unification Metrics",
-      "type": "BloX",
-      "subtype": "BloX",
-      "oid": "675784e4bf3fcf003f594e0c",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "title": "dm_11874_QSR VA - IDU Dashboard",
-        "fullname": "LocalHost/dm_11874_QSR VA - IDU Dashboard",
-        "id": "aLOCALHOST_aDMXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDASHBOARD",
-        "address": "LocalHost",
-        "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "ids": [],
-          "all": false
-        },
-        "panels": [
-          {
-            "name": "Items",
-            "items": [
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "profiles_before_unification",
-                  "dim": "[idu_calculations.profiles_before_unification]",
-                  "datatype": "numeric",
-                  "merged": true,
-                  "title": "Pre Unification Profile"
-                },
-                "instanceid": "6EAE9-3B56-16",
-                "PanelName": "Pre Unification Profile",
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "decimals": "auto",
-                    "number": {
-                      "separated": true
-                    },
-                    "abbreviateAll": true
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "canonical_ids",
-                  "dim": "[idu_calculations.canonical_ids]",
-                  "datatype": "numeric",
-                  "title": "Unified Profiles"
-                },
-                "instanceid": "4B00B-15FF-3F",
-                "PanelName": "Unified Profiles",
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "decimals": "auto",
-                    "number": {
-                      "separated": true
-                    },
-                    "abbreviateAll": true
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "addresable_id_non_unique",
-                  "dim": "[idu_calculations.addresable_id_non_unique]",
-                  "datatype": "numeric",
-                  "title": "Addressable IDs"
-                },
-                "instanceid": "FDE87-3611-B0",
-                "PanelName": "Addressable IDs",
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "decimals": "auto",
-                    "number": {
-                      "separated": true
-                    },
-                    "abbreviateAll": true
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "date",
-                  "dim": "[idu_calculations.date]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "Last Update"
-                },
-                "instanceid": "A6A5A-A37B-6E",
-                "PanelName": "Last Update"
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "duration",
-                  "dim": "[idu_calculations.duration]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "Duration"
-                },
-                "instanceid": "2DF79-7BD2-79",
-                "PanelName": "Duration"
-              }
-            ]
-          },
-          {
-            "name": "Values",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ],
-        "usedFormulasMapping": {}
-      },
-      "style": {
-        "currentCard": {
-          "style": ".carousel-button{display:none !important;} span.label:after { content: '';display: block; width: 100px; background-color: #5069a9; height: 1px; margin:5px auto; } #val{color:#5f7899; font-weight:500;}",
-          "script": "",
-          "title": "",
-          "titleStyle": [
-            {
-              "display": "none"
-            }
-          ],
-          "showCarousel": true,
-          "body": [
-            {
-              "type": "Container",
-              "style": {
-                "padding": "0px"
-              },
-              "items": [
-                {
-                  "type": "ColumnSet",
-                  "class": "listholder",
-                  "columns": [
-                    {}
-                  ]
-                }
-              ]
-            }
-          ],
-          "actions": []
-        },
-        "currentConfig": {
-          "fontFamily": "Avenir",
-          "fontSizes": {
-            "default": 16,
-            "small": 12,
-            "medium": 22,
-            "large": 30,
-            "extraLarge": 40
-          },
-          "fontWeights": {
-            "default": 300,
-            "light": 100,
-            "medium": 400,
-            "bold": 900
-          },
-          "containerStyles": {
-            "default": {
-              "backgroundColor": "#ffffff",
-              "foregroundColors": {
-                "default": {
-                  "normal": "#3A4356"
-                },
-                "white": {
-                  "normal": "#ffffff"
-                },
-                "grey": {
-                  "normal": "#dcdcdc"
-                },
-                "orange": {
-                  "normal": "#f2B900"
-                },
-                "blue": {
-                  "normal": "#5e3ca7"
-                },
-                "yellow": {
-                  "normal": "#ffcb05"
-                },
-                "black": {
-                  "normal": "#000000"
-                },
-                "lightGreen": {
-                  "normal": "#93c0c0"
-                },
-                "green": {
-                  "normal": "#54a254"
-                },
-                "red": {
-                  "normal": "#dd1111"
-                },
-                "accent": {
-                  "normal": "#2E89FC"
-                },
-                "good": {
-                  "normal": "#54a254"
-                },
-                "warning": {
-                  "normal": "#e69500"
-                },
-                "attention": {
-                  "normal": "#cc3300"
-                }
-              }
-            }
-          },
-          "imageSizes": {
-            "default": 40,
-            "small": 40,
-            "smaller": 48,
-            "medium": 70,
-            "notsmall": 75,
-            "notbig": 60,
-            "large": 160
-          },
-          "imageSet": {
-            "imageSize": "medium",
-            "maxImageHeight": 100
-          },
-          "actions": {
-            "color": "",
-            "backgroundColor": "",
-            "maxActions": 5,
-            "spacing": "extraLarge",
-            "buttonSpacing": 20,
-            "actionsOrientation": "horizontal",
-            "actionAlignment": "center",
-            "showCard": {
-              "actionMode": "inline",
-              "inlineTopMargin": 16,
-              "style": "default"
-            }
-          },
-          "spacing": {
-            "default": 5,
-            "small": 5,
-            "medium": 10,
-            "large": 26,
-            "big": 24,
-            "extraLarge": 26,
-            "padding": 20
-          },
-          "separator": {
-            "lineThickness": 1,
-            "lineColor": "#dedddd"
-          },
-          "factSet": {
-            "title": {
-              "size": "default",
-              "color": "default",
-              "weight": "bold",
-              "warp": true
-            },
-            "value": {
-              "size": "default",
-              "color": "default",
-              "weight": "default",
-              "warp": true
-            },
-            "spacing": 20
-          },
-          "supportsInteractivity": true,
-          "imageBaseUrl": ""
-        },
-        "currentCardName": "default",
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": [
-            {
-              "id": "pre_unification_profile",
-              "title": "Pre Unification Profile",
-              "singular": "Pre Unification Profile",
-              "plural": "Pre Unification Profile"
-            },
-            {
-              "id": "unified_profiles",
-              "title": "Unified Profiles",
-              "singular": "Unified Profiles",
-              "plural": "Unified Profiles"
-            },
-            {
-              "id": "addressable_ids",
-              "title": "Addressable IDs",
-              "singular": "Addressable IDs",
-              "plural": "Addressable IDs"
-            },
-            {
-              "id": "last_update",
-              "title": "Last Update",
-              "singular": "Last Update",
-              "plural": "Last Update"
-            },
-            {
-              "id": "duration",
-              "title": "duration",
-              "singular": "duration",
-              "plural": "duration"
-            }
-          ]
-        }
-      },
-      "instanceid": "C106D-4E51-FA",
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 4,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "saveDisabledTargetFilters": false,
-        "drillToDashboardByName": false
-      },
-      "drilledDashboardDisplay": {},
-      "realTimeRefreshing": false,
-      "options": {
-        "dashboardFiltersMode": "select",
-        "selector": true,
-        "title": false,
-        "drillTarget": "dummy",
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true
-      },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
-      "script": "widget.on('ready', function(w, args) {\nvar attributes = w.queryResult;\n\tvar json = JSON.stringify(attributes);\n    var obj = JSON.parse(json);\n    var listArray = [];\n    for (let i = 0; i < obj.length; i++) {\n\t\tvar newobj = Object.values(obj[i]);\n\t    var objcount = Object.keys(newobj).length;\n\t\t//console.log(objcount);\n\t\tfor (let j =0; j < newobj.length; j++){\n\t\t\t//console.log(newobj[j]);\n\t  var element_key = newobj[j].Panel;\n      var element_value = newobj[j].Text;\n\t\t\tif(element_value !== 'N\\A'){\n\t\t\t\n             listArray.push(\"<div class='column spacing-none' style='flex-grow: 1; background-size: 100% 100%; background-repeat: no-repeat;'><div id='listItm' style='width:100%; padding-top:40px; padding-bottom:30px;' class='flex-container spacing-none' ><div class='column spacing-none' ><div class='text-block font-size-default font-weight-light color-default spacing-one horizontal-left' style='text-align:center;'><span class='label'>\" + element_key + \"</span> </div> <div class='text-block font-size-medium font-weight-normalcolor-default spacing-one horizontal-left' style='text-align:center;'><span id='val' class=\"+ element_value +\">\" + element_value + \"</span> </div></div></div></div>\");\n\t\t\t}\n\t}\n   }\n\tlistArray = listArray.slice(0, objcount);\n\t$(element).find(\".listholder\").html(listArray);\n});"
-    },
-    {
-      "title": "Unification Overview",
-      "type": "BloX",
-      "subtype": "BloX",
-      "oid": "67586a2c29afe5003fc2c99f",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "title": "dm_11874_QSR VA - IDU Dashboard",
-        "fullname": "LocalHost/dm_11874_QSR VA - IDU Dashboard",
-        "id": "aLOCALHOST_aDMXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDASHBOARD",
-        "address": "LocalHost",
-        "database": "admXwAa11874XwAaQSRIAAaVAIAAaLQAaIAAaIDUIAAaDashboard"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "ids": [],
-          "all": false
-        },
-        "panels": [
-          {
-            "name": "Items",
-            "items": [
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "total_source_ids",
-                  "dim": "[idu_calculations.total_source_ids]",
-                  "datatype": "numeric",
-                  "title": "Total IDs"
-                },
-                "instanceid": "B546F-AD4E-DA",
-                "PanelName": "Total IDs",
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "decimals": "auto",
-                    "number": {
-                      "separated": true
-                    },
-                    "abbreviateAll": true
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "composite_ids",
-                  "dim": "[idu_calculations.composite_ids]",
-                  "datatype": "numeric",
-                  "title": "Composite IDs"
-                },
-                "instanceid": "B791B-D7CF-B9",
-                "PanelName": "Composite IDs",
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": false,
-                      "b": false,
-                      "m": false,
-                      "k": false
-                    },
-                    "decimals": "auto",
-                    "number": {
-                      "separated": true
-                    },
-                    "abbreviateAll": false
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "addresable_id_non_unique",
-                  "dim": "[idu_calculations.addresable_id_non_unique]",
-                  "datatype": "numeric",
-                  "title": "Addressable IDs"
-                },
-                "instanceid": "579CB-DD45-11",
-                "PanelName": "Addressable IDs",
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "decimals": "auto",
-                    "number": {
-                      "separated": true
-                    },
-                    "abbreviateAll": true
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "non_addressable_ids",
-                  "dim": "[idu_calculations.non_addressable_ids]",
-                  "datatype": "numeric",
-                  "title": "Non Addressable IDs"
-                },
-                "instanceid": "E9171-51E6-AE",
-                "PanelName": "Non Addressable IDs",
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "decimals": "auto",
-                    "number": {
-                      "separated": true
-                    },
-                    "abbreviateAll": true
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "table": "idu_calculations",
-                  "column": "overall_deduplication_rate",
-                  "dim": "[idu_calculations.overall_deduplication_rate]",
-                  "datatype": "numeric",
-                  "title": "Deduplication Rate"
-                },
-                "instanceid": "28CE9-A237-2E",
-                "PanelName": "Deduplication Rate",
-                "format": {
-                  "mask": {
-                    "decimals": "auto",
-                    "percent": true
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "Values",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ],
-        "usedFormulasMapping": {}
-      },
-      "style": {
-        "currentCard": {
-          "style": ".circular-chart { stroke: 486485; display:block; margin:10px auto; max-width: 60%;  }.circle-bg { fill: none; stroke: #dae4ec; stroke-width: 3.8; }.circle { fill: none; stroke-width: 2.8; stroke-linecap: round; }.circular-chart.orange .circle { stroke: #be9c40; }.percentage { fill: #666; font-family: Avenir, sans-serif; font-size: 0.3em; text-anchor: middle; }.circular-chart.purple .circle { stroke: #a363a5; }.circular-chart.blue .circle{stroke: #179bf2}.circular-chart.red .circle{stroke:rgb(174, 53, 124)}.circular-chart .circle{stroke: #5069a9}",
-          "script": "",
-          "title": "",
-          "showCarousel": true,
-          "body": [
-            {
-              "type": "Container",
-              "style": {
-                "padding": "0px"
-              },
-              "items": [
-                {
-                  "type": "ColumnSet",
-                  "class": "ringholder",
-                  "style": {
-                    "display": "flex"
-                  },
-                  "columns": [
-                    {}
-                  ]
-                }
-              ]
-            }
-          ],
-          "actions": []
-        },
-        "currentConfig": {
-          "fontFamily": "Avenir",
-          "fontSizes": {
-            "default": 16,
-            "small": 16,
-            "medium": 20,
-            "large": 50,
-            "extraLarge": 32
-          },
-          "fontWeights": {
-            "default": 200,
-            "light": 100,
-            "bold": 1000
-          },
-          "containerStyles": {
-            "default": {
-              "backgroundColor": "#ffffff",
-              "foregroundColors": {
-                "default": {
-                  "normal": "#000000"
-                },
-                "white": {
-                  "normal": "#ffffff"
-                },
-                "grey": {
-                  "normal": "#5C6372"
-                },
-                "orange": {
-                  "normal": "#f2B900"
-                },
-                "yellow": {
-                  "normal": "#ffcb05"
-                },
-                "black": {
-                  "normal": "#000000"
-                },
-                "lightGreen": {
-                  "normal": "#3ADCCA"
-                },
-                "green": {
-                  "normal": "#54a254"
-                },
-                "red": {
-                  "normal": "#dd1111"
-                },
-                "accent": {
-                  "normal": "#2E89FC"
-                },
-                "good": {
-                  "normal": "#54a254"
-                },
-                "warning": {
-                  "normal": "#e69500"
-                },
-                "attention": {
-                  "normal": "#cc3300"
-                }
-              }
-            }
-          },
-          "imageSizes": {
-            "default": 40,
-            "small": 40,
-            "medium": 80,
-            "large": 160
-          },
-          "imageSet": {
-            "imageSize": "medium",
-            "maxImageHeight": 100
-          },
-          "actions": {
-            "color": "",
-            "backgroundColor": "white",
-            "maxActions": 5,
-            "spacing": "extraLarge",
-            "buttonSpacing": 20,
-            "actionsOrientation": "horizontal",
-            "actionAlignment": "center",
-            "showCard": {
-              "actionMode": "inline",
-              "inlineTopMargin": 16,
-              "style": "default"
-            }
-          },
-          "spacing": {
-            "default": 5,
-            "small": 20,
-            "medium": 60,
-            "large": 20,
-            "extraLarge": 40,
-            "padding": 0
-          },
-          "separator": {
-            "lineThickness": 1,
-            "lineColor": "#eeeeee"
-          },
-          "factSet": {
-            "title": {
-              "size": "default",
-              "color": "default",
-              "weight": "bold",
-              "warp": true
-            },
-            "value": {
-              "size": "default",
-              "color": "default",
-              "weight": "default",
-              "warp": true
-            },
-            "spacing": 20
-          },
-          "supportsInteractivity": true,
-          "imageBaseUrl": ""
-        },
-        "currentCardName": "default",
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": [
-            {
-              "id": "total_ids",
-              "title": "Total IDs",
-              "singular": "Total IDs",
-              "plural": "Total IDs"
-            },
-            {
-              "id": "composite_ids",
-              "title": "composite_ids",
-              "singular": "composite_ids",
-              "plural": "composite_ids"
-            },
-            {
-              "id": "addressable_ids",
-              "title": "Addressable IDs",
-              "singular": "Addressable IDs",
-              "plural": "Addressable IDs"
-            },
-            {
-              "id": "non_addressable_ids",
-              "title": "non_addressable_ids",
-              "singular": "non_addressable_ids",
-              "plural": "non_addressable_ids"
-            },
-            {
-              "id": "deduplication_rate",
-              "title": "Deduplication Rate",
-              "singular": "Deduplication Rate",
-              "plural": "Deduplication Rate"
-            }
-          ]
-        }
-      },
-      "instanceid": "A02CF-700E-80",
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 4,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "saveDisabledTargetFilters": false,
-        "drillToDashboardByName": false
-      },
-      "drilledDashboardDisplay": {},
-      "realTimeRefreshing": false,
-      "options": {
-        "dashboardFiltersMode": "select",
-        "selector": true,
-        "title": false,
-        "drillTarget": "dummy",
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true
-      },
-      "dashboardid": "6755dfc75c02df003f2ba67e",
-      "script": "//Naz recreated this widget Dec 10 2024\nwidget.on('ready', function(w, args) {\n    var maxCount = 5; // Based on the number of the items in the panel (not the values) adjust the variable here.\n    var attributes = w.queryResult;\n\tvar json = JSON.stringify(attributes);\n    var obj = JSON.parse(json);\n    var listArray = [];\n\n    for (let i = 0;   i < obj.length; i++) {\n\t\tvar newobj = Object.values(obj[i]);\n\t    var objcount = Object.keys(newobj).length;\n\t\tfor (let j =0;  j < newobj.length; j++){\n\n\t     var element_key = newobj[j].Panel;\n         var element_value = newobj[j].Text;\n\t     var element_data = newobj[j].Value;\n\t     var percentage;\n\t     var element_base = newobj[0].Value;\n\t\t\t\n\t      if (typeof element_value === 'string' && element_value.endsWith('%')){\n\t\t\n          percentage = element_data * 100;\n\t\t \n\t      } else {\n\t\t  percentage = (element_data / element_base) * 100;\n\t      }\n\t   \n\t\t  if(element_value !== 'N\\A'){\n\t\t\t\n             listArray.push(\"<div class='column spacing-none' style=' flex-basis:100%; background-size: 100% 100%; background-repeat: no-repeat;'><div id='listItm' style='width:100%; padding-top:40px; padding-bottom:30px;' class='flex-container spacing-none' ><div class='column spacing-none' ><div class='text-block font-size-default font-weight-light color-default spacing-one horizontal-left' style='text-align:center;'> <div class='single-chart'> <svg viewBox='0 0 36 36' class='circular-chart'><path class='circle-bg' d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831' /><path class='circle' stroke-dasharray='\"+ percentage  +\", 100' d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831' /><text x='18' y='20.35' class='percentage'>\" + element_value + \"</text> </svg> <p>\" + element_key + \"</p></div></div></div></div></div>\");\n\t\t  }\n\t    \n         }\n\t }\n\tlistArray = listArray.slice(0, maxCount);\n\t//console.log(listArray);\n\t$(element).find(\".ringholder\").html(listArray);\n});"
     }
   ],
   "hierarchies": []

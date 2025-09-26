@@ -24,6 +24,7 @@ The retail starter pack includes a PRP layer that sits between raw data ingestio
 - Unpacking nested JSON fields
 - Concatatenation or separation of fields if necessary
 - Early filtering of unnecessary fields
+- Record deduplication should happen here as no further deduplication is done downstream
 
 For further details, and specific details on the schema required see Data Ingestion.
 

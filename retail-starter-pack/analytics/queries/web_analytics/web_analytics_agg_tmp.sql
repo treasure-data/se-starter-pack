@@ -55,8 +55,8 @@ base as (select
   , if(td_parse_user_agent(td_user_agent, 'ua_family') = 'Other', 'UNKNOWN', td_parse_user_agent(td_user_agent, 'ua_family')) as browser_name
   , element_at(td_parse_agent(td_user_agent), 'version')                                                                      as browser_version
   , td_language
-  , TD_SESSIONIZE_WINDOW(time, cast ('${conversion.sessionize_time_range}' as int)) OVER (PARTITION BY retail_unification_id ORDER BY time) AS session_id
-  , retail_unification_id
+  , TD_SESSIONIZE_WINDOW(time, cast ('${conversion.sessionize_time_range}' as int)) OVER (PARTITION BY ${unification_id} ORDER BY time) AS session_id
+  , ${unification_id} 
   from pageviews a, cal
   where TD_TIME_RANGE(a.time, st_dt , end_dt)
 )

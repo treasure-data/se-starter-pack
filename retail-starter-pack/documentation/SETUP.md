@@ -289,7 +289,7 @@ Map your email engagement data:
 
 ## Step 3: Configure PRP Queries
 
-The PRP (Prep) layer allows you to create custom SQL queries to transform complex data before schema mapping. This is only needed when your raw data requires preprocessing like JSON parsing or field concatenation.
+The PRP (Prep) layer allows you to create custom SQL queries to transform complex data before schema mapping. This is only needed when your raw data requires preprocessing like JSON parsing, field concatenation, or record deduplication.
 
 ### 3.1 When to Use PRP Queries
 

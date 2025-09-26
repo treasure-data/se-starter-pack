@@ -1,21 +1,21 @@
 with known_cust as (
-  select distinct retail_unification_id as  kc
-  from enriched_customers
+  select distinct ${unification_id} as  kc
+  from profile_identifiers where email is not null
 ),
 all_web_cust as (
-  select distinct retail_unification_id as wc
-  from enriched_pageviews
+  select distinct ${unification_id} as wc
+  from pageviews
   where TD_INTERVAL(time, '-1d')
 ),
 total_sales as (
 (
   select sum(amount) as amount from (
       select sum(amount) as amount
-        from enriched_order_offline_transactions
+        from order_offline_transactions
         where TD_INTERVAL(trfmd_order_datetime_unix, '-1d')
         union all
         select sum(amount) as amount
-        from enriched_order_online_transactions
+        from order_digital_transactions
         where TD_INTERVAL(trfmd_order_datetime_unix, '-1d')
   )
 )

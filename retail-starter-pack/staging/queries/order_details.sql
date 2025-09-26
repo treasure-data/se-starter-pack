@@ -48,7 +48,7 @@ case
   when nullif(lower(ltrim(rtrim("product_sub_department"))), '') is null then null
   else array_join((transform((split(lower(trim("product_sub_department")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
 end   AS  "trfmd_product_sub_department", 
-TD_TIME_PARSE(order_date) as trfmd_order_date_unix
+TD_TIME_PARSE(order_datetime) as trfmd_order_datetime_unix
 FROM
 
 order_details

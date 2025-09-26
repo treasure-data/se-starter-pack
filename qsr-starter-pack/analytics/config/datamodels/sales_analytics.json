@@ -1,5 +1,5 @@
 {
-    "model_name": "QSR VA - Sales Analytics",
+    "model_name": "Retail VA - Sales Analytics",
     "model_tables": [
         {
             "db": "sink_database",
