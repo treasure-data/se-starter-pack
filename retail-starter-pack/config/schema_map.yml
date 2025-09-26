@@ -16,7 +16,7 @@ schema_change:
   - prp: time
     src: time
     type: bigint
-  prp_table_name: not exists
+  prp_table_name: consents 
   src_table_name: consents
 - columns:
   - prp: datetime
@@ -30,6 +30,9 @@ schema_change:
     type: varchar
   - prp: email
     src: email
+    type: varchar
+  - prp: phone_number
+    src: phone_number
     type: varchar
   - prp: null
     src: customer_id
@@ -46,7 +49,7 @@ schema_change:
   - prp: email
     src: email
     type: varchar
-  - prp: phone_number
+  - prp: null
     src: phone_number
     type: varchar
   - prp: td_global_id
@@ -55,13 +58,13 @@ schema_change:
   - prp: td_client_id
     src: td_client_id
     type: varchar
-  - prp: form_type
+  - prp: null
     src: form_type
     type: varchar
   - prp: time
     src: time
     type: bigint
-  prp_table_name: not exists
+  prp_table_name: formfills
   src_table_name: formfills
 - columns:
   - prp: external_id
@@ -70,8 +73,8 @@ schema_change:
   - prp: email
     src: email
     type: varchar
-  - prp: secondary_email
-    src: null
+  - prp: null
+    src: secondary_email
     type: varchar
   - prp: phone_number
     src: phone_number
@@ -97,16 +100,16 @@ schema_change:
   - prp: zip
     src: postal_code
     type: varchar
-  - prp: gender
-    src: null
+  - prp: null
+    src: gender
     type: varchar
   - prp: null
-    src: birthdate
+    src: birthday
     type: varchar
-  - prp: membership_status
-    src: null
+  - prp: loyalty_is_opt_in
+    src: membership_status
     type: varchar
-  - prp: null
+  - prp: loyalty_vip_tier_name
     src: membership_tier
     type: varchar
   - prp: null
@@ -115,26 +118,23 @@ schema_change:
   - prp: null
     src: net_debits
     type: double
-  - prp: null
+  - prp: loyalty_points_earned
     src: membership_points_earned
     type: bigint
-  - prp: null
+  - prp: loyalty_points_balance
     src: membership_points_balance
     type: bigint
   - prp: null
     src: membership_points_pending
     type: bigint
-  - prp: null
+  - prp: loyalty_total_redemptions
     src: total_loyalty_purchases
     type: bigint
-  - prp: null
+  - prp: loyalty_vip_expiration_date
     src: current_membership_level_expiration
     type: varchar
   - prp: null
     src: location_id
-    type: varchar
-  - prp: null
-    src: location_address
     type: varchar
   - prp: null
     src: location_city
@@ -159,15 +159,6 @@ schema_change:
     type: varchar
   - prp: null
     src: wishlist_item
-    type: varchar
-  - prp: null
-    src: membership_status
-    type: varchar
-  - prp: null
-    src: gender
-    type: varchar
-  - prp: null
-    src: secondary_email
     type: varchar
   - prp: time
     src: time
@@ -220,6 +211,12 @@ schema_change:
   - prp: line_item_id
     src: order_line_no
     type: bigint
+  - prp: order_created_at
+    src: order_datetime
+    type: varchar
+  - prp: order_updated_at
+    src: order_updated_datetime
+    type: varchar
   - prp: null
     src: time
     type: bigint
@@ -243,6 +240,9 @@ schema_change:
     type: varchar
   - prp: created_at
     src: order_datetime
+    type: varchar
+  - prp: order_updated_at
+    src: order_updated_datetime
     type: varchar
   - prp: null
     src: payment_method
@@ -355,6 +355,9 @@ schema_change:
   - prp: order_datetime
     src: order_datetime
     type: varchar
+  - prp: order_updated_at
+    src: order_updated_datetime
+    type: varchar
   - prp: payment_method
     src: payment_method
     type: varchar
@@ -418,10 +421,10 @@ schema_change:
   - prp: td_charset
     src: td_charset
     type: varchar
-  - prp: td_os
+  - prp: null
     src: td_os
     type: varchar
-  - prp: td_os_version
+  - prp: null
     src: td_os_version
     type: varchar
   - prp: td_user_agent
@@ -454,16 +457,16 @@ schema_change:
   - prp: td_referrer
     src: td_referrer
     type: varchar
-  - prp: td_browser
+  - prp: null
     src: td_browser
     type: varchar
-  - prp: td_browser_version
+  - prp: null
     src: td_browser_version
     type: varchar
   - prp: time
     src: time
     type: bigint
-  prp_table_name: not exists
+  prp_table_name: pageviews
   src_table_name: pageviews
 - columns:
   - prp: app_name

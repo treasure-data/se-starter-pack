@@ -6,6 +6,7 @@ create table  email_activity_tmp (
   campaign_id varchar,
   campaign_name varchar,
   email varchar,
+  phone_number varchar,
   customer_id varchar,
   activity_type varchar,
   time bigint

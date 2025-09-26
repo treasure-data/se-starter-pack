@@ -5,7 +5,7 @@ create table ${stg}_${sub}.${tbl} as
 SELECT *,
     -- BIGINT field: ensure it's not negative
     CASE WHEN time IS NULL OR time < 0 THEN NULL ELSE time END AS trfmd_time,
-
+    TD_TIME_PARSE(CAST(message_date as varchar)) as message_date_unix,
     -- Phone number: remove non-numeric characters
     CASE 
         WHEN nullif(lower(trim(phone_number)), 'null') IS NULL THEN NULL

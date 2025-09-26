@@ -1,6 +1,14 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+drop table if exists ${stg}_${sub}.${tbl};
 
-create table ${stg}_${sub}.${tbl} as 
+CREATE TABLE IF NOT EXISTS ${stg}_${sub}.${tbl} (
+  time bigint
+);
+
+INSERT INTO ${stg}_${sub}.${tbl}
+
+with max_time as (
+  select COALESCE(max(time),0) as max_time from ${stg}_${sub}.${tbl}
+)
 
 SELECT
 *,
@@ -70,28 +78,31 @@ case
 end   AS  "trfmd_guest_checkout_flag", 
 -- 
 case
-  when nullif(lower(ltrim(rtrim("store_address"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("store_address"))), '') is null then null
-  else array_join((transform((split(lower(trim("store_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_store_address",
+  when nullif(lower(ltrim(rtrim("location_address"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("location_address"))), '') is null then null
+  else array_join((transform((split(lower(trim("location_address")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_location_address",
 --
 case
-  when nullif(lower(ltrim(rtrim("store_postal_code"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("store_postal_code"))), '') is null then null
-  else lower(ltrim(rtrim("store_postal_code")))
-end   AS  "trfmd_store_postal_code",
+  when nullif(lower(ltrim(rtrim("location_postal_code"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("location_postal_code"))), '') is null then null
+  else lower(ltrim(rtrim("location_postal_code")))
+end   AS  "trfmd_location_postal_code",
 --
 case
-  when nullif(lower(ltrim(rtrim("store_city"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("store_city"))), '') is null then null
-  else array_join((transform((split(lower(trim("store_city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_store_city",
+  when nullif(lower(ltrim(rtrim("location_city"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("location_city"))), '') is null then null
+  else array_join((transform((split(lower(trim("location_city")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_location_city",
 --
 case
-  when nullif(lower(ltrim(rtrim("store_state"))), 'null') is null then null
-  when nullif(lower(ltrim(rtrim("store_state"))), '') is null then null
-  else array_join((transform((split(lower(trim("store_state")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
-end   AS  "trfmd_store_state"
+  when nullif(lower(ltrim(rtrim("location_state"))), 'null') is null then null
+  when nullif(lower(ltrim(rtrim("location_state"))), '') is null then null
+  else array_join((transform((split(lower(trim("location_state")),' ')), x -> concat(upper(substr(x,1,1)),substr(x,2,length(x))))),' ','')
+end   AS  "trfmd_location_state"
 FROM
 
 order_digital_transactions
+-- WHERE
+--   time > (SELECT max_time FROM max_time)
+;

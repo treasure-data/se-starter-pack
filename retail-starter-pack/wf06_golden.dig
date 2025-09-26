@@ -19,7 +19,7 @@ _export:
   
   +move_parent_table: 
     for_each>:  
-      tbl: ['parent_table', 'profile_identifiers']
+      tbl: ['parent_table', 'profile_identifiers', 'profile_geography']
     _do: 
       +move: 
         td>: golden/queries/copy_table.sql
@@ -27,7 +27,7 @@ _export:
 
 +attributes:
   for_each>: 
-    attr: ['email_activity', 'pageviews', 'transactions']
+    attr: ['email_activity', 'pageviews', 'transactions', 'order_details', 'survey_responses']
   _parallel: true
   _do: 
     +create_attr_table: 
@@ -42,7 +42,7 @@ _export:
 
 +gld_transformation: 
   for_each>: 
-    tbl: ['order_details', 'order_digital_transactions', 'order_offline_transactions']
+    tbl: ['order_digital_transactions', 'order_offline_transactions']
   _do: 
     +transform: 
       td>: golden/queries/${tbl}.sql 
@@ -54,3 +54,18 @@ _export:
       rename_tables: [{from: "${tbl}_tmp", to: "${tbl}"}]
       database: ${gld}_${sub}
 
++all_profile_identifiers:
+  td>: golden/queries/all_profile_identifiers.sql
+  database: ${gld}_${sub}
+  create_table: all_profile_identifiers
+
+#Send Error Alert
+_error:
+  +send_error_alert:
+    for_each>:
+      email: ${email_ids}
+    _do:
+      _export:
+        subject: "Treasure Data Value Accelerator Failed! Please Review ASAP."
+        receive_email: ${email}
+      call>: utilities/error.dig

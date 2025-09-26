@@ -1,6 +1,11 @@
-drop table if exists ${stg}_${sub}.${tbl}; 
+CREATE TABLE IF NOT EXISTS ${stg}_${sub}.${tbl} (
+  time bigint
+);
 
-create table ${stg}_${sub}.${tbl} as 
+INSERT INTO ${stg}_${sub}.${tbl}
+with max_time as (
+  select COALESCE(max(time),0) as max_time from ${stg}_${sub}.${tbl}
+)
 
 SELECT
 *,
@@ -27,3 +32,5 @@ end   AS  "trfmd_td_title"
 FROM
 
 pageviews
+WHERE
+  time > (SELECT max_time FROM max_time)
